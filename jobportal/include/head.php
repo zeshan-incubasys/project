@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Job Portal</title>
+    <title>Index Page</title>
     <!--<link rel="stylesheet" href="<?=CSS_URL?>bootstrap.min.css">-->
     <link rel="stylesheet" href="<?=CSS_URL?>bootstrap.css" media="all" type="text/css">
     <link rel="stylesheet" href="<?=CSS_URL?>customize.css" media="all" type="text/css">
