@@ -1,20 +1,12 @@
-/*.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 0 0 -4px;
-	float: none;
-}*/
-
-
-body{
-	font:14px/16px 'Pontano Sans', sans-serif !important;
+body {
+	font: 14px/16px 'Pontano Sans', sans-serif !important;
 	color: #fff;
 }
-a{
+a {
 	color: #fff;
 	text-decoration: none;
 }
-h2{
+h2 {
 	font-size: 18px;
 	line-height: 21px;
 	color: #fff;
@@ -22,31 +14,42 @@ h2{
 	padding: 0;
 	margin: 0 0 22px;
 }
-
-
-
-
-.top-header{
-	background:#fff;
+.top-header {
+	background: #fff;
 	padding: 15px 0;
 }
-.top-header .logo{
+.top-header .logo {
 	background: url(../images/logo.png) no-repeat;
 	width: 214px;
-	height: 89px;
-	float: left;
-	background-size: 73%;
+	height: 121px;
+	display:block;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	text-indent:-9999px;
 }
-.top-header .logo a{
+.navbar{ margin:0 ;}
+.navbar-default{
+	background:none;
+	border:none;
+}
+.navbar-nav > li > a{ padding:0 15px 0 0; }
+.navbar-nav{ 
+	padding:45px 0;
+	text-transform:uppercase;
+	font-size:12px;
+	line-height:15px;
+}
+/*.top-header .logo a {
 	display: block;
 	height: 100%;
-}
-.top-header #nav{
+}*/
+.top-header #nav {
 	overflow: hidden;
 	text-transform: uppercase;
 	padding: 0 0 0 15px;
 }
-.top-header #nav ul{
+.top-header #nav ul {
 	margin: 0;
 	font-size: 12px;
 	line-height: 14px;
@@ -54,99 +57,87 @@ h2{
 	list-style: none;
 	float: right;
 }
-.top-header #nav ul li{
+.top-header #nav ul li {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0 0 10px 10px;
 }
 .top-header #nav ul .active a,
-.top-header #nav ul li a:hover{
-	border-bottom:2px solid #6d9cac;
+.top-header #nav ul li a:hover {
+	border-bottom: 2px solid #6d9cac;
 	padding: 0 0 3px;
 	text-decoration: none;
-	color:#1e3244;
+	color: #1e3244;
 }
-.top-header #nav li a{
+.top-header #nav li a {
 	font-weight: bold;
 	color: #1e3244;
 }
-.carousel{ margin: 0 !important;}
-.carousel-inner{ overflow:hidden;}
-.item{
-    background: #333;    
-    text-align: center;
-    height: auto;
+.carousel { margin: 0 !important; }
+.carousel-inner { overflow: hidden; }
+.item {
+	background: #333;
+	text-align: center;
+	height: auto;
 }
-.carousel{
-    margin-top: 20px;
-}
-.carousel img{ width: 100%;}
-
-.what-do{
+.carousel { margin-top: 20px; }
+.carousel img { width: 100%; }
+.what-do {
 	background: #2d4658;
 	padding: 30px 0 0;
 }
-.what-do .head{
+.what-do .head {
 	text-align: center;
 	overflow: hidden;
 	padding: 0 0 30px;
 }
-.what-do .head h2 span{
+.what-do .head h2 span {
 	padding: 0 0 12px;
 	background: url(../images/ico-headbar.png) no-repeat 50% 100%;
 }
-.what-do .holder{
+.what-do .holder {
 	overflow: hidden;
 	background: #6193a5;
 }
-.what-do .holder .block{
+.what-do .holder .block {
 	overflow: hidden;
 	display: table;
 	width: 100%;
 }
-.what-do .holder .block .image-area .image.one{
-	background: url(../images/img1.jpg) no-repeat;
-	width: 100%;
-	height:414px;
-	background-size:100%;
-}
 .what-do .holder .block .image-area{
-	padding:0 0;
-	height: 100%;
+	background: url(../images/img1.jpg) no-repeat;
+	background-size: cover;
+	height:414px;
 }
-.what-do .holder .block .image-area .caption{
+.what-do .holder .block .image-area .caption {
 	display: table-cell;
 	vertical-align: middle;
 	float: none;
 	clear: both;
 }
-.what-do .holder .block .text-area{
+.what-do .holder .block .text-area {
 	height: 100%;
-overflow: hidden;
+	overflow: hidden;
 }
-.what-do .holder .block .text-area .text{
+.what-do .holder .block .text-area .text {
 	display: table-cell;
 	vertical-align: middle;
 	clear: both;
 	float: none;
 	height: 100%;
+	padding:100px 0;
 }
-
-
-
-
-
-
-
-
+.what-do .holder .heading{
+	text-align:center;
+}
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-	.container {width: 940px;}
-
- }
+@media (min-width: 768px) {
+}
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { }
+@media (min-width: 992px) {
+}
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { }
+@media (min-width: 1200px) {
+}
