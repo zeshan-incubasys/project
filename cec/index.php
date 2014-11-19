@@ -71,10 +71,11 @@
 			<section class="testimonial-area" id="testimonials">
 				<div class="holder">
 					<div class="testi">
-						<h1>Testimonials</h1>
+						<!--<h1>Testimonials</h1>-->
 						<div class="blockquote">
-							<p>If you aren't sure, always go for conferences. Best. Product. Ever! I have gotten at least 50 times the value from conferences. I like conferences more and more each day because it makes my life a lot easier.</p>
-							<span class="author">Wallie G</span>
+							<p>WES 2015 will offer education institutes and professional training providers the opportunity to drive up enrollment and reach out to the next batch of aspiring students.</p>
+							<!--<p>If you aren't sure, always go for conferences. Best. Product. Ever! I have gotten at least 50 times the value from conferences. I like conferences more and more each day because it makes my life a lot easier.</p>
+							<span class="author">Wallie G</span>-->
 						</div>
 					</div>
 				</div>
