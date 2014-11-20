@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Index Page</title>
+    <title>Marina Recrewter</title>
     <link rel="stylesheet" href="<?php echo CSS_URL ?>bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo CSS_URL?>customize.css" media="all" type="text/css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>

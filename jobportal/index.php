@@ -45,16 +45,16 @@
           <p>Decades of maritime experience on commercial and private ships make us an ideal choice for management agencies, captains &amp; recruiters looking for certified and professional crew. Candidates love the fact that we speak their language. Experience that is ‘Truly Different’.</p>
         </div>
         <div class="holder">
-          <div class="block">
-              <div class="col-md-4 col-md-offset-2 text-area">
+          <div class="block visible-lg">
+              <div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
                   <div class="text">
                     <p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
                     <p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
                     <p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference.  </p>
                   </div>
               </div>
-              <div class="col-md-6 image-area">
-              		<div class="col-md-10 col-xs-12 heading">
+              <div class="col-lg-6 image-area col-xs-12">
+              		<div class="col-lg-10 col-xs-12 heading">
       						    <h3>About Us</h3>
                       <div class="ico-div">
                           <a href="#">learn more</a>
@@ -62,17 +62,34 @@
       					</div>
             </div>
           </div>
+		  <div class="block hidden-lg">
+              <div class="col-lg-6 image-area col-xs-12">
+              		<div class="col-lg-10 col-xs-12 heading">
+      						    <h3>About Us</h3>
+                      <div class="ico-div">
+                          <a href="#">learn more</a>
+                      </div>
+      					</div>
+            </div>
+			<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
+                  <div class="text">
+                    <p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
+                    <p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
+                    <p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference.  </p>
+                  </div>
+              </div>
+          </div>
           <div class="block">
               
-              <div class="col-md-6 image-area one">
-                  <div class="col-md-10 col-md-offset-2 col-xs-12 heading">
+              <div class="col-lg-6 col-xs-12 image-area one">
+                  <div class="col-lg-10 col-lg-offset-2 col-xs-12 heading">
                       <h3>WHY Marina Recrewter?</h3>
                       <div class="ico-div">
                           <a href="#">learn more</a>
                       </div>
                 </div>
             </div>
-            <div class="col-md-4 text-area">
+            <div class="col-lg-4 col-xs-12 text-area">
                   <div class="info">
                       <div class="wrap">
                         <span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>
@@ -175,7 +192,7 @@
     <section id="contact">
       <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-2 block">
+            <div class="col-md-4 col-md-offset-2 block visible-md">
               <div class="direction">
                   <span>e</span>
                   <span>36 53.297</span>
@@ -184,6 +201,17 @@
                   <strong class="heading">Address</strong>
                   <span>THE ADDRESS WILL COME HERE
                   </br>Address 123 City, State</span>
+              </div>
+            </div>
+			<div class="col-md-4 col-md-offset-2 block hidden-md">
+              <div class="address">
+                  <strong class="heading">Address</strong>
+                  <span>THE ADDRESS WILL COME HERE
+                  </br>Address 123 City, State</span>
+              </div>
+			  <div class="direction">
+                  <span>e</span>
+                  <span>36 53.297</span>
               </div>
             </div>
             <div class="col-md-4 block">
