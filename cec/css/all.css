@@ -243,22 +243,22 @@ select {
 }
 #main .slider .slide.active { z-index: 10000; }
 #main .slider .image-holder {
-	background: url(../images/Banner_1.jpg) no-repeat center center;
+	background: url(../images/banner/Banner_1.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
 }
 #main .slider .image-holder.img2 {
-	background: url(../images/Banner_2.jpg) no-repeat center center;
+	background: url(../images/banner/Banner_2.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
 }
 #main .slider .image-holder.img3 {
-	background: url(../images/Banner_3.jpg) no-repeat center center;
+	background: url(../images/banner/Banner_3.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
 }
 #main .slider .image-holder.img4 {
-	background: url(../images/img3.jpg) no-repeat center center;
+	background: url(../images/banner/img3.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
 }
