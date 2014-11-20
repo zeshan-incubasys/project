@@ -192,7 +192,7 @@
     <section id="contact">
       <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-2 block visible-md">
+            <div class="col-md-4 col-md-offset-2 block visible-lg">
               <div class="direction">
                   <span>e</span>
                   <span>36 53.297</span>
@@ -203,7 +203,7 @@
                   </br>Address 123 City, State</span>
               </div>
             </div>
-			<div class="col-md-4 col-md-offset-2 block hidden-md">
+			<div class="col-md-4 col-md-offset-2 block hidden-lg">
               <div class="address">
                   <strong class="heading">Address</strong>
                   <span>THE ADDRESS WILL COME HERE
