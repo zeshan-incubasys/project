@@ -6,6 +6,7 @@ a {
 	color: #fff;
 	text-decoration: none;
 }
+a:hover, a:focus{ color:#fff;}
 h2 {
 	font-size: 18px;
 	line-height: 21px;
@@ -14,20 +15,70 @@ h2 {
 	padding: 0;
 	margin: 0 0 22px;
 }
+
+
 .top-header {
 	background: #fff;
-	padding: 15px 0;
+	padding: 15px 0 0;
 }
 .top-header .logo {
 	background: url(../images/logo.png) no-repeat;
-	width: 214px;
-	height: 121px;
+	width: 171px;
+	height: 99px;
 	display:block;
 	padding:0;
 	margin:0;
+	background-size:100%;
 	overflow:hidden;
 	text-indent:-9999px;
 }
+#footer  .container{
+	overflow: hidden;
+	padding:12px 0;
+}
+#footer .logo{
+	float: left;
+	background: url(../images/logo.png) no-repeat;
+	width: 171px;
+	height: 99px;
+	display:block;
+	padding:0;
+	margin:0;
+	background-size:100%;
+	overflow:hidden;
+	text-indent:-9999px;
+}
+#footer .logo a{
+	height: 100%;
+	display: block;
+}
+#footer .navigation{
+	overflow: hidden;
+}
+#footer .navigation ul{
+	float: right;
+	font-size: 12px;
+    line-height: 15px;
+    padding: 40px 0;
+    text-transform: uppercase;
+}
+#footer .navigation li{
+	display: inline-block;
+	vertical-align: middle;
+}
+#footer li a{
+	color: #1e3244;
+	padding: 0 10px;
+}
+
+#footer li a:hover{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-bottom: 2px solid #6d9cac;
+    color: #1e3244 !important;
+    padding: 0 10px 3px;
+    text-decoration: none;
+}
+
 .navbar{ margin:0 ;}
 .navbar-default{
 	background:none;
@@ -38,7 +89,7 @@ h2 {
 	color: #1e3244 !important;
 }
 .navbar-nav{ 
-	padding:45px 0;
+	padding:42px 0;
 	text-transform:uppercase;
 	font-size:12px;
 	line-height:15px;
@@ -198,7 +249,7 @@ h2 {
 #services .holder{
 	overflow: hidden;
 	background: #fff;
-	margin:50px 0 0;
+	margin:17px 0 0;
 	color: #3a3939 !important;
 }
 #services .holder .block:after{
@@ -279,7 +330,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	overflow: hidden;
 	padding: 40px 0 60px;
 	background: url(../images/contact/bg-map.png) no-repeat 50% 0;
-	background-size: 100%;
+	background-size:cover;
 }
 #contact .container{
 	background: url(../images/contact/ico-direction.png) no-repeat 50% 0;
@@ -364,11 +415,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	/*background: url(../images/contact/divider.png) no-repeat 0 30px;*/
 	padding: 60px 20px;
 	border-left: 2px solid #fff;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	-webkit-transition: all 0.8s ease;
+	-moz-transition: all 0.8s ease;
+	-ms-transition: all 0.8s ease;
+	-o-transition: all 0.8s ease;
+	transition: all 0.8s ease;
 }
 #social-area .block .area.facebook:hover{ background: #213059;}
 
