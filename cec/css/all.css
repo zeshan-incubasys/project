@@ -842,6 +842,7 @@ select {
 	overflow: hidden;
 	height: 0;
 }
+.lightbox .form3,
 .lightbox .form2{
 	margin:0 auto;
 	width:300px;

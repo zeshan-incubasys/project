@@ -96,6 +96,7 @@ $(document).ready(function(e) {
     });
 
     // Form Validation
+	// Brochure form
     $('.form2 .form-btn').on('click', function(e){
         e.preventDefault();
         var name = $('.form2 .name').val();
@@ -134,6 +135,53 @@ $(document).ready(function(e) {
                 }else{
                     $('.message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
                     $('.message-box').delay(4000).fadeOut(800);
+                    window.open('brochure.pdf', '_blank');
+                    window.open('forms.pdf', '_blank');
+                }
+
+            });
+        }
+    });
+	
+	// Registration form
+	$('.form3 .form-btn').on('click', function(e){
+        e.preventDefault();
+        var name = $('.form3 .name').val();
+        var email = $('.form3 .email').val();
+        var phone = $('.form3 .phone').val();
+        var org = $('.form3 .org').val();
+        var result = '';
+        var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        var valid = emailReg.test(email);
+
+        if(name == ''){
+            result += '<p>Please Fill in your Name</p>';
+        }
+        if(email == ''){
+            result += '<p>Please Fill in your Email</p>';
+        }
+        if((email != '') && !valid){
+            result += '<p>Please Fill in Valid Email Address</p>';
+        }
+        if(phone == ''){
+            result += '<p>Please Fill in your Phone</p>';
+        }
+        if(org == ''){
+            result += '<p>Please Fill in your Organization Name</p>';
+        }
+        if(result != ''){
+            $('.form3 .message-box').fadeIn(800).removeClass('success').addClass('error').html(result);
+            $('.form3 .message-box').delay(4000).fadeOut(800);
+        }else{
+
+            $('.form3 .message-box').fadeIn(800).removeClass('error').addClass('success').html(' Please wait while we send your query.');
+            $.post('brochure.php',{name:name, email:email, phone:phone, org:org}, function(data){
+                if(data == 0){
+                    $('.form3 .message-box').fadeIn(800).removeClass('success').addClass('error').html('Mail Not sent due to some Technical Issue.');
+                    $('.form3 .message-box').delay(4000).fadeOut(800);
+                }else{
+                    $('.form3 .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
+                    $('.form3 .message-box').delay(4000).fadeOut(800);
                     window.open('brochure.pdf', '_blank');
                     window.open('forms.pdf', '_blank');
                 }

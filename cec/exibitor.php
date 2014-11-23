@@ -219,7 +219,7 @@
             </div>
             <div class="text-area">
                 <div class="holder">
-                    <a class="download lightbox" href="#popup1"><span>Fill The Registration Form</span></a>
+                    <a class="download lightbox" href="#popup2"><span>Fill The Registration Form</span></a>
                 </div>
             </div>
         </div>
@@ -263,6 +263,21 @@
 		<form action="#" class="form2">
 			<fieldset>
 				<h1>Please enter your details below to download the brochure.</h1>
+				<div class="message-box"></div>
+				<input type="text" placeholder="Name" class="name">
+				<input type="email" class="email" placeholder="Email Address">
+				<input type="text" placeholder="Phone" class="phone">
+				<input type="text" placeholder="Organization" class="org">
+				<input type="submit" value="Submit" class="form-btn">
+			</fieldset>
+		</form>
+	</div>
+</div>
+<div class="popup-holder">
+	<div id="popup2" class="lightbox">
+		<form action="#" class="form3">
+			<fieldset>
+				<h1>Please enter your details to register</h1>
 				<div class="message-box"></div>
 				<input type="text" placeholder="Name" class="name">
 				<input type="email" class="email" placeholder="Email Address">
