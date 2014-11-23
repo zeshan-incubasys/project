@@ -30,16 +30,23 @@
 					</form>
 					</div>
 				</div>
-				<nav id="nav">
-					<a href="#" class="opener">Menu</a>
-					<ul>
-						<li class="active"><a href="index.php#header">Home</a></li>
-						<li><a href="index.php#about">About us</a></li>
-						<li><a href="exibitor.php">Exhibitors</a></li>
-						<li><a href="exibitor.php#visitor">Visitors</a></li>
-						<li><a href="media.php">Media Center</a></li>
-						<li><a href="index.php#contact">Contact us</a></li>
+				<div class="nav-area">
+					<ul class="social-networks">
+						<li><a target="_blank" href="http://ae.linkedin.com/pub/world-education-show-2015/a7/344/3b7/" target="_blank">linkedin</a></li>
+						<li class="twitter"><a href="https://twitter.com/WES_2015" target="_blank">twitter</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/worldeducationshow" target="_blank">facebook</a></li>
 					</ul>
-				</nav>
+					<nav id="nav">
+						<a href="#" class="opener">Menu</a>
+						<ul>
+							<li class="active"><a href="index.php#header">Home</a></li>
+							<li><a href="index.php#about">About us</a></li>
+							<li><a href="exibitor.php">Exhibitors</a></li>
+							<li><a href="exibitor.php#visitor">Visitors</a></li>
+							<li><a href="media.php">Media Center</a></li>
+							<li><a href="index.php#contact">Contact us</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</header>
