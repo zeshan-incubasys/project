@@ -123,18 +123,18 @@ $(document).ready(function(e) {
             result += '<p>Please Fill in your Organization Name</p>';
         }
         if(result != ''){
-            $('.message-box').fadeIn(800).removeClass('success').addClass('error').html(result);
-            $('.message-box').delay(4000).fadeOut(800);
+            $('.form2 .message-box').fadeIn(800).removeClass('success').addClass('error').html(result);
+            $('.form2 .message-box').delay(4000).fadeOut(800);
         }else{
 
-            $('.message-box').fadeIn(800).removeClass('error').addClass('success').html(' Please wait while we send your query.');
+            $('.form2 .message-box').fadeIn(800).removeClass('error').addClass('success').html(' Please wait while we send your query.');
             $.post('brochure.php',{name:name, email:email, phone:phone, org:org}, function(data){
                 if(data == 0){
-                    $('.message-box').fadeIn(800).removeClass('success').addClass('error').html('Mail Not sent due to some Technical Issue.');
-                    $('.message-box').delay(4000).fadeOut(800);
+                    $('.form2 .message-box').fadeIn(800).removeClass('success').addClass('error').html('Mail Not sent due to some Technical Issue.');
+                    $('.form2 .message-box').delay(4000).fadeOut(800);
                 }else{
-                    $('.message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
-                    $('.message-box').delay(4000).fadeOut(800);
+                    $('.form2 .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
+                    $('.form2 .message-box').delay(4000).fadeOut(800);
                     window.open('brochure.pdf', '_blank');
                     window.open('forms.pdf', '_blank');
                 }
@@ -259,18 +259,18 @@ $(document).ready(function(e) {
             result += '<p>Please Leave Us a Message</p>';
         }
         if(result != ''){
-            $('.message-box').fadeIn(800).removeClass('success').addClass('error').html(result);
-            $('.message-box').delay(4000).fadeOut(800);
+            $('.form .message-box').fadeIn(800).removeClass('success').addClass('error').html(result);
+            $('.form .message-box').delay(4000).fadeOut(800);
         }else{
 
-            $('.message-box').fadeIn(800).removeClass('error').addClass('success').html('Please Wait While we Send your Query.');
+            $('.form .message-box').fadeIn(800).removeClass('error').addClass('success').html('Please Wait While we Send your Query.');
             $.post('email.php',{name:name, email:email, phone:phone, message:message}, function(data){
                 if(data == 0){
-                    $('.message-box').fadeIn(800).removeClass('success').addClass('error').html('Mail Not sent due to some Technical Issue.');
-                    $('.message-box').delay(4000).fadeOut(800);
+                    $('.form .message-box').fadeIn(800).removeClass('success').addClass('error').html('Mail Not sent due to some Technical Issue.');
+                    $('.form .message-box').delay(4000).fadeOut(800);
                 }else{
-                    $('.message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
-                    $('.message-box').delay(4000).fadeOut(800);
+                    $('.form .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
+                    $('.form .message-box').delay(4000).fadeOut(800);
                 }
 
             });
