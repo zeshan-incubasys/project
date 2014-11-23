@@ -149,6 +149,29 @@ select {
     */clear:both;
     z-index: 100;
 }
+.nav-area .social-networks{
+	margin:0;
+	padding:28px 0;
+	list-style:none;
+	float:left;
+	text-align:center;
+}
+.nav-area .social-networks li{
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 2px;
+}
+.nav-area .social-networks a{
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	width:28px;
+	height:25px;
+	background:url(../images/ico-social.png) no-repeat;
+}
+.nav-area .social-networks .twitter a{ background-position:-36px 0; }
+.nav-area .social-networks .facebook a{ background-position:100% 0; }
+.nav-area,
 #nav{
 	float:right;
 	text-align:center;
@@ -909,6 +932,7 @@ select {
 	#footer .f-content{
 		padding:60px 10px 20px
 	}
+	.nav-area .social-networks{ display:none; }
 }
 @media only screen and (max-width:767px){
 	#header .logo{
