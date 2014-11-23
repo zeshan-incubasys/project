@@ -19,6 +19,8 @@
 				<span class="copy">Copyright 2015. Cecdubai.com</span>
 				<span class="by">Designed &amp; Developed by <a href="http://www.incubasys.com" target="_blank">Incubasys</a></span>
 			</div>
+    <a id="brochure_link" href="brochure.pdf" download="brochure.pdf" class="hidden">download</a>
+    <a id="form_link" href="forms.pdf" download="forms.pdf" class="hidden"> download</a>
 		</footer>
 	</div>
 </body>
