@@ -424,22 +424,142 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	transition: all 0.8s ease;
 }
 #social-area .block .area.facebook:hover{ background: #213059;}
-
-
-
-
-
-
-/*.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
-	float: none !important;
-	clear: both !important;
-	display: inline-block !important;
-	vertical-align: middle !important;
-	margin: 0 0 0 -4px;
-}*/
-
 .navbar-toggle{ margin-top:26px; margin-right:0;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{ border:none; }
+.about{
+	background:url(../images/about3.jpg) no-repeat center top;
+	background-size:cover;
+	padding:36px 0;
+}
+.about h2{
+	text-align:center;
+	margin:0 0 28px;
+	text-transform:uppercase;
+	font-size:25px;
+	line-height:28px;
+	padding:0 0 12px;
+}
+.about h2 span{
+	background: url("../images/ico-headbar.png") no-repeat scroll 50% 100% rgba(0, 0, 0, 0);
+	padding: 0 0 12px;
+}
+.about p{ margin:0 0 26px;}
+.about h3{
+	margin:0 0 6px;
+	font-size:18px;
+	line-height:21px;
+}
+.about ul{ margin-bottom: 26px;}
+.about ul li{ margin:0 0 6px; }
+.about .author{ text-align:right; }
+.about .author h2{
+	padding:0;
+	margin:0 0 10px;
+	text-align:right;
+}
+.about .author .title{
+	display:block;
+	font-weight:normal;
+	font-size:20px;
+	line-height:23px;
+}
+.banner{
+	background:url(../images/consult-banner.jpg) no-repeat center center;
+	background-size:cover;
+	padding:50px 0;
+}
+.banner.crew{ 
+	background:url(../images/crew-banner.jpg) no-repeat center center;
+	background-size:cover;
+	color:#fff;
+}
+.banner.candidate{ 
+	background:url(../images/candidate-banner.jpg) no-repeat center center;
+	background-size:cover;
+	color:#fff;
+}
+.banner h1{
+	font-size:28px;
+	line-height:31px;
+	margin:0;
+	font-weight:bold;
+}
+.banner .title{
+	display:block;
+	font-style:italic;
+	font-size:16px;
+	line-height:19px;
+}
+.crew .listing ul{ 
+	margin:0;
+	padding:0 0 0 15px;
+}
+.crew .text-area p { overflow:hidden; }
+.crew .text-area{ padding:20px 0; }
+.crew .image-area{
+	float:right;
+	margin:10px 0;
+}
+.crew .img{ width:100%; height:auto; margin:0 0 20px; display:block;}
+.crew .listing .butn{
+	display:block;
+	background:#2d4658 url(../images/ico-captain.png) no-repeat 12% 50%;
+	font-size:20px;
+	line-height:48px;
+	font-weight:bold;
+	border-radius:0;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 0 20px;
+}
+.candidate,
+.crew{ 
+	color:#1e3244;
+	padding-top:65px;
+	font-size:14px;
+	line-height:20px;
+	font-weight:200;
+}
+.advice{
+	background:url(../images/anchor.png) no-repeat center top;
+	color:#1e3244;
+	padding-top:65px;
+	padding-bottom:65px;
+	font-size:14px;
+	line-height:20px;
+	font-weight:200;
+}
+.advice p{ margin:0 0 16px; }
+.advice ul li{ margin:0 0 5px; }
+.image-section img{
+	display:block;
+	height:auto;
+	width:100%;
+}
+.image-section .holder{ overflow:hidden; }
+.image-section .butn.cv{ background:#2d4658 url(../images/ico-captain.png) no-repeat 12% 50%; }
+.image-section .butn{
+	display:block;
+	background:#2d4658 url(../images/ico-enquire.png) no-repeat 12% 50%;
+	font-size:20px;
+	line-height:48px;
+	font-weight:bold;
+	border-radius:0;
+	text-align:center;
+	text-transform:uppercase;
+}
+.image-section .image{
+	padding:0 2px;
+	margin:0 0 10px;
+}
+.note{
+	display:block;
+	text-align:right;
+	font-style:italic;
+	color:#70a6b8;
+	clear:both;
+	padding:30px 0 ;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	#services .text-area .buttons-area{
@@ -564,6 +684,129 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 }
 #contact .container .address{
 	overflow: hidden;
+}
+.about{
+	background:url(../images/about3.jpg) no-repeat center top;
+	background-size:cover;
+	padding:36px 0;
+}
+.about h2{
+	text-align:center;
+	margin:0 0 28px;
+	text-transform:uppercase;
+	font-size:25px;
+	line-height:28px;
+	padding:0 0 12px;
+}
+.about h2 span{
+	background: url("../images/ico-headbar.png") no-repeat scroll 50% 100% rgba(0, 0, 0, 0);
+	padding: 0 0 12px;
+}
+.about p{ margin:0 0 26px;}
+.about h3{
+	margin:0 0 6px;
+	font-size:18px;
+	line-height:21px;
+}
+.about ul{ margin-bottom: 26px;}
+.about .author{ text-align:right; }
+.about .author h2{
+	padding:0;
+	margin:0 0 10px;
+	text-align:right;
+}
+.about .author .title{
+	display:block;
+	font-weight:normal;
+	font-size:20px;
+	line-height:23px;
+}
+.banner{
+	background:url(../images/consult-banner.jpg) no-repeat center center;
+	background-size:cover;
+	padding:50px 0;
+}
+.banner h1{
+	font-size:45px;
+	line-height:48px;
+	margin:0;
+	font-weight:bold;
+}
+.banner .title{
+	display:block;
+	font-style:italic;
+	font-size:25px;
+	line-height:28px;
+}
+.candidate,
+.crew{ 
+	color:#1e3244;
+	padding-top:65px;
+	font-size:18px;
+	line-height:34px;
+	font-weight:200;
+}
+.crew .listing ul{ 
+	margin:0;
+	padding:0 0 0 15px;
+}
+.crew .text-area p { overflow:hidden; }
+.crew .text-area{ padding:20px 0; }
+.crew .image-area{
+	float:right;
+	margin:10px 0;
+}
+.advice{
+	background:url(../images/anchor.png) no-repeat center top;
+	color:#1e3244;
+	padding-top:65px;
+	padding-bottom:65px;
+	font-size:18px;
+	line-height:34px;
+	font-weight:200;
+}
+.advice p{ margin:0 0 16px; }
+.advice ul li{ margin:0 0 5px; }
+.image-section img{
+	display:block;
+	height:auto;
+	width:100%;
+}
+.crew .img{ margin:0 auto 20px; display:block;}
+.crew .listing .butn{
+	display:block;
+	background:#2d4658 url(../images/ico-captain.png) no-repeat 12% 50%;
+	font-size:31px;
+	line-height:82px;
+	font-weight:bold;
+	border-radius:0;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 0 40px;
+}
+.crew .listing ul{ margin:0 0 40px; }
+.crew .listing .holder{ padding:50px 0;}
+.image-section .butn.cv{ background:#2d4658 url(../images/ico-captain.png) no-repeat 12% 50%; }
+.image-section .butn{
+	display:block;
+	background:#2d4658 url(../images/ico-enquire.png) no-repeat 25% 50%;
+	font-size:31px;
+	line-height:82px;
+	font-weight:bold;
+	border-radius:0;
+	text-align:center;
+}
+.image-section .image{
+	padding:0 2px;
+	margin:0 0 10px;
+}
+.note{
+	display:block;
+	text-align:right;
+	font-style:italic;
+	color:#70a6b8;
+	clear:both;
+	padding:30px 0 ;
 }
 }
 
