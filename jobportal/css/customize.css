@@ -70,7 +70,7 @@ h2 {
 	color: #1e3244;
 	padding: 0 10px;
 }
-
+#footer .active a,+
 #footer li a:hover{
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     border-bottom: 2px solid #6d9cac;
@@ -140,7 +140,7 @@ h2 {
 .what-do .head {
 	text-align: center;
 	overflow: hidden;
-	padding: 0 0 30px;
+	padding-bottom:30px;
 	text-transform: capitalize;
 }
 #services .head,
@@ -278,14 +278,26 @@ h2 {
 	margin: 0;
 	padding: 0;}
 #services .block .text-area h2{ color: #3a3939 !important;}
-#services .head h2{ color: #fff !important;}
-#services .head h2 span{
-	background: url("../images/ico-headbar.png") no-repeat scroll 50% 100% rgba(0, 0, 0, 0);
-	padding: 0 0 12px;
+#services .head h2{ color: #fff !important; position:relative; }
+#services .head h2:after{
+	background: url("../images/ico-headbar.png") no-repeat 0 100%;
+	position:absolute;
+	top:100%;
+	left:50%;
+	width:24px;
+	height:3px;
+	content:'';
+	padding:0 0 12px;
 }
-#services .block .text-area h2 span {
-    background: url("../images/ico-headbar1.png") no-repeat scroll 50% 100% rgba(0, 0, 0, 0);
-    padding: 0 0 12px;
+#services .block .text-area h2:after{
+	background: url("../images/ico-headbar1.png") no-repeat 0 100%;
+	position:absolute;
+	top:100%;
+	left:50%;
+	width:24px;
+	height:3px;
+	content:'';
+	padding:0 0 12px;
 }
 #services .block .text-area p{ line-height: 26px}
 #services .text-area .buttons-area{
@@ -327,7 +339,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	font-weight: bold !important;
 }
 
-
+#services .text-area ul li{ margin:0 0 10px; }
 #contact{
 	overflow: hidden;
 	padding: 40px 0 60px;
@@ -342,6 +354,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 #contact .container .block{
 	text-align: center;
 	background: url(../images/contact/divider.png) no-repeat 0 30px;
+	overflow:hidden;
 }
 #contact .container .direction{
 	overflow: hidden;
@@ -416,6 +429,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 #social-area .block .area{
 	/*background: url(../images/contact/divider.png) no-repeat 0 30px;*/
 	padding: 60px 20px;
+	border-left:none;
 	border-top:1px solid #fff;
 	-webkit-transition: all 0.8s ease;
 	-moz-transition: all 0.8s ease;
@@ -423,7 +437,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	-o-transition: all 0.8s ease;
 	transition: all 0.8s ease;
 }
-#social-area .block .area.facebook:hover{ background: #213059;}
+#social-area .block .area:hover{ background: #213059;}
 .navbar-toggle{ margin-top:26px; margin-right:0;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{ border:none; }
 .about{
@@ -562,7 +576,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	#services .text-area .buttons-area{
+#services .text-area .buttons-area{
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 0 #055677;
@@ -646,11 +660,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
     padding: 0 10px 3px;
     text-decoration: none;
 }
-#social-area .block{border-top: 2px solid #fff;}
 #social-area .block .area{
 	/*background: url(../images/contact/divider.png) no-repeat 0 30px;*/
 	padding: 60px 20px;
-	border-left: 2px solid #fff;
+	border-left: 1px solid #fff;
 	-webkit-transition: all 0.8s ease;
 	-moz-transition: all 0.8s ease;
 	-ms-transition: all 0.8s ease;
@@ -668,13 +681,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .navbar-nav .active a,
 .navbar-nav > li > a:hover{
 	border-bottom: 2px solid #6d9cac;
-	padding:0 10px 3px ;
+	padding:0 10px ;
 	text-decoration: none;
 	color: #1e3244 !important;
 	background: none !important;
 }
 .navbar-nav > li > a{
-	padding:0 10px 0;
+	padding:0 10px 3px;
 	color: #1e3244 !important;
 	text-align:center;
 }
