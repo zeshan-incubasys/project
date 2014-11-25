@@ -17,13 +17,14 @@
 		</ul>
 	</div>
 	<div class="image-section container">
-		<div class="col-md-5 row">
+		<div class="col-md-5 image">
 			<img src="images/advice1.jpg" alt="">
 		</div>
-		<div class="col-md-7 row">
+		<div class="col-md-7 image">
 			<img src="images/advice2.jpg" alt="">
-			<a href="#" class="btn">ENQUIRE NOW</a>
+			<a href="#" class="butn">ENQUIRE NOW</a>
 		</div>
+		<span class="note">For any requests or further information, please contact us.</span>
 	</div>
 	<section class="what-do">
         <div class="container head">
