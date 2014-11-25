@@ -110,21 +110,26 @@
     </section>
 
 
-    <section id="services">
+    <section id="services" class="visible-lg">
         <div class="container">
              <div class="head">
                 <h2><span>our services</span></h2>
             </div>
             <div class="holder">
                 <div class="block">
-                    <div class="col-md-6 image-area">
+                    <div class="col-xs-12 col-lg-6 image-area">
                           <img src="<?php echo IMAGE_URL; ?>/services/img1.jpg" alt="">
                     </div>
-                    <div class="col-md-6 text-area">
+                    <div class="col-xs-12 col-lg-6 text-area">
                           <div class="head">
-                              <h2><span>Find Professional Crew</span></h2>
+                              <h2><span>We find the Right Crew for you!</span></h2>
                           </div>
-                          <p>Our goal is to provide you with a shortlist of qualified Candidates, matching your specific job vacancies and securing you the best available certified and professional crew. Whether you are a Management Company, a Yacht Owner or Captain, we aim to become a key partner - located in Dubai Marina, offering the unique opportunity of assisting you as a local recruitment agency. Meeting in person, we are sure to understand your bespoke requirements.</p>
+                          <ul>
+						  	<li>We dont just find you the Skills – but also Personality &amp; Ability to fit in</li>
+							<li>All Candidates are professional &amp; certified with relevant authorities</li>
+							<li>We Provide you with candidates who are personally interviewed, screened &amp; shortlisted</li>
+							<li>Located at Dubai Marina, we are your local marine recruitment agency that is directed and managed by actual Captains! </li>
+						  </ul>
                           <div class="buttons-area">
                               <span class="btn"><a href="#">LEARN MORE</a></span>
                               <span class="btn"><a href="#">REGISTER INTEREST</a></span>
@@ -133,31 +138,35 @@
                     </div>
                 </div>
                  <div class="block">
-                    <div class="col-xs-12 col-md-6 text-area one">
+                    <div class="col-xs-12 col-lg-6 text-area one">
                           <div class="head">
-                              <h2><span>Find Professional Crew</span></h2>
+                              <h2><span>Consultancy/Advice</span></h2>
                           </div>
-                          <p>Our goal is to provide you with a shortlist of qualified Candidates, matching your specific job vacancies and securing you the best available certified and professional crew. Whether you are a Management Company, a Yacht Owner or Captain, we aim to become a key partner - located in Dubai Marina, offering the unique opportunity of assisting you as a local recruitment agency. Meeting in person, we are sure to understand your bespoke requirements.</p>
+                          <p>Marina ReCrewter is more than a crew agency. Due to our immense platform of (local) network and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your vessel.</p>
                           <div class="buttons-area">
                               <span class="btn"><a href="#">LEARN MORE</a></span>
                               <span class="btn"><a href="#">REGISTER INTEREST</a></span>
                           </div>
 
                     </div>
-                    <div class="col-md-6 image-area one">
+                    <div class="col-xs-12 col-lg-6 image-area one">
                           <img src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt="">
                     </div>
                 </div>
 
                 <div class="block">
-                    <div class="col-md-6 image-area">
+                    <div class="col-xs-12 col-lg-6 image-area">
                           <img src="<?php echo IMAGE_URL; ?>/services/img3.jpg" alt="">
                     </div>
-                    <div class="col-md-6 text-area">
+                    <div class="col-xs-12 col-lg-6 text-area">
                           <div class="head">
-                              <h2><span>Find Professional Crew</span></h2>
+                              <h2><span>Candidates/Jobseekers – Work &amp; Live Your Dream!</span></h2>
                           </div>
-                          <p>Our goal is to provide you with a shortlist of qualified Candidates, matching your specific job vacancies and securing you the best available certified and professional crew. Whether you are a Management Company, a Yacht Owner or Captain, we aim to become a key partner - located in Dubai Marina, offering the unique opportunity of assisting you as a local recruitment agency. Meeting in person, we are sure to understand your bespoke requirements.</p>
+                          <ul>
+						  	<li>Are you an experienced crew member looking for a new and exciting opportunity?</li>
+							<li>Are you a fresh talent looking to break into the maritime industry and enjoy the perks of being part of a crew on a private yacht?</li>
+							<li>We assist and advise to advance your career and contribute to securing your next dream job</li>
+						  </ul>
                           <div class="buttons-area">
                               <span class="btn"><a href="#">LEARN MORE</a></span>
                               <span class="btn"><a href="#">REGISTER INTEREST</a></span>
@@ -167,18 +176,18 @@
                 </div>
 
                  <div class="block">
-                    <div class="col-md-6 text-area one">
+                    <div class="col-xs-12 col-lg-6 text-area one" style="padding:100px 20px;">
                           <div class="head">
-                              <h2><span>Find Professional Crew</span></h2>
+                              <h2><span>Commercial ReCrewment</span></h2>
                           </div>
-                          <p>Our goal is to provide you with a shortlist of qualified Candidates, matching your specific job vacancies and securing you the best available certified and professional crew. Whether you are a Management Company, a Yacht Owner or Captain, we aim to become a key partner - located in Dubai Marina, offering the unique opportunity of assisting you as a local recruitment agency. Meeting in person, we are sure to understand your bespoke requirements.</p>
-                          <div class="buttons-area">
+                          <p style="text-align:center;">Coming Soon</p>
+                          <!--<div class="buttons-area">
                               <span class="btn"><a href="#">LEARN MORE</a></span>
                               <span class="btn"><a href="#">REGISTER INTEREST</a></span>
-                          </div>
+                          </div>-->
 
                     </div>
-                    <div class="col-md-6 image-area one">
+                    <div class="col-xs-12 col-lg-6 image-area one">
                           <img src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt="">
                     </div>
                 </div>
@@ -188,7 +197,89 @@
         </div>
     </section>
 
+	<section id="services" class="hidden-lg">
+        <div class="container">
+             <div class="head">
+                <h2><span>our services</span></h2>
+            </div>
+            <div class="holder">
+                <div class="block">
+                    <div class="col-xs-12 col-lg-6 image-area">
+                          <img src="<?php echo IMAGE_URL; ?>/services/img1.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 col-lg-6 text-area">
+                          <div class="head">
+                              <h2><span>We find the Right Crew for you!</span></h2>
+                          </div>
+                          <ul>
+						  	<li>We dont just find you the Skills – but also Personality &amp; Ability to fit in</li>
+							<li>All Candidates are professional &amp; certified with relevant authorities</li>
+							<li>We Provide you with candidates who are personally interviewed, screened &amp; shortlisted</li>
+							<li>Located at Dubai Marina, we are your local marine recruitment agency that is directed and managed by actual Captains! </li>
+						  </ul>
+                          <div class="buttons-area">
+                              <span class="btn"><a href="#">LEARN MORE</a></span>
+                              <span class="btn"><a href="#">REGISTER INTEREST</a></span>
+                          </div>
 
+                    </div>
+                </div>
+                 <div class="block">
+				 	<div class="col-xs-12 col-lg-6 image-area one">
+                          <img src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 col-lg-6 text-area one">
+                          <div class="head">
+                              <h2><span>Consultancy/Advice</span></h2>
+                          </div>
+                          <p>Marina ReCrewter is more than a crew agency. Due to our immense platform of (local) network and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your vessel.</p>
+                          <div class="buttons-area">
+                              <span class="btn"><a href="#">LEARN MORE</a></span>
+                              <span class="btn"><a href="#">REGISTER INTEREST</a></span>
+                          </div>
+
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="col-xs-12 col-lg-6 image-area">
+                          <img src="<?php echo IMAGE_URL; ?>/services/img3.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 col-lg-6 text-area">
+                          <div class="head">
+                              <h2><span>Candidates/Jobseekers – Work &amp; Live Your Dream!</span></h2>
+                          </div>
+                          <ul>
+						  	<li>Are you an experienced crew member looking for a new and exciting opportunity?</li>
+							<li>Are you a fresh talent looking to break into the maritime industry and enjoy the perks of being part of a crew on a private yacht?</li>
+							<li>We assist and advise to advance your career and contribute to securing your next dream job</li>
+						  </ul>
+                          <div class="buttons-area">
+                              <span class="btn"><a href="#">LEARN MORE</a></span>
+                              <span class="btn"><a href="#">REGISTER INTEREST</a></span>
+                          </div>
+
+                    </div>
+                </div>
+
+                 <div class="block">
+				 	<div class="col-xs-12 col-lg-6 image-area one">
+                          <img src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 col-lg-6 text-area one" style="padding:100px 20px;">
+                          <div class="head">
+                              <h2><span>Commercial ReCrewment</span></h2>
+                          </div>
+                          <p style="text-align:center;">Coming Soon</p>
+
+                    </div>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </section>
     <section id="contact">
       <div class="container">
         <div class="row">
@@ -203,21 +294,37 @@
                   </br>Address 123 City, State</span>
               </div>
             </div>
+			
+            <div class="col-md-4 block visible-lg">
+              <div class="direction">
+                  <span>s</span>
+                  <span>36 53.297</span>
+              </div>
+              <div class="address">
+                  <strong class="heading">phone</strong>
+                  <span>123 456 789</span>
+                  <span class="tell"><span>123 456 789</span></span>
+              </div>
+            </div>
+			
 			<div class="col-md-4 col-md-offset-2 block hidden-lg">
+           
+			  <div class="direction col-xs-6">
+                  <span>e</span>
+                  <span>36 53.297</span>
+              </div>
+			  <div class="direction col-xs-6">
+                  <span>s</span>
+                  <span>36 53.297</span>
+              </div>
+			  
+            </div>
+			
+			<div class="col-md-4 block hidden-lg">
               <div class="address">
                   <strong class="heading">Address</strong>
                   <span>THE ADDRESS WILL COME HERE
                   </br>Address 123 City, State</span>
-              </div>
-			  <div class="direction">
-                  <span>e</span>
-                  <span>36 53.297</span>
-              </div>
-            </div>
-            <div class="col-md-4 block">
-              <div class="direction">
-                  <span>s</span>
-                  <span>36 53.297</span>
               </div>
               <div class="address">
                   <strong class="heading">phone</strong>
@@ -234,7 +341,7 @@
 
     <section id="social-area">
         <div class="block">
-          <div class="area col-md-6">
+          <div class="area blog col-md-6">
             <span>blog</span>
           </div>
           <div class="area facebook col-md-6 ">
@@ -242,10 +349,10 @@
           </div>
         </div>
         <div class="block">
-          <div class="area col-md-6">
+          <div class="area instagram col-md-6">
             <span>instagram</span>
           </div>
-          <div class="area col-md-6">
+          <div class="area google col-md-6">
             <span>GOOGLE+</span>
           </div>
         </div>
