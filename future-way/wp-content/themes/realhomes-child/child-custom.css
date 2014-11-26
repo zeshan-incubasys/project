@@ -1,0 +1,8 @@
+/* Child Theme - Custom CSS File for Buyers to Modify */
+#overview .property-item .price span {
+    background-color: #bd1320;
+}
+
+.property-grid .property-item span {
+    color: #bd1320;
+}
