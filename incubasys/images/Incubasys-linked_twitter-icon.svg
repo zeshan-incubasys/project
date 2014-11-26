@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+<symbol  id="Twitter" viewBox="-13.9 -13.85 27.799 27.7">
+	<g>
+		<g>
+			<path fill="#2E91D7" d="M0,13.85c-7.6,0-13.9-6.301-13.9-13.9S-7.7-13.85,0-13.85c7.601,0,13.899,6.199,13.899,13.799
+				S7.601,13.85,0,13.85z M7.101,2.449c0-0.1,0-0.3,0-0.4c0-4-3.4-8.699-9.601-8.699c-1.9,0-3.7,0.5-5.2,1.4c0.3,0,0.5,0,0.8,0
+				c1.6,0,3,0.5,4.2,1.299c-1.5,0-2.7,0.9-3.2,2.102c0.2,0,0.4-0.102,0.6-0.102c0.3,0,0.6,0,0.9,0.102C-6-1.551-7.1-0.351-7.1,1.149
+				l0,0c0.5-0.2,1-0.4,1.5-0.4C-6.4,1.35-7,2.249-7,3.35c0,0.6,0.1,1.1,0.4,1.5c1.7-1.801,4.2-3.101,7-3.2c-0.1,0.2-0.1,0.5-0.1,0.7
+				c0,1.699,1.5,3.1,3.4,3.1c1,0,1.9-0.4,2.5-1c0.8,0.1,1.5,0.4,2.199,0.7c-0.299-0.7-0.799-1.3-1.5-1.7
+				c0.701,0.1,1.301,0.2,1.9,0.5C8.399,3.449,7.8,2.85,7.101,2.449z"/>
+		</g>
+	</g>
+</symbol>
+<use xlink:href="#Twitter"  width="27.799" height="27.7" id="XMLID_6_" x="-13.9" y="-13.85" transform="matrix(0.9964 0 0 -0.9964 14.9502 14.9502)" overflow="visible"/>
+</svg>
