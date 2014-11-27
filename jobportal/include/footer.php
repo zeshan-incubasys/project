@@ -16,7 +16,7 @@
 						<li><a href="#">register</a></li>
 						<li><a href="#">contact</a></li>
 					</ul>
-					<span class="by">Designed &amp; Developed by <a href="http://www.incubasys.com">Incubasys</a></span>
+					<span class="by">Designed &amp; Developed by <a target="_blank" href="http://www.incubasys.com">Incubasys</a></span>
 				</nav>
 			</div>
 	</footer>
