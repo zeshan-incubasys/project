@@ -171,17 +171,17 @@ h2 {
 	background: #2d4658;
 	padding: 30px 0 0;
 }
-#services .head,
+.services .head,
 .what-do .head {
 	text-align: center;
 	overflow: hidden;
 	padding-bottom:30px;
 	text-transform: capitalize;
 }
-#services .head,
+.services .head,
 .what-do .head p{ line-height: 25px;}
 
-#services .head{ padding: 0 0 12px;}
+.services .head{ padding: 0 0 12px;}
 .what-do .head h2 span {
 	padding: 0 0 12px;
 	background: url(../images/ico-headbar.png) no-repeat 50% 100%;
@@ -278,43 +278,43 @@ h2 {
 	text-decoration: none;
 }
 
-#services{
+.services{
 	overflow: hidden;
 	background: #272727;
 	padding: 50px 0 70px 0;
 }
-#services .holder{
+.services .holder{
 	overflow: hidden;
 	background: #fff;
 	margin:17px 0 0;
 	color: #3a3939 !important;
 }
-#services .holder .block:after{
+.services .holder .block:after{
 	content: '';
 	display: block;
 	clear: both;
 }
-#services .holder .block .image-area img{
+.services .holder .block .image-area img{
 	width: 100%;
 	height: auto;
 }
-#services .holder .text-area{ padding: 20px 30px 20px;}
-#services .holder .text-area.one{ padding:20px 30px 20px; }
-#services .holder .text-area .head{
+.services .holder .text-area{ padding: 20px 30px 20px;}
+.services .holder .text-area.one{ padding:20px 30px 20px; }
+.services .holder .text-area .head{
 	overflow: hidden;
     text-align: center;
     text-transform: capitalize;
 }
-#services .holder .image-area{
+.services .holder .image-area{
 	margin:0;
 	padding: 0;
 }
-#services .holder .image-area.one{
+.services .holder .image-area.one{
 	margin: 0;
 	padding: 0;}
-#services .block .text-area h2{ color: #3a3939 !important;}
-#services .head h2{ color: #fff !important; position:relative; }
-#services .head h2:after{
+.services .block .text-area h2{ color: #3a3939 !important;}
+.services .head h2{ color: #fff !important; position:relative; }
+.services .head h2:after{
 	background: url("../images/ico-headbar.png") no-repeat 0 100%;
 	position:absolute;
 	top:100%;
@@ -324,7 +324,7 @@ h2 {
 	content:'';
 	padding:0 0 12px;
 }
-#services .block .text-area h2:after{
+.services .block .text-area h2:after{
 	background: url("../images/ico-headbar1.png") no-repeat 0 100%;
 	position:absolute;
 	top:100%;
@@ -334,19 +334,19 @@ h2 {
 	content:'';
 	padding:0 0 12px;
 }
-#services .block .text-area p{ line-height: 26px}
-#services .text-area .buttons-area{
+.services .block .text-area p{ line-height: 26px}
+.services .text-area .buttons-area{
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 0 #055677;
 }
-#services .text-area .buttons-area:after{
+.services .text-area .buttons-area:after{
 	content: '';
 	display: block;
 	clear: both;
 }
-#services .text-area .buttons-area .btn:first-child{ margin: 0 auto;}
-#services .text-area .buttons-area .btn{
+.services .text-area .buttons-area .btn:first-child{ margin: 0 auto;}
+.services .text-area .buttons-area .btn{
 	padding: 0;
 	display: block;
 	max-width:300px;
@@ -365,7 +365,7 @@ background: linear-gradient(to bottom,  #7aa7b6 0%,#75a3b2 16%,#6697a8 45%,#4d7e
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', endColorstr='#4c7d90',GradientType=0 ); /* IE6-8 */
 
 }
-#services .text-area .buttons-area a{
+.services .text-area .buttons-area a{
 	color: #fff;
 	display: block;
 	width: 100%;
@@ -374,7 +374,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	font-weight: bold !important;
 }
 
-#services .text-area ul li{ margin:0 0 10px; }
+.services .text-area ul li{ margin:0 0 10px; }
 #contact{
 	overflow: hidden;
 	padding: 40px 0 60px;
@@ -543,6 +543,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	margin:0;
 	padding:0 0 0 15px;
 }
+.crew .text-block{ overflow:hidden; padding:30px 0; }
 .crew .text-area p { overflow:hidden; }
 .crew .text-area{ padding:20px 0; }
 .crew .image-area{
@@ -646,7 +647,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	font-weight:normal;
 }
 .main .cv-form .holder{ overflow:hidden; }
-.main .fields{ margin:0 0 20px; overflow:hidden; }
+.main .fields{ margin-bottom: 20px; overflow:hidden; }
 .main label span{ color:#f00; }
 .main select{
 	height:40px;
@@ -666,6 +667,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	-webkit-box-sizing:border-box;
 	margin:0;
 	padding:0 10px;
+	color:#23384b;
+}
+.main .cv-form textarea{
+	height:140px;
+	border:2px solid #ececec;
+	border-radius:6px;
+	width:100%;
+	background:#fff;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	margin:0;
+	padding:10px;
 	color:#23384b;
 }
 .main input[type="submit"]{
@@ -808,6 +822,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	background-size:cover;
 	padding:20px 0;
 }
+.popup .container{ position:relative; }
+.popup .ico-close{
+	position:absolute;
+	right:0;
+	top:0;
+	background:url(../images/ico-close.png) no-repeat;
+	width:33px;
+	height:33px;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.popup.inner{ text-align:center; }
 .popup .main-ico{
 	display:block;
 	margin:0 auto 20px;
@@ -832,10 +858,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
     width: 24px;
 }
 .popup p{ margin:0 0 30px; }
+.popup .text-block{
+	overflow:hidden;
+	text-align:left;
+	margin:0 0 26px; 
+}
+.popup .text-block .block{ margin:0 0 26px; }
+.popup .text-block h3{
+	margin:0 0 10px;
+	font-size:18px;
+	line-height:21px;
+}
+.popup .text-block ul{
+	padding:0 0 0 12px;
+	margin:0;
+}
+.popup .text-block ul li{
+	margin:0 0 5px;
+}
+.popup .text-block .ico,
 .popup .author .ico {
 	display:block;
 	margin:0 auto 15px;
 }
+.popup .list{
+	text-align:center;
+	font-style:italic;
+	padding:0;
+}
+.popup .list li{ margin:0 0 20px; }
 .popup .author{ text-align:right; }
 .popup .author h2{
 	padding:0;
@@ -851,18 +902,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-#services .text-area .buttons-area{
+.services .text-area .buttons-area{
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 0 #055677;
 }
-#services .text-area .buttons-area:after{
+.services .text-area .buttons-area:after{
 	content: '';
 	display: block;
 	clear: both;
 }
-#services .text-area .buttons-area .btn:first-child{ margin: 0;}
-#services .text-area .buttons-area .btn{
+.services .text-area .buttons-area .btn:first-child{ margin: 0;}
+.services .text-area .buttons-area .btn{
 	padding: 0;
 	display: inline-block;
 	vertical-align: middle;
@@ -881,7 +932,7 @@ background: linear-gradient(to bottom,  #7aa7b6 0%,#75a3b2 16%,#6697a8 45%,#4d7e
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', endColorstr='#4c7d90',GradientType=0 ); /* IE6-8 */
 
 }
-#services .text-area .buttons-area a{
+.services .text-area .buttons-area a{
 	color: #fff;
 	display: block;
 	width: 100%;
@@ -946,8 +997,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	-o-transition: all 0.8s ease;
 	transition: all 0.8s ease;
 }
-#services .holder .text-area{ padding: 20px 30px 20px;}
-#services .holder .text-area.one{ padding:20px 30px 20px; }
+.services .holder .text-area{ padding: 20px 30px 20px;}
+.services .holder .text-area.one{ padding:20px 30px 20px; }
 .navbar-nav{ 
 	padding:42px 0;
 	text-transform:uppercase;
@@ -1102,10 +1153,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .main{ 
 	background:#fafbfb;
 	border-top:1px solid #eaecee;
-	padding:20px 0 0;
+	padding:28px 0 0;
 }
 .main h1{
-	margin:0 0 10px;
+	margin:0 0 28px;
 	text-align:center;
 	color:#23384b;
 	font-weight:bold;
@@ -1150,6 +1201,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	width:250px;
 	color:#23384b;
 }
+.main .cv-form.contact textarea,
+.main .contact input[type="text"]{ width:100%; }
 .main input[type="text"]{
 	height:40px;
 	border:2px solid #ececec;
@@ -1165,6 +1218,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 }
 .main .cv-form label{ padding:10px 0 0;}
 .main .cv-form .holder{ overflow:hidden; }
+.main .cv-form textarea{ width:290px; }
 .main .filter-form .search{
 	height:40px;
 	border:2px solid #ececec;

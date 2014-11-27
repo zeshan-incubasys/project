@@ -37,7 +37,17 @@
 			<li>You will be our priority to assist and we give you our full commitment. Your confidentiality is preserved and we take pride in our hands-on approach, providing you with an honest service.</li>
 			<li>Our maritime background and experience will serve you. We will not promote or advise a Candidate, unless we would have hired him/her ourselves. At Marina ReCrewter, we already know from past experience &amp; understand the qualifications that you as a Client will be looking for.</li>
 		</ul>
-		<span class="note">For any requests or further information, please contact us.</span>
+		<!--<span class="note">For any requests or further information, please contact us.</span>-->
+		<div class="text-block">
+			<div class="col-sm-3 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<img src="images/crew3.png" alt="">
+			</div>
+			<div class="col-sm-9 col-xs-12">
+				<h3>IMPORTANT STATEMENT</h3>
+				<p>Marina ReCrewter strives to enhance safety in local waters, through placing only certified crewmembers and operating as advising safety and security consultants.</p>
+				<p>As our client, Management Company, Yacht Owner or Captain, in a maritime market with ever changing requirements and legislation, you have access to an updated agency/consultancy operated by Captains and Sr. Officers from the industry.</p>
+			</div>
+		</div>
 	</div>
 	<section class="what-do">
         <div class="container head">
