@@ -876,6 +876,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .popup .text-block ul li{
 	margin:0 0 5px;
 }
+.popup .text-block .ico-ship{
+	width:100%;
+	height:auto;
+}
 .popup .text-block .ico,
 .popup .author .ico {
 	display:block;
@@ -1260,6 +1264,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .main .jcf-file .jcf-fake-input { width:290px; }
 #footer .by,
 #footer .social{ text-align:right; }
+.popup .text-block .ico-ship{
+	display:block;
+	margin:0 auto 15px;
+	width:auto;
+}
 }
 @media (max-width:767px){
 	.main .table {

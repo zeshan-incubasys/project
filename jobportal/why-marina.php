@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 block">
-					<img src="images/img-ship.png" alt="" class="ico">
+					<img src="images/img-ship.png" alt="" class="ico-ship">
 				</div>
 			</div>
 			<h2><span>Commitment to Law &amp; Regulations</span></h2>

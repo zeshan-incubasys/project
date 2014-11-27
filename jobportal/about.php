@@ -1,5 +1,5 @@
 <?php  include('include/header.php');?>
-	<section class="about hidden-lg">
+	<section class="about">
 		<div class="container">
 			<div class="col-md-7 col-sm-offset-5">
 				<div class="row">
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="what-do hidden-lg">
+	<section class="what-do">
         <div class="container head">
           <h2><span>OUR SERVICES</span></h2>
           <p>Decades of maritime experience on commercial and private ships make us an ideal choice for management agencies, captains &amp; recruiters looking for certified and professional crew. Candidates love the fact that we speak their language. Experience that is ‘Truly Different’.</p>
@@ -35,6 +35,7 @@
 	</section>
 	<div class="popup">
 		<div class="container">
+			<a href="#" class="ico-close">ico</a>
 			<img src="images/ico-marina.png" class="main-ico">
 			<h2><span>About us</span></h2>
 			<p>16 years of age, I began my career at sea. I had never thought of becoming a sailor, before attending an introduction meeting held at my local school, hosted by a Maersk Captain. After completing the basic maritime/safety course, I started out as Ordinary Seaman/Deck Hand on various coasters and container vessels. At first I quit, I thought I was too young, but eventually, I began to get my bearings right. On board EAC lines M/V Fionia, I was on the 8-12 watch with the Second Officer, who encouraged me to consider a future as deck officer, “you need to go ashore and study at the maritime academy”, he advised. A good call at the time, the future was looking bleak for Danish ratings and I still wanted to sail. </p>
