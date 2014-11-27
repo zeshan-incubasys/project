@@ -1,10 +1,9 @@
-<?php  include('include/header.php');?>
+<?php  include('include/header-admin.php');?>
 	<div class="main">
-		<div class="container">
 			<h1>Dashboard</h1>
 			<form action="#" class="filter-form">
 				<fieldset>
-					<div class="col-md-4 col-sm-5 col-xs-12 fields">
+					<div class="col-md-3 col-sm-6 col-xs-12 fields">
 						<label>Filter By <span>*</span></label>
 						<select>
 							<option></option>
@@ -14,7 +13,7 @@
 							<option>Filter</option>
 						</select>
 					</div>
-					<div class="col-md-4 col-sm-5 col-xs-12 pull-right fields">
+					<div class="col-md-3 col-sm-6 col-xs-12 pull-right fields">
 						<label>Search By <span>*</span></label>
 						<input type="search" class="search">
 					</div>
@@ -153,5 +152,3 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-<?php include('include/footer.php');?>

@@ -20,11 +20,6 @@
 				</nav>
 			</div>
 	</footer>
-	<script type="text/javascript">
-		$(document).ready(function(e) {
-			$('.main').css({"min-height": $(window).height()- ($('footer').height() + $('header').height() + 20) + "px"});
-		});
-	</script>
 </div>
 </body>
 </html>

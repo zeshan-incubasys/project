@@ -30,6 +30,12 @@
 				<img src="images/crew2.jpg" alt="">
 				<a href="#" class="butn">Find Crew</a>
 			</div>
+			<div class="more-area">
+				<a href="#" class="ico-close">close</a>
+				<p>Marina ReCrewter strives to enhance safety in local waters, through placing only certified crewmembers and operating as advising safety and security consultants.</p>
+				<p>As our client, Management Company, Yacht Owner or Captain, in a maritime market with ever changing requirements and legislation, you have access to an updated agency/consultancy operated by Captains and Sr. Officers from the industry.</p>
+				<a href="#">Read More</a>
+			</div>
 		</div>
 		<ul>
 			<li>Located in Dubai Marina, we offer the unique opportunity of assisting you as a local recruitment agency. Meeting in person, we are sure to understand your bespoke requirements.</li>
