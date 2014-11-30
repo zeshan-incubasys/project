@@ -15,8 +15,14 @@ h2 {
 	padding: 0;
 	margin: 0 0 22px;
 }
-
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus,
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{ background:none; }
 p{ text-align:justify; }
+.dropdown-menu{ 
+	text-align:center;
+	border:1px solid #e5e5e5 !important;
+}
+.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header{ padding:5px 20px;}
 .top-header {
 	background: #fff;
 	padding: 15px 0;
@@ -130,7 +136,7 @@ p{ text-align:justify; }
 	border:none;
 }
 .navbar-nav > li > a{
-	padding:0 10px 20px;
+	padding:10px;
 	color: #1e3244 !important;
 	text-align:center;
 }
@@ -208,7 +214,7 @@ p{ text-align:justify; }
 .what-do .holder .block .image-area{
 	background: url(../images/img1.jpg) no-repeat center top;
 	background-size: cover;
-	height:472px;
+	height:520px;
 }
 .what-do .holder .block .image-area.one{
 	background: url(../images/img2.jpg) no-repeat center top;
@@ -225,14 +231,13 @@ p{ text-align:justify; }
 	overflow: hidden;
 }
 .what-do .holder .block .text-area .text {
-	display:block;
 	clear: both;
 	float: none;
 	height: 100%;
-	padding:80px 0 20px;
+	padding:80px 80px 20px 20px;
 }
 .what-do .holder .block .text-area .info{
-	padding:28px 10px 20px;
+	padding:75px 10px 20px;
 }
 .what-do .holder .block .info .wrap{
 	overflow: hidden;
@@ -262,7 +267,7 @@ p{ text-align:justify; }
 	text-align:center;
 	vertical-align: middle;
 	display: table-cell;
-	padding: 140px 0 0;
+	padding: 170px 0 0;
 	text-transform: uppercase;
 }
 .what-do .holder .heading h3{
@@ -314,6 +319,7 @@ p{ text-align:justify; }
     text-align: center;
     text-transform: capitalize;
 }
+.services .holder .text-area ul{ margin:0 0 24px;}
 .services .holder .image-area{
 	margin:0;
 	padding: 0;
@@ -332,6 +338,7 @@ p{ text-align:justify; }
 	height:3px;
 	content:'';
 	padding:0 0 12px;
+	margin:0 0 0 -12px;
 }
 .services .block .text-area h2:after{
 	background: url("../images/ico-headbar1.png") no-repeat 0 100%;
@@ -342,6 +349,7 @@ p{ text-align:justify; }
 	height:3px;
 	content:'';
 	padding:0 0 12px;
+	margin:0 0 0 -12px;
 }
 .services .block .text-area p{ line-height: 26px}
 .services .text-area .buttons-area{
@@ -723,6 +731,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	padding:10px;
 	color:#23384b;
 }
+.main input[type="button"],
 .main input[type="submit"]{
 	height:40px;
 	border:none;
@@ -958,10 +967,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 .popup .text-block{ text-align:left; }
-.what-do .holder .block .text-area .text {
-	display: table-cell;
+.what-do .holder .text-area .text {
+	display: inline-block;
 	vertical-align: middle;
+	width:77%;
 }
+.what-do .holder .block .text-area .text.new{ width:100%; }
 .services .text-area .buttons-area{
 	text-align: center;
 	text-transform: uppercase;
@@ -1068,18 +1079,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .navbar-nav .active a,
 .navbar-nav > li > a:hover{
 	border-bottom: 2px solid #6d9cac;
-	padding:0 10px ;
+	padding:0 8px ;
 	text-decoration: none;
 	color: #1e3244 !important;
 	background: none !important;
 }
 .navbar-nav > li > a{
-	padding:0 10px 3px;
+	padding:0 8px 3px;
 	color: #1e3244 !important;
 	text-align:center;
+	margin:0 2px;
 }
 .what-do .holder .block .info .wrap .icon{
-	float: left;
+	display:inline-block;
+	vertical-align:middle;
 	margin: 0 20px 0 0;
 }
 .what-do .holder .block .info .title{
@@ -1340,7 +1353,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	margin:0 auto 15px;
 	width:auto;
 }
-
+.main .jcf-file .jcf-real-element {width:450px; }
 }
 @media (max-width:767px){
 	.main .table {
@@ -1559,8 +1572,10 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	/*font-size: 200px;
 	height: 200px;*/
 	margin: 0;
-	right: 0;
+	right: 15px;
 	top: 0;
+	width:100%;
+	height:100%;
 }
 .jcf-file .jcf-fake-input {
 	float:right;

@@ -33,7 +33,7 @@
 		<div class="holder">
 			<div class="block visible-lg">
 				<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-					<div class="text">
+					<div class="text new">
 						<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 						<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
 						<p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. </p>
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-					<div class="text">
+					<div class="text new">
 						<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 						<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
 						<p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. </p>
@@ -68,7 +68,7 @@
 						<div class="ico-div"> <a href="#">learn more</a> </div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-xs-12 text-area">
+				<div class="col-lg-5 col-xs-12 text-area">
 					<div class="info">
 						<div class="wrap"> 
 							<span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>

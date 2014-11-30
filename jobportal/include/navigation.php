@@ -16,7 +16,17 @@
 				<li class="active"><a href="#">home</a></li>
 				<li><a href="#">about</a></li>
 				<li><a href="#">service</a></li>
-				<li><a href="#">register</a></li>
+				<!--<li><a href="#">register</a></li>-->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Register</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Another action</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Something else here</a></li>
+					</ul>
+				</li>
 				<li><a href="#">contact</a></li>
 			</ul>
 		</div>
