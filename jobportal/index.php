@@ -68,7 +68,7 @@
 						<div class="ico-div"> <a href="#">learn more</a> </div>
 					</div>
 				</div>
-				<div class="col-lg-5 col-xs-12 text-area">
+				<div class="col-lg-6 col-xs-12 text-area">
 					<div class="info">
 						<div class="wrap"> 
 							<span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>

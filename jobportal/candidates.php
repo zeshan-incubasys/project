@@ -31,7 +31,7 @@
 	</div>
 	<div class="image-section container crew">
 		<div class="holder">
-			<div class="col-md-5 image">
+			<div class="col-md-5 image visible-lg visible-md">
 				<img src="images/candidate1.jpg" alt="">
 			</div>
 			<div class="col-md-7 image">

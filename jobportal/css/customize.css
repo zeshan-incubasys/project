@@ -20,7 +20,9 @@ h2 {
 p{ text-align:justify; }
 .dropdown-menu{ 
 	text-align:center;
-	border:1px solid #e5e5e5 !important;
+	border:solid #e5e5e5 !important;
+	border-width:1px 0 !important;
+	font-size:11px;
 }
 .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header{ padding:5px 20px;}
 .top-header {
@@ -198,9 +200,21 @@ p{ text-align:justify; }
 .what-do .head p{ line-height: 25px;}
 
 .services .head{ padding: 0 0 12px;}
-.what-do .head h2 span {
+/*.what-do .head h2 span {
 	padding: 0 0 12px;
 	background: url(../images/ico-headbar.png) no-repeat 50% 100%;
+}*/
+.what-do .head h2{ position:relative; }
+.what-do .head h2:after{
+	background: url("../images/ico-headbar.png") no-repeat 0 100%;
+	position:absolute;
+	top:100%;
+	left:50%;
+	width:24px;
+	height:3px;
+	content:'';
+	padding:0 0 12px;
+	margin:0 0 0 -12px;
 }
 .what-do .holder {
 	overflow: hidden;
@@ -565,7 +579,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .crew .text-area{ padding:20px 0; }
 .crew .image-area{
 	float:right;
-	margin:10px 0;
+	margin:10px 0 0 20px;
 }
 .crew .img{ width:100%; height:auto; margin:0 0 20px; display:block;}
 .crew .listing .butn{
@@ -1177,7 +1191,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .crew .text-area{ padding:20px 0; }
 .crew .image-area{
 	float:right;
-	margin:10px 0;
+	margin:10px 0 0 40px;
 }
 .advice{
 	background:url(../images/anchor.png) no-repeat center top;
