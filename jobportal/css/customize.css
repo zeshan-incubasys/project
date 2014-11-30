@@ -16,7 +16,7 @@ h2 {
 	margin: 0 0 22px;
 }
 
-
+p{ text-align:justify; }
 .top-header {
 	background: #fff;
 	padding: 15px 0;
@@ -208,7 +208,7 @@ h2 {
 .what-do .holder .block .image-area{
 	background: url(../images/img1.jpg) no-repeat center top;
 	background-size: cover;
-	height:414px;
+	height:472px;
 }
 .what-do .holder .block .image-area.one{
 	background: url(../images/img2.jpg) no-repeat center top;
@@ -225,8 +225,7 @@ h2 {
 	overflow: hidden;
 }
 .what-do .holder .block .text-area .text {
-	display: table-cell;
-	vertical-align: middle;
+	display:block;
 	clear: both;
 	float: none;
 	height: 100%;
@@ -902,7 +901,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .popup p{ margin:0 0 30px; }
 .popup .text-block{
 	overflow:hidden;
-	text-align:left;
+	text-align:center;
 	margin:0 0 26px; 
 }
 .popup .text-block .block{ margin:0 0 26px; }
@@ -946,8 +945,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 	font-size:20px;
 	line-height:23px;
 }
+.what-do .holder .block .info .title{
+	display:block;
+	font-size:16px;
+	line-height:19px;
+	text-align:center;
+}
+.what-do .holder .block .info ul{ 
+	padding:0 0 0 15px;
+	text-align:center;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+.popup .text-block{ text-align:left; }
+.what-do .holder .block .text-area .text {
+	display: table-cell;
+	vertical-align: middle;
+}
 .services .text-area .buttons-area{
 	text-align: center;
 	text-transform: uppercase;
@@ -1067,6 +1081,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa7b6', end
 .what-do .holder .block .info .wrap .icon{
 	float: left;
 	margin: 0 20px 0 0;
+}
+.what-do .holder .block .info .title{
+	display:block;
+	font-size:16px;
+	line-height:19px;
+	text-align:left;
+}
+.what-do .holder .block .info ul{ 
+	padding:0 0 0 15px;
+	text-align:left;
 }
 #contact .container .address{
 	overflow: hidden;

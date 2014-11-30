@@ -70,9 +70,40 @@
 				</div>
 				<div class="col-lg-4 col-xs-12 text-area">
 					<div class="info">
-						<div class="wrap"> <span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span> <span class="text">Our maritime background will benefit our clients. With more than 25 years of active sea service; in rating, JR. Officer, SR. Officer and Captain positions in the commercial cargo and cruise ship industries as well as private yachting. We have a unique insight into what (for e.g.) a yacht captain will be looking for. Not just in terms of legal requirements and skills, but as importantly, in regards to personality and ability to fit in.</span> </div>
-						<div class="wrap"> <span class="icon"><img src="<?php echo IMAGE_URL; ?>ico2.png" alt=""></span> <span class="text">Sailors, as all professionals, prefer to speak to likeminded, in a niche market as the maritime industry with ever changing safety and legal requirements, specific knowledge and being well versed in maritime law is paramount – hence, nobody will understand a crewmember or captain better than Marina ReCrewter. Having been there, facing the same challenges in managing and building a strong reliable team, makes a difference.</span> </div>
-						<div class="wrap"> <span class="icon"><img src="<?php echo IMAGE_URL; ?>ico3.png" alt=""></span> <span class="text">Our location – Dubai, UAE. The region is lacking a professional agency specializing in maritime recruitment. Fulfilling an obvious gap in the region, we believe we are ideally placed to bridge the gap between the West, Asia and the Middle-East in becoming a strategic partner and a local point of contact for established agencies and professional crewmembers is this fast growing metropolis.</span> </div>
+						<div class="wrap"> 
+							<span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>
+							<div class="text">
+								<strong class="title">Strong Maritime Background!</strong>
+								<ul>
+									<li>Over 25 years of active sea service in various roles including Captain</li>
+									<li>Commercial Cargo, Cruise Ships &amp; Private Yachting expertise</li>
+									<li>We understand what a Captain is looking for – Skill + Personality + Ability to fit in</li>
+								</ul>
+							</div>
+						</div>
+						<div class="wrap"> <span class="icon">
+							<img src="<?php echo IMAGE_URL; ?>ico2.png" alt=""></span>
+							<div class="text">
+								<strong class="title">We Understand Legal And Speak Your Language!</strong>
+								<ul>
+									<li>Sailors prefer to speak to the likeminded; we understand Captains &amp; Crew members better.</li>
+									<li>We have a solid grip of the legal and safety requirements of hte maritime industry</li>
+									<li>Well versed in maritime law &amp; specific knowledge of this niche market</li>
+								</ul>
+							</div>
+						</div>
+						<div class="wrap"> 
+							<span class="icon"><img src="<?php echo IMAGE_URL; ?>ico3.png" alt=""></span>
+							<div class="text">
+								<strong class="title">Prime Location!</strong>
+								<ul>
+									<li>Based in Dubai, UAE – well establised &amp; fast growing market with one of the highest concentration of yachts and ships in the world!</li>
+							<li>We are the regions only professional agency specializing in maritime recruitment. </li>
+							<li>Ideally placed to bridge the gap between the West, Asia and the Middle-East. </li>
+							<li>We can be your strategic partner and a local point of contact in this fast growing metropolis.</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
