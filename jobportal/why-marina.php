@@ -57,7 +57,7 @@
 				<li>What is the plan of action, if one of your guest have a cardio arrest, dive or jet-ski accident?</li>
 			</ul>
 			<img src="images/ico-marina3.png" class="main-ico">
-			<p>At sea, you need a fast and professional first response from your crew.</p>
+			<p style="text-align:center;">At sea, you need a fast and professional first response from your crew.</p>
 			<ul class="list">
 				<li>We ensure that you have well trained and certified crewmembers within a well-organized safety structure. This can make a world of difference. </li>
 				<li>It is paramount to understand that the beautiful, clean and shinning yacht is no better than its crew. Hired to provide the best service and maintenance, it has been easy to down play the safety of family, friends, guests, clients or crew - but it seems with the implementation of new safety regulations, the tide is turning and you.</li>
