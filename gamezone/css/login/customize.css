@@ -1,0 +1,321 @@
+
+
+body{
+	background:#fff url(../../images/login/bg-page.jpg) no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+
+
+
+
+#login-wrap{ overflow: hidden;}
+	#login-wrap .main-holder{
+		overflow: hidden;
+		padding: 40px 0 0 ;
+	}
+	#login-wrap .main-holder .heading-area{
+		overflow: hidden;
+		text-align: center;
+		margin: 0 0 20px;
+		text-transform: uppercase;
+	}
+	#login-wrap .main-holder .heading-area .heading{
+		font-size: 20px;
+		line-height: 24px;
+		color: #fff;
+		display: block;
+	}
+	#login-wrap .holder{
+		overflow: hidden;
+		width:96%;
+		margin: 0 auto;
+	}
+	/*#login-wrap .holder .logo{
+		background:url(../../images/login/logo.png) no-repeat 80% 100%;
+		height:200px;
+		width:80%;
+		text-indent: -9999px;
+		display: block;
+	}*/
+	#login-wrap .holder .logo{ text-indent: -9999px;}
+	#login-wrap .holder .logo a{
+		display: block;
+		/*height: 100%;*/
+	}
+	#login-wrap .holder .wrapper{
+		background: #f7f7f8;
+		border-radius: 40px;
+		margin: 0 auto 20px;
+	}
+	#login-wrap .holder .form-wrap{
+		overflow: hidden;
+		padding:40px 4% 0;
+	}
+	#login-wrap .holder .input-wrap{
+		border-radius: 25px;
+		background: #fff;
+		border: 1px solid #dbd7e3;
+		padding: 4px 10px;
+		font-size: 24px !important;
+		text-transform: capitalize;
+		color: #8f86a3;
+		line-height: 28px;
+		margin: 0 0 20px;
+	}
+	#login-wrap .holder .input-wrap input[type="text"],
+	#login-wrap .holder .input-wrap.pswd input[type="text"]{
+		background:#fff url(../../images/login/ico2.png) no-repeat 10px 6px;
+		width: 100%;
+		outline: none;
+		border: 0;
+		padding:4px 10px 4px 42px;
+		font-size: 18px !important;
+		text-transform: capitalize;
+		color: #8f86a3;
+		line-height: 22px;
+		font-weight: normal !important;
+	}
+	#login-wrap .holder .input-wrap.pswd input[type="text"]{
+		background:#fff url(../../images/login/ico3.png) no-repeat 10px 6px;
+	
+	}
+	#login-wrap .sign-area{
+		overflow: hidden;
+		text-align: center;
+		font-size: 20px;
+		line-height: 24px;
+		padding: 11px 0 28px;
+		border-bottom: 1px solid #dbd7e3;
+	}
+	#login-wrap .sign-area .sign-btn{
+		display: block;
+		margin: 0 auto 10px;
+		padding:13px 50px;
+		background: #37277f;
+		text-transform: uppercase;
+		color: #fff;
+		border: none;
+		outline: none;
+		border-radius: 40px;
+	}
+	#login-wrap .sign-area .forgot{
+		display: block;
+		padding: 0 10px;
+	}
+	#login-wrap .social-area{
+		overflow: hidden;
+		padding:20px 0 25px;
+		text-transform: capitalize;
+	}
+	#login-wrap .social-area .title{
+		display: block;
+		margin:0 0 25px;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #5a566e;
+	}
+	#login-wrap .social-area .holder{
+		overflow: hidden;
+		width: auto;
+	}
+	#login-wrap .social-area .holder a,
+	#login-wrap .social-area .holder .gmail{
+		display: block;
+		margin: 0 auto 10px;
+		padding:13px 45px;
+		background: #3f5a9c;
+		color: #fff;
+		border: none;
+		outline: none;
+		min-width: 179px;
+		border-radius: 40px;
+		text-align: center;
+		font-size: 20px;
+		line-height: 22px;
+	}
+	#login-wrap .social-area .holder .gmail{
+		background: #d64a3d;
+	}
+	#login-wrap .footer{
+		padding:23px 10px;
+		text-align: center;
+		color: #b8b2c5;
+		font-size: 20px;
+		line-height: 22px;
+		border-radius: 0 0 20px 20px;
+		background:#fff url(../../images/login/bg-footer.png) no-repeat 50%	-222px;
+	}
+	#login-wrap .footer a{color:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1500px){}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+#login-wrap{ overflow: hidden;}
+	#login-wrap .main-holder{
+		overflow: hidden;
+		padding: 100px 0 0 ;
+	}
+	#login-wrap .main-holder .heading-area{
+		overflow: hidden;
+		text-align: center;
+		margin: 0 0 20px;
+		text-transform: uppercase;
+	}
+	#login-wrap .main-holder .heading-area .heading{
+		font-size: 33px;
+		line-height: 36px;
+		color: #fff;
+		display: block;
+	}
+	#login-wrap .holder{
+		overflow: hidden;
+		width:490px;
+		margin: 0 auto;
+	}
+	#login-wrap .holder .logo{
+		background:url(../../images/login/logo.png) no-repeat 80% 100%;
+		background-size: 52%;
+		height:185px;
+		width:80%;
+		text-indent: -9999px;
+		display: block;
+	}
+	#login-wrap .holder .logo a{
+		display: block;
+		/*height: 100%;*/
+	}
+	#login-wrap .holder .wrapper{
+		background: #f7f7f8;
+		border-radius: 40px;
+		margin: 0 auto 20px;
+	}
+	#login-wrap .holder .form-wrap{
+		overflow: hidden;
+		padding:30px 7% 0;
+	}
+	#login-wrap .holder .input-wrap{
+		border-radius: 35px;
+		background: #fff;
+		border: 1px solid #dbd7e3;
+		padding: 8px 11px;
+		font-size: 24px !important;
+		text-transform: capitalize;
+		color: #8f86a3;
+		line-height: 28px;
+		margin: 0 0 15px;
+	}
+	#login-wrap .holder .input-wrap input[type="text"],
+	#login-wrap .holder .input-wrap.pswd input[type="text"]{
+		background:#fff url(../../images/login/ico2.png) no-repeat 10px 4px;
+		width: 100%;
+		outline: none;
+		border: 0;
+		padding:3px 10px 4px 42px;
+		font-size: 22px !important;
+		text-transform: capitalize;
+		color: #8f86a3;
+		line-height: 26px;
+		font-weight: normal !important;
+	}
+	#login-wrap .holder .input-wrap.pswd input[type="text"]{
+		background:#fff url(../../images/login/ico3.png) no-repeat 10px 4px;
+	}
+	#login-wrap .sign-area{
+		overflow: hidden;
+		font-size: 20px;
+		line-height: 24px;
+		padding: 11px 0 17px;
+		border-bottom: 1px solid #dbd7e3;
+	}
+	#login-wrap .sign-area .sign-btn{
+		float: right;
+		padding:18px 50px;
+		background: #37277f;
+		text-transform: uppercase;
+		color: #fff;
+		border: none;
+		outline: none;
+		border-radius: 40px;
+	}
+	#login-wrap .sign-area .forgot{
+		display:inline-block;
+		vertical-align: middle;
+		padding: 21px 10px 0 0;
+		text-transform: capitalize;
+	}
+	#login-wrap .social-area{
+		overflow: hidden;
+		padding:15px 0 17px;
+		text-transform: capitalize;
+	}
+	#login-wrap .social-area .title{
+		display: block;
+		margin:0 0 25px;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #5a566e;
+	}
+	#login-wrap .social-area .holder{
+		overflow: hidden;
+		width: auto;
+	}
+	#login-wrap .social-area .holder a,
+	#login-wrap .social-area .holder .gmail{
+		display: inline-block;
+		vertical-align: middle;
+		padding:18px 45px;
+		background: #3f5a9c;
+		color: #fff;
+		border: none;
+		outline: none;
+		min-width: 179px;
+		border-radius: 40px;
+		text-align: center;
+		font-size: 20px;
+		line-height: 22px;
+	}
+	#login-wrap .social-area .holder .gmail{
+		background: #d64a3d;
+		float: right;
+	}
+	#login-wrap .footer{
+		padding:23px 10px;
+		text-align: center;
+		color: #b8b2c5;
+		font-size: 20px;
+		line-height: 22px;
+		border-radius: 0 0 20px 20px;
+		background:#fff url(../../images/login/bg-footer.png) no-repeat 50%	-222px;
+	}
+	#login-wrap .footer a{color:#fff;}
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

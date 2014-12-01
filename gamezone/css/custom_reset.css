@@ -1,0 +1,46 @@
+* { max-height: 100000px; }
+body {
+	background: #fff;
+	color: #89949b;
+	font: 12px/15px "Lucida Grande", "Lucida Sans", sans-serif;
+	margin: 0;
+	min-width: 320px;
+}
+a { 
+	color: #4b5c66;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #4b5c66;
+}
+img { border-style: none; }
+form,
+fieldset {
+	border-style: none;
+	margin: 0;
+	padding: 0;
+}
+input,
+textarea,
+select {
+	color: #4c505d;
+	font: 12px/15px "Lucida Grande", "Lucida Sans", sans-serif;
+	vertical-align: middle;
+} 
+h1{
+	margin: 0 0 5px;
+	padding: 0;
+	color: #4b5c66;
+	font-size: 24px;
+	line-height: 27px;
+	text-transform: capitalize;
+}
+h2{
+	margin: 0 0 0;
+	padding: 0;
+	color: #4b5c66;
+	font-size: 20px;
+	line-height: 23px;
+	text-transform: capitalize;
+}
