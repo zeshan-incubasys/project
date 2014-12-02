@@ -707,10 +707,42 @@ p{ text-align:justify; }
 	border-radius:0;
 	text-align:center;
 	text-transform:uppercase;
+	-webkit-transition: all 0.8s ease;
+	-moz-transition: all 0.8s ease;
+	-ms-transition: all 0.8s ease;
+	-o-transition: all 0.8s ease;
+	transition: all 0.8s ease;
 }
+.image-section .butn:hover{
+	background:#6d9cac url(../images/ico-enquire.png) no-repeat 12% 50%;
+	text-decoration:none;
+}
+.image-section .butn.cv:hover{ background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%; }
 .image-section .image{
 	padding:0 2px;
 	margin:0 0 10px;
+	overflow:hidden;
+}
+.image-section .image img{
+	-webkit-transition: all 0.8s ease;
+	-moz-transition: all 0.8s ease;
+	-ms-transition: all 0.8s ease;
+	-o-transition: all 0.8s ease;
+	transition: all 0.8s ease;
+}
+.image-section .image img:hover{
+	-moz-transform: scale(1.2) rotate(2deg);
+	-webkit-transform: scale(1.2) rotate(2deg);
+	-o-transform: scale(1.2) rotate(2deg);
+	-ms-transform: scale(1.2) rotate(2deg);
+	transform: scale(1.2) rotate(2deg);
+}
+.image-section .image.img2 img:hover{
+	-moz-transform: scale(1.2) rotate(-2deg);
+	-webkit-transform: scale(1.2) rotate(-2deg);
+	-o-transform: scale(1.2) rotate(-2deg);
+	-ms-transform: scale(1.2) rotate(-2deg);
+	transform: scale(1.2) rotate(-2deg);
 }
 .note{
 	display:block;
@@ -1290,6 +1322,15 @@ p{ text-align:justify; }
 		text-align:center;
 		text-transform:uppercase;
 		margin:0 0 40px;
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		transition: all 1s ease;
+	}
+	.crew .listing .butn:hover{
+		background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%;
+		text-decoration:none;
 	}
 	.crew .listing ul{ margin:0 0 40px; }
 	.crew .listing .holder{ padding:50px 0;}
@@ -1302,7 +1343,14 @@ p{ text-align:justify; }
 		font-weight:bold;
 		border-radius:0;
 		text-align:center;
+		position:relative;
+		z-index:99;
 	}
+	.image-section .butn:hover{
+		background:#6d9cac url(../images/ico-enquire.png) no-repeat 25% 50%;
+		text-decoration:none;
+	}
+	.image-section .butn.cv:hover{ background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%; }
 	.image-section .image{
 		padding:0 2px;
 		margin:0 0 10px;

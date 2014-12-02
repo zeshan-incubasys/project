@@ -34,7 +34,7 @@
 			<div class="col-md-5 image visible-lg visible-md">
 				<img src="images/candidate1.jpg" alt="">
 			</div>
-			<div class="col-md-7 image">
+			<div class="col-md-7 image img2">
 				<img src="images/candidate2.jpg" alt="">
 				<a href="#" class="butn cv">Submit CV</a>
 			</div>
