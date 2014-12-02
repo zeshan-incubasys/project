@@ -1,5 +1,30 @@
 <?php  include('include/header.php');?>
-<?php  include('include/slider.php');?>
+	<div class="slider-gallery">
+		<div id="myCarousel" class="carousel slide" data-interval="4000" data-ride="carousel"> 
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>-->
+			</ol>
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="active item"> <a href=""><img src="<?php echo IMAGE_URL; ?>/slider/img1.jpg" alt=""></a> 
+					<!-- <div class="carousel-caption">
+                  <h3>First slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div> --> 
+				</div>
+				<div class="item"> <a href=""><img src="<?php echo IMAGE_URL; ?>/slider/img1.jpg" alt=""></a> 
+					<!-- <div class="carousel-caption">
+                  <h3>First slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div> --> 
+				</div>
+			</div>
+			<!-- Carousel nav --> 
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="carousel-control right" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+	</div>
 	<section class="what-do">
 		<div class="container head">
 			<h2><span>what we do</span></h2>
@@ -8,7 +33,7 @@
 		<div class="holder">
 			<div class="block visible-lg">
 				<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-					<div class="text new">
+					<div class="text">
 						<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 						<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
 						<p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. </p>
@@ -29,7 +54,7 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-					<div class="text new">
+					<div class="text">
 						<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 						<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access to an expanding regional market, we aim to become a key partner to our Clients as a local recruitment agency.</p>
 						<p>Our active maritime background will benefit our Clients. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table”, facing the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. </p>
@@ -43,7 +68,7 @@
 						<div class="ico-div"> <a href="#">learn more</a> </div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-xs-12 text-area">
+				<div class="col-lg-4 col-xs-12 text-area">
 					<div class="info">
 						<div class="wrap"> 
 							<span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>
@@ -91,7 +116,7 @@
 			</div>
 			<div class="holder">
 				<div class="block">
-					<div class="col-xs-12 col-lg-6 image-area"> <img src="<?php echo IMAGE_URL; ?>/services/img1.jpg" alt=""> </div>
+					<div class="col-xs-12 col-lg-6 image-area thumbnail-kenburn"> <div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img1.jpg" alt=""> </div></div>
 					<div class="col-xs-12 col-lg-6 text-area">
 						<div class="head">
 							<h2><span>We find the Right Crew for you!</span></h2>
@@ -113,11 +138,11 @@
 						<p>Marina ReCrewter is more than a crew agency. Due to our immense platform of (local) network and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your vessel.</p>
 						<div class="buttons-area"> <span class="btn"><a href="#">LEARN MORE</a></span> <span class="btn"><a href="#">REGISTER INTEREST</a></span> </div>
 					</div>
-					<div class="col-xs-12 col-lg-6 image-area one"> <img src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt=""> </div>
+					<div class="col-xs-12 col-lg-6 image-area one thumbnail-kenburn"> <div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt=""></div>  </div>
 				</div>
 				<div class="block">
-					<div class="col-xs-12 col-lg-6 image-area"> <img src="<?php echo IMAGE_URL; ?>/services/img3.jpg" alt=""> </div>
-					<div class="col-xs-12 col-lg-6 text-area">
+					<div class="col-xs-12 col-lg-6 image-area thumbnail-kenburn"><div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img3.jpg" alt=""> </div></div>
+					  <div class="col-xs-12 col-lg-6 text-area">
 						<div class="head">
 							<h2><span>Candidates/Jobseekers – Work &amp; Live Your Dream!</span></h2>
 						</div>
@@ -141,7 +166,7 @@
                           </div>--> 
 						
 					</div>
-					<div class="col-xs-12 col-lg-6 image-area one"> <img src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt=""> </div>
+					<div class="col-xs-12 col-lg-6 image-area one  thumbnail-kenburn"> <div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt=""> </div></div>
 				</div>
 			</div>
 		</div>
