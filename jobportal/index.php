@@ -1,6 +1,6 @@
 <?php  include('include/header.php');?>
 <?php include('include/slider.php');?>
-	<section class="what-do">
+	<section class="what-do" id="about">
 		<div class="container head">
 			<h2><span>what we do</span></h2>
 			<p>Decades of maritime experience on commercial and private ships make us an ideal choice for management agencies, captains &amp; recruiters looking for certified and professional crew. Candidates love the fact that we speak their language. Experience that is ‘Truly Different’.</p>
@@ -205,6 +205,7 @@
 	</section>
 	<section id="contact">
 		<div class="container">
+			<img src="images/contact/ico-direction.png" alt="" class="icon">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2 block visible-lg">
 					<div class="direction"> <span>e</span> <span>36 53.297</span> </div>

@@ -1,3 +1,16 @@
+$(document).ready(function() {
+	$("nav").on("click", "a", function(){
+	  var clickedItem = $(this).attr("href");
+	  var Xpos = $(clickedItem).offset().top;
+	  if($(this).parent("li").hasClass("active")){
+	   $('html, body').animate({ scrollTop: Xpos }, 800);
+	  }else{
+	   $("nav li").removeClass("active");
+	   $(this).parent("li").addClass("active");
+	   $('html, body').animate({ scrollTop: Xpos }, 800);
+	  }
+	 });
+});
 // page init
 jQuery(function(){
 	initCustomForms();

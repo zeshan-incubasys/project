@@ -7,7 +7,7 @@
 </script>
 <body>
 	<div id="site-wrapper">
-		<header>
+		<header id="#header">
 			<div class="top-header">
 				<div class="container">
 					<?php include('navigation.php');?>
