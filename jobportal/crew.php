@@ -26,7 +26,7 @@
 			<div class="col-md-5 image">
 				<img src="images/crew1.jpg" alt="">
 			</div>
-			<div class="col-md-7 image">
+			<div class="col-md-7 image img2">
 				<img src="images/crew2.jpg" alt="">
 				<a href="#" class="butn">Find Crew</a>
 			</div>

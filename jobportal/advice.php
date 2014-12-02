@@ -20,7 +20,7 @@
 		<div class="col-md-5 image">
 			<img src="images/advice1.jpg" alt="">
 		</div>
-		<div class="col-md-7 image">
+		<div class="col-md-7 image img2">
 			<img src="images/advice2.jpg" alt="">
 			<a href="#" class="butn">ENQUIRE NOW</a>
 		</div>
