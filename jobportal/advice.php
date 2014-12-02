@@ -26,10 +26,13 @@
 		</div>
 		<span class="note">For any requests or further information, please contact us.</span>
 	</div>
-	<section class="what-do">
+<a href="#myModal3" role="button" data-toggle="modal">
+	  <section class="what-do">
         <div class="container head">
           <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
           <p>Whether you are an experienced candidate or a new talent, it is our goal to help advance your career and hopefully contribute to securing your next job. We are committed to assist and advice. You will be supported by our hands-on approach, an honest assessment matching realistic opportunities.</p>
         </div>
 	</section>
+</a>
+<?php  include('popup.php');?>
 <?php include('include/footer.php');?>
