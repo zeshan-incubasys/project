@@ -1,30 +1,5 @@
 <?php  include('include/header.php');?>
-	<div class="slider-gallery">
-		<div id="myCarousel" class="carousel slide" data-interval="4000" data-ride="carousel"> 
-			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>-->
-			</ol>
-			<!-- Carousel items -->
-			<div class="carousel-inner">
-				<div class="active item"> <a href=""><img src="<?php echo IMAGE_URL; ?>/slider/img1.jpg" alt=""></a> 
-					<!-- <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div> --> 
-				</div>
-				<div class="item"> <a href=""><img src="<?php echo IMAGE_URL; ?>/slider/img1.jpg" alt=""></a> 
-					<!-- <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div> --> 
-				</div>
-			</div>
-			<!-- Carousel nav --> 
-			<a class="carousel-control left" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="carousel-control right" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
-	</div>
+<?php  include('include/slider.php');?>
 	<section class="what-do">
 		<div class="container head">
 			<h2><span>what we do</span></h2>
