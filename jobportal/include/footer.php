@@ -5,9 +5,9 @@
 				</strong>
 				<nav class="navigation">
 					<ol class="social">
-						<li><a href="#">fb</a></li>
-						<li class="linkedin"><a href="#">linkedin</a></li>
-						<li class="twitter"><a href="#">twitter</a></li>
+						<li><a target="_blank" href="http://www.facebook.com">fb</a></li>
+						<li class="linkedin"><a target="_blank" href="http://www.linkedin.com">linkedin</a></li>
+						<li class="twitter"><a target="_blank" href="http://www.twitter.com">twitter</a></li>
 					</ol>
 					<ul class="hidden-xs">
 						<li class="active"><a href="#">home</a></li>
