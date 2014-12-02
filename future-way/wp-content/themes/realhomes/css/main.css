@@ -3,13 +3,13 @@ a:hover {
 }
 
 ::-moz-selection {
-  background: #ec894d;
+  background: #bd1320;
   color: white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #ec894d;
+  background: #bd1320;
   color: white;
   text-shadow: none;
 }
@@ -134,7 +134,7 @@ a img.aligncenter {
   outline: none;
 }
 .real-btn:hover, .btn-blue:hover, .btn-grey:hover, .real-btn.current, .current.btn-blue, .current.btn-grey, .real-btn:focus, .btn-blue:focus, .btn-grey:focus, .real-btn:active, .btn-blue:active, .btn-grey:active {
-  background-color: #e3712c;
+  background-color: #bd1320;
   color: white;
   box-shadow: none;
   outline: none;
@@ -156,7 +156,7 @@ a img.aligncenter {
 }
 
 .btn-blue {
-  font-weight: blod;
+  font-weight: bold;
   background-color: #58caec;
 }
 .btn-blue:hover, .btn-blue.current {
@@ -164,7 +164,7 @@ a img.aligncenter {
 }
 
 .btn-grey {
-  font-weight: blod;
+  font-weight: bold;
   background-color: #aeadad;
 }
 .btn-grey:hover, .btn-grey.current {
@@ -641,7 +641,7 @@ body {
   left: 62px;
   top: 78px;
   background-color: rgba(255, 255, 255, 0.9);
-  background-color: #fff\9;
+  background-color: #fff \9;
   padding: 2px 23px 16px;
   width: 440px;
 }
@@ -745,7 +745,7 @@ body {
 }
 .advance-search .search-heading .fa-search {
   padding: 13px 20px 15px;
-  padding-bottom: 16px\9;
+  padding-bottom: 16px \9;
   margin-right: 20px;
   background-color: #252a2b;
   font-size: 24px;
@@ -772,8 +772,8 @@ body {
   font-size: 13px;
   margin: 30px 0 0;
   padding: 8px 28px;
-  padding-top: 7px\9;
-  padding-bottom: 7px\9;
+  padding-top: 7px \9;
+  padding-bottom: 7px \9;
   -webkit-padding-before: 7px;
   -webkit-padding-after: 7px;
 }
@@ -921,7 +921,7 @@ textarea {
 }
 .property-items .span6 {
   width: 440px;
-  margin-left: 19.3px;
+  margin-left: 19px;
 }
 .property-items .narrative {
   padding: 42px 40px;
@@ -1713,7 +1713,7 @@ $list_item_margin: 1px;*/
   border-left: none;
 }
 .widget.social_network .social_networks li a {
-  width: 42.7px;
+  width: 42px;
   border: none;
   border-left: 1px solid #dedede;
 }
@@ -1952,7 +1952,7 @@ ul.featured-properties li .price {
 .page-head h1.page-title {
   font-size: 24px;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: blod;
+  font-weight: bold;
   text-transform: capitalize;
   margin: 0;
 }
@@ -1982,7 +1982,7 @@ ul.featured-properties li .price {
 /* Agent Listing Page
 /*------------------------------------------------------*/
 .lisitng-grid-layout .main {
-  margin: 52.5px 0 64px;
+  margin: 52px 0 64px;
 }
 .lisitng-grid-layout .title-heading {
   text-transform: capitalize;
@@ -2873,7 +2873,7 @@ address {
 .services-list li .title {
   margin: 0 0 7px;
   font-size: 18px;
-  font-size: 16px\9;
+  font-size: 16px \9;
   line-height: 36px;
 }
 .services-list li .title span {
@@ -3477,8 +3477,8 @@ address {
 #filter-by a:focus, #filter-by a.active, #filter-by a:hover {
   outline: 0;
   color: #fff;
-  border-color: #ec894d;
-  background-color: #ec894d;
+  border-color: #bd1320;
+  background-color: #bd1320;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
@@ -5295,7 +5295,7 @@ input[type="text"].ui-autocomplete-loading {
 .recaptcha_widget {
   -webkit-box-sizing: "border-box";
   -moz-box-sizing: "border-box";
-  box-sizing: "border-box";
+  box-sizing: border-box;
   max-width: 293px;
   border: 1px solid #dedede;
   padding: 10px;
@@ -5311,7 +5311,7 @@ input[type="text"].ui-autocomplete-loading {
 #recaptcha_image img {
   -webkit-box-sizing: "border-box";
   -moz-box-sizing: "border-box";
-  box-sizing: "border-box";
+  box-sizing: border-box;
   width: 100%;
   height: auto;
   border: 3px solid #FFF;
@@ -5325,7 +5325,7 @@ input[type="text"].ui-autocomplete-loading {
 .recaptcha_is_showing_audio #recaptcha_image {
   -webkit-box-sizing: "border-box";
   -moz-box-sizing: "border-box";
-  box-sizing: "border-box";
+  box-sizing: border-box;
   width: 100%;
   height: 60px;
   background: #FFF;
@@ -5348,7 +5348,7 @@ input[type="text"].ui-autocomplete-loading {
   margin: 0 0 6px;
   -webkit-box-sizing: "border-box";
   -moz-box-sizing: "border-box";
-  box-sizing: "border-box";
+  box-sizing: border-box;
 }
 .recaptcha_input input {
   width: 92%;
