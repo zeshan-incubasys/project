@@ -639,6 +639,15 @@ p{ text-align:justify; }
 	text-align:center;
 	text-transform:uppercase;
 	margin:0 0 20px;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+.crew .listing .butn:hover{
+	background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%;
+	text-decoration:none;
 }
 .candidate,
 .crew{
@@ -712,6 +721,8 @@ p{ text-align:justify; }
 	-ms-transition: all 0.8s ease;
 	-o-transition: all 0.8s ease;
 	transition: all 0.8s ease;
+	z-index:99;
+	position:relative;
 }
 .image-section .butn:hover{
 	background:#6d9cac url(../images/ico-enquire.png) no-repeat 12% 50%;
@@ -963,6 +974,8 @@ p{ text-align:justify; }
 	background:url(../images/popup-bg.jpg) no-repeat center top;
 	background-size:cover;
 	padding:20px 0;
+	position:relative;
+	z-index:9999;
 }
 .popup .container{ position:relative; }
 .popup .ico-close{
