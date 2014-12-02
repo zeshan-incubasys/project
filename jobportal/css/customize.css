@@ -217,7 +217,7 @@ p{ text-align:justify; }
 	text-transform: capitalize;
 }
 .services .head,
-.what-do .head p{ line-height: 25px;}
+.what-do .head p{ text-align: center; line-height: 25px;}
 
 .services .head{ padding: 0 0 12px;}
 /*.what-do .head h2 span {
@@ -730,7 +730,7 @@ p{ text-align:justify; }
 }
 .image-section .butn.cv:hover{ background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%; }
 .image-section .image{
-	padding:0 2px;
+	padding:0;
 	margin:0 0 10px;
 	overflow:hidden;
 }
@@ -974,8 +974,7 @@ p{ text-align:justify; }
 	background:url(../images/popup-bg.jpg) no-repeat center top;
 	background-size:cover;
 	padding:20px 0;
-	position:relative;
-	z-index:9999;
+	overflow:auto !important;
 }
 .popup .container{ position:relative; }
 .popup .ico-close{
@@ -1352,7 +1351,7 @@ p{ text-align:justify; }
 		display:block;
 		background:#2d4658 url(../images/ico-enquire.png) no-repeat 25% 50%;
 		font-size:31px;
-		line-height:82px;
+		line-height:86px;
 		font-weight:bold;
 		border-radius:0;
 		text-align:center;
@@ -1365,7 +1364,7 @@ p{ text-align:justify; }
 	}
 	.image-section .butn.cv:hover{ background:#6d9cac url(../images/ico-captain.png) no-repeat 12% 50%; }
 	.image-section .image{
-		padding:0 2px;
+		padding:0;
 		margin:0 0 10px;
 	}
 	.note{

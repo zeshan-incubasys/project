@@ -44,10 +44,13 @@
 		<p>Are you determined to join, do you want to pursue a career in yachting?</p>
 		<span class="note">For any requests or further information, please contact us.</span>
 	</div>
-	<section class="what-do">
+	<a href="#myModal3" role="button" data-toggle="modal">
+	  <section class="what-do">
         <div class="container head">
           <h2><span>WHY Marina ReCrewter? </span></h2>
           <p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
         </div>
 	</section>
+</a>
+<?php  include('popup.php');?>
 <?php include('include/footer.php');?>

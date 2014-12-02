@@ -29,8 +29,8 @@
 <a href="#myModal3" role="button" data-toggle="modal">
 	  <section class="what-do">
         <div class="container head">
-          <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
-          <p>Whether you are an experienced candidate or a new talent, it is our goal to help advance your career and hopefully contribute to securing your next job. We are committed to assist and advice. You will be supported by our hands-on approach, an honest assessment matching realistic opportunities.</p>
+          <h2><span>WHY Marina ReCrewter? </span></h2>
+          <p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
         </div>
 	</section>
 </a>
