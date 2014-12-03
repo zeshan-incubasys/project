@@ -439,7 +439,7 @@ p{ text-align:justify; }
     transition: all 3s linear 0s;
     width: 133px;
 }
-#contact .icon:hover{
+#contact:hover .icon{
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: 1;
