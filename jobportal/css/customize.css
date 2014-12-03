@@ -249,10 +249,27 @@ p{ text-align:justify; }
 	background: url(../images/img1.jpg) no-repeat center top;
 	background-size: cover;
 	height:520px;
+	opacity: 1;
+	transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	overflow: hidden;
+}
+.what-do .holder .block .image-area:hover{
+	opacity: 0.7;
+
 }
 .what-do .holder .block .image-area.one{
 	background: url(../images/img2.jpg) no-repeat center top;
 	background-size: cover;
+	opacity: 1;
+	transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	overflow: hidden;
+}
+.what-do .holder .block .image-area.one:hover{
+	opacity: 0.7;
 }
 .what-do .holder .block .image-area .caption {
 	display: table-cell;
@@ -281,6 +298,15 @@ p{ text-align:justify; }
 	display: block;
 	width: 100%;
 	height: auto;
+	opacity: 0.7;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+.what-do .holder .block .info .wrap:hover img{
+	opacity: 1;
 }
 .what-do .holder .block .info .wrap .icon{
 	float:none;
@@ -316,6 +342,7 @@ p{ text-align:justify; }
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 .what-do .holder .heading a{
 	padding: 0 0 7px;
 	border-bottom:1px solid #fff;
@@ -1765,3 +1792,11 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	overflow: hidden;
 }
 /* common custom form elements styles */
+::selection,li::selection,div::selection {
+	background: #6193a5; /* WebKit/Blink Browsers */
+	color: #fff;
+}
+::-moz-selection,li::-moz-selection,div::-moz-selection, {
+	background: #6193a5; /* Gecko Browsers */
+	color: #fff;
+}
