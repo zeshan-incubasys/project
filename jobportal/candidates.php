@@ -14,7 +14,7 @@
 		</div>
 		<div class="col-md-5 col-md-offset-2 listing">
 			<div class="holder">
-				<a href="#" class="butn">Submit CV</a>
+				<a href="cv.php" class="butn">Submit CV</a>
 				<h3>Who We Serve</h3>
 				<ul>
 					<li>Experienced, Certified &amp; Professional crew members looking for that perfect opportunity</li>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="col-md-7 image img2">
 				<img src="images/candidate2.jpg" alt="">
-				<a href="#" class="butn cv">Submit CV</a>
+				<a href="cv.php" class="butn cv">Submit CV</a>
 			</div>
 		</div>
 		<p>To work on board a luxury yacht and be part of a unique lifestyle, you must remember standards and expectations are high. You have to be good - very good - but you also have to fit in, be a team-player, usually working long hours and living in tight quarters with shared crew cabins. Being employed by some of the World’s most affluent personalities, requires utmost discretion.</p>
