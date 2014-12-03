@@ -37,6 +37,7 @@ p{ text-align:justify; }
 	color:#555;
 	text-transform:uppercase;
 	border-bottom:2px solid #6d9cac;
+	z-index:9999;
 }
 .top-header .greet a{ color:#6d9cac; }
 .top-header .logo {
@@ -460,28 +461,30 @@ p{ text-align:justify; }
 	background-size:cover;
 }
 #contact .icon {
-    display: block;
-    height: 133px;
-    margin: 0 auto;
-    transition: all 3s linear 0s;
-    width: 133px;
+	display: block;
+	height: 133px;
+	margin: 0 auto;
+	transition: all 3s linear 0s;
+	-moz-transition: all 3s linear 0s;
+	-webkit-transition: all 3s linear 0s;
+	width: 133px;
 }
 #contact:hover .icon{
-	-webkit-animation-name: spin;
+	/*-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;*/
 	-moz-animation-name: spin;
 	-moz-animation-duration: 5s;
-	-moz-animation-iteration-count: 1;
+	-moz-animation-iteration-count: infinite;
 	-moz-animation-timing-function: linear;
 	-ms-animation-name: spin;
 	-ms-animation-duration: 5s;
-	-ms-animation-iteration-count: 1;
+	-ms-animation-iteration-count: infinite;
 	-ms-animation-timing-function: linear;
 	animation-name: spin;
 	animation-duration: 5s;
-	animation-iteration-count: 1;
+	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
 #contact .container .block:first-child{ background: none;}
@@ -836,6 +839,7 @@ p{ text-align:justify; }
 	width:100%;
 	color:#23384b;
 }
+.main input[type="password"],
 .main input[type="email"],
 .main input[type="text"]{
 	height:40px;
@@ -1084,6 +1088,7 @@ p{ text-align:justify; }
 	text-align:center;
 	font-style:italic;
 	padding:0;
+	list-style-position:inside;
 }
 .popup .list li{ margin:0 0 20px; }
 .popup .author{ text-align:right; }
@@ -1469,6 +1474,8 @@ p{ text-align:justify; }
 		width:250px;
 		color:#23384b;
 	}
+	.main input[type="email"]
+	.main input[type="password"],
 	.main input[type="text"]{
 		height:40px;
 		border:2px solid #ececec;
@@ -1482,6 +1489,7 @@ p{ text-align:justify; }
 		padding:0 10px;
 		color:#23384b;
 	}
+	.main input[type="password"],
 	.main input[type="email"],
 	.main .cv-form.contact textarea,
 	.main .contact input[type="text"]{ width:100%; }
