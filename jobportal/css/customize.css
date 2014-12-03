@@ -298,7 +298,7 @@ p{ text-align:justify; }
 	display: block;
 	width: 100%;
 	height: auto;
-	opacity: 0.7;
+	opacity: 0.5;
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-ms-transition: all .5s ease-in-out;
@@ -1813,3 +1813,9 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	background: #6193a5; /* Gecko Browsers */
 	color: #fff;
 }
+.btn a
+{
+	text-decoration: none;
+
+}
+
