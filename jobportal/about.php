@@ -58,12 +58,9 @@
 			<section class="what-do">
 
 				  <div class="container head">
-						<h2><span>OUR SERVICES</span></h2>
+						<h2><span>From Deck Hand to Captain – Our Director’s Story</span></h2>
 
-						<p>Decades of maritime experience on commercial and private ships make us an ideal choice for
-							  management agencies, captains &amp; recruiters looking for certified and professional
-							  crew. Candidates love the fact that we speak their language. Experience that is ‘Truly
-							  Different’.</p>
+						<p>The course of a career, is not just a statement of personal achievements, it serves also as inspiration and motivation of the rewarding and amazing opportunities that awaits any determined and committed Candidate: Marina ReCrewter is dedicated to your career and getting you navigated safely underway.</p>
 				  </div>
 
 			</section>
@@ -71,7 +68,7 @@
 	  <div id="myModal3" class="popup modal animated fadeOutUp" data-easein="fadeInUp" data-easeout="fadeOutUp"
 		   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"">
 		<div class="container">
-			  <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>-->
+			 <a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>
 			  <img src="images/ico-marina.png" class="main-ico">
 
 			  <h2><span>About us</span></h2>
