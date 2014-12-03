@@ -1,7 +1,7 @@
 <div id="myModal3" class="popup modal animated fadeOutUp inner" data-easein="fadeInUp" data-easeout="fadeOutUp"
 	 tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"">
 	  <div class="container">
-			<a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>
+			<!--<a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>-->
 			<img src="images/ico-marina2.png" class="main-ico">
 			<h2><span>WHY Marina ReCrewter? </span></h2>
 			<p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
