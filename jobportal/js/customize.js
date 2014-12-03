@@ -11,7 +11,7 @@ $(document).ready(function() {
 	  }
 	 });
 	
-	$('.login .email').hide();
+	/*$('.login .email').hide();
 	$('.login').on('click', '.forget',  function(e){
 		var active = $(this).parents('.login-form');
 		if(active.hasClass('active')){
@@ -25,6 +25,15 @@ $(document).ready(function() {
 			$('.login .email').delay(500).slideDown('slow');
 			$('.login input[type="submit"]').attr('value', 'Send');
 		}
+	});*/
+	$('#forget').hide();
+	$('#forget-btn').on('click', function(e){
+		$('#forget').delay(500).slideDown('slow');
+		$('#login').slideUp('slow');
+	});
+	$('#login-btn').on('click', function(e){
+		$('#login').delay(500).slideDown('slow');
+		$('#forget').slideUp('slow');
 	});
 });
 // page init

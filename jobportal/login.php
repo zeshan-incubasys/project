@@ -22,17 +22,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-xs-12 pull-right">
-					<strong class="logo"><a href="#">Marina Recrewter</a></strong>
-					<form action="#" class="login-form">
+					<strong class="logo"><a href="index.php">Marina Recrewter</a></strong>
+					<form action="#" class="login-form" id="login">
 						<fieldset>
-							<div class="fields">
-								<input type="text" placeholder="Username">
-								<input type="password" placeholder="Password">
+							<input type="text" placeholder="Username">
+							<input type="password" placeholder="Password">
+							<div class="submit-area">
+								<a href="#" class="forget" id="forget-btn">Forgot password?</a>
+								<input type="submit" value="Log in" class="pull-right">
 							</div>
+						</fieldset>
+					</form>
+					<form action="#" class="login-form" id="forget">
+						<fieldset>
 							<input type="email" placeholder="Email" class="email">
 							<div class="submit-area">
-								<a href="#" class="forget">Forgot password?</a>
-								<input type="submit" value="Log in" class="pull-right">
+								<a href="#" class="forget" id="login-btn">Login</a>
+								<input type="submit" value="Send" class="pull-right">
 							</div>
 						</fieldset>
 					</form>

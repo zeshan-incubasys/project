@@ -836,6 +836,7 @@ p{ text-align:justify; }
 	width:100%;
 	color:#23384b;
 }
+.main input[type="email"],
 .main input[type="text"]{
 	height:40px;
 	border:2px solid #ececec;
@@ -1468,8 +1469,6 @@ p{ text-align:justify; }
 		width:250px;
 		color:#23384b;
 	}
-	.main .cv-form.contact textarea,
-	.main .contact input[type="text"]{ width:100%; }
 	.main input[type="text"]{
 		height:40px;
 		border:2px solid #ececec;
@@ -1483,6 +1482,9 @@ p{ text-align:justify; }
 		padding:0 10px;
 		color:#23384b;
 	}
+	.main input[type="email"],
+	.main .cv-form.contact textarea,
+	.main .contact input[type="text"]{ width:100%; }
 	.main .cv-form label{ padding:10px 0 0;}
 	.main .cv-form .holder{ overflow:hidden; }
 	.main .cv-form textarea{ width:450px; }
