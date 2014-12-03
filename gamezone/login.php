@@ -14,8 +14,8 @@
 							<div class="input-wrap">
 								<input type="text" placeholder="login">
 							</div>
-							<div class="input-wrap pswd">
-								<input type="text" placeholder="login">
+							<div class="input-wrap">
+								<input type="password" placeholder="password">
 							</div>
 							<div class="sign-area">
 								<button class="sign-btn">sign in</button>

@@ -7,7 +7,7 @@ if($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['SERVER_NAME']=='localhost')
 else
 {
     $project_name="gamezone";
-    define('BASE_URL',"http://192.168.1.62/project/$project_name/");    
+    define('BASE_URL',"http://192.168.1.46/project/$project_name/");    
 }
 define('CSS_URL',BASE_URL."css/");
 define('IMAGE_URL',BASE_URL."images/");

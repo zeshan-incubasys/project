@@ -12,4 +12,12 @@
 	<script type="text/javascript" src="<?=JS_URL?>jquery.main.js"></script>
 	<script type="text/javascript" src="<?=JS_URL?>bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?=JS_URL?>customize.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	 <script>
+		$(function() {
+		$( "#datepicker" ).datepicker();
+		});
+	</script>
 </head>

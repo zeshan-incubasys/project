@@ -18,7 +18,10 @@
 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-		    $('#sample-table-2').DataTable();
+		    $('#sample-table-2').DataTable(),
+		    $('#sample-table-3').DataTable(),
+		    $('#sample-table-4').DataTable(),
+		    $('#sample-table-5').DataTable();
 		});
 	</script>
 </head>

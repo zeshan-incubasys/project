@@ -44,3 +44,254 @@ h2{
 	line-height: 23px;
 	text-transform: capitalize;
 }
+
+
+/**/
+
+/*Date Picker style*/
+.ui-widget-content{
+	background: #fff !important;
+	border: 1px solid #dbd7e3 !important;
+	color: #8f86a3 !important;
+}
+.ui-widget-header{
+	color: #8f86a3 !important;
+	background: #f6f6f6 !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	background: #fff !important;
+	text-align: center !important;
+	border: 1px solid #f2f2f2 !important;
+}
+.ui-datepicker td{ text-align: center !important;}
+
+/*Date Picker End*/
+
+
+
+/*-----------------------------*/
+
+
+/*Custom select,radio, checkbox*/
+
+/* custom checkbox styles */
+
+
+/* hide original element */
+.jcf-hidden {
+	display: block !important;
+	position: absolute !important;
+	left: -9999px !important; /* change to right: -9999px on RTL sites */
+}
+/* custom checkbox styles */
+
+
+.chk-area {
+	border: 1px solid #777;
+	margin: 0 10px 0 0;
+	float: left;
+	width: 20px;
+	height: 20px;
+}
+.chk-checked {
+	background: #aaf;
+}
+.chk-focus {
+	border-color: #f00;
+}
+.chk-disabled {
+	background: #eee;
+}
+.jcf-label-disabled {
+	color: #ccc;
+}
+/* custom radio styles */
+.rad-area {
+	border: 1px solid #777;
+	border-radius: 10px;
+	margin: 0 10px 0 0;
+	float: left;
+	width: 20px;
+	height: 20px;
+}
+.rad-checked {
+	background: #aaf;
+}
+.rad-focus {
+	border-color: #f00;
+}
+.rad-disabled {
+	background: #eee;
+}
+/* custom select styles */
+.select-area {
+	border:none !important;
+	position: relative;
+	overflow: hidden;
+	cursor: default;
+	height: 26px;
+	font-size: 18px;
+	line-height:28px;
+	float: left;
+	width: 100% !important;
+	padding: 0 20px 0 10px;
+}
+.select-focus {
+	border-color: #f00;
+}
+.select-area .center {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+}
+.select-disabled {
+	background: #eee;
+}
+.select-area .select-opener {
+	background:#fff url(../images/ico-down.png) 50% 50% no-repeat;
+	position: absolute;
+	height: 26px;
+	width: 22px;
+	right: 0;
+	top: 0;
+}
+.select-options {
+	position: absolute;
+	overflow: hidden;
+	background: #fff;
+	z-index: 2000;
+}
+.select-options .opt-disabled a {
+	background: #fff !important;
+	color: #aaa !important;
+}
+.select-options .drop-holder {
+	border: 1px solid #dbd7e3 !important;
+	overflow: hidden;
+	height: 1%;
+	font-size: 18px;
+	line-height: 24px;
+	color:#8f86a3 !important;
+	border-radius: 0 0 5px 5px;
+}
+.select-options ul {
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.select-options ul li {
+	width: 100%;
+	float: left;
+}
+.select-options ul a {
+	text-decoration: none;
+	padding: 5px 10px;
+	display: block;
+	cursor: default;
+	color: #000;
+	height: 1%;
+}
+.select-options .item-selected a {
+	text-decoration: none;
+	background: #ccc;
+	color: #fff;
+}
+/* select options optgroup example styles */
+.select-options .optgroup {
+	clear: both;
+}
+.select-options .optgroup strong {
+	display: block;
+	padding: 5px;
+}
+.select-options .optgroup ul a {
+	padding-left: 30px;
+}
+/* multiple select styles */
+.select-multiple-area {
+	border: 1px solid #777;
+	clear: both;
+}
+.select-multiple-area .multiple-list{
+	border: none;
+	position: static;
+}
+.select-multiple-area .multiple-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.select-multiple-area .multiple-list li {
+	margin: 0;
+}
+.select-multiple-area .multiple-list a:hover {
+	text-decoration: none;
+	background: #fff;
+	color: #000;
+}
+.select-multiple-area .multiple-list a {
+	display: block;
+	cursor: default;
+	padding: 5px;
+	color: #000;
+}
+.select-multiple-area .multiple-list .item-selected a {
+	background: #007;
+	color: #fff;
+}
+.select-multiple-area .multiple-list .optgroup strong {
+	display: block;
+	padding: 5px;
+}
+.select-multiple-area .multiple-list .optgroup a {
+	padding-left: 30px;
+}
+.select-disabled  .multiple-list .item-selected a {
+	background: #777;
+}
+/* custom scrollbars styles */
+.scrollable-area-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+.scrollable-area-wrapper .hscrollbar,
+.scrollable-area-wrapper .vscrollbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+}
+.scrollable-area-wrapper .hscroll-left,
+.scrollable-area-wrapper .vscroll-up,
+.scrollable-area-wrapper .hscroll-right,
+.scrollable-area-wrapper .vscroll-down {
+	background: #777;
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+.scrollable-area-wrapper .hscroll-line,
+.scrollable-area-wrapper .vscroll-line {
+	background: #eee;
+	width: 20px;
+	float: left;
+}
+.scrollable-area-wrapper .hscroll-slider,
+.scrollable-area-wrapper .vscroll-slider {
+	background: #ccc;
+	width: 20px;
+	height: 20px;
+}
+.scrollable-area-wrapper .hscrollbar {
+	position: static;
+	height: 20px;
+	top: auto;
+}
+.scrollable-area-wrapper .hscroll-line {
+	height: 20px;
+	width: auto;
+}

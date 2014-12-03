@@ -33,7 +33,6 @@
 	</div>
 
 
-
 	<div id="content" class="col-sm-9 col-md-10">
 		<div class="header">
 			<div class="user-area">
