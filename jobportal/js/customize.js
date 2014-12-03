@@ -10,6 +10,22 @@ $(document).ready(function() {
 	   $('html, body').animate({ scrollTop: Xpos }, 800);
 	  }
 	 });
+	
+	$('.login .email').hide();
+	$('.login').on('click', '.forget',  function(e){
+		var active = $(this).parents('.login-form');
+		if(active.hasClass('active')){
+			active.removeClass('active');
+			$('.login .fields').delay(500).slideDown('slow');
+			$('.login .email').slideUp('slow');
+			$('.login input[type="submit"]').attr('value', 'Login');
+		}else{
+			active.addClass('active');
+			$('.login .fields').slideUp('slow');
+			$('.login .email').delay(500).slideDown('slow');
+			$('.login input[type="submit"]').attr('value', 'Send');
+		}
+	});
 });
 // page init
 jQuery(function(){

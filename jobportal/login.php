@@ -25,10 +25,13 @@
 					<strong class="logo"><a href="#">Marina Recrewter</a></strong>
 					<form action="#" class="login-form">
 						<fieldset>
-							<input type="text" placeholder="Username">
-							<input type="password" placeholder="Password">
+							<div class="fields">
+								<input type="text" placeholder="Username">
+								<input type="password" placeholder="Password">
+							</div>
+							<input type="email" placeholder="Email" class="email">
 							<div class="submit-area">
-								<a href="#">Forgot password?</a>
+								<a href="#" class="forget">Forgot password?</a>
 								<input type="submit" value="Log in" class="pull-right">
 							</div>
 						</fieldset>
