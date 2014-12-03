@@ -71,7 +71,7 @@
 	  <div id="myModal3" class="popup modal animated fadeOutUp" data-easein="fadeInUp" data-easeout="fadeOutUp"
 		   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"">
 		<div class="container">
-			  <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>-->
+			  <a href="#" data-dismiss="modal" aria-hidden="true" class="ico-close">ico</a>
 			  <img src="images/ico-marina.png" class="main-ico">
 
 			  <h2><span>About us</span></h2>

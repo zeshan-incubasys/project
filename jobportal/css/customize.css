@@ -464,24 +464,26 @@ p{ text-align:justify; }
     height: 133px;
     margin: 0 auto;
     transition: all 3s linear 0s;
+    -moz-transition: all 3s linear 0s;
+    -webkit-transition: all 3s linear 0s;
     width: 133px;
 }
-#contact:hover .icon{
+#contact:hover .icon {
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
-	-webkit-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 	-moz-animation-name: spin;
 	-moz-animation-duration: 5s;
-	-moz-animation-iteration-count: 1;
+	-moz-animation-iteration-count: infinite;
 	-moz-animation-timing-function: linear;
 	-ms-animation-name: spin;
 	-ms-animation-duration: 5s;
-	-ms-animation-iteration-count: 1;
+	-ms-animation-iteration-count: infinite;
 	-ms-animation-timing-function: linear;
 	animation-name: spin;
 	animation-duration: 5s;
-	animation-iteration-count: 1;
+	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
 #contact .container .block:first-child{ background: none;}
@@ -1790,18 +1792,18 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	left: 10px;
 	margin-left: -10px;
 	position: relative;
-	-webkit-transition: all 0.8s ease-in-out;
-	-moz-transition: all 0.8s ease-in-out;
-	-o-transition: all 0.8s ease-in-out;
-	-ms-transition: all 0.8s ease-in-out;
-	transition: all 0.8s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 .thumbnail-kenburn:hover img {
-	-webkit-transform: scale(1.2) rotate(-2deg);
-	-moz-transform: scale(1.2) rotate(-2deg);
-	-o-transform: scale(1.2) rotate(-2deg);
-	-ms-transform: scale(1.2) rotate(-2deg);
-	transform: scale(1.2) rotate(-2deg);
+	-webkit-transform: scale(1.1) rotate(-2deg);
+	-moz-transform: scale(1.1) rotate(-2deg);
+	-o-transform: scale(1.1) rotate(-2deg);
+	-ms-transform: scale(1.1) rotate(-2deg);
+	transform: scale(1.1) rotate(-2deg);
 }
 .over-flow-h {
 	overflow: hidden;
