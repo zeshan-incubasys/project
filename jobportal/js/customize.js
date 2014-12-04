@@ -26,6 +26,15 @@ $(document).ready(function() {
 			$('.login input[type="submit"]').attr('value', 'Send');
 		}
 	});*/
+	$('navbar-toggle collapsed').on("click",function(){
+	if($('#bs-example-navbar-collapse-1').hasClass('in'))
+	{
+		$('#bs-example-navbar-collapse-1').addClass('in');
+	}else 
+	{
+		$('#bs-example-navbar-collapse-1').removeClass('in');
+	}
+});
 	$('#forget').hide();
 	$('#forget-btn').on('click', function(e){
 		$('#forget').delay(500).slideDown('slow');

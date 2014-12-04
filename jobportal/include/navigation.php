@@ -27,6 +27,9 @@
 						<li><a href="#">Another action</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Action</a></li>
+						<li class="divider"></li>
 					</ul>
 				</li>
 				<li><a href="<?php if(strpos($_SERVER['PHP_SELF'], 'index.php')!=false){ echo '#contact'; }else{echo 'index.php#contact';}?>">contact</a></li>
