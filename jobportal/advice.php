@@ -6,7 +6,7 @@
 		</div>
 	</section>
 	<div class="advice container">
-		<p>At Marina ReCrewter, we are more than a crew agency. Due to our immense platform of (local) network and contacts and maritime background, we have received requests to assist and support in a more consultative role, acting as initiating link with management related tasks.</p>
+		<p>At MARINA RECREWTER, we are more than a crew agency. Due to our immense platform of (local) network and contacts and maritime background, we have received requests to assist and support in a more consultative role, acting as initiating link with management related tasks.</p>
 		<ul>
 			<li>ISM code, Lloyds certified Internal Management System Auditor </li>
 			<li>ISPS code, Lloyds certified Company and Ship Security Officer, CSO/SSO</li>
@@ -29,7 +29,7 @@
 
 	  <section class="what-do">
         <div class="container head">
-			  <a href="#myModal3" role="button" data-toggle="modal"><h2><span>WHY Marina ReCrewter? </span></h2></a>
+			  <a href="#myModal3" role="button" data-toggle="modal"><h2><span>WHY MARINA RECREWTER? </span></h2></a>
           <p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
         </div>
 	</section>

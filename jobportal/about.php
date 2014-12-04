@@ -5,7 +5,7 @@
 						<div class="row">
 							  <h2><span>About us</span></h2>
 
-							  <p>A recently launched, yet effective agency with a vast network, Marina ReCrewter, is
+							  <p>A recently launched, yet effective agency with a vast network, MARINA RECREWTER, is
 									striving to provide personal and reliable service. Our mission, besides finding the
 									best qualified Candidates, is to coach new and experienced talent in order to match
 									Client’s expectations</p>
@@ -32,14 +32,14 @@
 										  other marine related areas rather than just recruitment.
 									</li>
 							  </ul>
-							  <p>Marina ReCrewter can be your initiating link in regards to assisting with required
+							  <p>MARINA RECREWTER can be your initiating link in regards to assisting with required
 									management tasks such as - DPA duties, pre-auditing, ISM/ISPS, safety rules and
 									regulation, crew training, maintenance and repair, classification, flag state,
 									sea-trials, delivery crew etc.</p>
 
 							  <h3>A Message from the Director</h3>
 
-							  <p>Overall; Marina ReCrewter was founded with the outlook to fulfill a gap in the region,
+							  <p>Overall; MARINA RECREWTER was founded with the outlook to fulfill a gap in the region,
 									keeping the focus on the ever increasing worldwide demand for certified and
 									experienced crew in the yachting industry as well as commercial shipping. We are
 									focused on quality and long term relationships. Our mission is to be your best
@@ -48,7 +48,7 @@
 
 							  <div class="pull-right author">
 									<h2>Capt. Thomas C Pedersen</h2>
-									<strong class="title">Master Mariner and Director Marina ReCrewterer</strong>
+									<strong class="title">Master Mariner and Director MARINA RECREWTERer</strong>
 							  </div>
 						</div>
 				  </div>
@@ -61,7 +61,7 @@
 						<a href="#myModal3" role="button" data-toggle="modal">
 							  <h2><span>From Deck Hand to Captain – Our Director’s Story</span></h2>
 						</a>
-						<p>The course of a career, is not just a statement of personal achievements, it serves also as inspiration and motivation of the rewarding and amazing opportunities that awaits any determined and committed Candidate: Marina ReCrewter is dedicated to your career and getting you navigated safely underway.</p>
+						<p>The course of a career, is not just a statement of personal achievements, it serves also as inspiration and motivation of the rewarding and amazing opportunities that awaits any determined and committed Candidate: MARINA RECREWTER is dedicated to your career and getting you navigated safely underway.</p>
 				  </div>
 
 			</section>
@@ -118,7 +118,7 @@
 					<img src="images/ico-cap.png" alt="" class="ico">
 
 					<h2>Capt. Thomas C Pedersen</h2>
-					<strong class="title">Master Mariner and Director Marina ReCrewterer</strong>
+					<strong class="title">Master Mariner and Director MARINA RECREWTERer</strong>
 			  </div>
 		</div>
 	</div>

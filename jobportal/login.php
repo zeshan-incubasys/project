@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Marina Recrewter</title>
+    <title>MARINA RECREWTER</title>
     <link rel="stylesheet" href="<?php echo CSS_URL ?>bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo CSS_URL?>customize.css" media="all" type="text/css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-xs-12 pull-right">
-					<strong class="logo"><a href="index.php">Marina Recrewter</a></strong>
+					<strong class="logo"><a href="index.php">MARINA RECREWTER</a></strong>
 					<form action="#" class="login-form" id="login">
 						<fieldset>
 							<input type="text" placeholder="Username">

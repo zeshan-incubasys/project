@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Marina Recrewter</title>
+    <title>MARINA RECREWTER</title>
 	<link rel="shortcut icon" type="image/png" href="<?php echo IMAGE_URL?>favicon.png">
     <link rel="stylesheet" href="<?php echo CSS_URL ?>bootstrap.min.css">
 	  <!--<link href="https://0.s3.envato.com/files/42255008/css/bootstrap-responsive.min.css" rel="stylesheet">-->

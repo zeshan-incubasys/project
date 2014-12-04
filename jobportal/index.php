@@ -12,7 +12,7 @@
 				  <div class="block visible-lg">
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
 							  <div class="text new">
-									<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives
+									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER, is strives
 										  to provide a personal and reliable service. Our mission, besides finding the
 										  best qualified Candidates, is to coach new and experienced talents in order to
 										  meet &amp; exceed your expectations.</p>
@@ -52,7 +52,7 @@
 
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
 							  <div class="text new">
-									<p>A young &amp; effective agency with a vast network, Marina ReCrewter, is strives
+									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER, is strives
 										  to provide a personal and reliable service. Our mission, besides finding the
 										  best qualified Candidates, is to coach new and experienced talents in order to
 										  meet &amp; exceed your expectations.</p>
@@ -74,7 +74,7 @@
 						<a href="why-marina.php">
 							  <div class="col-lg-6 col-xs-12 image-area one">
 									<div class="col-lg-10 col-lg-offset-2 col-xs-12 heading">
-										  <h3>WHY Marina Recrewter?</h3>
+										  <h3>WHY MARINA RECREWTER?</h3>
 
 										  <div class="ico-div">learn more</div>
 									</div>
@@ -217,7 +217,7 @@
 									<div class="head">
 										  <h2><span>Consultancy/Advice</span></h2>
 									</div>
-									<p>Marina ReCrewter is more than a crew agency. Due to our immense platform of
+									<p>MARINA RECREWTER is more than a crew agency. Due to our immense platform of
 										  (local) network and contacts coupled with our strong maritime background, we
 										  go an extra yard or two by accepting requests to assist and support in a more
 										  consultative role, acting as an initiating link with management related tasks.
@@ -345,7 +345,7 @@
 									<div class="head">
 										  <h2><span>Consultancy/Advice</span></h2>
 									</div>
-									<p>Marina ReCrewter is more than a crew agency. Due to our immense platform of
+									<p>MARINA RECREWTER is more than a crew agency. Due to our immense platform of
 										  (local) network and contacts coupled with our strong maritime background, we
 										  go an extra yard or two by accepting requests to assist and support in a more
 										  consultative role, acting as an initiating link with management related tasks.

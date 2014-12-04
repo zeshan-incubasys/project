@@ -2,7 +2,7 @@
 <div class="popup">
 	<div class="container">
 			<img src="images/ico-marina2.png" class="main-ico">
-			<h2><span>WHY Marina ReCrewter? </span></h2>
+			<h2><span>WHY MARINA RECREWTER? </span></h2>
 			<p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
 			<div class="text-block">
 				  <div class="col-md-6 block">

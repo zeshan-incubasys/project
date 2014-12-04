@@ -35,7 +35,7 @@
 				  <div class="more-area">
 						<a href="#" class="ico-close">close</a>
 
-						<p>Marina ReCrewter strives to enhance safety in local waters, through placing only certified
+						<p>MARINA RECREWTER strives to enhance safety in local waters, through placing only certified
 							  crewmembers and operating as advising safety and security consultants.</p>
 
 						<p>As our client, Management Company, Yacht Owner or Captain, in a maritime market with ever
@@ -55,7 +55,7 @@
 						preserved and we take pride in our hands-on approach, providing you with an honest service.
 				  </li>
 				  <li>Our maritime background and experience will serve you. We will not promote or advise a Candidate,
-						unless we would have hired him/her ourselves. At Marina ReCrewter, we already know from past
+						unless we would have hired him/her ourselves. At MARINA RECREWTER, we already know from past
 						experience &amp; understand the qualifications that you as a Client will be looking for.
 				  </li>
 			</ul>
@@ -67,7 +67,7 @@
 				  <div class="col-sm-9 col-xs-12">
 						<h3>IMPORTANT STATEMENT</h3>
 
-						<p>Marina ReCrewter strives to enhance safety in local waters, through placing only certified
+						<p>MARINA RECREWTER strives to enhance safety in local waters, through placing only certified
 							  crewmembers and operating as advising safety and security consultants.</p>
 
 						<p>As our client, Management Company, Yacht Owner or Captain, in a maritime market with ever
@@ -80,7 +80,7 @@
 	  <section class="what-do">
 			<div class="container head">
 				  <a href="#myModal3" role="button" data-toggle="modal">
-						<h2><span>WHY Marina ReCrewter? </span></h2>
+						<h2><span>WHY MARINA RECREWTER? </span></h2>
 				  </a>
 
 				  <p>We have experienced firsthand the effects of not having the right profile on board; inadequate

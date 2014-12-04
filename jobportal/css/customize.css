@@ -33,6 +33,7 @@ body {
 a {
 	color: #fff;
 	text-decoration: none;
+	outline:none !important;
 }
 a:hover,
 a:focus { color: #fff; }
