@@ -1344,6 +1344,10 @@ p { text-align: center; }
 }
 .services .holder .text-area { padding: 20px 30px 20px; }
 .services .holder .text-area.one { padding: 20px 30px 20px; }
+.services .holder .text-area.one .main{
+	min-height:inherit !important;
+}
+.services .holder .text-area.one
 .navbar-nav {
 	padding: 42px 0;
 	text-transform: uppercase;
