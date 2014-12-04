@@ -102,7 +102,7 @@
 							<li>We Provide you with candidates who are personally interviewed, screened &amp; shortlisted</li>
 							<li>Located at Dubai Marina, we are your local marine recruitment agency that is directed and managed by actual Captains! </li>
 						</ul>
-						<div class="buttons-area"> <span class="btn float-shadow"><a href="crew.php">LEARN MORE</a></span> <span class="btn float-shadow"><a href="#">Find Crew</a></span> </div>
+						<div class="buttons-area"> <span class="btn"><a href="crew.php" data-text="Learn More">LEARN MORE</a></span> <span class="btn"><a href="#" data-text="Find Crew">Find Crew</a></span> </div>
 					</div>
 				</div>
 				<div class="block">
@@ -115,7 +115,7 @@
 								<li>Are you a fresh talent looking to break into the maritime industry and enjoy the perks of being part of a crew on a private yacht?</li>
 								<li>We assist and advise to advance your career and contribute to securing your next dream job</li>
 						  </ul>
-						  <div class="buttons-area"> <span class="btn float-shadow"><a href="candidates.php">LEARN MORE</a></span> <span class="btn float-shadow"><a href="#">SUBMIT CV</a></span>
+						  <div class="buttons-area"> <span class="btn"><a href="candidates.php" data-text="Learn More">LEARN MORE</a></span> <span class="btn"><a href="#" data-text="Submit CV">SUBMIT CV</a></span>
 						  </div>
 
 					</div>
@@ -128,7 +128,7 @@
 								<h2><span>Consultancy/Advice</span></h2>
 						  </div>
 						  <p>Marina ReCrewter is more than a crew agency. Due to our immense platform of (local) network and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your vessel.</p>
-						  <div class="buttons-area"> <span class="btn float-shadow"><a href="advice.php">LEARN MORE</a></span> <span class="btn float-shadow"><a href="#">ENQUIRE NOW</a></span> </div>
+						  <div class="buttons-area"> <span class="btn"><a href="advice.php" data-text="Learn More">LEARN MORE</a></span> <span class="btn"><a href="#" data-text="Enquire Now">ENQUIRE NOW</a></span> </div>
 					</div>
 				</div>
 				<div class="block">
