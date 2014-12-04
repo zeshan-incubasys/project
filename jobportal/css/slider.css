@@ -303,51 +303,36 @@
 	51% { opacity: 1; }
 }
 #wowslider-container0 a.ws_next, #wowslider-container0 a.ws_prev {
-	font: 2.8em "controls";
-	z-index:60;
-	color: #60CAC0;
-	background-color:#fff;
-	overflow: hidden;
-	width: 1.6em;
-	height: 1.6em;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	
-	-webkit-transition: all .4s ease;
-  	-moz-transition: all .4s ease;
-  	-o-transition: all .4s ease;
-  	transition: all .4s ease;
-}
-#wowslider-container0 a.ws_next {
 	position:absolute;
 	top:50%;
-	margin-top:-0.8em;
-	right: 0.5em;
+	margin-top:-2.3em;
+	z-index:60;
+	width: 2.6em;	
+	height: 4.6em;
+	background-image: url(arrows.png);
+	background-size:200%;
+	z-index:9999;
+}
+#wowslider-container0 a.ws_next{
+	background-position: 100% 0;
+	right:20px;
 }
 #wowslider-container0 a.ws_prev {
-	position:absolute;
-	top:50%;
-	margin-top:-0.8em;
-	left: 0.5em;
+	background-position: 0 0; 
+	left:20px;
 }
-#wowslider-container0 a.ws_next:after,
-#wowslider-container0 a.ws_prev:after {
-	display: block;
-	text-align: center;
-	line-height: 1.5em;	
-	line-height: 1.9em\9; /* ie9 hack */
-	
-	-webkit-transition: color .4s ease;
-  	-moz-transition: color .4s ease;
-  	-o-transition: color .4s ease;
-  	transition: color .4s ease;
+#wowslider-container0 a.ws_next:hover{
+	background-position: 100% 100%;
 }
+#wowslider-container0 a.ws_prev:hover {
+	background-position: 0 100%; 
+}
+
 /* IE10+ hacks */
-_:-ms-input-placeholder, :root #wowslider-container0 a.ws_prev:after {line-height: 1.9em;}
+/*_:-ms-input-placeholder, :root #wowslider-container0 a.ws_prev:after {line-height: 1.9em;}*/
 /* IE10+ hacks */
-_:-ms-input-placeholder, :root #wowslider-container0 a.ws_next:after {line-height: 1.9em;}
-#wowslider-container0 a.ws_next:after{
+/*_:-ms-input-placeholder, :root #wowslider-container0 a.ws_next:after {line-height: 1.9em;}*/
+/*#wowslider-container0 a.ws_next:after{
 	content:'\e801';
 }
 #wowslider-container0 a.ws_prev:after{
@@ -372,7 +357,7 @@ _:-ms-input-placeholder, :root #wowslider-container0 a.ws_next:after {line-heigh
 	-moz-box-shadow: 0 0 0 0.25em rgba(255,255,255,0.3);
 	box-shadow: 0 0 0 0.25em rgba(255,255,255,0.3);
 }
-
+*/
 /*playpause*/
 @-webkit-keyframes playAnimate {
 	49% { -webkit-transform: translateY(100%); }

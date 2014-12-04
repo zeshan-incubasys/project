@@ -1082,8 +1082,9 @@ p{ text-align:center; }
 .popup .text-block .block{ margin:0 0 26px; }
 .popup .text-block h3{
 	margin:0 0 10px;
-	font-size:18px;
-	line-height:21px;
+	font-size:16px;
+	line-height:18px;
+	font-weight: bold;
 }
 .popup .text-block ul{
 	padding:0 0 0 12px;
@@ -1103,7 +1104,7 @@ p{ text-align:center; }
 }
 .popup .list{
 	text-align:center;
-	font-style:italic;
+	font-weight: bold;
 	padding:0;
 	list-style-position:inside;
 }
@@ -1850,17 +1851,17 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	left: 10px;
 	margin-left: -10px;
 	position: relative;
-	-webkit-transition: all 0.8s ease-in-out;
-	-moz-transition: all 0.8s ease-in-out;
-	-o-transition: all 0.8s ease-in-out;
-	-ms-transition: all 0.8s ease-in-out;
-	transition: all 0.8s ease-in-out;
+	-webkit-transition: all 1.2s ease-in-out;
+	-moz-transition: all 1.2s ease-in-out;
+	-o-transition: all 1.2s ease-in-out;
+	-ms-transition: all 1.2s ease-in-out;
+	transition: all 1.2s ease-in-out;
 }
 .thumbnail-kenburn:hover img {
-	-webkit-transform: scale(1.2) rotate(-2deg);
-	-moz-transform: scale(1.2) rotate(-2deg);
-	-o-transform: scale(1.2) rotate(-2deg);
-	-ms-transform: scale(1.2) rotate(-2deg);
+	-webkit-transform: scale(1.1) rotate(-2deg);
+	-moz-transform: scale(1.1) rotate(-2deg);
+	-o-transform: scale(1.1) rotate(-2deg);
+	-ms-transform: scale(1.1) rotate(-2deg);
 	transform: scale(1.2) rotate(-2deg);
 }
 .over-flow-h {

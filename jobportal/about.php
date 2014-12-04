@@ -54,17 +54,18 @@
 				  </div>
 			</div>
 	  </section>
-	  <a href="#myModal3" role="button" data-toggle="modal">
+
 			<section class="what-do">
 
 				  <div class="container head">
-						<h2><span>From Deck Hand to Captain – Our Director’s Story</span></h2>
-
+						<a href="#myModal3" role="button" data-toggle="modal">
+							  <h2><span>From Deck Hand to Captain – Our Director’s Story</span></h2>
+						</a>
 						<p>The course of a career, is not just a statement of personal achievements, it serves also as inspiration and motivation of the rewarding and amazing opportunities that awaits any determined and committed Candidate: Marina ReCrewter is dedicated to your career and getting you navigated safely underway.</p>
 				  </div>
 
 			</section>
-	  </a>
+
 	  <div id="myModal3" class="popup modal animated fadeOutUp" data-easein="fadeInUp" data-easeout="fadeOutUp"
 		   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"">
 		<div class="container">
