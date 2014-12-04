@@ -23,6 +23,13 @@ else{
 		<style type="text/css">
 		.mCSB_scrollTools{ right:12px; }
 	</style>
+
+	<script type="text/javascript">
+$(document).bind("mobileinit", function () {
+    $.mobile.ajaxEnabled = false;
+});
+</script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 	<div class="overlay">
@@ -114,7 +121,7 @@ else{
 						<div class="slideset">
 							<?php while($rows = mysql_fetch_array($query)){ array_push($thumb_images,$rows['image_url']); ?>
 							<div class="slide">
-								<img src="<?= $rows['image_url'];?>" alt="">
+								<span class="helper"></span><img src="<?= $rows['image_url'];?>" alt="">
 							</div>
 							<?php } ?>
 						</div>

@@ -10,6 +10,7 @@ include_once('admin/php/connection.php');
 	<title>Artica</title>
 	<link href="css/all.css" type="text/css" rel="stylesheet" media="all">
 	<link href="css/jquery.mCustomScrollbar.css" type="text/css" rel="stylesheet" media="all">
+	
 </head>
 <body>
 	<div class="overlay">
