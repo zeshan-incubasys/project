@@ -46,6 +46,39 @@ $(document).ready(function(){
 	var galleryContwidth = $('#main .part').width();
 	
 	if(galleryWidth > galleryContwidth){
+		$('#main .part').on('swipeleft', function () {
+			var deviceWidth = $(window).width();
+			var range = $(this).find('ul').width();
+			
+			var limit = range - deviceWidth;
+			var leftPos = $(this).find('ul').position().left
+			
+			//console.log(leftPos+"   "+limit);
+			leftPosTemp=leftPos;
+			leftPosTemp=(leftPos<0)?leftPos*-1:leftPos;
+			if(leftPosTemp <= limit){
+				
+				leftPos=(parseInt(leftPos)<=0)?leftPos - 150:leftPos + 150;
+				$(this).find('ul').animate({"left":leftPos + "px"});
+			}
+		});
+		$('#main .part').on('swiperight', function () {
+			var deviceWidth = $(window).width();
+			var range = $(this).find('ul').width();
+			
+			var limit = 0;
+			var leftPos = $(this).find('ul').position().left
+			
+			//console.log(leftPos+"   "+limit);
+			/*leftPosTemp=leftPos;
+			leftPosTemp=(leftPos<0)?leftPos*-1:leftPos;*/
+			if(leftPos < limit){
+				
+				leftPos=(parseInt(leftPos)<0)?leftPos + 150:leftPos - 150;
+				$(this).find('ul').animate({"left":leftPos + "px"});
+			}
+		});
+		
 		$('#main .part').on('mousemove', function (event) {
 			var $this = $(this);
 			var parentOffset = $this.parent().offset();
@@ -79,7 +112,6 @@ $(document).ready(function(){
 				"top": (offsetY * -1) + "px",
 				"left": (offsetX * -1) + "px"
 			});
-			
 		});
 	}
 	

@@ -65,9 +65,10 @@ fieldset {
 	padding: 0;
 	border-style: none;
 }
+.ui-loader{ display:none !important; }
 .overlay {
 	background: #303030;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -714,14 +715,22 @@ fieldset {
 	float: left;
 	height:400px !important;
 	overflow:hidden;
+	text-align:center;
 }
 .slideshow .pag-holder{
 	width:100%;
 	overflow:hidden;
 }
+.helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
 .slideshow .slide img{
-	display:block;
-	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+	height:auto;
+	width:100%;
 	margin:0 auto;
 }
 .slideshow .pagination{
@@ -946,6 +955,7 @@ fieldset {
 		padding:0 15px 5px;
 		text-align:center;
 	}
+	#main .gallery li:hover .hover{ display:none; }
 }
 @media screen and (max-width:480px) {
 	/*#header .display{ height:74px; }*/
