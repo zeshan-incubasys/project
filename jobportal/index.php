@@ -231,15 +231,47 @@
 							  </div>
 						</div>
 						<div class="block">
-							  <div class="col-xs-12 col-lg-6 text-area one" style="padding:100px 20px;">
-									<div class="head">
+							  <div class="col-xs-12 col-lg-6 text-area one">
+									<!--<div class="head">
 										  <h2><span>Commercial ReCrewment</span></h2>
 									</div>
-									<p style="text-align:center;">Coming Soon</p>
+									<p style="text-align:center;">Coming Soon</p>-->
 									<!--<div class="buttons-area">
 										  <span class="btn"><a href="#">LEARN MORE</a></span>
 										  <span class="btn"><a href="#">REGISTER INTEREST</a></span>
 									  </div>-->
+									<div class="head">
+										  <h2><span>Contact Us</span></h2>
+									</div>
+									<div class="main" style="min-height: 0 !important; background: none; padding: 0; border:none;">
+
+
+												<form action="#" class="cv-form contact">
+													  <fieldset>
+															<div class="holder" style="margin:0; ">
+																  <div class="col-xs-12 fields " style="margin:0 0 10px; ">
+																		<input type="text" placeholder="Name">
+																  </div>
+																  <div class="col-xs-6 fields" style="margin:0 0 10px; ">
+																		<input type="text" placeholder="Email">
+																  </div>
+																  <div class="col-xs-6 fields" style="margin:0 0 10px; ">
+																		<input type="text" placeholder="Phone">
+																  </div>
+																  <div class="col-xs-12 fields" style="margin:0 0 10px; ">
+																		<textarea placeholder="Message" style="height:62px;"></textarea>
+																  </div>
+															</div>
+															<div class="holder" style="margin:0; ">
+
+																  <div class="col-xs-12 fields " style="margin:0 0 10px; ">
+																		<input type="submit" value="Send">
+																  </div>
+															</div>
+													  </fieldset>
+												</form>
+
+									</div>
 
 							  </div>
 							  <div class="col-xs-12 col-lg-6 image-area one thumbnail-kenburn">
@@ -328,10 +360,42 @@
 							  <div class="col-xs-12 col-lg-6 image-area one"><img
 											src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area one" style="padding:100px 20px;">
-									<div class="head">
+								<!--	<div class="head">
 										  <h2><span>Commercial ReCrewment</span></h2>
 									</div>
-									<p style="text-align:center;">Coming Soon</p>
+									<p style="text-align:center;">Coming Soon</p>-->
+									<div class="head">
+										  <h2><span>Contact Us</span></h2>
+									</div>
+									<div class="main" style="min-height: 0 !important; background: none; padding: 0; border:none;">
+
+
+										  <form action="#" class="cv-form contact">
+												<fieldset>
+													  <div class="holder" style="margin:0; ">
+															<div class="col-xs-12 fields " style="margin:0 0 10px; ">
+																  <input type="text" placeholder="Name">
+															</div>
+															<div class="col-xs-6 fields" style="margin:0 0 10px; ">
+																  <input type="text" placeholder="Email">
+															</div>
+															<div class="col-xs-6 fields" style="margin:0 0 10px; ">
+																  <input type="text" placeholder="Phone">
+															</div>
+															<div class="col-xs-12 fields" style="margin:0 0 10px; ">
+																  <textarea placeholder="Message" style="height:62px;"></textarea>
+															</div>
+													  </div>
+													  <div class="holder" style="margin:0; ">
+
+															<div class="col-xs-12 fields " style="margin:0 0 10px; ">
+																  <input type="submit" value="Send">
+															</div>
+													  </div>
+												</fieldset>
+										  </form>
+
+									</div>
 							  </div>
 						</div>
 				  </div>
@@ -362,7 +426,12 @@
 							  <div class="address"><strong class="heading">phone</strong> <span>123 456 789</span> <span
 											class="tell"><span>123 456 789</span></span></div>
 						</div>
-						<div class="mail-area"><span class="btn"><a href="contact.php">email us</a></span></div>
+						<div class="mail-area">
+							  <span class="btn">
+									<a href="contact.php">email us</a>
+							  </span>
+							  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+						</div>
 				  </div>
 			</div>
 	  </section>

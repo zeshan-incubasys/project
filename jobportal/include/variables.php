@@ -6,7 +6,7 @@ if($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['SERVER_NAME']=='localhost')
 }else
 {
 	$project_name="jobportal";
-    define('BASE_URL',"http://192.168.1.22/project/$project_name/");// http://sitename.com/
+    define('BASE_URL',"http://192.168.1.44/project/$project_name/");// http://sitename.com/
 }
 define('CSS_URL',BASE_URL."css/");
 define('IMAGE_URL',BASE_URL."images/");

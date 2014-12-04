@@ -10,6 +10,23 @@ $(document).ready(function() {
 	   $('html, body').animate({ scrollTop: Xpos }, 800);
 	  }
 	 });
+
+    $('#myModal3').on("click",function(){
+        $('#myModal3').modal('hide');
+    });
+    $('.navbar-toggle').on("click",function(){
+        $('#bs-example-navbar-collapse-1').removeAttr('style');
+        if($('#bs-example-navbar-collapse-1').hasClass('in'))
+        {
+            $('#bs-example-navbar-collapse-1').removeClass('in');
+        }
+        else
+        {
+            $('#bs-example-navbar-collapse-1').addClass('in');
+        }
+
+
+    });
 	
 	/*$('.login .email').hide();
 	$('.login').on('click', '.forget',  function(e){
