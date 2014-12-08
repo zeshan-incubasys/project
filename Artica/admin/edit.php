@@ -1,5 +1,6 @@
 <?php
 include_once('php/header.php');
+
 if(isset($_GET['id'])){
 	$id = $_GET['id'];
 	$pid = $id; 
@@ -77,10 +78,15 @@ if (isset($_POST['subimage'])){
 		}*/
 		
 		if($result == ''){
-			$query = mysql_query("SELECT * FROM project_subimages WHERE project_id = $id");
-			$count = mysql_num_rows($query);
-			
-			$count = $count + 1;
+			$query = mysql_query("SELECT * FROM project_subimages WHERE project_id = $id ORDER BY id DESC LIMIT 1");
+			  $count = mysql_num_rows($query);
+			 $name=array();
+			   if ($count > 0){
+			  while($row = mysql_fetch_array($query)){
+					$name=explode('.',$row['image_url']);
+			 }
+			}
+			$count = $name[1] + 1;
 			$url = '../images/project'.$id.'.'.$count.'.jpg';
 			$up_url = 'images/project'.$id.'.'.$count.'.jpg';
 			
