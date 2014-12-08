@@ -12,8 +12,8 @@
 			<li>ISPS code, Lloyds certified Company and Ship Security Officer, CSO/SSO</li>
 			<li>Classification and Statutory Surveys, Lloyds certified</li>
 			<li>Risk Management and Incident Investigation, Lloyds certified</li>
-			<li>We are well versed in Port State Controls, Class and Flag State Inspections, MCA USCG rules and regulation. Pre-audits: Crew safety and Security training. </li>
-			<li>Maintenance and repair, sea-trials and delivery crew </li>
+			<li>We are well versed in Port State Controls, Class and Flag State Inspections, MCA USCG rules and regulation. Pre-audits: Crew safety and Security training.</li>
+			<li>Maintenance and repair, sea-trials and delivery crew</li>
 		</ul>
 	</div>
 	<div class="image-section container">

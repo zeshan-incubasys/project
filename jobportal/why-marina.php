@@ -3,7 +3,8 @@
 	<div class="container">
 			<img src="images/ico-marina2.png" class="main-ico">
 			<h2><span>WHY MARINA RECREWTER? </span></h2>
-			<p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
+			<p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority.</p>
+			<h2><span>How We Achieve This?</span></h2>
 			<div class="text-block">
 				  <div class="col-md-6 block">
 						<div class="col-md-3 row">
@@ -12,10 +13,10 @@
 						<div class="col-md-9 row">
 							  <h3>Strong Marintime Background!</h3>
 							  <ul>
-									<li>Over 25 years of active sea service in various roles including Captain</li>
-									<li>Commercial Cargo, Cruise Ships &amp; Private Yachting expertise</li>
-									<li>We understand what a Captain is looking for – Skill + Personality + Ability to fit in</li>
-							  </ul>
+									  <li>25+ years of active sea service - including Captain</li>
+									  <li>Commercial Cargo, Cruise Ships &amp; Private Yachting</li>
+									  <li>We Know what Captains look for – Skill + Personality + Ability to fit in</li>
+								</ul>
 						</div>
 				  </div>
 				  <div class="col-md-6 block">
@@ -25,10 +26,10 @@
 						<div class="col-md-9 row">
 							  <h3>We Understand Legal And Speak Your Language!</h3>
 							  <ul>
-									<li>Sailors prefer to speak to the likeminded; we understand Captains &amp; Crew members better.</li>
-									<li>We have a solid grip of the legal and safety requirements of hte maritime industry</li>
-									<li>Well versed in maritime law &amp; specific knowledge of this niche market</li>
-							  </ul>
+								  <li>Sailors speak to the likeminded; we understand Captains &amp; Crew</li>
+								  <li>Our solid grip of the legal and safety requirements</li>
+								  <li>Well versed in maritime law &amp; knowledge</li>
+							</ul>
 						</div>
 				  </div>
 				  <div class="col-md-6 block">
@@ -38,11 +39,10 @@
 						<div class="col-md-9 row">
 							  <h3>Prime Location!</h3>
 							  <ul>
-									<li>Based in Dubai, UAE – well establised &amp; fast growing market with one of the highest concentration of yachts and ships in the world!</li>
-									<li>We are the regions only professional agency specializing in maritime recruitment. </li>
-									<li>Ideally placed to bridge the gap between the West, Asia and the Middle-East. </li>
-									<li>We can be your strategic partner and a local point of contact in this fast growing metropolis.</li>
-							  </ul>
+								  <li>Based in Dubai, UAE – Fast growing market, high concentration of yachts</li>
+								  <li>Region’s only professional agency specializing in maritime recruitment</li>
+								  <li>Your Strategic Partner aiming to bridge the gap - West, Asia and the Middle-East</li>
+							</ul>
 						</div>
 				  </div>
 				  <div class="col-md-6 block">

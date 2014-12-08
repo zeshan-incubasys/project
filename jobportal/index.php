@@ -5,28 +5,18 @@
 				  <h2><span>what we do</span></h2>
 
 				  <p>Decades of maritime experience on commercial and private ships make us an ideal choice for
-						management agencies, captains & recruiters looking for certified and professional crew.
+						management agencies, captains &amp; recruiters looking for certified and professional crew.
 						Candidates love the fact that we speak their language. Experience that is ‘Truly Different’.</p>
 			</div>
 			<div class="holder">
 				  <div class="block visible-lg">
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
 							  <div class="text new">
-									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER, is strives
-										  to provide a personal and reliable service. Our mission, besides finding the
-										  best qualified Candidates, is to coach new and experienced talents in order to
-										  meet &amp; exceed your expectations.</p>
+									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 
-									<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access
-										  to an expanding regional market, we aim to become a key partner to our Clients
-										  as a local recruitment agency.</p>
+									<p>Ideally located in the Emirates, a developing maritime hotspot, with easy access to an expanding regional market, we aim to become a key partner for our Clients as a local recruitment agency.</p>
 
-									<p>Our active maritime background will benefit our Clients. We are well versed in
-										  maritime law - paramount, in an industry with ever changing safety and legal
-										  requirements. As Captains, having been "at the other side of the table",
-										  facing the same challenges in building a strong team, offers great insights
-										  into knowing what a Client will be looking for and makes an all important
-										  difference. </p>
+									<p>Our active maritime background will benefit you. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table” &amp; having faced the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. LEARN MORE</p>
 							  </div>
 						</div>
 						<a href="about.php">
@@ -52,21 +42,11 @@
 
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
 							  <div class="text new">
-									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER, is strives
-										  to provide a personal and reliable service. Our mission, besides finding the
-										  best qualified Candidates, is to coach new and experienced talents in order to
-										  meet &amp; exceed your expectations.</p>
+									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 
-									<p>Ideally located in the Emirates, a developing maritime hot spot, with easy access
-										  to an expanding regional market, we aim to become a key partner to our Clients
-										  as a local recruitment agency.</p>
+									<p>Ideally located in the Emirates, a developing maritime hotspot, with easy access to an expanding regional market, we aim to become a key partner for our Clients as a local recruitment agency.</p>
 
-									<p>Our active maritime background will benefit our Clients. We are well versed in
-										  maritime law - paramount, in an industry with ever changing safety and legal
-										  requirements. As Captains, having been "at the other side of the table",
-										  facing the same challenges in building a strong team, offers great insights
-										  into knowing what a Client will be looking for and makes an all important
-										  difference. </p>
+									<p>Our active maritime background will benefit you. We are well versed in maritime law - paramount, in an industry with ever changing safety and legal requirements. As Captains, having been “at the other side of the table” &amp; having faced the same challenges in building a strong team, offers great insights into knowing what a Client will be looking for and makes an all important difference. LEARN MORE</p>
 							  </div>
 						</div>
 				  </div>
@@ -89,15 +69,9 @@
 										  <div class="text">
 												<strong class="title">Strong Maritime Background!</strong>
 												<ul>
-													  <li>Over 25 years of active sea service in various roles including
-															Captain
-													  </li>
-													  <li>Commercial Cargo, Cruise Ships &amp; Private Yachting
-															expertise
-													  </li>
-													  <li>We understand what a Captain is looking for - Skill +
-															Personality + Ability to fit in
-													  </li>
+													  <li>25+ years of active sea service - including Captain</li>
+													  <li>Commercial Cargo, Cruise Ships &amp; Private Yachting</li>
+													  <li>We Know what Captains look for – Skill + Personality + Ability to fit in</li>
 												</ul>
 										  </div>
 									</div>
@@ -105,18 +79,11 @@
 							<img src="<?php echo IMAGE_URL; ?>ico2.png" alt=""></span>
 
 										  <div class="text">
-												<strong class="title">We Understand Legal And Speak Your
-													  Language!</strong>
+												<strong class="title">We Understand Legal And Speak Your Language!</strong>
 												<ul>
-													  <li>Sailors prefer to speak to the likeminded; we understand
-															Captains &amp; Crew members better.
-													  </li>
-													  <li>We have a solid grip of the legal and safety requirements of
-															hte maritime industry
-													  </li>
-													  <li>Well versed in maritime law &amp; specific knowledge of this
-															niche market
-													  </li>
+													  <li>Sailors speak to the likeminded; we understand Captains &amp; Crew</li>
+													  <li>Our solid grip of the legal and safety requirements</li>
+													  <li>Well versed in maritime law &amp; knowledge</li>
 												</ul>
 										  </div>
 									</div>
@@ -126,19 +93,9 @@
 										  <div class="text">
 												<strong class="title">Prime Location!</strong>
 												<ul>
-													  <li>Based in Dubai, UAE - well establised &amp; fast growing
-															market with one of the highest concentration of yachts and
-															ships in the world!
-													  </li>
-													  <li>We are the regions only professional agency specializing in
-															maritime recruitment.
-													  </li>
-													  <li>Ideally placed to bridge the gap between the West, Asia and
-															the Middle-East.
-													  </li>
-													  <li>We can be your strategic partner and a local point of contact
-															in this fast growing metropolis.
-													  </li>
+													  <li>Based in Dubai, UAE – Fast growing market, high concentration of yachts</li>
+													  <li>Region’s only professional agency specializing in maritime recruitment</li>
+													  <li>Your Strategic Partner aiming to bridge the gap - West, Asia and the Middle-East</li>
 												</ul>
 										  </div>
 									</div>
@@ -163,18 +120,10 @@
 										  <h2><span>We find the Right Crew for you!</span></h2>
 									</div>
 									<ul>
-										  <li>We dont just find you the Skills - but also Personality &amp; Ability to
-												fit in
-										  </li>
-										  <li>All Candidates are professional &amp; certified with relevant
-												authorities
-										  </li>
-										  <li>We Provide you with candidates who are personally interviewed, screened
-												&amp; shortlisted
-										  </li>
-										  <li>Located at Dubai Marina, we are your local marine recruitment agency that
-												is directed and managed by actual Captains!
-										  </li>
+										  <li>We dont just find you the Skills – but also Personality &amp; Ability to fit in.</li>
+										  <li>All Candidates are Professional &amp; Certified with relevant authorities.</li>
+										  <li>We Provide you with Candidates who are personally Interviewed &amp; Screened.</li>
+										  <li>Located at Dubai Marina, Proudly Directed and Managed by actual Captains!</li>
 									</ul>
 									<div class="buttons-area"><span class="btn"><a href="crew.php"
 																				   data-text="Learn More">LEARN MORE</a></span>
@@ -184,18 +133,13 @@
 						<div class="block">
 							  <div class="col-xs-12 col-lg-6 text-area one">
 									<div class="head">
-										  <h2><span>Candidates/Jobseekers - Work &amp; Live Your Dream!</span></h2>
+										  <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
 									</div>
 									<ul>
-										  <li>Are you an experienced crew member looking for a new and exciting
-												opportunity?
-										  </li>
-										  <li>Are you a fresh talent looking to break into the maritime industry and
-												enjoy the perks of being part of a crew on a private yacht?
-										  </li>
-										  <li>We assist and advise to advance your career and contribute to securing
-												your next dream job
-										  </li>
+										  <li>Are you an experienced crew member looking for an exciting opportunity?</li>
+										  <li>Fresh talent looking to break in and enjoy the perks of working on a private yacht?</li>
+										  <li>We advise to advance your career and assist in securing your dream job.</li>
+										  <li>Our hands-on approach and assessment match your profile to realistic opportunities.</li>
 									</ul>
 									<div class="buttons-area"><span class="btn"><a href="candidates.php"
 																				   data-text="Learn More">LEARN MORE</a></span>
@@ -217,12 +161,7 @@
 									<div class="head">
 										  <h2><span>Consultancy/Advice</span></h2>
 									</div>
-									<p>MARINA RECREWTER is more than a crew agency. Due to our immense platform of
-										  (local) network and contacts coupled with our strong maritime background, we
-										  go an extra yard or two by accepting requests to assist and support in a more
-										  consultative role, acting as an initiating link with management related tasks.
-										  We can advise on legal and safety requirements and help you implement these
-										  measures on your vessel.</p>
+									<p>MARINA RECREWTER is more than a crew agency. Due to our immense network (local &amp; International) and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your yacht.</p>
 
 									<div class="buttons-area"><span class="btn"><a href="advice.php"
 																				   data-text="Learn More">LEARN MORE</a></span>
@@ -299,18 +238,10 @@
 										  <h2><span>We find the Right Crew for you!</span></h2>
 									</div>
 									<ul>
-										  <li>We dont just find you the Skills - but also Personality &amp; Ability to
-												fit in
-										  </li>
-										  <li>All Candidates are professional &amp; certified with relevant
-												authorities
-										  </li>
-										  <li>We Provide you with candidates who are personally interviewed, screened
-												&amp; shortlisted
-										  </li>
-										  <li>Located at Dubai Marina, we are your local marine recruitment agency that
-												is directed and managed by actual Captains!
-										  </li>
+										  <li>We dont just find you the Skills – but also Personality &amp; Ability to fit in.</li>
+										  <li>All Candidates are Professional &amp; Certified with relevant authorities.</li>
+										  <li>We Provide you with Candidates who are personally Interviewed &amp; Screened.</li>
+										  <li>Located at Dubai Marina, Proudly Directed and Managed by actual Captains!</li>
 									</ul>
 									<div class="buttons-area"><span class="btn"><a href="crew.php">LEARN MORE</a></span>
 										  <span class="btn"><a href="#">Find Crew</a></span></div>
@@ -321,18 +252,13 @@
 											src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area one">
 									<div class="head">
-										  <h2><span>Candidates/Jobseekers - Work &amp; Live Your Dream!</span></h2>
+										  <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
 									</div>
 									<ul>
-										  <li>Are you an experienced crew member looking for a new and exciting
-												opportunity?
-										  </li>
-										  <li>Are you a fresh talent looking to break into the maritime industry and
-												enjoy the perks of being part of a crew on a private yacht?
-										  </li>
-										  <li>We assist and advise to advance your career and contribute to securing
-												your next dream job
-										  </li>
+										  <li>Are you an experienced crew member looking for an exciting opportunity?</li>
+										  <li>Fresh talent looking to break in and enjoy the perks of working on a private yacht?</li>
+										  <li>We advise to advance your career and assist in securing your dream job.</li>
+										  <li>Our hands-on approach and assessment match your profile to realistic opportunities.</li>
 									</ul>
 									<div class="buttons-area"><span class="btn"><a href="candidates.php">LEARN MORE</a></span>
 										  <span class="btn"><a href="#">SUBMIT CV</a></span></div>
@@ -345,13 +271,7 @@
 									<div class="head">
 										  <h2><span>Consultancy/Advice</span></h2>
 									</div>
-									<p>MARINA RECREWTER is more than a crew agency. Due to our immense platform of
-										  (local) network and contacts coupled with our strong maritime background, we
-										  go an extra yard or two by accepting requests to assist and support in a more
-										  consultative role, acting as an initiating link with management related tasks.
-										  We can advise on legal and safety requirements and help you implement these
-										  measures on your vessel.</p>
-
+									<p>MARINA RECREWTER is more than a crew agency. Due to our immense network (local &amp; International) and contacts coupled with our strong maritime background, we go an extra yard or two by accepting requests to assist and support in a more consultative role, acting as an initiating link with management related tasks. We can advise on legal and safety requirements and help you implement these measures on your yacht.</p>
 									<div class="buttons-area"><span class="btn"><a href="advice.php">LEARN
 													  MORE</a></span> <span class="btn"><a href="#">ENQUIRE
 													  NOW</a></span></div>
