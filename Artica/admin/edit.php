@@ -1,6 +1,5 @@
 <?php
 include_once('php/header.php');
-
 if(isset($_GET['id'])){
 	$id = $_GET['id'];
 	$pid = $id; 
@@ -66,7 +65,7 @@ if (isset($_POST['subimage'])){
 	$image_size = $_FILES['image2']['size'];
 	$image_type = $_FILES['image2']['type'];
 	$image_tmp = $_FILES['image2']['tmp_name'];
-	
+	print_r($_FILES['image2']);
 	if(!empty($image_name)){
 		
 		/*if($image_size >= 612000){
@@ -89,9 +88,11 @@ if (isset($_POST['subimage'])){
 			$count = $name[1] + 1;
 			$url = '../images/project'.$id.'.'.$count.'.jpg';
 			$up_url = 'images/project'.$id.'.'.$count.'.jpg';
-			
+
+
 			$query = mysql_query("INSERT INTO project_subimages (image_url, project_id) values('$up_url', '$id')") or die(mysql_error());
-			if($query){
+			  $query=0;
+			  if($query){
 				move_uploaded_file($image_tmp, $url);
 				echo '<div class="message-area">Image Has been Added Successfully !</div>';
 			}
@@ -178,6 +179,7 @@ if (isset($_POST['subimage'])){
 	echo 'ID Not Set';
 }
 ?>
+
 
 
 
