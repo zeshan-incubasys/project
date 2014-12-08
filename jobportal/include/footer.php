@@ -17,7 +17,7 @@
 						<li><a href="#">register</a></li>
 						<li><a href="<?php if(strpos($_SERVER['PHP_SELF'], 'index.php')!=false){ echo '#contact'; }else{echo 'index.php#contact';}?>">contact</a></li>
 					</ul>
-					<span class="by">Designed &amp; Developed by <a target="_blank" href="http://www.incubasys.com">Incubasys</a></span>
+					<span class="by">Design &amp; Developed by <a target="_blank" href="http://www.incubasys.com">Incubasys</a></span>
 				</nav>
 			</div>
 	</footer>
