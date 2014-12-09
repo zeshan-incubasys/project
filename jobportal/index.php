@@ -64,6 +64,7 @@
 						<div class="col-lg-6 col-xs-12 text-area">
 							  <div class="info">
 									<div class="wrap">
+									
 										  <span class="icon"><img src="<?php echo IMAGE_URL; ?>ico1.png" alt=""></span>
 
 										  <div class="text">
