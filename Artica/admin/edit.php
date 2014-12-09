@@ -65,7 +65,7 @@ if (isset($_POST['subimage'])){
 	$image_size = $_FILES['image2']['size'];
 	$image_type = $_FILES['image2']['type'];
 	$image_tmp = $_FILES['image2']['tmp_name'];
-	
+	print_r($_FILES['image2']);
 	if(!empty($image_name)){
 		
 		/*if($image_size >= 612000){
@@ -77,15 +77,22 @@ if (isset($_POST['subimage'])){
 		}*/
 		
 		if($result == ''){
-			$query = mysql_query("SELECT * FROM project_subimages WHERE project_id = $id");
-			$count = mysql_num_rows($query);
-			
-			$count = $count + 1;
+			$query = mysql_query("SELECT * FROM project_subimages WHERE project_id = $id ORDER BY id DESC LIMIT 1");
+			  $count = mysql_num_rows($query);
+			 $name=array();
+			   if ($count > 0){
+			  while($row = mysql_fetch_array($query)){
+					$name=explode('.',$row['image_url']);
+			 }
+			}
+			$count = $name[1] + 1;
 			$url = '../images/project'.$id.'.'.$count.'.jpg';
 			$up_url = 'images/project'.$id.'.'.$count.'.jpg';
-			
+
+
 			$query = mysql_query("INSERT INTO project_subimages (image_url, project_id) values('$up_url', '$id')") or die(mysql_error());
-			if($query){
+			  $query=0;
+			  if($query){
 				move_uploaded_file($image_tmp, $url);
 				echo '<div class="message-area">Image Has been Added Successfully !</div>';
 			}
@@ -172,6 +179,7 @@ if (isset($_POST['subimage'])){
 	echo 'ID Not Set';
 }
 ?>
+
 
 
 
