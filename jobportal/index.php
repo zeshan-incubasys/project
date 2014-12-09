@@ -4,9 +4,9 @@
 			<div class="container head">
 				  <h2><span>what we do</span></h2>
 
-				  <p>Decades of maritime experience on commercial and private ships make us an ideal choice for
+				  <p>Decades of maritime experience on commercial vessels and private yachts make us an ideal choice for
 						management agencies, captains &amp; recruiters looking for certified and professional crew.
-						Candidates love the fact that we speak their language. Experience that is ‘Truly Different’.</p>
+						Candidates love the fact that we speak ’their’ language. An Experience that is ‘Truly Different’.</p>
 			</div>
 			<div class="holder">
 				  <div class="block visible-lg">

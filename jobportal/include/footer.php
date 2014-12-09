@@ -23,6 +23,15 @@
 	</footer>
 	<script type="text/javascript" src="<?php echo JS_URL; ?>wowslider.js"></script>
 	<script type="text/javascript" src="<?php echo JS_URL; ?>script.js"></script>
+	<script type="text/javascript" src="<?php echo JS_URL; ?>viewportchecker.js"></script>
+	<script type="text/javascript">
+		  jQuery(document).ready(function() {
+				jQuery('section').addClass("hidepopup").viewportChecker({
+					  classToAdd: 'showpopup animated fadeInUp',
+					  offset:50
+				});
+		  });
+	</script>
 </div>
 </body>
 </html>
