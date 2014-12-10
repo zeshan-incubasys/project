@@ -392,11 +392,11 @@ p { text-align: center; }
 transition: all 600ms ease-in;
 }
 .what-do .holder .block .info .wrap:hover .icon{
-	-moz-transform: rotate(360deg);
+	/*-moz-transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);
 	-o-transform: rotate(360deg);
 	-ms-transform: rotate(360deg);
-	transform: rotate(360deg);
+	transform: rotate(360deg);*/
 }
 .what-do .holder .block .info .wrap .text {
 	padding: 0;
@@ -1120,7 +1120,7 @@ transition: all 600ms ease-in;
 .popup .main-ico {
 	display: block;
 	margin: 0 auto 20px;
-	-webkit-animation-name: spin;
+	/*-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
@@ -1135,11 +1135,11 @@ transition: all 600ms ease-in;
 	animation-name: spin;
 	animation-duration: 5s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function: linear;*/
 }
 .popup h2 {
 	text-align: center;
-	margin: 0 0 28px;
+	margin: 20px 0 28px;
 	font-size: 25px;
 	line-height: 28px;
 	padding: 0 0 12px;
@@ -1182,7 +1182,7 @@ transition: all 600ms ease-in;
 .popup .author .ico {
 	display: block;
 	margin: 0 auto 15px;
-	-webkit-animation-name: spin;
+	/*-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
@@ -1197,7 +1197,7 @@ transition: all 600ms ease-in;
 	animation-name: spin;
 	animation-duration: 5s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function: linear;*/
 }
 .popup .list {
 	text-align: center;
@@ -1278,6 +1278,13 @@ transform: rotate(-20deg);
 	margin: 0 0 20px;
 	padding: 0 10px;
 }
+.what-do .holder .block .text-area .text.new.image {
+	text-align: center;
+}
+.what-do .holder .block .text-area .text.new.image img {
+	width: 120px;
+
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -1306,6 +1313,7 @@ transform: rotate(-20deg);
 	width: 100%;
 	padding: 80px 80px 20px 20px;
 }
+
 .what-do .holder .block .text-area p { text-align: justify; }
 .services .text-area .buttons-area {
 	text-align: center;
@@ -1564,6 +1572,9 @@ transform: rotate(-20deg);
 .crew .image-area {
 	float: right;
 	margin: 10px 0 0 40px;
+}
+.crew h3 {
+	font: 24px/27px "luzsans-boldluzsans-bold", sans-serif;
 }
 .advice {
 	background: url(../images/anchor.png) no-repeat center top;
@@ -2044,5 +2055,8 @@ div::selection {
 ::-moz-selection, li::-moz-selection, div::-moz-selection, {
  background: #6193a5; /* Gecko Browsers */
  color: #fff;
+}
+:focus {
+	outline: none;
 }
 .btn a { text-decoration: none; }

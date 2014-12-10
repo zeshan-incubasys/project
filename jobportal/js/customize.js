@@ -14,6 +14,9 @@ $(document).ready(function() {
     $('#myModal3').on("click",function(){
         $('#myModal3').modal('hide');
     });
+    $('#myModal1').on("click",function(){
+        $('#myModal1').modal('hide');
+    });
     $('.navbar-toggle').on("click",function(){
         $('#bs-example-navbar-collapse-1').removeAttr('style');
         if($('#bs-example-navbar-collapse-1').hasClass('in'))

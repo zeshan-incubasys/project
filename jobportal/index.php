@@ -11,7 +11,8 @@
 			<div class="holder">
 				  <div class="block visible-lg">
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-							  <div class="text new">
+							  <div class="text new image">
+									<img src="<?=IMAGE_URL?>Lighthouse.svg" alt="" class="icon">
 									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 
 									<p>Ideally located in the Emirates, a developing maritime hotspot, with easy access to an expanding regional market, we aim to become a key partner for our Clients as a local recruitment agency.</p>
@@ -41,7 +42,8 @@
 						</a>
 
 						<div class="col-lg-4 col-xs-12  col-lg-offset-2 text-area">
-							  <div class="text new">
+							  <div class="text new image">
+									<img src="<?=IMAGE_URL?>Lighthouse.svg" alt="" class="icon">
 									<p>A young &amp; effective agency with a vast network, MARINA RECREWTER strives to provide a personal and reliable service. Our mission, besides finding the best qualified Candidates, is to coach new and experienced talents in order to meet &amp; exceed your expectations.</p>
 
 									<p>Ideally located in the Emirates, a developing maritime hotspot, with easy access to an expanding regional market, we aim to become a key partner for our Clients as a local recruitment agency.</p>
