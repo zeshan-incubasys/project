@@ -21,8 +21,8 @@
 				</nav>
 			</div>
 	</footer>
-	<script type="text/javascript" src="<?php echo JS_URL; ?>wowslider.js"></script>
-	<script type="text/javascript" src="<?php echo JS_URL; ?>script.js"></script>
+	<!--<script type="text/javascript" src="<?php echo JS_URL; ?>wowslider.js"></script>
+	<script type="text/javascript" src="<?php echo JS_URL; ?>script.js"></script>-->
 	<script type="text/javascript" src="<?php echo JS_URL; ?>viewportchecker.js"></script>
 	<script type="text/javascript">
 		  jQuery(document).ready(function() {

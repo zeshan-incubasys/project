@@ -115,8 +115,11 @@
 				  <div class="holder">
 						<div class="block">
 							  <div class="col-xs-12 col-lg-6 image-area thumbnail-kenburn">
-									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img1.jpg"
-																  alt=""></div>
+									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/service1.jpg"
+																  alt="">
+																  <img class="color" src="<?php echo IMAGE_URL; ?>/services/service1-col.jpg"
+																  alt="">
+																  </div>
 							  </div>
 							  <div class="col-xs-12 col-lg-6 text-area">
 									<div class="head">
@@ -151,14 +154,20 @@
 
 							  </div>
 							  <div class="col-xs-12 col-lg-6 image-area one thumbnail-kenburn">
-									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img2.jpg"
-																  alt=""></div>
+									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/service2.jpg"
+																  alt="">
+																  <img class="color" src="<?php echo IMAGE_URL; ?>/services/service2-col.jpg"
+																  alt="">
+																  </div>
 							  </div>
 						</div>
 						<div class="block">
 							  <div class="col-xs-12 col-lg-6 image-area thumbnail-kenburn">
-									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img3.jpg"
-																  alt=""></div>
+									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/service3.jpg"
+																  alt="">
+																  <img class="color" src="<?php echo IMAGE_URL; ?>/services/service3-col.jpg"
+																  alt="">
+																  </div>
 							  </div>
 							  <div class="col-xs-12 col-lg-6 text-area">
 									<div class="head">
@@ -220,7 +229,9 @@
 
 							  </div>
 							  <div class="col-xs-12 col-lg-6 image-area one thumbnail-kenburn">
-									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/img4.jpg"
+									<div class="over-flow-h"><img src="<?php echo IMAGE_URL; ?>/services/service4.jpg"
+																  alt="">
+																  <img class="color" src="<?php echo IMAGE_URL; ?>/services/service4-col.jpg"
 																  alt=""></div>
 							  </div>
 						</div>
@@ -234,8 +245,10 @@
 				  </div>
 				  <div class="holder">
 						<div class="block">
-							  <div class="col-xs-12 col-lg-6 image-area"><img
-											src="<?php echo IMAGE_URL; ?>/services/img1.jpg" alt=""></div>
+							  <div class="col-xs-12 col-lg-6 image-area"><img src="<?php echo IMAGE_URL; ?>/services/service1.jpg"
+																  alt="">
+																  <img class="color" src="<?php echo IMAGE_URL; ?>/services/service1-col.jpg"
+																  alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area">
 									<div class="head">
 										  <h2><span>We find the Right Crew for you!</span></h2>
@@ -251,8 +264,9 @@
 							  </div>
 						</div>
 						<div class="block">
-							  <div class="col-xs-12 col-lg-6 image-area one"><img
-											src="<?php echo IMAGE_URL; ?>/services/img2.jpg" alt=""></div>
+							  <div class="col-xs-12 col-lg-6 image-area one"><img src="<?php echo IMAGE_URL; ?>/services/service2.jpg"
+																  alt=""><img class="color" src="<?php echo IMAGE_URL; ?>/services/service2-col.jpg"
+																  alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area one">
 									<div class="head">
 										  <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
@@ -268,8 +282,9 @@
 							  </div>
 						</div>
 						<div class="block">
-							  <div class="col-xs-12 col-lg-6 image-area"><img
-											src="<?php echo IMAGE_URL; ?>/services/img3.jpg" alt=""></div>
+							  <div class="col-xs-12 col-lg-6 image-area"><img src="<?php echo IMAGE_URL; ?>/services/service3.jpg"
+																  alt=""><img class="color" src="<?php echo IMAGE_URL; ?>/services/service3-col.jpg"
+																  alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area">
 									<div class="head">
 										  <h2><span>Consultancy/Advice</span></h2>
@@ -283,8 +298,9 @@
 							  </div>
 						</div>
 						<div class="block">
-							  <div class="col-xs-12 col-lg-6 image-area one"><img
-											src="<?php echo IMAGE_URL; ?>/services/img4.jpg" alt=""></div>
+							  <div class="col-xs-12 col-lg-6 image-area one"><img src="<?php echo IMAGE_URL; ?>/services/service4.jpg"
+																  alt=""><img class="color" src="<?php echo IMAGE_URL; ?>/services/service4-col.jpg"
+																  alt=""></div>
 							  <div class="col-xs-12 col-lg-6 text-area one" style="padding:100px 20px;">
 								<!--	<div class="head">
 										  <h2><span>Commercial ReCrewment</span></h2>

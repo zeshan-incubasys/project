@@ -16,7 +16,7 @@
 			<li>Maintenance and repair, sea-trials and delivery crew</li>
 		</ul>
 	</div>
-	<div class="image-section container">
+	<div class="image-section container ad-images">
 		<div class="col-md-5 image">
 			<img src="images/advice1.jpg" alt="">
 		</div>
