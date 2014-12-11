@@ -645,14 +645,19 @@ transition: all 600ms ease-in;
 	opacity:0;
 }
 .services .holder .block .image-area:hover img.color{ opacity:1; }
-.services .holder .text-area { padding: 20px 30px 20px; }
-.services .holder .text-area.one { padding: 20px 30px 20px; }
+.services .holder .text-area { padding: 20px 30px !important; }
+.services .holder .text-area.one { padding: 20px 30px !important; }
 .services .holder .text-area .head {
 	overflow: hidden;
 	text-align: center;
 	text-transform: capitalize;
 }
-.services .holder .text-area ul { margin: 0 0 24px; }
+.services .holder .text-area ul { 
+	margin: 0 0 24px;
+	text-align:center;
+	list-style-position:inside;
+	padding:0;
+}
 .services .holder .image-area {
 	margin: 0;
 	padding: 0;
@@ -662,6 +667,10 @@ transition: all 600ms ease-in;
 	-o-transition: all 1.5s ease;
 	transition: all 1.5s ease;
 	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	width:100%;
+	float:none;
 }
 .services .holder .image-area.one {
 	margin: 0;
@@ -1487,6 +1496,7 @@ transition: all 600ms ease-in;
 	padding: 0 0 0 15px;
 	text-align: center;
 }
+.cand-box{ padding:30px 0 50px;}
 @-ms-keyframes spin {
  0% {
 -ms-transform: rotate(-20deg);
@@ -1677,12 +1687,22 @@ transform: rotate(-20deg);
 	-o-transition: all 0.8s ease;
 	transition: all 0.8s ease;
 }
-.services .holder .text-area { padding: 20px 30px 20px; }
-.services .holder .text-area.one { padding: 20px 30px 20px; }
+.services .holder .text-area { 
+	padding: 10px 30px;
+	display:inline-block;
+	vertical-align:middle;
+	float:none;
+	margin:0 0 0 -3px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+.services .holder .text-area.one { padding: 10px 30px; }
 .services .holder .text-area.one .main{
 	min-height:inherit !important;
 }
-.services .holder .text-area.one
+.services .holder .text-area ul { text-align:left; }
 .navbar-nav {
 	padding: 42px 0;
 	text-transform: uppercase;
@@ -2108,6 +2128,20 @@ transform: rotate(-20deg);
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.services .holder .image-area {
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all 1.5s ease;
+	-moz-transition: all 1.5s ease;
+	-ms-transition: all 1.5s ease;
+	-o-transition: all 1.5s ease;
+	transition: all 1.5s ease;
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	width:49.95%;
+	float:none;
+}
 }
 /* custom select styles */
 .jcf-select {

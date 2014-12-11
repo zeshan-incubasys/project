@@ -44,10 +44,12 @@
 		<p>Backed by references proving that they can deliver consistent and exceptional service, the successful candidate, should have the passion, flexibility and the right attitude to fulfill his/her ambitions. </p>
 		<p>Are you determined to join, do you want to pursue a career in yachting?</p>
 		<p>Send your CV and Register with MARINA RECREWTER</p>
-		<h3>GENERAL INFORMATION</h3>
-		<p>The purpose of this section is mainly to try to assist prospective new talents who have little or no previous seagoing experience and to provide more experienced candidates with basic information and requirements. MARINA RECREWTER is committed to support your career, ready to coach and advise.
-			  <a href="#myModal1" role="button" data-toggle="modal" style="color: #1e3244; font-weight: bold;">Read More </a>
-		</p>
+		<div class="cand-box">
+			<h3>GENERAL INFORMATION</h3>
+			<p>The purpose of this section is mainly to try to assist prospective new talents who have little or no previous seagoing experience and to provide more experienced candidates with basic information and requirements. MARINA RECREWTER is committed to support your career, ready to coach and advise.
+				  <a href="#myModal1" role="button" data-toggle="modal" style="color: #1e3244; font-weight: bold;">Read More </a>
+			</p>
+		</div>
 		<!--<p>A large yacht is operated either as a private or commercial (charter) vessel. An increasing number of yachts are exceeding 3000 GT, which require full commercial merchant certification for all deck and engineering officers. Most yachts are ISM/ISPS MLC2006 compliant through classification and flag state.</p>
 		<p>Years of experience and qualifications related to a certain position is of course essential, but there are a few tips to add to your CV: Dive certificate, first aid/medical course, hospitality service, languages, mechanic/carpentry, water sports experience, computer skills, driving license, boat handling, nursing etc In fact, any extra skill/hobby, you might see as a potential advantage to have on board. Longevity in previous held positions is a must for obvious reasons, as are great references and positive feed-back.</p>
 		<p>Before being considered, all crewmembers should as a minimum hold; a STCW95 and ENG1 certificates. Additional courses, such as crowd management, fast rescue boat, advanced firefighting, helicopter ops. Security awareness, will depend on and correspond with your safety responsibilities on board the yacht’s emergency muster plan. </p>

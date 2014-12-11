@@ -331,7 +331,9 @@
 													  <div class="holder" style="margin:0; ">
 
 															<div class="col-xs-12 fields " style="margin:0 0 10px; ">
-																  <input type="submit" value="Send">
+																 <div class="buttons-area"><span class="btn">
+																			<a href="javascript:void(0);" onClick='$("#home_contact_form").submit();' data-text="Send" style="min-width:200px; ">Send</a></span>
+																		</div>
 															</div>
 													  </div>
 												</fieldset>
