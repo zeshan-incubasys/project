@@ -82,19 +82,22 @@ jQuery(function(){
 
 // scroll gallery init
 function initCarousel() {
-	jQuery('.slider').scrollGallery({
-		mask: '.mask',
-		slider: '.slideset',
-		slides: '.slide',
-		btnPrev: 'a.btn-prev',
-		btnNext: 'a.btn-next',
-		stretchSlideToMask: true,
-		maskAutoSize: true,
-		autoRotation: true,
-		switchTime: 3000,
-		animSpeed: 500,
-		step: 1
-	});
+	if($('.slider').html()!=undefined){
+
+        jQuery('.slider').scrollGallery({
+            mask: '.mask',
+            slider: '.slideset',
+            slides: '.slide',
+            btnPrev: 'a.btn-prev',
+            btnNext: 'a.btn-next',
+            stretchSlideToMask: true,
+            maskAutoSize: true,
+            autoRotation: true,
+            switchTime: 3000,
+            animSpeed: 500,
+            step: 1
+        });
+    }
 }
 
 /*

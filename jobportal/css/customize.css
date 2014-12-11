@@ -1423,10 +1423,23 @@ transition: all 600ms ease-in;
 	width: 100%;
 	height: auto;
 }
+.ico
+{
+    opacity: 0.5;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.ico:hover {
+    opacity: 1;
+}
 .popup .text-block .ico,
 .popup .author .ico {
 	display: block;
 	margin: 0 auto 15px;
+
 	/*-webkit-animation-name: spin;
 	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
@@ -1444,6 +1457,7 @@ transition: all 600ms ease-in;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;*/
 }
+
 .popup .list {
 	text-align: center;
 	padding: 0;
