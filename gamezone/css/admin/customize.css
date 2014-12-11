@@ -364,6 +364,7 @@ body.admin-page{
 	background: #fff;
 	margin: 0 43px 0 0;
 	width: 164px;
+	height: 164px;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -383,6 +384,7 @@ body.admin-page{
 	background: #fff;
 	margin: 0 30px 0 0;
 	width:70px;
+	border-radius: 100%;
 	height: 70px;
 	float: left;
 	-webkit-transition: all 0.2s ease;
@@ -943,6 +945,11 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 	line-height: 28px;
 	width: 44%;
 }
+#form-wrap .row .input-wrap.file{
+	padding: 0;
+	cursor: pointer !important;
+}
+#form-wrap .row .input-wrap input[type="file"]{cursor: pointer;}
 #form-wrap .row .input-wrap input[type="text"],
 #form-wrap .row .input-wrap input[type="password"],
 #form-wrap .row .input-wrap input[type="mail"]{
@@ -956,6 +963,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 	line-height: 22px;
 	font-weight: normal !important;
 	outline: none !important;
+	z-index: 99999 !important;
 }
 #form-wrap .row  input[type="submit"]{
 	background:#32487f;

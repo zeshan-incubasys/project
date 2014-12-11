@@ -1,9 +1,19 @@
 // page init
 jQuery(function(){
-	jcf.customForms.replaceAll();
+	initCustomForms();
 	initCarousel();
 	initOpenClose();
+	jQuery('input, textarea').placeholder();
 });
+
+// initialize custom form elements
+function initCustomForms() {
+	jcf.setOptions('Select', {
+		wrapNative: false,
+		wrapNativeOnMobile: false
+	});
+	jcf.replaceAll();
+}
 
 // scroll gallery init
 function initCarousel() {
@@ -698,1755 +708,2587 @@ function initOpenClose() {
 	};
 }(jQuery));
 
-/*
- * JavaScript Custom Forms Module
- */
-jcf = {
-	// global options
-	modules: {},
-	plugins: {},
-	baseOptions: {
-		unselectableClass:'jcf-unselectable',
-		labelActiveClass:'jcf-label-active',
-		labelDisabledClass:'jcf-label-disabled',
-		classPrefix: 'jcf-class-',
-		hiddenClass:'jcf-hidden',
-		focusClass:'jcf-focus',
-		wrapperTag: 'div'
-	},
-	// replacer function
-	customForms: {
-		setOptions: function(obj) {
-			for(var p in obj) {
-				if(obj.hasOwnProperty(p) && typeof obj[p] === 'object') {
-					jcf.lib.extend(jcf.modules[p].prototype.defaultOptions, obj[p]);
-				}
-			}
-		},
-		replaceAll: function(context) {
-			for(var k in jcf.modules) {
-				var els = jcf.lib.queryBySelector(jcf.modules[k].prototype.selector, context);
-				for(var i = 0; i<els.length; i++) {
-					if(els[i].jcf) {
-						// refresh form element state
-						els[i].jcf.refreshState();
-					} else {
-						// replace form element
-						if(!jcf.lib.hasClass(els[i], 'default') && jcf.modules[k].prototype.checkElement(els[i])) {
-							new jcf.modules[k]({
-								replaces:els[i]
-							});
-						}
-					}
-				}
-			}
-		},
-		refreshAll: function(context) {
-			for(var k in jcf.modules) {
-				var els = jcf.lib.queryBySelector(jcf.modules[k].prototype.selector, context);
-				for(var i = 0; i<els.length; i++) {
-					if(els[i].jcf) {
-						// refresh form element state
-						els[i].jcf.refreshState();
-					}
-				}
-			}
-		},
-		refreshElement: function(obj) {
-			if(obj && obj.jcf) {
-				obj.jcf.refreshState();
-			}
-		},
-		destroyAll: function() {
-			for(var k in jcf.modules) {
-				var els = jcf.lib.queryBySelector(jcf.modules[k].prototype.selector);
-				for(var i = 0; i<els.length; i++) {
-					if(els[i].jcf) {
-						els[i].jcf.destroy();
-					}
-				}
-			}
-		}
-	},
-	// detect device type
-	isTouchDevice: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
-	isWinPhoneDevice: /Windows Phone/.test(navigator.userAgent),
-	// define base module
-	setBaseModule: function(obj) {
-		jcf.customControl = function(opt){
-			this.options = jcf.lib.extend({}, jcf.baseOptions, this.defaultOptions, opt);
-			this.init();
+/*! http://mths.be/placeholder v2.0.7 by @mathias */
+;(function(window, document, $) {
+
+	// Opera Mini v7 doesn’t support placeholder although its DOM seems to indicate so
+	var isOperaMini = Object.prototype.toString.call(window.operamini) == '[object OperaMini]';
+	var isInputSupported = 'placeholder' in document.createElement('input') && !isOperaMini;
+	var isTextareaSupported = 'placeholder' in document.createElement('textarea') && !isOperaMini;
+	var prototype = $.fn;
+	var valHooks = $.valHooks;
+	var propHooks = $.propHooks;
+	var hooks;
+	var placeholder;
+
+	if (isInputSupported && isTextareaSupported) {
+
+		placeholder = prototype.placeholder = function() {
+			return this;
 		};
-		for(var p in obj) {
-			jcf.customControl.prototype[p] = obj[p];
-		}
-	},
-	// add module to jcf.modules
-	addModule: function(obj) {
-		if(obj.name){
-			// create new module proto class
-			jcf.modules[obj.name] = function(){
-				jcf.modules[obj.name].superclass.constructor.apply(this, arguments);
-			}
-			jcf.lib.inherit(jcf.modules[obj.name], jcf.customControl);
-			for(var p in obj) {
-				jcf.modules[obj.name].prototype[p] = obj[p]
-			}
-			// on create module
-			jcf.modules[obj.name].prototype.onCreateModule();
-			// make callback for exciting modules
-			for(var mod in jcf.modules) {
-				if(jcf.modules[mod] != jcf.modules[obj.name]) {
-					jcf.modules[mod].prototype.onModuleAdded(jcf.modules[obj.name]);
+
+		placeholder.input = placeholder.textarea = true;
+
+	} else {
+
+		placeholder = prototype.placeholder = function() {
+			var $this = this;
+			$this
+				.filter((isInputSupported ? 'textarea' : ':input') + '[placeholder]')
+				.not('.placeholder')
+				.bind({
+					'focus.placeholder': clearPlaceholder,
+					'blur.placeholder': setPlaceholder
+				})
+				.data('placeholder-enabled', true)
+				.trigger('blur.placeholder');
+			return $this;
+		};
+
+		placeholder.input = isInputSupported;
+		placeholder.textarea = isTextareaSupported;
+
+		hooks = {
+			'get': function(element) {
+				var $element = $(element);
+
+				var $passwordInput = $element.data('placeholder-password');
+				if ($passwordInput) {
+					return $passwordInput[0].value;
 				}
+
+				return $element.data('placeholder-enabled') && $element.hasClass('placeholder') ? '' : element.value;
+			},
+			'set': function(element, value) {
+				var $element = $(element);
+
+				var $passwordInput = $element.data('placeholder-password');
+				if ($passwordInput) {
+					return $passwordInput[0].value = value;
+				}
+
+				if (!$element.data('placeholder-enabled')) {
+					return element.value = value;
+				}
+				if (value == '') {
+					element.value = value;
+					// Issue #56: Setting the placeholder causes problems if the element continues to have focus.
+					if (element != safeActiveElement()) {
+						// We can't use `triggerHandler` here because of dummy text/password inputs :(
+						setPlaceholder.call(element);
+					}
+				} else if ($element.hasClass('placeholder')) {
+					clearPlaceholder.call(element, true, value) || (element.value = value);
+				} else {
+					element.value = value;
+				}
+				// `set` can not return `undefined`; see http://jsapi.info/jquery/1.7.1/val#L2363
+				return $element;
 			}
+		};
+
+		if (!isInputSupported) {
+			valHooks.input = hooks;
+			propHooks.value = hooks;
 		}
-	},
-	// add plugin to jcf.plugins
-	addPlugin: function(obj) {
-		if(obj && obj.name) {
-			jcf.plugins[obj.name] = function() {
-				this.init.apply(this, arguments);
-			}
-			for(var p in obj) {
-				jcf.plugins[obj.name].prototype[p] = obj[p];
-			}
-		}
-	},
-	// miscellaneous init
-	init: function(){
-		if(navigator.pointerEnabled || navigator.msPointerEnabled) {
-			// use pointer events instead of mouse events
-			this.eventPress = navigator.pointerEnabled ? 'pointerdown' : 'MSPointerDown';
-			this.eventMove = navigator.pointerEnabled ? 'pointermove' : 'MSPointerMove';
-			this.eventRelease = navigator.pointerEnabled ? 'pointerup' : 'MSPointerUp';
-		} else {
-			// handle default desktop mouse events
-			this.eventPress = 'mousedown';
-			this.eventMove = 'mousemove';
-			this.eventRelease = 'mouseup';
-		}
-		if(this.isTouchDevice) {
-			// handle touch events also
-			this.eventPress += ' touchstart';
-			this.eventMove += ' touchmove';
-			this.eventRelease += ' touchend';
+		if (!isTextareaSupported) {
+			valHooks.textarea = hooks;
+			propHooks.value = hooks;
 		}
 
-		setTimeout(function(){
-			jcf.lib.domReady(function(){
-				jcf.initStyles();
+		$(function() {
+			// Look for forms
+			$(document).delegate('form', 'submit.placeholder', function() {
+				// Clear the placeholder values so they don't get submitted
+				var $inputs = $('.placeholder', this).each(clearPlaceholder);
+				setTimeout(function() {
+					$inputs.each(setPlaceholder);
+				}, 10);
 			});
-		},1);
-		return this;
-	},
-	initStyles: function() {
-		// create <style> element and rules
-		var head = document.getElementsByTagName('head')[0],
-			style = document.createElement('style'),
-			rules = document.createTextNode('.'+jcf.baseOptions.unselectableClass+'{'+
-				'-moz-user-select:none;'+
-				'-webkit-tap-highlight-color:rgba(255,255,255,0);'+
-				'-webkit-user-select:none;'+
-				'user-select:none;'+
-			'}');
+		});
 
-		// append style element
-		style.type = 'text/css';
-		if(style.styleSheet) {
-			style.styleSheet.cssText = rules.nodeValue;
+		// Clear placeholder values upon page reload
+		$(window).bind('beforeunload.placeholder', function() {
+			$('.placeholder').each(function() {
+				this.value = '';
+			});
+		});
+
+	}
+
+	function args(elem) {
+		// Return an object of element attributes
+		var newAttrs = {};
+		var rinlinejQuery = /^jQuery\d+$/;
+		$.each(elem.attributes, function(i, attr) {
+			if (attr.specified && !rinlinejQuery.test(attr.name)) {
+				newAttrs[attr.name] = attr.value;
+			}
+		});
+		return newAttrs;
+	}
+
+	function clearPlaceholder(event, value) {
+		var input = this;
+		var $input = $(input);
+		if (input.value == $input.attr('placeholder') && $input.hasClass('placeholder')) {
+			if ($input.data('placeholder-password')) {
+				$input = $input.hide().next().show().attr('id', $input.removeAttr('id').data('placeholder-id'));
+				// If `clearPlaceholder` was called from `$.valHooks.input.set`
+				if (event === true) {
+					return $input[0].value = value;
+				}
+				$input.focus();
+			} else {
+				input.value = '';
+				$input.removeClass('placeholder');
+				input == safeActiveElement() && input.select();
+			}
+		}
+	}
+
+	function setPlaceholder() {
+		var $replacement;
+		var input = this;
+		var $input = $(input);
+		var id = this.id;
+		if (input.value == '') {
+			if (input.type == 'password') {
+				if (!$input.data('placeholder-textinput')) {
+					try {
+						$replacement = $input.clone().attr({ 'type': 'text' });
+					} catch(e) {
+						$replacement = $('<input>').attr($.extend(args(this), { 'type': 'text' }));
+					}
+					$replacement
+						.removeAttr('name')
+						.data({
+							'placeholder-password': $input,
+							'placeholder-id': id
+						})
+						.bind('focus.placeholder', clearPlaceholder);
+					$input
+						.data({
+							'placeholder-textinput': $replacement,
+							'placeholder-id': id
+						})
+						.before($replacement);
+				}
+				$input = $input.removeAttr('id').hide().prev().attr('id', id).show();
+				// Note: `$input[0] != input` now!
+			}
+			$input.addClass('placeholder');
+			$input[0].value = $input.attr('placeholder');
 		} else {
-			style.appendChild(rules);
+			$input.removeClass('placeholder');
 		}
-		head.appendChild(style);
 	}
-}.init();
 
-/*
- * Custom Form Control prototype
- */
-jcf.setBaseModule({
-	init: function(){
-		if(this.options.replaces) {
-			this.realElement = this.options.replaces;
-			this.realElement.jcf = this;
-			this.replaceObject();
-		}
-	},
-	defaultOptions: {
-		// default module options (will be merged with base options)
-	},
-	checkElement: function(el){
-		return true; // additional check for correct form element
-	},
-	replaceObject: function(){
-		this.createWrapper();
-		this.attachEvents();
-		this.fixStyles();
-		this.setupWrapper();
-	},
-	createWrapper: function(){
-		this.fakeElement = jcf.lib.createElement(this.options.wrapperTag);
-		this.labelFor = jcf.lib.getLabelFor(this.realElement);
-		jcf.lib.disableTextSelection(this.fakeElement);
-		jcf.lib.addClass(this.fakeElement, jcf.lib.getAllClasses(this.realElement.className, this.options.classPrefix));
-		jcf.lib.addClass(this.realElement, jcf.baseOptions.hiddenClass);
-	},
-	attachEvents: function(){
-		jcf.lib.event.add(this.realElement, 'focus', this.onFocusHandler, this);
-		jcf.lib.event.add(this.realElement, 'blur', this.onBlurHandler, this);
-		jcf.lib.event.add(this.fakeElement, 'click', this.onFakeClick, this);
-		jcf.lib.event.add(this.fakeElement, jcf.eventPress, this.onFakePressed, this);
-		jcf.lib.event.add(this.fakeElement, jcf.eventRelease, this.onFakeReleased, this);
-
-		if(this.labelFor) {
-			this.labelFor.jcf = this;
-			jcf.lib.event.add(this.labelFor, 'click', this.onFakeClick, this);
-			jcf.lib.event.add(this.labelFor, jcf.eventPress, this.onFakePressed, this);
-			jcf.lib.event.add(this.labelFor, jcf.eventRelease, this.onFakeReleased, this);
-		}
-	},
-	fixStyles: function() {
-		// hide mobile webkit tap effect
-		if(jcf.isTouchDevice) {
-			var tapStyle = 'rgba(255,255,255,0)';
-			this.realElement.style.webkitTapHighlightColor = tapStyle;
-			this.fakeElement.style.webkitTapHighlightColor = tapStyle;
-			if(this.labelFor) {
-				this.labelFor.style.webkitTapHighlightColor = tapStyle;
-			}
-		}
-	},
-	setupWrapper: function(){
-		// implement in subclass
-	},
-	refreshState: function(){
-		// implement in subclass
-	},
-	destroy: function() {
-		if(this.fakeElement && this.fakeElement.parentNode) {
-			this.fakeElement.parentNode.insertBefore(this.realElement, this.fakeElement);
-			this.fakeElement.parentNode.removeChild(this.fakeElement);
-		}
-		jcf.lib.removeClass(this.realElement, jcf.baseOptions.hiddenClass);
-		this.realElement.jcf = null;
-	},
-	onFocus: function(){
-		// emulated focus event
-		jcf.lib.addClass(this.fakeElement,this.options.focusClass);
-	},
-	onBlur: function(cb){
-		// emulated blur event
-		jcf.lib.removeClass(this.fakeElement,this.options.focusClass);
-	},
-	onFocusHandler: function() {
-		// handle focus loses
-		if(this.focused) return;
-		this.focused = true;
-
-		// handle touch devices also
-		if(jcf.isTouchDevice) {
-			if(jcf.focusedInstance && jcf.focusedInstance.realElement != this.realElement) {
-				jcf.focusedInstance.onBlur();
-				jcf.focusedInstance.realElement.blur();
-			}
-			jcf.focusedInstance = this;
-		}
-		this.onFocus.apply(this, arguments);
-	},
-	onBlurHandler: function() {
-		// handle focus loses
-		if(!this.pressedFlag) {
-			this.focused = false;
-			this.onBlur.apply(this, arguments);
-		}
-	},
-	onFakeClick: function(){
-		if(jcf.isTouchDevice) {
-			this.onFocus();
-		} else if(!this.realElement.disabled) {
-			this.realElement.focus();
-		}
-	},
-	onFakePressed: function(e){
-		this.pressedFlag = true;
-	},
-	onFakeReleased: function(){
-		this.pressedFlag = false;
-	},
-	onCreateModule: function(){
-		// implement in subclass
-	},
-	onModuleAdded: function(module) {
-		// implement in subclass
-	},
-	onControlReady: function() {
-		// implement in subclass
+	function safeActiveElement() {
+		// Avoid IE9 `document.activeElement` of death
+		// https://github.com/mathiasbynens/jquery-placeholder/pull/99
+		try {
+			return document.activeElement;
+		} catch (err) {}
 	}
-});
 
-/*
- * JCF Utility Library
+}(this, document, jQuery));
+
+/*!
+ * JavaScript Custom Forms
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
  */
-jcf.lib = {
-	bind: function(func, scope){
-		return function() {
-			return func.apply(scope, arguments);
+;(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		module.exports = factory(require('jquery'));
+	} else {
+		root.jcf = factory(jQuery);
+	}
+}(this, function ($) {
+	'use strict';
+
+	// private variables
+	var customInstances = [];
+
+	// default global options
+	var commonOptions = {
+		optionsKey: 'jcf',
+		dataKey: 'jcf-instance',
+		rtlClass: 'jcf-rtl',
+		focusClass: 'jcf-focus',
+		pressedClass: 'jcf-pressed',
+		disabledClass: 'jcf-disabled',
+		hiddenClass: 'jcf-hidden',
+		resetAppearanceClass: 'jcf-reset-appearance',
+		unselectableClass: 'jcf-unselectable'
+	};
+
+	// detect device type
+	var isTouchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+		isWinPhoneDevice = /Windows Phone/.test(navigator.userAgent);
+	commonOptions.isMobileDevice = !!(isTouchDevice || isWinPhoneDevice);
+
+	// create global stylesheet if custom forms are used
+	var createStyleSheet = function() {
+		var styleTag = $('<style>').appendTo('head'),
+			styleSheet = styleTag.prop('sheet') || styleTag.prop('styleSheet');
+
+		// crossbrowser style handling
+		var addCSSRule = function(selector, rules, index) {
+			if(styleSheet.insertRule) {
+				styleSheet.insertRule(selector + '{' + rules + '}', index);
+			} else {
+				styleSheet.addRule(selector, rules, index);
+			}
 		};
-	},
-	browser: (function() {
-		var ua = navigator.userAgent.toLowerCase(), res = {},
-		match = /(webkit)[ \/]([\w.]+)/.exec(ua) || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(ua) ||
-				/(msie) ([\w.]+)/.exec(ua) || ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+))?/.exec(ua) || [];
-		res[match[1]] = true;
-		res.version = match[2] || "0";
-		res.safariMac = ua.indexOf('mac') != -1 && ua.indexOf('safari') != -1;
-		return res;
-	})(),
-	getOffset: function (obj) {
-		if (obj.getBoundingClientRect && !jcf.isWinPhoneDevice) {
-			var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;
-			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-			var clientLeft = document.documentElement.clientLeft || document.body.clientLeft || 0;
-			var clientTop = document.documentElement.clientTop || document.body.clientTop || 0;
-			return {
-				top:Math.round(obj.getBoundingClientRect().top + scrollTop - clientTop),
-				left:Math.round(obj.getBoundingClientRect().left + scrollLeft - clientLeft)
+
+		// add special rules
+		addCSSRule('.' + commonOptions.hiddenClass, 'position:absolute !important;left:-9999px !important;height:1px !important;width:1px !important;margin:0 !important;border-width:0 !important;-webkit-appearance:none;-moz-appearance:none;appearance:none');
+		addCSSRule('.' + commonOptions.rtlClass + '.' + commonOptions.hiddenClass, 'right:-9999px !important; left: auto !important');
+		addCSSRule('.' + commonOptions.unselectableClass, '-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;');
+		addCSSRule('.' + commonOptions.resetAppearanceClass, 'background: none; border: none; -webkit-appearance: none; appearance: none; opacity: 0; filter: alpha(opacity=0);');
+
+		// detect rtl pages
+		var html = $('html'), body = $('body');
+		if(html.css('direction') === 'rtl' || body.css('direction') === 'rtl') {
+			html.addClass(commonOptions.rtlClass);
+		}
+
+		// handle form reset event
+		html.on('reset', function() {
+			setTimeout(function(){
+				api.refreshAll();
+			}, 0);
+		});
+
+		// mark stylesheet as created
+		commonOptions.styleSheetCreated = true;
+	};
+
+	// simplified pointer events handler
+	(function() {
+		var pointerEventsSupported = navigator.pointerEnabled || navigator.msPointerEnabled,
+			touchEventsSupported = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+			eventList, eventMap = {}, eventPrefix = 'jcf-';
+
+		// detect events to attach
+		if(pointerEventsSupported) {
+			eventList = {
+				pointerover: navigator.pointerEnabled ? 'pointerover' : 'MSPointerOver',
+				pointerdown: navigator.pointerEnabled ? 'pointerdown' : 'MSPointerDown',
+				pointermove: navigator.pointerEnabled ? 'pointermove' : 'MSPointerMove',
+				pointerup: navigator.pointerEnabled ? 'pointerup' : 'MSPointerUp'
 			};
 		} else {
-			var posLeft = 0, posTop = 0;
-			while (obj.offsetParent) {posLeft += obj.offsetLeft; posTop += obj.offsetTop; obj = obj.offsetParent;}
-			return {top:posTop,left:posLeft};
+			eventList = {
+				pointerover: 'mouseover',
+				pointerdown: 'mousedown' + (touchEventsSupported ? ' touchstart' : ''),
+				pointermove: 'mousemove' + (touchEventsSupported ? ' touchmove' : ''),
+				pointerup: 'mouseup' + (touchEventsSupported ? ' touchend' : '')
+			};
 		}
-	},
-	getScrollTop: function() {
-		return window.pageYOffset || document.documentElement.scrollTop;
-	},
-	getScrollLeft: function() {
-		return window.pageXOffset || document.documentElement.scrollLeft;
-	},
-	getWindowWidth: function(){
-		return document.compatMode=='CSS1Compat' ? document.documentElement.clientWidth : document.body.clientWidth;
-	},
-	getWindowHeight: function(){
-		return document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
-	},
-	getStyle: function(el, prop) {
-		if (document.defaultView && document.defaultView.getComputedStyle) {
-			return document.defaultView.getComputedStyle(el, null)[prop];
-		} else if (el.currentStyle) {
-			return el.currentStyle[prop];
-		} else {
-			return el.style[prop];
-		}
-	},
-	getParent: function(obj, selector) {
-		while(obj.parentNode && obj.parentNode != document.body) {
-			if(obj.parentNode.tagName.toLowerCase() == selector.toLowerCase()) {
-				return obj.parentNode;
-			}
-			obj = obj.parentNode;
-		}
-		return false;
-	},
-	isParent: function(parent, child) {
-		while(child.parentNode) {
-			if(child.parentNode === parent) {
+
+		// create event map
+		$.each(eventList, function(targetEventName, fakeEventList) {
+			$.each(fakeEventList.split(' '), function(index, fakeEventName) {
+				eventMap[fakeEventName] = targetEventName;
+			});
+		});
+
+		// jQuery event hooks
+		$.each(eventList, function(eventName, eventHandlers) {
+			eventHandlers = eventHandlers.split(' ');
+			$.event.special[eventPrefix + eventName] = {
+				setup: function() {
+					var self = this;
+					$.each(eventHandlers, function(index, fallbackEvent) {
+						if(self.addEventListener) self.addEventListener(fallbackEvent, fixEvent, false);
+						else self['on' + fallbackEvent] = fixEvent;
+					});
+				},
+				teardown: function() {
+					var self = this;
+					$.each(eventHandlers, function(index, fallbackEvent) {
+						if(self.addEventListener) self.removeEventListener(fallbackEvent, fixEvent, false);
+						else self['on' + fallbackEvent] = null;
+					});
+				}
+			};
+		});
+
+		// check that mouse event are not simulated by mobile browsers
+		var lastTouch = null;
+		var mouseEventSimulated = function(e) {
+			var dx = Math.abs(e.pageX - lastTouch.x),
+				dy = Math.abs(e.pageY - lastTouch.y),
+				rangeDistance = 25;
+
+			if (dx <= rangeDistance && dy <= rangeDistance) {
 				return true;
 			}
-			child = child.parentNode;
-		}
-		return false;
-	},
-	getLabelFor: function(object) {
-		var parentLabel = jcf.lib.getParent(object,'label');
-		if(parentLabel) {
-			return parentLabel;
-		} else if(object.id) {
-			return jcf.lib.queryBySelector('label[for="' + object.id + '"]')[0];
-		}
-	},
-	disableTextSelection: function(el){
-		if (typeof el.onselectstart !== 'undefined') {
-			el.onselectstart = function() {return false;};
-		} else if(window.opera) {
-			el.setAttribute('unselectable', 'on');
-		} else {
-			jcf.lib.addClass(el, jcf.baseOptions.unselectableClass);
-		}
-	},
-	enableTextSelection: function(el) {
-		if (typeof el.onselectstart !== 'undefined') {
-			el.onselectstart = null;
-		} else if(window.opera) {
-			el.removeAttribute('unselectable');
-		} else {
-			jcf.lib.removeClass(el, jcf.baseOptions.unselectableClass);
-		}
-	},
-	queryBySelector: function(selector, scope){
-		if(typeof scope === 'string') {
-			var result = [];
-			var holders = this.getElementsBySelector(scope);
-			for (var i = 0, contextNodes; i < holders.length; i++) {
-				contextNodes = Array.prototype.slice.call(this.getElementsBySelector(selector, holders[i]));
-				result = result.concat(contextNodes);
+		};
+
+		// normalize event
+		var fixEvent = function(e) {
+			var origEvent = e || window.event,
+				touchEventData = null,
+				targetEventName = eventMap[origEvent.type];
+
+			e = $.event.fix(origEvent);
+			e.type = eventPrefix + targetEventName;
+
+			if(origEvent.pointerType) {
+				switch(origEvent.pointerType) {
+					case 2: e.pointerType = 'touch'; break;
+					case 3: e.pointerType = 'pen'; break;
+					case 4: e.pointerType = 'mouse'; break;
+					default: e.pointerType = origEvent.pointerType;
+				}
+			} else {
+				e.pointerType = origEvent.type.substr(0,5); // "mouse" or "touch" word length
 			}
-			return result;
-		} else {
-			return this.getElementsBySelector(selector, scope);
-		}
-	},
-	prevSibling: function(node) {
-		while(node = node.previousSibling) if(node.nodeType == 1) break;
-		return node;
-	},
-	nextSibling: function(node) {
-		while(node = node.nextSibling) if(node.nodeType == 1) break;
-		return node;
-	},
-	fireEvent: function(element,event) {
-		if(element.dispatchEvent){
-			var evt = document.createEvent('HTMLEvents');
-			evt.initEvent(event, true, true );
-			return !element.dispatchEvent(evt);
-		}else if(document.createEventObject){
-			var evt = document.createEventObject();
-			return element.fireEvent('on'+event,evt);
-		}
-	},
-	inherit: function(Child, Parent) {
-		var F = function() { }
-		F.prototype = Parent.prototype
-		Child.prototype = new F()
-		Child.prototype.constructor = Child
-		Child.superclass = Parent.prototype
-	},
-	extend: function(obj) {
-		for(var i = 1; i < arguments.length; i++) {
-			for(var p in arguments[i]) {
-				if(arguments[i].hasOwnProperty(p)) {
-					obj[p] = arguments[i][p];
-				}
+
+			if(!e.pageX && !e.pageY) {
+				touchEventData = origEvent.changedTouches ? origEvent.changedTouches[0] : origEvent;
+				e.pageX = touchEventData.pageX;
+				e.pageY = touchEventData.pageY;
 			}
-		}
-		return obj;
-	},
-	hasClass: function (obj,cname) {
-		return (obj.className ? obj.className.match(new RegExp('(\\s|^)'+cname+'(\\s|$)')) : false);
-	},
-	addClass: function (obj,cname) {
-		if (!this.hasClass(obj,cname)) obj.className += (!obj.className.length || obj.className.charAt(obj.className.length - 1) === ' ' ? '' : ' ') + cname;
-	},
-	removeClass: function (obj,cname) {
-		if (this.hasClass(obj,cname)) obj.className=obj.className.replace(new RegExp('(\\s|^)'+cname+'(\\s|$)'),' ').replace(/\s+$/, '');
-	},
-	toggleClass: function(obj, cname, condition) {
-		if(condition) this.addClass(obj, cname); else this.removeClass(obj, cname);
-	},
-	createElement: function(tagName, options) {
-		var el = document.createElement(tagName);
-		for(var p in options) {
-			if(options.hasOwnProperty(p)) {
-				switch (p) {
-					case 'class': el.className = options[p]; break;
-					case 'html': el.innerHTML = options[p]; break;
-					case 'style': this.setStyles(el, options[p]); break;
-					default: el.setAttribute(p, options[p]);
-				}
+
+			if(origEvent.type === 'touchend') {
+				lastTouch = {x: e.pageX, y: e.pageY};
 			}
-		}
-		return el;
-	},
-	setStyles: function(el, styles) {
-		for(var p in styles) {
-			if(styles.hasOwnProperty(p)) {
-				switch (p) {
-					case 'float': el.style.cssFloat = styles[p]; break;
-					case 'opacity': el.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity='+styles[p]*100+')'; el.style.opacity = styles[p]; break;
-					default: el.style[p] = (typeof styles[p] === 'undefined' ? 0 : styles[p]) + (typeof styles[p] === 'number' ? 'px' : '');
-				}
+			if(e.pointerType === 'mouse' && lastTouch && mouseEventSimulated(e)) {
+				return;
+			} else {
+				return ($.event.dispatch || $.event.handle).call(this, e);
 			}
-		}
-		return el;
-	},
-	getInnerWidth: function(el) {
-		return el.offsetWidth - (parseInt(this.getStyle(el,'paddingLeft')) || 0) - (parseInt(this.getStyle(el,'paddingRight')) || 0);
-	},
-	getInnerHeight: function(el) {
-		return el.offsetHeight - (parseInt(this.getStyle(el,'paddingTop')) || 0) - (parseInt(this.getStyle(el,'paddingBottom')) || 0);
-	},
-	getAllClasses: function(cname, prefix, skip) {
-		if(!skip) skip = '';
-		if(!prefix) prefix = '';
-		return cname ? cname.replace(new RegExp('(\\s|^)'+skip+'(\\s|$)'),' ').replace(/[\s]*([\S]+)+[\s]*/gi,prefix+"$1 ") : '';
-	},
-	getElementsBySelector: function(selector, scope) {
-		if(typeof document.querySelectorAll === 'function') {
-			return (scope || document).querySelectorAll(selector);
-		}
-		var selectors = selector.split(',');
-		var resultList = [];
-		for(var s = 0; s < selectors.length; s++) {
-			var currentContext = [scope || document];
-			var tokens = selectors[s].replace(/^\s+/,'').replace(/\s+$/,'').split(' ');
-			for (var i = 0; i < tokens.length; i++) {
-				token = tokens[i].replace(/^\s+/,'').replace(/\s+$/,'');
-				if (token.indexOf('#') > -1) {
-					var bits = token.split('#'), tagName = bits[0], id = bits[1];
-					var element = document.getElementById(id);
-					if (tagName && element.nodeName.toLowerCase() != tagName) {
-						return [];
-					}
-					currentContext = [element];
-					continue;
-				}
-				if (token.indexOf('.') > -1) {
-					var bits = token.split('.'), tagName = bits[0] || '*', className = bits[1], found = [], foundCount = 0;
-					for (var h = 0; h < currentContext.length; h++) {
-						var elements;
-						if (tagName == '*') {
-							elements = currentContext[h].getElementsByTagName('*');
-						} else {
-							elements = currentContext[h].getElementsByTagName(tagName);
-						}
-						for (var j = 0; j < elements.length; j++) {
-							found[foundCount++] = elements[j];
-						}
-					}
-					currentContext = [];
-					var currentContextIndex = 0;
-					for (var k = 0; k < found.length; k++) {
-						if (found[k].className && found[k].className.match(new RegExp('(\\s|^)'+className+'(\\s|$)'))) {
-							currentContext[currentContextIndex++] = found[k];
-						}
-					}
-					continue;
-				}
-				if (token.match(/^(\w*)\[(\w+)([=~\|\^\$\*]?)=?"?([^"]*)"?\]$/)) {
-					var tagName = RegExp.$1 || '*', attrName = RegExp.$2, attrOperator = RegExp.$3, attrValue = RegExp.$4;
-					if(attrName.toLowerCase() == 'for' && this.browser.msie && this.browser.version < 8) {
-						attrName = 'htmlFor';
-					}
-					var found = [], foundCount = 0;
-					for (var h = 0; h < currentContext.length; h++) {
-						var elements;
-						if (tagName == '*') {
-							elements = currentContext[h].getElementsByTagName('*');
-						} else {
-							elements = currentContext[h].getElementsByTagName(tagName);
-						}
-						for (var j = 0; elements[j]; j++) {
-							found[foundCount++] = elements[j];
-						}
-					}
-					currentContext = [];
-					var currentContextIndex = 0, checkFunction;
-					switch (attrOperator) {
-						case '=': checkFunction = function(e) { return (e.getAttribute(attrName) == attrValue) }; break;
-						case '~': checkFunction = function(e) { return (e.getAttribute(attrName).match(new RegExp('(\\s|^)'+attrValue+'(\\s|$)'))) }; break;
-						case '|': checkFunction = function(e) { return (e.getAttribute(attrName).match(new RegExp('^'+attrValue+'-?'))) }; break;
-						case '^': checkFunction = function(e) { return (e.getAttribute(attrName).indexOf(attrValue) == 0) }; break;
-						case '$': checkFunction = function(e) { return (e.getAttribute(attrName).lastIndexOf(attrValue) == e.getAttribute(attrName).length - attrValue.length) }; break;
-						case '*': checkFunction = function(e) { return (e.getAttribute(attrName).indexOf(attrValue) > -1) }; break;
-						default : checkFunction = function(e) { return e.getAttribute(attrName) };
-					}
-					currentContext = [];
-					var currentContextIndex = 0;
-					for (var k = 0; k < found.length; k++) {
-						if (checkFunction(found[k])) {
-							currentContext[currentContextIndex++] = found[k];
-						}
-					}
-					continue;
-				}
-				tagName = token;
-				var found = [], foundCount = 0;
-				for (var h = 0; h < currentContext.length; h++) {
-					var elements = currentContext[h].getElementsByTagName(tagName);
-					for (var j = 0; j < elements.length; j++) {
-						found[foundCount++] = elements[j];
-					}
-				}
-				currentContext = found;
-			}
-			resultList = [].concat(resultList,currentContext);
-		}
-		return resultList;
-	},
-	scrollSize: (function(){
-		var content, hold, sizeBefore, sizeAfter;
-		function buildSizer(){
-			if(hold) removeSizer();
-			content = document.createElement('div');
-			hold = document.createElement('div');
-			hold.style.cssText = 'position:absolute;overflow:hidden;width:100px;height:100px';
-			hold.appendChild(content);
-			document.body.appendChild(hold);
-		}
-		function removeSizer(){
-			document.body.removeChild(hold);
-			hold = null;
-		}
-		function calcSize(vertical) {
-			buildSizer();
-			content.style.cssText = 'height:'+(vertical ? '100%' : '200px');
-			sizeBefore = (vertical ? content.offsetHeight : content.offsetWidth);
-			hold.style.overflow = 'scroll'; content.innerHTML = 1;
-			sizeAfter = (vertical ? content.offsetHeight : content.offsetWidth);
-			if(vertical && hold.clientHeight) sizeAfter = hold.clientHeight;
-			removeSizer();
-			return sizeBefore - sizeAfter;
-		}
-		return {
-			getWidth:function(){
-				return calcSize(false);
+		};
+	}());
+
+	// custom mousewheel/trackpad handler
+	(function() {
+		var wheelEvents = ('onwheel' in document || document.documentMode >= 9 ? 'wheel' : 'mousewheel DOMMouseScroll').split(' '),
+			shimEventName = 'jcf-mousewheel';
+
+		$.event.special[shimEventName] = {
+			setup: function() {
+				var self = this;
+				$.each(wheelEvents, function(index, fallbackEvent) {
+					if(self.addEventListener) self.addEventListener(fallbackEvent, fixEvent, false);
+					else self['on' + fallbackEvent] = fixEvent;
+				});
 			},
-			getHeight:function(){
-				return calcSize(true)
+			teardown: function() {
+				var self = this;
+				$.each(wheelEvents, function(index, fallbackEvent) {
+					if(self.addEventListener) self.removeEventListener(fallbackEvent, fixEvent, false);
+					else self['on' + fallbackEvent] = null;
+				});
 			}
-		}
-	}()),
-	domReady: function (handler){
-		var called = false
-		function ready() {
-			if (called) return;
-			called = true;
-			handler();
-		}
-		if (document.addEventListener) {
-			document.addEventListener("DOMContentLoaded", ready, false);
-		} else if (document.attachEvent) {
-			if (document.documentElement.doScroll && window == window.top) {
-				function tryScroll(){
-					if (called) return
-					if (!document.body) return
-					try {
-						document.documentElement.doScroll("left")
-						ready()
-					} catch(e) {
-						setTimeout(tryScroll, 0)
-					}
-				}
-				tryScroll()
-			}
-			document.attachEvent("onreadystatechange", function(){
-				if (document.readyState === "complete") {
-					ready()
-				}
-			})
-		}
-		if (window.addEventListener) window.addEventListener('load', ready, false)
-		else if (window.attachEvent) window.attachEvent('onload', ready)
-	},
-	event: (function(){
-		var guid = 0;
-		function fixEvent(e) {
-			e = e || window.event;
-			if (e.isFixed) {
-				return e;
-			}
-			e.isFixed = true; 
-			e.preventDefault = e.preventDefault || function(){this.returnValue = false}
-			e.stopPropagation = e.stopPropagation || function(){this.cancelBubble = true}
-			if (!e.target) {
-				e.target = e.srcElement
-			}
-			if (!e.relatedTarget && e.fromElement) {
-				e.relatedTarget = e.fromElement == e.target ? e.toElement : e.fromElement;
-			}
-			if (e.pageX == null && e.clientX != null) {
-				var html = document.documentElement, body = document.body;
-				e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0);
-				e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0);
-			}
-			if (!e.which && e.button) {
-				e.which = e.button & 1 ? 1 : (e.button & 2 ? 3 : (e.button & 4 ? 2 : 0));
-			}
-			if(e.type === "DOMMouseScroll" || e.type === 'mousewheel') {
-				e.mWheelDelta = 0;
-				if (e.wheelDelta) {
-					e.mWheelDelta = e.wheelDelta/120;
-				} else if (e.detail) {
-					e.mWheelDelta = -e.detail/3;
-				}
-			}
-			return e;
-		}
-		function commonHandle(event, customScope) {
-			event = fixEvent(event);
-			var handlers = this.events[event.type];
-			for (var g in handlers) {
-				var handler = handlers[g];
-				var ret = handler.call(customScope || this, event);
-				if (ret === false) {
-					event.preventDefault()
-					event.stopPropagation()
-				}
-			}
-		}
-		var publicAPI = {
-			add: function(elem, type, handler, forcedScope) {
-				// handle multiple events
-				if(type.indexOf(' ') > -1) {
-					var eventList = type.split(' ');
-					for(var i = 0; i < eventList.length; i++) {
-						publicAPI.add(elem, eventList[i], handler, forcedScope);
-					}
-					return;
-				}
+		};
 
-				if (elem.setInterval && (elem != window && !elem.frameElement)) {
-					elem = window;
-				}
-				if (!handler.guid) {
-					handler.guid = ++guid;
-				}
-				if (!elem.events) {
-					elem.events = {};
-					elem.handle = function(event) {
-						return commonHandle.call(elem, event);
-					}
-				}
-				if (!elem.events[type]) {
-					elem.events[type] = {};
-					if (elem.addEventListener) elem.addEventListener(type, elem.handle, false);
-					else if (elem.attachEvent) elem.attachEvent("on" + type, elem.handle);
-					if(type === 'mousewheel') {
-						publicAPI.add(elem, 'DOMMouseScroll', handler, forcedScope);
-					}
-				}
-				var fakeHandler = jcf.lib.bind(handler, forcedScope);
-				fakeHandler.guid = handler.guid;
-				elem.events[type][handler.guid] = forcedScope ? fakeHandler : handler;
-			},
-			remove: function(elem, type, handler) {
-				// handle multiple events
-				if(type.indexOf(' ') > -1) {
-					var eventList = type.split(' ');
-					for(var i = 0; i < eventList.length; i++) {
-						publicAPI.remove(elem, eventList[i], handler);
-					}
-					return;
-				}
+		var fixEvent = function(e) {
+			var origEvent = e || window.event;
+			e = $.event.fix(origEvent);
+			e.type = shimEventName;
+		
+			// old wheel events handler
+			if('detail'      in origEvent) { e.deltaY = -origEvent.detail;      }
+			if('wheelDelta'  in origEvent) { e.deltaY = -origEvent.wheelDelta;  }
+			if('wheelDeltaY' in origEvent) { e.deltaY = -origEvent.wheelDeltaY; }
+			if('wheelDeltaX' in origEvent) { e.deltaX = -origEvent.wheelDeltaX; }
 
-				var handlers = elem.events && elem.events[type];
-				if (!handlers) return;
-				delete handlers[handler.guid];
-				for(var any in handlers) return;
-				if (elem.removeEventListener) elem.removeEventListener(type, elem.handle, false);
-				else if (elem.detachEvent) elem.detachEvent("on" + type, elem.handle);
-				delete elem.events[type];
-				for (var any in elem.events) return;
-				try {
-					delete elem.handle;
-					delete elem.events;
-				} catch(e) {
-					if(elem.removeAttribute) {
-						elem.removeAttribute("handle");
-						elem.removeAttribute("events");
-					}
-				}
-				if(type === 'mousewheel') {
-					publicAPI.remove(elem, 'DOMMouseScroll', handler);
-				}
+			// modern wheel event handler
+			if('deltaY' in origEvent) {
+				e.deltaY = origEvent.deltaY;
 			}
-		}
-		return publicAPI;
-	}())
-}
+			if('deltaX' in origEvent) {
+				e.deltaX = origEvent.deltaX;
+			}
 
-// custom select module
-jcf.addModule({
-	name:'select',
-	selector:'select',
-	defaultOptions: {
-		useNativeDropOnMobileDevices: true,
-		hideDropOnScroll: true,
-		showNativeDrop: false,
-		handleDropPosition: false,
-		selectDropPosition: 'bottom', // or 'top'
-		wrapperClass:'select-area',
-		focusClass:'select-focus',
-		dropActiveClass:'select-active',
-		selectedClass:'item-selected',
-		currentSelectedClass:'current-selected',
-		disabledClass:'select-disabled',
-		valueSelector:'span.center', 
-		optGroupClass:'optgroup',
-		openerSelector:'a.select-opener',		
-		selectStructure:'<span class="left"></span><span class="center"></span><a class="select-opener"></a>',
-		wrapperTag: 'span',
-		classPrefix:'select-',
-		dropMaxHeight: 200,
-		dropFlippedClass: 'select-options-flipped',
-		dropHiddenClass:'options-hidden',
-		dropScrollableClass:'options-overflow',
-		dropClass:'select-options',
-		dropClassPrefix:'drop-',
-		dropStructure:'<div class="drop-holder"><div class="drop-list"></div></div>',
-		dropSelector:'div.drop-list'
-	},
-	checkElement: function(el){
-		return (!el.size && !el.multiple);
-	},
-	setupWrapper: function(){
-		jcf.lib.addClass(this.fakeElement, this.options.wrapperClass);
-		this.realElement.parentNode.insertBefore(this.fakeElement, this.realElement.nextSibling);
-		this.fakeElement.innerHTML = this.options.selectStructure;
-		this.fakeElement.style.width = (this.realElement.offsetWidth > 0 ? this.realElement.offsetWidth + 'px' : 'auto');
+			// handle deltaMode for mouse wheel
+			e.delta = e.deltaY || e.deltaX;
+			if (origEvent.deltaMode === 1) {
+				var lineHeight = 16;
+				e.delta *= lineHeight;
+				e.deltaY *= lineHeight;
+				e.deltaX *= lineHeight;
+			}
 
-		// show native drop if specified in options
-		if(this.options.useNativeDropOnMobileDevices && (jcf.isTouchDevice || jcf.isWinPhoneDevice)) {
-			this.options.showNativeDrop = true;
-		}
-		if(this.options.showNativeDrop) {
-			this.fakeElement.appendChild(this.realElement);
-			jcf.lib.removeClass(this.realElement, this.options.hiddenClass);
-			jcf.lib.setStyles(this.realElement, {
-				top:0,
-				left:0,
-				margin:0,
-				padding:0,
-				opacity:0,
-				border:'none',
-				position:'absolute',
-				width: jcf.lib.getInnerWidth(this.fakeElement) - 1,
-				height: jcf.lib.getInnerHeight(this.fakeElement) - 1
+			return ($.event.dispatch || $.event.handle).call(this, e);
+		};
+	}());
+
+	// extra module methods
+	var moduleMixin = {
+		// provide function for firing native events
+		fireNativeEvent: function(elements, eventName) {
+			$(elements).each(function() {
+				var element = this, eventObject;					
+				if(element.dispatchEvent) {
+					eventObject = document.createEvent('HTMLEvents');
+					eventObject.initEvent(eventName, true, true);
+					element.dispatchEvent(eventObject);
+				} else if(document.createEventObject) {
+					eventObject = document.createEventObject();
+					eventObject.target = element;
+					element.fireEvent('on' + eventName, eventObject);
+				}
 			});
-			jcf.lib.event.add(this.realElement, jcf.eventPress, function(){
-				this.realElement.title = '';
-			}, this)
+		},
+		// bind event handlers for module instance (functions beggining with "on")
+		bindHandlers: function() {
+			var self = this;
+			$.each(self, function(propName, propValue) {
+				if(propName.indexOf('on') === 0 && $.isFunction(propValue)) {
+					// dont use $.proxy here because it doesn't create unique handler
+					self[propName] = function() {
+						return propValue.apply(self, arguments);
+					};
+				}
+			});
 		}
-		
-		// create select body
-		this.opener = jcf.lib.queryBySelector(this.options.openerSelector, this.fakeElement)[0];
-		this.valueText = jcf.lib.queryBySelector(this.options.valueSelector, this.fakeElement)[0];
-		jcf.lib.disableTextSelection(this.valueText);
-		this.opener.jcf = this;
+	};
 
-		if(!this.options.showNativeDrop) {
-			this.createDropdown();
-			this.refreshState();
-			this.onControlReady(this);
-			this.hideDropdown();
-		} else {
-			this.refreshState();
-		}
-		this.addEvents();
-	},
-	addEvents: function(){
-		if(this.options.showNativeDrop) {
-			jcf.lib.event.add(this.realElement, 'click', this.onChange, this);
-		} else {
-			jcf.lib.event.add(this.fakeElement, 'click', this.toggleDropdown, this);
-		}
-		jcf.lib.event.add(this.realElement, 'change', this.onChange, this);
-	},
-	onFakeClick: function() {
-		// do nothing (drop toggles by toggleDropdown method)
-	},
-	onFocus: function(){
-		jcf.modules[this.name].superclass.onFocus.apply(this, arguments);
-		if(!this.options.showNativeDrop) {
-			// Mac Safari Fix
-			if(jcf.lib.browser.safariMac) {
-				this.realElement.setAttribute('size','2');
+	// public API
+	var api = {
+		modules: {},
+		getOptions: function() {
+			return $.extend({}, commonOptions);
+		},
+		setOptions: function(moduleName, moduleOptions) {
+			if(arguments.length > 1) {
+				// set module options
+				if(this.modules[moduleName]) {
+					$.extend(this.modules[moduleName].prototype.options, moduleOptions);
+				}
+			} else {
+				// set common options
+				$.extend(commonOptions, moduleName);
 			}
-			jcf.lib.event.add(this.realElement, 'keydown', this.onKeyDown, this);
-			if(jcf.activeControl && jcf.activeControl != this) {
-				jcf.activeControl.hideDropdown();
-				jcf.activeControl = this;
+		},
+		addModule: function(proto) {
+			// add module to list
+			var Module = function(options) {
+				// save instance to collection
+				options.element.data(commonOptions.dataKey, this);
+				customInstances.push(this);
+
+				// save options
+				this.options = $.extend({}, commonOptions, this.options, options.element.data(commonOptions.optionsKey), options);
+
+				// bind event handlers to instance
+				this.bindHandlers();
+				
+				// call constructor
+				this.init.apply(this, arguments);
+			};
+
+			// set proto as prototype for new module
+			Module.prototype = proto;
+
+			// add mixin methods to module proto
+			$.extend(proto, moduleMixin);
+			if(proto.plugins) {
+				$.each(proto.plugins, function(pluginName, plugin) {
+					$.extend(plugin.prototype, moduleMixin);
+				});
 			}
-		}
-	},
-	onBlur: function(){
-		if(!this.options.showNativeDrop) {
-			// Mac Safari Fix
-			if(jcf.lib.browser.safariMac) {
-				this.realElement.removeAttribute('size');
+
+			// override destroy method
+			var originalDestroy = Module.prototype.destroy;
+			Module.prototype.destroy = function() {
+				this.options.element.removeData(this.options.dataKey);
+
+				for(var i = customInstances.length - 1; i >= 0; i--) {
+					if(customInstances[i] === this) {
+						customInstances.splice(i, 1);
+						break;
+					}
+				}
+
+				if(originalDestroy) {
+					originalDestroy.apply(this, arguments);
+				}
+			};
+
+			// save module to list
+			this.modules[proto.name] = Module;
+		},
+		getInstance: function(element) {
+			return $(element).data(commonOptions.dataKey);
+		},
+		replace: function(elements, moduleName, customOptions) {
+			var self = this,
+				instance;
+
+			if(!commonOptions.styleSheetCreated) {
+				createStyleSheet();
 			}
-			if(!this.isActiveDrop() || !this.isOverDrop()) {
-				jcf.modules[this.name].superclass.onBlur.apply(this);
-				if(jcf.activeControl === this) jcf.activeControl = null;
-				if(!jcf.isTouchDevice) {
-					this.hideDropdown();
+
+			$(elements).each(function() {
+				var moduleOptions,
+					element = $(this);
+
+				instance = element.data(commonOptions.dataKey);
+				if(instance) {
+					instance.refresh();
+				} else {
+					if(!moduleName) {
+						$.each(self.modules, function(currentModuleName, module) {
+							if(module.prototype.matchElement.call(module.prototype, element)) {
+								moduleName = currentModuleName;
+								return false;
+							}
+						});
+					}
+					if(moduleName) {
+						moduleOptions = $.extend({element:element}, customOptions);
+						instance = new self.modules[moduleName](moduleOptions);
+					}
+				}
+			});
+			return instance;
+		},
+		refresh: function(elements) {
+			$(elements).each(function() {
+				var instance = $(this).data(commonOptions.dataKey);
+				if(instance) {
+					instance.refresh();
+				}
+			});
+		},
+		destroy: function(elements) {
+			$(elements).each(function() {
+				var instance = $(this).data(commonOptions.dataKey);
+				if(instance) {
+					instance.destroy();
+				}
+			});
+		},
+		replaceAll: function(context) {
+			var self = this;
+			$.each(this.modules, function(moduleName, module) {
+				$(module.prototype.selector, context).each(function() {
+					self.replace(this, moduleName);
+				});
+			});
+		},
+		refreshAll: function(context) {
+			if(context) {
+				$.each(this.modules, function(moduleName, module) {
+					$(module.prototype.selector, context).each(function() {
+						var instance = $(this).data(commonOptions.dataKey);
+						if(instance) {
+							instance.refresh();
+						}
+					});
+				});
+			} else {
+				for(var i = customInstances.length - 1; i >= 0; i--) {
+					customInstances[i].refresh();
 				}
 			}
-			jcf.lib.event.remove(this.realElement, 'keydown', this.onKeyDown);
-		} else {
-			jcf.modules[this.name].superclass.onBlur.apply(this);
-		}
-	},
-	onChange: function() {
-		this.refreshState();
-	},
-	onKeyDown: function(e){
-		this.dropOpened = true;
-		jcf.tmpFlag = true;
-		setTimeout(function(){jcf.tmpFlag = false},100);
-		var context = this;
-		context.keyboardFix = true;
-		setTimeout(function(){
-			context.refreshState();
-		},10);
-		if(e.keyCode == 13) {
-			context.toggleDropdown.apply(context);
-			return false;
-		}
-	},
-	onResizeWindow: function(e){
-		if(this.isActiveDrop()) {
-			this.hideDropdown();
-		}
-	},
-	onScrollWindow: function(e){
-		if(this.options.hideDropOnScroll) {
-			this.hideDropdown();
-		} else if(this.isActiveDrop()) {
-			this.positionDropdown();
-		}
-	},
-	onOptionClick: function(e){
-		var opener = e.target && e.target.tagName && e.target.tagName.toLowerCase() == 'li' ? e.target : jcf.lib.getParent(e.target, 'li');
-		if(opener && !jcf.lib.hasClass(opener, 'opt-disabled')) {
-			this.dropOpened = true;
-			this.realElement.selectedIndex = parseInt(opener.getAttribute('rel'));
-			if(jcf.isTouchDevice) {
-				this.onFocus();
+		},
+		destroyAll: function(context) {
+			var self = this;
+			if(context) {
+				$.each(this.modules, function(moduleName, module) {
+					$(module.prototype.selector, context).each(function(index, element) {
+						var instance = $(element).data(commonOptions.dataKey);
+						if(instance) {
+							instance.destroy();
+						}
+					});
+				});
 			} else {
+				while(customInstances.length) {
+					customInstances[0].destroy();
+				}
+			}
+		}
+	};
+
+	return api;
+}));
+
+/*!
+ * JavaScript Custom Forms : Select Module
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
+ */
+;(function($, window) {
+	'use strict';
+
+	jcf.addModule({
+		name: 'Select',
+		selector: 'select',
+		options: {
+			element: null
+		},
+		plugins: {
+			ListBox: ListBox,
+			ComboBox: ComboBox,
+			SelectList: SelectList
+		},
+		matchElement: function(element) {
+			return element.is('select');
+		},
+		init: function() {
+			this.element = $(this.options.element);
+			this.createInstance();
+		},
+		isListBox: function() {
+			return this.element.is('[size]:not([jcf-size]), [multiple]');
+		},
+		createInstance: function() {
+			if(this.instance) {
+				this.instance.destroy();
+			}
+			if(this.isListBox()) {
+				this.instance = new ListBox(this.options);
+			} else {
+				this.instance = new ComboBox(this.options);
+			}
+		},
+		refresh: function() {
+			var typeMismatch = (this.isListBox() && this.instance instanceof ComboBox) ||
+								(!this.isListBox() && this.instance instanceof ListBox);
+
+			if(typeMismatch) {
+				this.createInstance();
+			} else {
+				this.instance.refresh();
+			}
+		},
+		destroy: function() {
+			this.instance.destroy();
+		}
+	});
+
+	// combobox module
+	function ComboBox(options) {
+		this.options = $.extend({
+			wrapNative: true,
+			wrapNativeOnMobile: true,
+			fakeDropInBody: true,
+			useCustomScroll: true,
+			flipDropToFit: true,
+			maxVisibleItems: 10,
+			fakeAreaStructure: '<span class="jcf-select"><span class="jcf-select-text"></span><span class="jcf-select-opener"></span></span>',
+			fakeDropStructure: '<div class="jcf-select-drop"><div class="jcf-select-drop-content"></div></div>',
+			optionClassPrefix: 'jcf-option-',
+			selectClassPrefix: 'jcf-select-',
+			dropContentSelector: '.jcf-select-drop-content',
+			selectTextSelector: '.jcf-select-text',
+			dropActiveClass: 'jcf-drop-active',
+			flipDropClass: 'jcf-drop-flipped'
+		}, options);
+		this.init();
+	}
+	$.extend(ComboBox.prototype, {
+		init: function(options) {
+			this.initStructure();
+			this.bindHandlers();
+			this.attachEvents();
+			this.refresh();
+		},
+		initStructure: function() {
+			// prepare structure
+			this.win = $(window);
+			this.doc = $(document);
+			this.realElement = $(this.options.element);
+			this.fakeElement = $(this.options.fakeAreaStructure).insertAfter(this.realElement);
+			this.selectTextContainer = this.fakeElement.find(this.options.selectTextSelector);
+			this.selectText = $('<span></span>').appendTo(this.selectTextContainer);
+			makeUnselectable(this.fakeElement);
+
+			// copy classes from original select
+			this.fakeElement.addClass(getPrefixedClasses(this.realElement.prop('className'), this.options.selectClassPrefix));
+
+			// detect device type and dropdown behavior
+			if(this.options.isMobileDevice && this.options.wrapNativeOnMobile && !this.options.wrapNative) {
+				this.options.wrapNative = true;
+			}
+
+			if(this.options.wrapNative) {
+				// wrap native select inside fake block
+				this.realElement.prependTo(this.fakeElement).css({
+					position: 'absolute',
+					height: '100%',
+					width: '100%'
+				}).addClass(this.options.resetAppearanceClass);
+			} else {
+				// just hide native select
+				this.realElement.addClass(this.options.hiddenClass);
+				this.fakeElement.attr('title', this.realElement.attr('title'));
+				this.fakeDropTarget = this.options.fakeDropInBody ? $('body') : this.fakeElement;
+			}
+		},
+		attachEvents: function() {
+			// delayed refresh handler
+			var self = this;
+			this.delayedRefresh = function() {
+				setTimeout(function() {
+					self.refresh();
+					if(self.list) {
+						self.list.refresh();
+					}
+				}, 1);
+			};
+
+			// native dropdown event handlers
+			if(this.options.wrapNative) {
+				this.realElement.on({
+					focus: this.onFocus,
+					change: this.onChange,
+					click: this.onChange,
+					keydown: this.onChange
+				});
+			} else {
+				// custom dropdown event handlers
+				this.realElement.on({
+					focus: this.onFocus,
+					change: this.onChange,
+					keydown: this.onKeyDown
+				});
+				this.fakeElement.on({
+					'jcf-pointerdown': this.onSelectAreaPress
+				});
+			}
+		},
+		onKeyDown: function(e) {
+			if(e.which === 13) {
+				this.toggleDropdown();
+			} else if(this.dropActive) {
+				this.delayedRefresh();
+			}
+		},
+		onChange: function() {
+			this.refresh();
+		},
+		onFocus: function() {
+			if(!this.pressedFlag || !this.focusedFlag) {
+				this.fakeElement.addClass(this.options.focusClass);
+				this.realElement.on('blur', this.onBlur);
+				this.toggleListMode(true);
+				this.focusedFlag = true;
+			}
+		},
+		onBlur: function() {
+			if(!this.pressedFlag) {
+				this.fakeElement.removeClass(this.options.focusClass);
+				this.realElement.off('blur', this.onBlur);
+				this.toggleListMode(false);
+				this.focusedFlag = false;
+			}
+		},
+		onResize: function() {
+			if(this.dropActive) {
+				this.hideDropdown();
+			}
+		},
+		onSelectDropPress: function() {
+			this.pressedFlag = true;	
+		},
+		onSelectDropRelease: function(e, pointerEvent) {
+			this.pressedFlag = false;
+			if(pointerEvent.pointerType === 'mouse') {
 				this.realElement.focus();
 			}
-			this.refreshState();
-			this.hideDropdown();
-			jcf.lib.fireEvent(this.realElement, 'change');
-		}
-		return false;
-	},
-	onClickOutside: function(e){
-		if(jcf.tmpFlag) {
-			jcf.tmpFlag = false;
-			return;
-		}
-		if(!jcf.lib.isParent(this.fakeElement, e.target) && !jcf.lib.isParent(this.selectDrop, e.target)) {
-			this.hideDropdown();
-		}
-	},
-	onDropHover: function(e){
-		if(!this.keyboardFix) {
-			this.hoverFlag = true;
-			var opener = e.target && e.target.tagName && e.target.tagName.toLowerCase() == 'li' ? e.target : jcf.lib.getParent(e.target, 'li');
-			if(opener) {
-				this.realElement.selectedIndex = parseInt(opener.getAttribute('rel'));
-				this.refreshSelectedClass(parseInt(opener.getAttribute('rel')));
+		},
+		onSelectAreaPress: function(e) {
+			// skip click if drop inside fake element or real select is disabled
+			var dropClickedInsideFakeElement = !this.options.fakeDropInBody && $(e.target).closest(this.dropdown).length;
+			if(dropClickedInsideFakeElement || e.button > 1 || this.realElement.is(':disabled')) {
+				return;
 			}
-		} else {
-			this.keyboardFix = false;
-		}
-	},
-	onDropLeave: function(){
-		this.hoverFlag = false;
-	},
-	isActiveDrop: function(){
-		return !jcf.lib.hasClass(this.selectDrop, this.options.dropHiddenClass);
-	},
-	isOverDrop: function(){
-		return this.hoverFlag;
-	},
-	createDropdown: function(){
-		// remove old dropdown if exists
-		if(this.selectDrop && this.selectDrop.parentNode) {
-			this.selectDrop.parentNode.removeChild(this.selectDrop);
-		}
 
-		// create dropdown holder
-		this.selectDrop = document.createElement('div');
-		this.selectDrop.className = this.options.dropClass;
-		this.selectDrop.innerHTML = this.options.dropStructure;
-		jcf.lib.setStyles(this.selectDrop, {position:'absolute'});
-		this.selectList = jcf.lib.queryBySelector(this.options.dropSelector,this.selectDrop)[0];
-		jcf.lib.addClass(this.selectDrop, this.options.dropHiddenClass);
-		document.body.appendChild(this.selectDrop);
-		this.selectDrop.jcf = this;
-		jcf.lib.event.add(this.selectDrop, 'click', this.onOptionClick, this);
-		jcf.lib.event.add(this.selectDrop, 'mouseover', this.onDropHover, this);
-		jcf.lib.event.add(this.selectDrop, 'mouseout', this.onDropLeave, this);
-		this.buildDropdown();
-	},
-	buildDropdown: function() {
-		// build select options / optgroups
-		this.buildDropdownOptions();
+			// toggle dropdown visibility
+			this.selectOpenedByEvent = e.pointerType;
+			this.toggleDropdown();
 
-		// position and resize dropdown
-		this.positionDropdown();
-
-		// cut dropdown if height exceedes
-		this.buildDropdownScroll();
-	},
-	buildDropdownOptions: function() {
-		this.resStructure = '';
-		this.optNum = 0;
-		for(var i = 0; i < this.realElement.children.length; i++) {
-			this.resStructure += this.buildElement(this.realElement.children[i], i) +'\n';
-		}
-		this.selectList.innerHTML = this.resStructure;
-	},
-	buildDropdownScroll: function() {
-		jcf.lib.addClass(this.selectDrop, jcf.lib.getAllClasses(this.realElement.className, this.options.dropClassPrefix, jcf.baseOptions.hiddenClass));
-		if(this.options.dropMaxHeight) {
-			if(this.selectDrop.offsetHeight > this.options.dropMaxHeight) {
-				this.selectList.style.height = this.options.dropMaxHeight+'px';
-				this.selectList.style.overflow = 'auto';
-				this.selectList.style.overflowX = 'hidden';
-				jcf.lib.addClass(this.selectDrop, this.options.dropScrollableClass);
+			// misc handlers
+			if(!this.focusedFlag) {
+				if(e.pointerType === 'mouse') {
+					this.realElement.focus();
+				} else {
+					this.onFocus(e);
+				}
 			}
-		}
-	},
-	parseOptionTitle: function(optTitle) {
-		return (typeof optTitle === 'string' && /\.(jpg|gif|png|bmp|jpeg)(.*)?$/i.test(optTitle)) ? optTitle : '';
-	},
-	buildElement: function(obj, index){
-		// build option
-		var res = '', optImage;
-		if(obj.tagName.toLowerCase() == 'option') {
-			if(!jcf.lib.prevSibling(obj) || jcf.lib.prevSibling(obj).tagName.toLowerCase() != 'option') {
-				res += '<ul>';
-			}
-			
-			optImage = this.parseOptionTitle(obj.title);
-			res += '<li rel="'+(this.optNum++)+'" class="'+(obj.className? obj.className + ' ' : '')+(obj.disabled? 'opt-disabled ' : '')+(index % 2 ? 'option-even ' : '')+'jcfcalc"><a href="#">'+(optImage ? '<img src="'+optImage+'" alt="" />' : '')+'<span>' + obj.innerHTML + '</span></a></li>';
-			if(!jcf.lib.nextSibling(obj) || jcf.lib.nextSibling(obj).tagName.toLowerCase() != 'option') {
-				res += '</ul>';
-			}
-			return res;
-		}
-		// build option group with options
-		else if(obj.tagName.toLowerCase() == 'optgroup' && obj.label) {
-			res += '<div class="'+this.options.optGroupClass+'">';
-			res += '<strong class="jcfcalc"><em>'+(obj.label)+'</em></strong>';
-			for(var i = 0; i < obj.children.length; i++) {
-				res += this.buildElement(obj.children[i], i);
-			}
-			res += '</div>';
-			return res;
-		}
-	},
-	positionDropdown: function(){
-		var ofs = jcf.lib.getOffset(this.fakeElement), selectAreaHeight = this.fakeElement.offsetHeight, selectDropHeight = this.selectDrop.offsetHeight;
-		var fitInTop = ofs.top - selectDropHeight >= jcf.lib.getScrollTop() && jcf.lib.getScrollTop() + jcf.lib.getWindowHeight() < ofs.top + selectAreaHeight + selectDropHeight;
-		
-		
-		if((this.options.handleDropPosition && fitInTop) || this.options.selectDropPosition === 'top') {
-			this.selectDrop.style.top = (ofs.top - selectDropHeight)+'px';
-			jcf.lib.addClass(this.selectDrop, this.options.dropFlippedClass);
-			jcf.lib.addClass(this.fakeElement, this.options.dropFlippedClass);
-		} else {
-			this.selectDrop.style.top = (ofs.top + selectAreaHeight)+'px';
-			jcf.lib.removeClass(this.selectDrop, this.options.dropFlippedClass);
-			jcf.lib.removeClass(this.fakeElement, this.options.dropFlippedClass);
-		}
-		this.selectDrop.style.left = ofs.left+'px';
-		this.selectDrop.style.width = this.fakeElement.offsetWidth+'px';
-	},
-	showDropdown: function(){
-		document.body.appendChild(this.selectDrop);
-		jcf.lib.removeClass(this.selectDrop, this.options.dropHiddenClass);
-		jcf.lib.addClass(this.fakeElement,this.options.dropActiveClass);
-		this.positionDropdown();
-
-		// highlight current active item
-		var activeItem = this.getFakeActiveOption();
-		this.removeClassFromItems(this.options.currentSelectedClass);
-		jcf.lib.addClass(activeItem, this.options.currentSelectedClass);
-		
-		// show current dropdown
-		jcf.lib.event.add(window, 'resize', this.onResizeWindow, this);
-		jcf.lib.event.add(window, 'scroll', this.onScrollWindow, this);
-		jcf.lib.event.add(document, jcf.eventPress, this.onClickOutside, this);
-		this.positionDropdown();
-	},
-	hideDropdown: function(){
-		if(this.selectDrop.parentNode) {
-			this.selectDrop.parentNode.removeChild(this.selectDrop);
-		}
-		if(typeof this.origSelectedIndex === 'number') {
-			this.realElement.selectedIndex = this.origSelectedIndex;
-		}
-		jcf.lib.removeClass(this.fakeElement,this.options.dropActiveClass);
-		jcf.lib.addClass(this.selectDrop, this.options.dropHiddenClass);
-		jcf.lib.event.remove(window, 'resize', this.onResizeWindow);
-		jcf.lib.event.remove(window, 'scroll', this.onScrollWindow);
-		jcf.lib.event.remove(document.documentElement, jcf.eventPress, this.onClickOutside);
-		if(jcf.isTouchDevice) {
-			this.onBlur();
-		}
-	},
-	toggleDropdown: function(){
-		if(!this.realElement.disabled && this.realElement.options.length) {
-			if(jcf.isTouchDevice) {
-				this.onFocus();
-			} else {
+			this.pressedFlag = true;
+			this.fakeElement.addClass(this.options.pressedClass);
+			this.doc.on('jcf-pointerup', this.onSelectAreaRelease);
+		},
+		onSelectAreaRelease: function(e) {
+			if(this.focusedFlag && e.pointerType === 'mouse') {
 				this.realElement.focus();
 			}
-			if(this.isActiveDrop()) {
+			this.pressedFlag = false;
+			this.fakeElement.removeClass(this.options.pressedClass);
+			this.doc.off('jcf-pointerup', this.onSelectAreaRelease);
+		},
+		onOutsideClick: function(e) {
+			var target = $(e.target),
+				clickedInsideSelect = target.closest(this.fakeElement).length || target.closest(this.dropdown).length;
+
+			if(!clickedInsideSelect) {
+				this.hideDropdown();
+			}
+		},
+		onSelect: function() {
+			this.hideDropdown();
+			this.refresh();
+			this.fireNativeEvent(this.realElement, 'change');
+		},
+		toggleListMode: function(state) {
+			if(!this.options.wrapNative) {
+				if(state) {
+					// temporary change select to list to avoid appearing of native dropdown
+					this.realElement.attr({
+						size: 4,
+						'jcf-size': ''
+					});
+				} else {
+					// restore select from list mode to dropdown select
+					if(!this.options.wrapNative) {
+						this.realElement.removeAttr('size jcf-size');
+					}
+				}
+			}
+		},
+		createDropdown: function() {
+			// destroy previous dropdown if needed
+			if(this.dropdown) {
+				this.list.destroy();
+				this.dropdown.remove();
+			}
+
+			// create new drop container
+			this.dropdown = $(this.options.fakeDropStructure).appendTo(this.fakeDropTarget);
+			this.dropdown.addClass(getPrefixedClasses(this.realElement.prop('className'), this.options.selectClassPrefix));
+			makeUnselectable(this.dropdown);
+
+			// set initial styles for dropdown in body
+			if(this.options.fakeDropInBody) {
+				this.dropdown.css({
+					position: 'absolute',
+					top: -9999
+				});
+			}
+
+			// create new select list instance
+			this.list = new SelectList({
+				useHoverClass: true,
+				handleResize: false,
+				alwaysPreventMouseWheel: true,
+				maxVisibleItems: this.options.maxVisibleItems,
+				useCustomScroll: this.options.useCustomScroll,
+				holder: this.dropdown.find(this.options.dropContentSelector),
+				element: this.realElement
+			});
+			$(this.list).on({
+				select: this.onSelect,
+				press: this.onSelectDropPress,
+				release: this.onSelectDropRelease
+			});
+		},
+		repositionDropdown: function() {
+			var selectOffset = this.fakeElement.offset(),
+				selectWidth = this.fakeElement.outerWidth(),
+				selectHeight = this.fakeElement.outerHeight(),
+				dropHeight = this.dropdown.outerHeight(),
+				winScrollTop = this.win.scrollTop(),
+				winHeight = this.win.height(),
+				calcTop, calcLeft, bodyOffset, needFlipDrop = false;
+
+			// check flip drop position
+			if(selectOffset.top + selectHeight + dropHeight > winScrollTop + winHeight && selectOffset.top - dropHeight > winScrollTop) {
+				needFlipDrop = true;
+			}
+
+			if(this.options.fakeDropInBody) {
+				bodyOffset = this.fakeDropTarget.css('position') !== 'static' ? this.fakeDropTarget.offset().top : 0;
+				if(this.options.flipDropToFit && needFlipDrop) {
+					// calculate flipped dropdown position
+					calcLeft = selectOffset.left;
+					calcTop = selectOffset.top - dropHeight - bodyOffset;
+				} else {
+					// calculate default drop position
+					calcLeft = selectOffset.left;
+					calcTop = selectOffset.top + selectHeight - bodyOffset;
+				}
+
+				// update drop styles
+				this.dropdown.css({
+					width: selectWidth,
+					left: calcLeft,
+					top: calcTop
+				});
+			}
+
+			// refresh flipped class
+			this.dropdown.add(this.fakeElement).toggleClass(this.options.flipDropClass, this.options.flipDropToFit && needFlipDrop);
+		},
+		showDropdown: function() {
+			// do not show empty custom dropdown 
+			if(!this.realElement.prop('options').length) {
+				return;
+			}
+
+			// create options list if not created
+			if(!this.dropdown) {
+				this.createDropdown();
+			}
+
+			// show dropdown
+			this.dropActive = true;
+			this.dropdown.appendTo(this.fakeDropTarget);
+			this.fakeElement.addClass(this.options.dropActiveClass);
+			this.refreshSelectedText();
+			this.repositionDropdown();
+			this.list.setScrollTop(this.savedScrollTop);
+			this.list.refresh();
+
+			// add temporary event handlers
+			this.win.on('resize', this.onResize);
+			this.doc.on('jcf-pointerdown', this.onOutsideClick);
+		},
+		hideDropdown: function() {
+			if(this.dropdown) {
+				this.savedScrollTop = this.list.getScrollTop();
+				this.fakeElement.removeClass(this.options.dropActiveClass + ' ' + this.options.flipDropClass);
+				this.dropdown.removeClass(this.options.flipDropClass).detach();
+				this.doc.off('jcf-pointerdown', this.onOutsideClick);
+				this.win.off('resize', this.onResize);
+				this.dropActive = false;
+				if(this.selectOpenedByEvent === 'touch') {
+					this.onBlur();
+				}
+			}
+		},
+		toggleDropdown: function() {
+			if(this.dropActive) {
 				this.hideDropdown();
 			} else {
 				this.showDropdown();
 			}
-			this.refreshState();
-		}
-	},
-	scrollToItem: function(){
-		if(this.isActiveDrop()) {
-			var dropHeight = this.selectList.offsetHeight;
-			var offsetTop = this.calcOptionOffset(this.getFakeActiveOption());
-			var sTop = this.selectList.scrollTop;
-			var oHeight = this.getFakeActiveOption().offsetHeight;
-			//offsetTop+=sTop;
+		},
+		refreshSelectedText: function() {
+			// redraw selected area
+			var selectedIndex = this.realElement.prop('selectedIndex'),
+				selectedOption = this.realElement.prop('options')[selectedIndex],
+				selectedOptionImage = selectedOption ? selectedOption.getAttribute('data-image') : null,
+				selectedOptionClasses,
+				selectedFakeElement;
 
-			if(offsetTop >= sTop + dropHeight) {
-				this.selectList.scrollTop = offsetTop - dropHeight + oHeight;
-			} else if(offsetTop < sTop) {
-				this.selectList.scrollTop = offsetTop;
+			if(!selectedOption) {
+				if(this.selectImage) {
+					this.selectImage.hide();
+				}
+				this.selectText.removeAttr('class').empty();
+			} else if(this.currentSelectedText !== selectedOption.innerHTML || this.currentSelectedImage !== selectedOptionImage) {
+				selectedOptionClasses = getPrefixedClasses(selectedOption.className, this.options.optionClassPrefix);
+				this.selectText.attr('class', selectedOptionClasses).html(selectedOption.innerHTML);
+
+				if(selectedOptionImage) {
+					if(!this.selectImage) {
+						this.selectImage = $('<img>').prependTo(this.selectTextContainer).hide();
+					}
+					this.selectImage.attr('src', selectedOptionImage).show();
+				} else if(this.selectImage) {
+					this.selectImage.hide();
+				}
+
+				this.currentSelectedText = selectedOption.innerHTML;
+				this.currentSelectedImage = selectedOptionImage;
 			}
-		}
-	},
-	getFakeActiveOption: function(c) {
-		return jcf.lib.queryBySelector('li[rel="'+(typeof c === 'number' ? c : this.realElement.selectedIndex) +'"]',this.selectList)[0];
-	},
-	calcOptionOffset: function(fake) {
-		var h = 0;
-		var els = jcf.lib.queryBySelector('.jcfcalc',this.selectList);
-		for(var i = 0; i < els.length; i++) {
-			if(els[i] == fake) break;
-			h+=els[i].offsetHeight;
-		}
-		return h;
-	},
-	childrenHasItem: function(hold,item) {
-		var items = hold.getElementsByTagName('*');
-		for(i = 0; i < items.length; i++) {
-			if(items[i] == item) return true;
-		}
-		return false;
-	},
-	removeClassFromItems: function(className){
-		var children = jcf.lib.queryBySelector('li',this.selectList);
-		for(var i = children.length - 1; i >= 0; i--) {
-			jcf.lib.removeClass(children[i], className);
-		}
-	},
-	setSelectedClass: function(c){
-		var activeOption = this.getFakeActiveOption(c);
-		if(activeOption) {
-			jcf.lib.addClass(activeOption, this.options.selectedClass);
-		}
-	},
-	refreshSelectedClass: function(c){
-		if(!this.options.showNativeDrop) {
-			this.removeClassFromItems(this.options.selectedClass);
-			this.setSelectedClass(c);
-		}
-		if(this.realElement.disabled) {
-			jcf.lib.addClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.addClass(this.labelFor, this.options.labelDisabledClass);
+		},
+		refresh: function() {
+			// refresh fake select visibility
+			if(this.realElement.prop('style').display === 'none') {
+				this.fakeElement.hide();
+			} else {
+				this.fakeElement.show();
 			}
-		} else {
-			jcf.lib.removeClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.removeClass(this.labelFor, this.options.labelDisabledClass);
-			}
-		}
-	},
-	refreshSelectedText: function() {
-		if(!this.dropOpened && this.realElement.title) {
-			this.valueText.innerHTML = this.realElement.title;
-		} else {
-			var activeOption = this.realElement.options[this.realElement.selectedIndex];
-			if(activeOption) {
-				if(activeOption.title) {
-					var optImage = this.parseOptionTitle(this.realElement.options[this.realElement.selectedIndex].title);
-					this.valueText.innerHTML = (optImage ? '<img src="'+optImage+'" alt="" />' : '') + this.realElement.options[this.realElement.selectedIndex].innerHTML;
-				} else {
-					this.valueText.innerHTML = this.realElement.options[this.realElement.selectedIndex].innerHTML;
+
+			// refresh selected text
+			this.refreshSelectedText();
+
+			// handle disabled state
+			this.fakeElement.toggleClass(this.options.disabledClass, this.realElement.is(':disabled'));
+		},	
+		destroy: function() {
+			// restore structure
+			if(this.options.wrapNative) {
+				this.realElement.insertBefore(this.fakeElement).css({
+					position: '',
+					height: '',
+					width: ''
+				}).removeClass(this.options.resetAppearanceClass);
+			} else {
+				this.realElement.removeClass(this.options.hiddenClass);
+				if(this.realElement.is('[jcf-size]')) {
+					this.realElement.removeAttr('size jcf-size');
 				}
 			}
-		}
 
-		var selectedOption = this.realElement.options[this.realElement.selectedIndex];
-		if(selectedOption && selectedOption.className) {
-			this.fakeElement.setAttribute('data-option-class', jcf.lib.getAllClasses(selectedOption.className, 'option-').replace(/^\s+|\s+$/g, ''));
-		} else {
-			this.fakeElement.removeAttribute('data-option-class');
+			// removing element will also remove its event handlers
+			this.fakeElement.remove();
+
+			// remove other event handlers
+			this.doc.off('jcf-pointerup', this.onSelectAreaRelease);
+			this.realElement.off({
+				focus: this.onFocus
+			});
 		}
-	},
-	refreshState: function(){
-		this.origSelectedIndex = this.realElement.selectedIndex;
-		this.refreshSelectedClass();
-		this.refreshSelectedText();
-		if(!this.options.showNativeDrop) {
-			this.positionDropdown();
-			if(this.selectDrop.offsetWidth) {
-				this.scrollToItem();
-			}
-		}
+	});
+
+	// listbox module
+	function ListBox(options) {
+		this.options = $.extend({
+			wrapNative: true,
+			useCustomScroll: true,
+			fakeStructure: '<span class="jcf-list-box"><span class="jcf-list-wrapper"></span></span>',
+			selectClassPrefix: 'jcf-select-',
+			listHolder: '.jcf-list-wrapper'
+		}, options);
+		this.init();
 	}
-});
+	$.extend(ListBox.prototype, {
+		init: function(options) {
+			this.bindHandlers();
+			this.initStructure();
+			this.attachEvents();
+		},
+		initStructure: function() {
+			var self = this;
+			this.realElement = $(this.options.element);
+			this.fakeElement = $(this.options.fakeStructure).insertAfter(this.realElement);
+			this.listHolder = this.fakeElement.find(this.options.listHolder);
+			makeUnselectable(this.fakeElement);
 
-// custom select module
-jcf.addModule({
-	name:'selectmultiple',
-	selector:'select[size], select[multiple]',
-	defaultOptions: {
-		maxVisibleOptions: 10,
-		disabledClass:'select-disabled',
-		focusClass:'select-multiple-focus',
-		wrapperClass:'select-multiple-area',
-		scrollClass:'select-multiple-scroll',
-		itemSelectedClass:'item-selected',
-		listSelector: 'div.multiple-list',
-		optionTextSelector: 'span',
-		optionStructure: '<a><span></span></a>',
-		selectStructure:'<div class="select-multiple-wrapper"><div class="wtop"><div class="tl"></div><div class="tr"></div></div><div class="cwrap"><div class="chold"><div class="multiple-list"></div></div></div><div class="wbot"><div class="bl"></div><div class="br"></div></div></div>'
-	},
-	checkElement: function(el){
-		return (el.size || el.multiple);
-	},
-	setupWrapper: function(){
-		jcf.lib.addClass(this.fakeElement, this.options.wrapperClass);
-		this.fakeElement.innerHTML = this.options.selectStructure;
-		this.fakeElement.style.width = this.realElement.offsetWidth + 'px';
-		this.realElement.size = this.realElement.options.length;
-		this.realElement.parentNode.insertBefore(this.fakeElement, this.realElement.nextSibling);
-		this.rebuildOptions();
-		this.refreshState();
-		this.addEvents();
-		this.onControlReady(this);
-	},
-	rebuildOptions: function(){
-		// build options list
-		this.optionsHolder = jcf.lib.queryBySelector(this.options.listSelector, this.fakeElement)[0];
-		this.optionsHolder.innerHTML = '';
-		this.currentHolder = this.optionsHolder;
-		this.fakeOptions = [];
-		for(var i = 0; i < this.realElement.children.length; i++) {
-			var curItem = this.realElement.children[i];
-			var curType = curItem.tagName.toLowerCase();
-			if(curType === 'option' && (!jcf.lib.prevSibling(curItem) || jcf.lib.prevSibling(curItem).tagName.toLowerCase() !== 'option')) {
-				this.currentHolder = document.createElement('ul');
-				this.optionsHolder.appendChild(this.currentHolder);
-			} else if(curType === 'optgroup') {
-				this.currentHolder = this.optionsHolder;
-			}
-			this.currentHolder.appendChild(this.buildElement(curItem));
-		}
-		
-		// add scrollbars on big selects
-		if(this.realElement.options.length > this.options.maxVisibleOptions) {
-			jcf.lib.addClass(this.fakeElement, this.options.scrollClass);
-			this.optionsHolder.style.height = (this.getFakeActiveOption().offsetHeight * this.options.maxVisibleOptions) + 'px';
-			this.realElement.style.height = this.optionsHolder.style.height;
-			this.optionsHolder.style.overflow = 'auto';
-			this.optionsHolder.style.overflowX = 'hidden';
-		}
-	},
-	buildElement: function(item) {
-		// handle <option>
-		if(item.tagName.toLowerCase() === 'option') {
-			return this.createOption(item);
-		}
-		// handle <optgroup>
-		else {
-			return this.createOptgroup(item);
-		}
-	},
-	createOptgroup: function(optgroup) {
-		var optHold = document.createElement('div');
-		var optTitle = document.createElement('strong');
-		var optList = document.createElement('ul');
-		optHold.className = 'optgroup';
-		optTitle.innerHTML = optgroup.getAttribute('label');
-		optHold.appendChild(optTitle);
-		optHold.appendChild(optList);
-		for(var i = 0; i < optgroup.children.length; i++) {
-			optList.appendChild(this.buildElement(optgroup.children[i]));
-		}
-		return optHold;
-	},
-	createOption: function(option, holder){
-		var item = document.createElement('li'), link;
-		item.innerHTML = this.options.optionStructure;
-		link = jcf.lib.queryBySelector(this.options.optionTextSelector, item)[0];
-		link.innerHTML = option.innerHTML;
-		if(option.className) {
-			link.className = option.className;
-		}
-		jcf.lib.event.add(item, 'click', function(e){
-			this.onOptionClick(e, item);
-		}, this);
-		if(holder) {
-			holder.appendChild(item);
-		}
-		this.fakeOptions.push(item);
-		return item;
-	},
-	addEvents: function(){
-		jcf.lib.event.add(this.realElement, 'keydown', this.onKeyDown, this);
-		jcf.lib.event.add(this.realElement, 'click', this.refreshState, this);
-		jcf.lib.event.add(this.realElement, 'change', this.refreshState, this);
-	},
-	onKeyDown: function(e) {
-		if(!this.realElement.disabled && e.keyCode !== 16 && e.keyCode !== 17) { // do not scroll to item when holding CTRL or SHIFT
-			this.lastDirection = (e.keyCode == 38 || e.keyCode == 37 ? -1 : e.keyCode == 40 || e.keyCode == 39 ? 1 : 0);
-			setTimeout(jcf.lib.bind(function(){
-				// opera multiple keyboard nav fix
-				if(jcf.lib.browser.opera && this.realElement.multiple && !e.shiftKey) {
-					if(this.lastDirection) {
-						this.realElement.selectedIndex = this.getChangedSelectedIndex() + this.lastDirection;
-					}
-				}
-				this.refreshState();
-				this.scrollToItem();
-			},this),10);
-		}
-	},
-	onOptionClick: function(e, item) {
-		if(!this.realElement.disabled) {
-			var itemIndex = this.getItemIndex(item);
-			if(this.realElement.multiple) {
-				if(jcf.isTouchDevice) {
-					// for touch devices toggle option
-					this.realElement.options[itemIndex].selected = !this.realElement.options[itemIndex].selected;
+			// copy classes from original select
+			this.fakeElement.addClass(getPrefixedClasses(this.realElement.prop('className'), this.options.selectClassPrefix));
+			this.realElement.addClass(this.options.hiddenClass);
+
+			this.list = new SelectList({
+				useCustomScroll: this.options.useCustomScroll,
+				holder: this.listHolder,
+				selectOnClick: false,
+				element: this.realElement
+			});
+		},
+		attachEvents: function() {
+			// delayed refresh handler
+			var self = this;
+			this.delayedRefresh = function(e) {
+				if(e && e.keyCode == 16) {
+					// ignore SHIFT key
+					return;
 				} else {
-					if(!(e.metaKey || e.ctrlKey) && !e.shiftKey) {
-						// set one selected index and clear selection
-						this.realElement.selectedIndex = itemIndex;
-					} else {
-						if(e.metaKey || e.ctrlKey) {
-							// if CTRL pressed - toggle selected option
-							this.realElement.options[itemIndex].selected = !this.realElement.options[itemIndex].selected;
-						} else if(e.shiftKey) {
-							// if SHIFT pressed - update selection
-							var selectedIndex = this.getChangedSelectedIndex();
-							var startIndex = selectedIndex < itemIndex ? selectedIndex : itemIndex;
-							var endIndex = selectedIndex < itemIndex ? itemIndex : selectedIndex;
-							for(var i = 0; i < this.fakeOptions.length; i++) {
-								this.realElement.options[i].selected = (i >= startIndex && i <= endIndex);
-							}
-						}
-					}
+					clearTimeout(self.refreshTimer);
+					self.refreshTimer = setTimeout(function() {
+						self.refresh();
+					}, 1);
+				}
+			};
+
+			// other event handlers
+			this.realElement.on({
+				focus: this.onFocus,
+				click: this.delayedRefresh,
+				keydown: this.delayedRefresh
+			});
+
+			// select list event handlers
+			$(this.list).on({
+				select: this.onSelect,
+				press: this.onFakeOptionsPress,
+				release: this.onFakeOptionsRelease
+			});
+		},
+		onFakeOptionsPress: function(e, pointerEvent) {
+			this.pressedFlag = true;
+			if(pointerEvent.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+		},
+		onFakeOptionsRelease: function(e, pointerEvent) {
+			this.pressedFlag = false;
+			if(pointerEvent.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+		},
+		onSelect: function() {
+			this.fireNativeEvent(this.realElement, 'change');
+			this.fireNativeEvent(this.realElement, 'click');
+		},
+		onFocus: function() {
+			if(!this.pressedFlag || !this.focusedFlag) {
+				this.fakeElement.addClass(this.options.focusClass);
+				this.realElement.on('blur', this.onBlur);
+				this.focusedFlag = true;
+			}
+		},
+		onBlur: function() {
+			if(!this.pressedFlag) {
+				this.fakeElement.removeClass(this.options.focusClass);
+				this.realElement.off('blur', this.onBlur);
+				this.focusedFlag = false;
+			}
+		},
+		refresh: function() {
+			this.fakeElement.toggleClass(this.options.disabledClass, this.realElement.is(':disabled'));
+			this.list.refresh();
+		},
+		destroy: function() {
+			this.list.destroy();
+			this.realElement.insertBefore(this.fakeElement).removeClass(this.options.hiddenClass);
+			this.fakeElement.remove();
+		}
+	});
+
+	// options list module
+	function SelectList(options) {
+		this.options = $.extend({
+			holder: null,
+			maxVisibleItems: 10,
+			selectOnClick: true,
+			useHoverClass: false,
+			useCustomScroll: false,
+			handleResize: true,
+			alwaysPreventMouseWheel: false,
+			indexAttribute: 'data-index',
+			cloneClassPrefix: 'jcf-option-',
+			containerStructure: '<span class="jcf-list"><span class="jcf-list-content"></span></span>',
+			containerSelector: '.jcf-list-content',
+			captionClass: 'jcf-optgroup-caption',
+			disabledClass: 'jcf-disabled',
+			optionClass: 'jcf-option',
+			groupClass: 'jcf-optgroup',
+			hoverClass: 'jcf-hover',
+			selectedClass: 'jcf-selected',
+			scrollClass: 'jcf-scroll-active'
+		}, options);
+		this.init();
+	}
+	$.extend(SelectList.prototype, {
+		init: function() {
+			this.initStructure();
+			this.refreshSelectedClass();
+			this.attachEvents();
+		},
+		initStructure: function() {
+			this.element = $(this.options.element);
+			this.indexSelector = '[' + this.options.indexAttribute + ']';
+			this.container = $(this.options.containerStructure).appendTo(this.options.holder);
+			this.listHolder = this.container.find(this.options.containerSelector);
+			this.lastClickedIndex = this.element.prop('selectedIndex');
+			this.rebuildList();
+		},
+		attachEvents: function() {
+			this.bindHandlers();
+			this.listHolder.on('jcf-pointerdown', this.indexSelector, this.onItemPress);
+			this.listHolder.on('jcf-pointerdown', this.onPress);
+
+			if(this.options.useHoverClass) {
+				this.listHolder.on('jcf-pointerover', this.indexSelector, this.onHoverItem);
+			}
+		},
+		onPress: function(e) {
+			$(this).trigger('press', e);
+			this.listHolder.on('jcf-pointerup', this.onRelease);
+		},
+		onRelease: function(e) {
+			$(this).trigger('release', e);
+			this.listHolder.off('jcf-pointerup', this.onRelease);
+		},
+		onHoverItem: function(e) {
+			var hoverIndex = parseFloat(e.currentTarget.getAttribute(this.options.indexAttribute));
+			this.fakeOptions.removeClass(this.options.hoverClass).eq(hoverIndex).addClass(this.options.hoverClass);
+		},
+		onItemPress: function(e) {
+			if(e.pointerType === 'touch' || this.options.selectOnClick) {
+				// select option after "click"
+				this.tmpListOffsetTop = this.list.offset().top;
+				this.listHolder.on('jcf-pointerup', this.indexSelector, this.onItemRelease);
+			} else {
+				// select option immediately
+				this.onSelectItem(e);
+			}
+		},
+		onItemRelease: function(e) {
+			// remove event handlers and temporary data
+			this.listHolder.off('jcf-pointerup', this.indexSelector, this.onItemRelease);
+
+			// simulate item selection
+			if(this.tmpListOffsetTop === this.list.offset().top) {
+				this.listHolder.on('click', this.indexSelector, this.onSelectItem);
+			}
+			delete this.tmpListOffsetTop;
+		},
+		onSelectItem: function(e) {
+			var clickedIndex = parseFloat(e.currentTarget.getAttribute(this.options.indexAttribute)),
+				range;
+
+			// remove click event handler
+			this.listHolder.off('click', this.indexSelector, this.onSelectItem);
+
+			// ignore clicks on disabled options
+			if(e.button > 1 || this.realOptions[clickedIndex].disabled) {
+				return;
+			}
+
+			if(this.element.prop('multiple')) {
+				if(e.metaKey || e.ctrlKey || e.pointerType === 'touch') {
+					// if CTRL/CMD pressed or touch devices - toggle selected option
+					this.realOptions[clickedIndex].selected = !this.realOptions[clickedIndex].selected;
+				} else if(e.shiftKey) {
+					// if SHIFT pressed - update selection
+					range = [this.lastClickedIndex, clickedIndex].sort(function(a, b){
+						return a - b;
+					});
+					this.realOptions.each(function(index, option) {
+						option.selected = (index >= range[0] && index <= range[1]);
+					});
+				} else {
+					// set single selected index
+					this.element.prop('selectedIndex', clickedIndex);
 				}
 			} else {
-				this.realElement.selectedIndex = itemIndex;
+				this.element.prop('selectedIndex', clickedIndex);
 			}
-		}
-		this.refreshState();
-		e.preventDefault();
-	},
-	scrollToItem: function(){
-		// calc values
-		var dropHeight = this.optionsHolder.offsetHeight;
-		var dropScrollTop = this.optionsHolder.scrollTop;
-		var curIndex = this.getChangedSelectedIndex();
 
-		// Opera multiple keyboard nav fix
-		if(typeof curIndex === 'undefined') {
-			this.realElement.selectedIndex = curIndex = 0;
-			this.refreshState();
-		}
-
-		// scroll list
-		var selectedOption = this.fakeOptions[curIndex];
-		var positionTop = this.getOptionRelativeOffset(selectedOption);
-		if(positionTop + selectedOption.offsetHeight >= dropScrollTop + dropHeight) {
-			// scroll down (always scroll to option)
-			this.optionsHolder.scrollTop = positionTop - dropHeight + selectedOption.offsetHeight;
-		} else if(positionTop < dropScrollTop) {
-			// scroll up (handle optgroup caption if present)
-			this.optionsHolder.scrollTop = this.getOptionRelativeOffset(this.isFirstOptionInGroup(curIndex) ? this.getOptionOptgroup(selectedOption) : selectedOption);
-		}
-	},
-	isFirstOptionInGroup: function(ind) {
-		var realOption = this.realElement.options[ind];
-		return ind === 0 && realOption === realOption.parentNode.children[0] && realOption.parentNode.tagName.toLowerCase() === 'optgroup';
-	},
-	getOptionOptgroup: function(fakeEl) {
-		return fakeEl.parentNode.parentNode;
-	},
-	getOptionRelativeOffset: function(fakeEl) {
-		return jcf.lib.getOffset(fakeEl).top - jcf.lib.getOffset(this.optionsHolder).top + this.optionsHolder.scrollTop;
-	},
-	getChangedSelectedIndex: function() {
-		// multiple changed select index
-		if(this.realElement.multiple) {
-			// handle first call
-			if(typeof this.lastPrevInd === 'undefined') {
-				this.retValue = this.lastCurInd = this.firstCurInd = this.realElement.selectedIndex;
+			// save last clicked option
+			if(!e.shiftKey) {
+				this.lastClickedIndex = clickedIndex;
 			}
-			this.lastPrevInd = this.lastCurInd; this.lastCurInd = this.getLastSelectedOptionIndex();
-			this.firstPrevInd = this.firstCurInd; this.firstCurInd = this.getFirstSelectedOptionIndex();
+
+			// refresh classes
+			this.refreshSelectedClass();
+
+			// scroll to active item in desktop browsers
+			if(e.pointerType === 'mouse') {
+				this.scrollToActiveOption();
+			}
+
+			// make callback when item selected
+			$(this).trigger('select');
+		},
+		rebuildList: function() {
+			// rebuild options
+			var self = this,
+				rootElement = this.element[0];
+
+			// recursively create fake options
+			this.storedSelectHTML = rootElement.innerHTML;
+			this.optionIndex = 0;
+			this.list = $(this.createOptionsList(rootElement));
+			this.listHolder.empty().append(this.list);
+			this.realOptions = this.element.find('option');
+			this.fakeOptions = this.list.find(this.indexSelector);
+			this.fakeListItems = this.list.find('.' + this.options.captionClass + ',' + this.indexSelector);
+			delete this.optionIndex;
+
+			// detect max visible items
+			var maxCount = this.options.maxVisibleItems,
+				sizeValue = this.element.prop('size');
+			if(sizeValue > 1) {
+				maxCount = sizeValue;
+			}
+
+			// handle scrollbar
+			var needScrollBar = this.fakeOptions.length > maxCount;
+			this.container.toggleClass(this.options.scrollClass, needScrollBar);
+			if(needScrollBar) {
+				// change max-height
+				this.listHolder.css({
+					maxHeight: this.getOverflowHeight(maxCount),
+					overflow: 'auto'
+				});
+
+				if(this.options.useCustomScroll && jcf.modules.Scrollable) {
+					// add custom scrollbar if specified in options
+					jcf.replace(this.listHolder, 'Scrollable', {
+						handleResize: this.options.handleResize,
+						alwaysPreventMouseWheel: this.options.alwaysPreventMouseWheel
+					});
+					return;
+				}
+			}
+
+			// disable edge wheel scrolling
+			if(this.options.alwaysPreventMouseWheel) {
+				this.preventWheelHandler = function(e) {
+					var currentScrollTop = self.listHolder.scrollTop(),
+						maxScrollTop = self.listHolder.prop('scrollHeight') - self.listHolder.innerHeight(),
+						maxScrollLeft = self.listHolder.prop('scrollWidth') - self.listHolder.innerWidth();
+
+					// check edge cases
+					if((currentScrollTop <= 0 && e.deltaY < 0) || (currentScrollTop >= maxScrollTop && e.deltaY > 0)) {
+						e.preventDefault();
+					}
+				};
+				this.listHolder.on('jcf-mousewheel', this.preventWheelHandler);
+			}
+		},
+		refreshSelectedClass: function() {
+			var self = this,
+				selectedItem,
+				isMultiple = this.element.prop('multiple'),
+				selectedIndex = this.element.prop('selectedIndex');
+
+			if(isMultiple) {
+				this.realOptions.each(function(index, option) {
+					self.fakeOptions.eq(index).toggleClass(self.options.selectedClass, !!option.selected);
+				});
+			} else {
+				this.fakeOptions.removeClass(this.options.selectedClass + ' ' + this.options.hoverClass);
+				selectedItem = this.fakeOptions.eq(selectedIndex).addClass(this.options.selectedClass);
+				if(this.options.useHoverClass) {
+					selectedItem.addClass(this.options.hoverClass);
+				}
+			}
+		},
+		scrollToActiveOption: function() {
+			// scroll to target option
+			var targetOffset = this.getActiveOptionOffset();
+			this.listHolder.prop('scrollTop', targetOffset);
+		},
+		getSelectedIndexRange: function() {
+			var firstSelected = -1, lastSelected = -1;
+			this.realOptions.each(function(index, option) {
+				if(option.selected) {
+					if(firstSelected < 0) {
+						firstSelected = index;
+					}
+					lastSelected = index;
+				}
+			});
+			return [firstSelected, lastSelected];
+		},
+		getChangedSelectedIndex: function() {
+			var selectedIndex = this.element.prop('selectedIndex'),
+				targetIndex;
+
+			if(this.element.prop('multiple')) {
+				// multiple selects handling
+				if(!this.previousRange) {
+					this.previousRange = [selectedIndex, selectedIndex];
+				}
+				this.currentRange = this.getSelectedIndexRange();
+				targetIndex = this.currentRange[this.currentRange[0] !== this.previousRange[0] ? 0 : 1];
+				this.previousRange = this.currentRange;
+				return targetIndex;
+			} else {
+				// single choice selects handling
+				return selectedIndex;
+			}
+		},
+		getActiveOptionOffset: function() {
+			// calc values
+			var dropHeight = this.listHolder.height(),
+				dropScrollTop = this.listHolder.prop('scrollTop'),
+				currentIndex = this.getChangedSelectedIndex(),
+				fakeOption = this.fakeOptions.eq(currentIndex),
+				fakeOptionOffset = fakeOption.offset().top - this.list.offset().top,
+				fakeOptionHeight = fakeOption.innerHeight();
+
+			// scroll list
+			if(fakeOptionOffset + fakeOptionHeight >= dropScrollTop + dropHeight) {
+				// scroll down (always scroll to option)
+				return fakeOptionOffset - dropHeight + fakeOptionHeight;
+			} else if(fakeOptionOffset < dropScrollTop) {
+				// scroll up to option
+				return fakeOptionOffset;
+			}
+		},
+		getOverflowHeight: function(sizeValue) {
+			var item = this.fakeListItems.eq(sizeValue - 1),
+				listOffset = this.list.offset().top,
+				itemOffset = item.offset().top,
+				itemHeight = item.innerHeight();
+
+			return itemOffset + itemHeight - listOffset;
+		},
+		getScrollTop: function() {
+			return this.listHolder.scrollTop();
+		},
+		setScrollTop: function(value) {
+			this.listHolder.scrollTop(value);
+		},
+		createOption: function(option) {
+			var newOption = document.createElement('span');
+			newOption.className = this.options.optionClass;
+			newOption.innerHTML = option.innerHTML;
+			newOption.setAttribute(this.options.indexAttribute, this.optionIndex++);
+
+			var optionImage, optionImageSrc = option.getAttribute('data-image');
+			if(optionImageSrc) {
+				optionImage = document.createElement('img');
+				optionImage.src = optionImageSrc;
+				newOption.insertBefore(optionImage, newOption.childNodes[0]);
+			}
+			if(option.disabled) {
+				newOption.className += ' ' + this.options.disabledClass;
+			}
+			if(option.className) {
+				newOption.className += ' ' + getPrefixedClasses(option.className, this.options.cloneClassPrefix);
+			}
+			return newOption;
+		},
+		createOptGroup: function(optgroup) {
+			var optGroupContainer = document.createElement('span'),
+				optGroupName = optgroup.getAttribute('label'),
+				optGroupCaption, optGroupList;
+
+			// create caption
+			optGroupCaption = document.createElement('span');
+			optGroupCaption.className = this.options.captionClass;
+			optGroupCaption.innerHTML = optGroupName;
+			optGroupContainer.appendChild(optGroupCaption);
+
+			// create list of options
+			if(optgroup.children.length) {
+				optGroupList = this.createOptionsList(optgroup);
+				optGroupContainer.appendChild(optGroupList);
+			}
+
+			optGroupContainer.className = this.options.groupClass;
+			return optGroupContainer;
+		},
+		createOptionContainer: function() {
+			var optionContainer = document.createElement('li');
+			return optionContainer;
+		},
+		createOptionsList: function(container) {
+			var self = this,
+				list = document.createElement('ul');
+
+			$.each(container.children, function(index, currentNode) {
+				var item = self.createOptionContainer(currentNode),
+					newNode;
+
+				switch(currentNode.tagName.toLowerCase()) {
+					case 'option': newNode = self.createOption(currentNode); break;
+					case 'optgroup': newNode = self.createOptGroup(currentNode); break;
+				}
+				list.appendChild(item).appendChild(newNode);
+			});
+			return list;
+		},
+		refresh: function() {
+			// check for select innerHTML changes
+			if(this.storedSelectHTML !== this.element.prop('innerHTML')) {
+				this.rebuildList();
+			}
+
+			// refresh custom scrollbar
+			var scrollInstance = jcf.getInstance(this.listHolder);
+			if(scrollInstance) {
+				scrollInstance.refresh();
+			}
+
+			// scroll active option into view
+			this.scrollToActiveOption();
+
+			// refresh selectes classes
+			this.refreshSelectedClass();
+		},
+		destroy: function() {
+			this.listHolder.off('jcf-mousewheel', this.preventWheelHandler);
+			this.listHolder.off('jcf-pointerdown', this.indexSelector, this.onSelectItem);
+			this.listHolder.off('jcf-pointerover', this.indexSelector, this.onHoverItem);
+			this.listHolder.off('jcf-pointerdown', this.onPress);
+		}
+	});
+
+	// helper functions
+	var getPrefixedClasses = function(className, prefixToAdd) {
+		return className ? className.replace(/[\s]*([\S]+)+[\s]*/gi, prefixToAdd + '$1 ') : '';
+	};
+	var makeUnselectable = (function() {
+		var unselectableClass = jcf.getOptions().unselectableClass;
+		function preventHandler(e) {
+			e.preventDefault();
+		}
+		return function(node) {
+			node.addClass(unselectableClass).on('selectstart', preventHandler);
+		};
+	}());
+
+}(jQuery, this));
+
+/*!
+ * JavaScript Custom Forms : Radio Module
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
+ */
+;(function($, window) {
+	'use strict';
+
+	jcf.addModule({
+		name: 'Radio',
+		selector: 'input[type="radio"]',
+		options: {
+			wrapNative: true,
+			checkedClass: 'jcf-checked',
+			uncheckedClass: 'jcf-unchecked',
+			labelActiveClass: 'jcf-label-active',
+			fakeStructure: '<span class="jcf-radio"><span></span></span>'
+		},
+		matchElement: function(element) {
+			return element.is(':radio');
+		},
+		init: function(options) {
+			this.initStructure();
+			this.attachEvents();
+			this.refresh();
+		},
+		initStructure: function() {
+			// prepare structure
+			this.doc = $(document);
+			this.realElement = $(this.options.element);
+			this.fakeElement = $(this.options.fakeStructure).insertAfter(this.realElement);
+			this.labelElement = this.getLabelFor();
+
+			if(this.options.wrapNative) {
+				// wrap native radio inside fake block
+				this.realElement.prependTo(this.fakeElement).css({
+					position: 'absolute',
+					opacity: 0
+				});
+			} else {
+				// just hide native radio
+				this.realElement.addClass(this.options.hiddenClass);
+			}
+		},
+		attachEvents: function() {
+			// add event handlers
+			this.realElement.on({
+				focus: this.onFocus,
+				click: this.onRealClick
+			});
+			this.fakeElement.on('click', this.onFakeClick);
+			this.fakeElement.on('jcf-pointerdown', this.onPress);
+		},
+		onRealClick: function(e) {
+			// redraw current radio and its group (setTimeout handles click that might be prevented)
+			var self = this;
+			this.savedEventObject = e;
+			setTimeout(function() {
+				self.refreshRadioGroup();
+			}, 0);
+		},
+		onFakeClick: function(e) {
+			// skip event if clicked on real element inside wrapper
+			if(this.options.wrapNative && this.realElement.is(e.target)) {
+				return;
+			}
+
+			// toggle checked class
+			if(!this.realElement.is(':disabled')) {
+				delete this.savedEventObject;
+				this.currentActiveRadio = this.getCurrentActiveRadio();
+				this.stateChecked = this.realElement.prop('checked');
+				this.realElement.prop('checked', true);
+				this.fireNativeEvent(this.realElement, 'click');
+				if(this.savedEventObject && this.savedEventObject.isDefaultPrevented()) {
+					this.realElement.prop('checked', this.stateChecked);
+					this.currentActiveRadio.prop('checked', true);
+				} else {
+					this.fireNativeEvent(this.realElement, 'change');
+				}
+				delete this.savedEventObject;
+			}
+		},
+		onFocus: function() {
+			if(!this.pressedFlag || !this.focusedFlag) {
+				this.focusedFlag = true;
+				this.fakeElement.addClass(this.options.focusClass);
+				this.realElement.on('blur', this.onBlur);
+			}
+		},
+		onBlur: function() {
+			if(!this.pressedFlag) {
+				this.focusedFlag = false;
+				this.fakeElement.removeClass(this.options.focusClass);
+				this.realElement.off('blur', this.onBlur);
+			}
+		},
+		onPress: function(e) {
+			if(!this.focusedFlag && e.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+			this.pressedFlag = true;
+			this.fakeElement.addClass(this.options.pressedClass);
+			this.doc.on('jcf-pointerup', this.onRelease);
+		},
+		onRelease: function(e) {
+			if(this.focusedFlag && e.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+			this.pressedFlag = false;
+			this.fakeElement.removeClass(this.options.pressedClass);
+			this.doc.off('jcf-pointerup', this.onRelease);
+		},
+		getCurrentActiveRadio: function() {
+			return this.getRadioGroup(this.realElement).filter(':checked');
+		},
+		getRadioGroup: function(radio) {
+			// find radio group for specified radio button
+			var name = radio.attr('name'),
+				parentForm = radio.parents('form');
+
+			if(name) {
+				if(parentForm.length) {
+					return parentForm.find('input[name="' + name + '"]');
+				} else {
+					return $('input[name="' + name + '"]:not(form input)');
+				}
+			} else {
+				return radio;
+			}
+		},
+		getLabelFor: function() {
+			var parentLabel = this.realElement.closest('label'),
+				elementId = this.realElement.prop('id');
+
+			if(!parentLabel.length && elementId) {
+				parentLabel = $('label[for="' + elementId + '"]');
+			}
+			return parentLabel.length ? parentLabel : null;
+		},
+		refreshRadioGroup: function() {
+			// redraw current radio and its group
+			this.getRadioGroup(this.realElement).each(function() {
+				jcf.refresh(this);
+			});
+		},
+		refresh: function() {
+			// redraw current radio button
+			var isChecked = this.realElement.is(':checked'),
+				isDisabled = this.realElement.is(':disabled');
+
+			this.fakeElement.toggleClass(this.options.checkedClass, isChecked)
+							.toggleClass(this.options.uncheckedClass, !isChecked)
+							.toggleClass(this.options.disabledClass, isDisabled);
+
+			if(this.labelElement) {
+				this.labelElement.toggleClass(this.options.labelActiveClass, isChecked);
+			}
+		},
+		destroy: function() {
+			// restore structure
+			if(this.options.wrapNative) {
+				this.realElement.insertBefore(this.fakeElement).css({
+					position: '',
+					width: '',
+					height: '',
+					opacity: '',
+					margin: ''
+				});
+			} else {
+				this.realElement.removeClass(this.options.hiddenClass);
+			}
+
+			// removing element will also remove its event handlers
+			this.fakeElement.off('jcf-pointerdown', this.onPress);
+			this.fakeElement.remove();
+
+			// remove other event handlers
+			this.doc.off('jcf-pointerup', this.onRelease);
+			this.realElement.off({
+				blur: this.onBlur,
+				focus: this.onFocus,
+				click: this.onRealClick
+			});
+		}
+	});
+
+}(jQuery, this));
+
+/*!
+ * JavaScript Custom Forms : Checkbox Module
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
+ */
+;(function($, window) {
+	'use strict';
+
+	jcf.addModule({
+		name: 'Checkbox',
+		selector: 'input[type="checkbox"]',
+		options: {
+			wrapNative: true,
+			checkedClass: 'jcf-checked',
+			uncheckedClass: 'jcf-unchecked',
+			labelActiveClass: 'jcf-label-active',
+			fakeStructure: '<span class="jcf-checkbox"><span></span></span>'
+		},
+		matchElement: function(element) {
+			return element.is(':checkbox');
+		},
+		init: function(options) {
+			this.initStructure();
+			this.attachEvents();
+			this.refresh();
+		},
+		initStructure: function() {
+			// prepare structure
+			this.doc = $(document);
+			this.realElement = $(this.options.element);
+			this.fakeElement = $(this.options.fakeStructure).insertAfter(this.realElement);
+			this.labelElement = this.getLabelFor();
+
+			if(this.options.wrapNative) {
+				// wrap native checkbox inside fake block
+				this.realElement.appendTo(this.fakeElement).css({
+					position: 'absolute',
+					height: '100%',
+					width: '100%',
+					opacity: 0,
+					margin: 0
+				});
+			} else {
+				// just hide native checkbox
+				this.realElement.addClass(this.options.hiddenClass);
+			}
+		},
+		attachEvents: function() {
+			// add event handlers
+			this.realElement.on({
+				focus: this.onFocus,
+				click: this.onRealClick
+			});
+			this.fakeElement.on('click', this.onFakeClick);
+			this.fakeElement.on('jcf-pointerdown', this.onPress);
+		},
+		onRealClick: function(e) {
+			// just redraw fake element (setTimeout handles click that might be prevented)
+			var self = this;
+			this.savedEventObject = e;
+			setTimeout(function() {
+				self.refresh();
+			}, 0);
+		},
+		onFakeClick: function(e) {
+			// skip event if clicked on real element inside wrapper
+			if(this.options.wrapNative && this.realElement.is(e.target)) {
+				return;
+			}
+
+			// toggle checked class
+			if(!this.realElement.is(':disabled')) {
+				delete this.savedEventObject;
+				this.stateChecked = this.realElement.prop('checked');
+				this.realElement.prop('checked', !this.stateChecked);
+				this.fireNativeEvent(this.realElement, 'click');
+				if(this.savedEventObject && this.savedEventObject.isDefaultPrevented()) {
+					this.realElement.prop('checked', this.stateChecked);
+				} else {
+					this.fireNativeEvent(this.realElement, 'change');
+				}
+				delete this.savedEventObject;
+			}
+		},
+		onFocus: function() {
+			if(!this.pressedFlag || !this.focusedFlag) {
+				this.focusedFlag = true;
+				this.fakeElement.addClass(this.options.focusClass);
+				this.realElement.on('blur', this.onBlur);
+			}
+		},
+		onBlur: function() {
+			if(!this.pressedFlag) {
+				this.focusedFlag = false;
+				this.fakeElement.removeClass(this.options.focusClass);
+				this.realElement.off('blur', this.onBlur);
+			}
+		},
+		onPress: function(e) {
+			if(!this.focusedFlag && e.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+			this.pressedFlag = true;
+			this.fakeElement.addClass(this.options.pressedClass);
+			this.doc.on('jcf-pointerup', this.onRelease);
+		},
+		onRelease: function(e) {
+			if(this.focusedFlag && e.pointerType === 'mouse') {
+				this.realElement.focus();
+			}
+			this.pressedFlag = false;
+			this.fakeElement.removeClass(this.options.pressedClass);
+			this.doc.off('jcf-pointerup', this.onRelease);
+		},
+		getLabelFor: function() {
+			var parentLabel = this.realElement.closest('label'),
+				elementId = this.realElement.prop('id');
+
+			if(!parentLabel.length && elementId) {
+				parentLabel = $('label[for="' + elementId + '"]');
+			}
+			return parentLabel.length ? parentLabel : null;
+		},
+		refresh: function() {
+			// redraw custom checkbox
+			var isChecked = this.realElement.is(':checked'),
+				isDisabled = this.realElement.is(':disabled');
+
+			this.fakeElement.toggleClass(this.options.checkedClass, isChecked)
+							.toggleClass(this.options.uncheckedClass, !isChecked)
+							.toggleClass(this.options.disabledClass, isDisabled);
+
+			if(this.labelElement) {
+				this.labelElement.toggleClass(this.options.labelActiveClass, isChecked);
+			}
+		},
+		destroy: function() {
+			// restore structure
+			if(this.options.wrapNative) {
+				this.realElement.insertBefore(this.fakeElement).css({
+					position: '',
+					width: '',
+					height: '',
+					opacity: '',
+					margin: ''
+				});
+			} else {
+				this.realElement.removeClass(this.options.hiddenClass);
+			}
+
+			// removing element will also remove its event handlers
+			this.fakeElement.off('jcf-pointerdown', this.onPress);
+			this.fakeElement.remove();
+
+			// remove other event handlers
+			this.doc.off('jcf-pointerup', this.onRelease);
+			this.realElement.off({
+				focus: this.onFocus,
+				click: this.onRealClick
+			});
+		}
+	});
+
+}(jQuery, this));
+
+/*!
+ * JavaScript Custom Forms : Scrollbar Module
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
+ */
+;(function($, window) {
+	'use strict';
+
+	jcf.addModule({
+		name: 'Scrollable',
+		selector: '.jcf-scrollable',
+		plugins: {
+			ScrollBar: ScrollBar
+		},
+		options: {
+			mouseWheelStep: 150,
+			handleResize: true,
+			alwaysShowScrollbars: false,
+			alwaysPreventMouseWheel: false,
+			scrollAreaStructure: '<div class="jcf-scrollable-wrapper"></div>'
+		},
+		matchElement: function(element) {
+			return element.is('.jcf-scrollable');
+		},
+		init: function(options) {
+			this.initStructure();
+			this.attachEvents();
+			this.rebuildScrollbars();
+		},
+		initStructure: function() {
+			// prepare structure
+			this.doc = $(document);
+			this.win = $(window);
+			this.realElement = $(this.options.element);
+			this.scrollWrapper = $(this.options.scrollAreaStructure).insertAfter(this.realElement);
+
+			// set initial styles
+			this.scrollWrapper.css('position', 'relative');
+			this.realElement.css('overflow', 'hidden');
+			this.vBarEdge = 0;
+		},
+		attachEvents: function() {
+			// create scrollbars
+			var self = this;
+			this.vBar = new ScrollBar({
+				holder: this.scrollWrapper,
+				vertical: true,
+				onScroll: function(scrollTop) {
+					self.realElement.scrollTop(scrollTop);
+				}
+			});
+			this.hBar = new ScrollBar({
+				holder: this.scrollWrapper,
+				vertical: false,
+				onScroll: function(scrollLeft) {
+					self.realElement.scrollLeft(scrollLeft);
+				}
+			});
+
+			// add event handlers
+			this.realElement.on('scroll', this.onScroll);
+			if(this.options.handleResize) {
+				this.win.on('resize orientationchange load', this.onResize);
+			}
+
+			// add pointer/wheel event handlers
+			this.realElement.on('jcf-mousewheel', this.onMouseWheel);
+			this.realElement.on('jcf-pointerdown', this.onTouchBody);
+		},
+		onScroll: function() {
+			this.redrawScrollbars();
+		},
+		onResize: function() {
+			// do not rebuild scrollbars if form field is in focus
+			if(!$(document.activeElement).is(':input')) {
+				this.rebuildScrollbars();
+			}
+		},
+		onTouchBody: function(e) {
+			if(e.pointerType === 'touch') {
+				this.touchData = {
+					scrollTop: this.realElement.scrollTop(),
+					scrollLeft: this.realElement.scrollLeft(),
+					left: e.pageX,
+					top: e.pageY
+				};
+				this.doc.on({
+					'jcf-pointermove': this.onMoveBody,
+					'jcf-pointerup': this.onReleaseBody
+				});
+			}
+		},
+		onMoveBody: function(e) {
+			var targetScrollTop,
+				targetScrollLeft,
+				verticalScrollAllowed = this.verticalScrollActive,
+				horizontalScrollAllowed = this.horizontalScrollActive;
+
+			if(e.pointerType === 'touch') {
+				targetScrollTop = this.touchData.scrollTop - e.pageY + this.touchData.top;
+				targetScrollLeft = this.touchData.scrollLeft - e.pageX + this.touchData.left;
+
+				// check that scrolling is ended and release outer scrolling
+				if(this.verticalScrollActive && (targetScrollTop < 0 || targetScrollTop > this.vBar.maxValue)) {
+					verticalScrollAllowed = false;
+				}
+				if(this.horizontalScrollActive && (targetScrollLeft < 0 || targetScrollLeft > this.hBar.maxValue)) {
+					horizontalScrollAllowed = false;
+				}
+
+				this.realElement.scrollTop(targetScrollTop);
+				this.realElement.scrollLeft(targetScrollLeft);
+
+				if(verticalScrollAllowed || horizontalScrollAllowed) {
+					e.preventDefault();
+				} else {
+					this.onReleaseBody(e);
+				}
+			}
+		},
+		onReleaseBody: function(e) {
+			if(e.pointerType === 'touch') {
+				delete this.touchData;
+				this.doc.off({
+					'jcf-pointermove': this.onMoveBody,
+					'jcf-pointerup': this.onReleaseBody
+				});
+			}
+		},
+		onMouseWheel: function(e) {
+			var currentScrollTop = this.realElement.scrollTop(),
+				currentScrollLeft = this.realElement.scrollLeft(),
+				maxScrollTop = this.realElement.prop('scrollHeight') - this.embeddedDimensions.innerHeight,
+				maxScrollLeft = this.realElement.prop('scrollWidth') - this.embeddedDimensions.innerWidth,
+				extraLeft, extraTop, preventFlag;
+
+			// check edge cases
+			if(!this.options.alwaysPreventMouseWheel) {
+				if(this.verticalScrollActive && e.deltaY) {
+					if(!(currentScrollTop <= 0 && e.deltaY < 0) && !(currentScrollTop >= maxScrollTop && e.deltaY > 0)) {
+						preventFlag = true;
+					}
+				}
+				if(this.horizontalScrollActive && e.deltaX) {
+					if(!(currentScrollLeft <= 0 && e.deltaX < 0) && !(currentScrollLeft >= maxScrollLeft && e.deltaX > 0)) {
+						preventFlag = true;
+					}
+				}
+				if(!this.verticalScrollActive && !this.horizontalScrollActive) {
+					return;
+				}
+			}
+
+			// prevent default action and scroll item
+			if(preventFlag || this.options.alwaysPreventMouseWheel) {
+				e.preventDefault();
+			} else {
+				return;
+			}
+
+			extraLeft = e.deltaX / 100 * this.options.mouseWheelStep;
+			extraTop = e.deltaY / 100 * this.options.mouseWheelStep;
+
+			this.realElement.scrollTop(currentScrollTop + extraTop);
+			this.realElement.scrollLeft(currentScrollLeft + extraLeft);
+		},
+		setScrollBarEdge: function(edgeSize) {
+			this.vBarEdge = edgeSize || 0;
+			this.redrawScrollbars();
+		},
+		saveElementDimensions: function() {
+			this.savedDimensions = {
+				top: this.realElement.width(),
+				left: this.realElement.height()
+			};
+			return this;
+		},
+		restoreElementDimensions: function() {
+			if(this.savedDimensions) {
+				this.realElement.css({
+					width: this.savedDimensions.width,
+					height: this.savedDimensions.height
+				});
+			}
+			return this;
+		},
+		saveScrollOffsets: function() {
+			this.savedOffsets = {
+				top: this.realElement.scrollTop(),
+				left: this.realElement.scrollLeft()
+			};
+			return this;
+		},
+		restoreScrollOffsets: function() {
+			if(this.savedOffsets) {
+				this.realElement.scrollTop(this.savedOffsets.top);
+				this.realElement.scrollLeft(this.savedOffsets.left);
+			}
+			return this;
+		},
+		getContainerDimensions: function() {
+			// save current styles
+			var desiredDimensions,
+				currentStyles,
+				currentHeight,
+				currentWidth;
+
+			if(this.isModifiedStyles) {
+				desiredDimensions = {
+					width: this.realElement.innerWidth() + this.vBar.getThickness(),
+					height: this.realElement.innerHeight() + this.hBar.getThickness()
+				};
+			} else {
+				// unwrap real element and measure it according to CSS
+				this.saveElementDimensions().saveScrollOffsets();
+				this.realElement.insertAfter(this.scrollWrapper);
+				this.scrollWrapper.detach();
+
+				// measure element
+				currentStyles = this.realElement.prop('style');
+				currentWidth = parseFloat(currentStyles.width);
+				currentHeight = parseFloat(currentStyles.height);
+
+				// reset styles if needed
+				if(this.embeddedDimensions && currentWidth && currentHeight) {
+					this.isModifiedStyles |= (currentWidth !== this.embeddedDimensions.width || currentHeight !== this.embeddedDimensions.height);
+					this.realElement.css({
+						overflow: '',
+						width: '',
+						height: ''
+					});
+				}
+
+				// calculate desired dimensions for real element
+				desiredDimensions = {
+					width: this.realElement.outerWidth(),
+					height: this.realElement.outerHeight()
+				};
+
+				// restore structure and original scroll offsets
+				this.scrollWrapper.insertAfter(this.realElement);
+				this.realElement.css('overflow', 'hidden').prependTo(this.scrollWrapper);
+				this.restoreElementDimensions().restoreScrollOffsets();
+			}
 			
-			// handle multiple call
-			if(this.lastPrevInd === this.lastCurInd && this.firstPrevInd === this.firstCurInd) {
-				return this.retValue;
-			}
+			return desiredDimensions;
+		},
+		getEmbeddedDimensions: function(dimensions) {
+			// handle scrollbars cropping
+			var fakeBarWidth = this.vBar.getThickness(),
+				fakeBarHeight = this.hBar.getThickness(),
+				paddingWidth = this.realElement.outerWidth() - this.realElement.width(),
+				paddingHeight = this.realElement.outerHeight() - this.realElement.height(),
+				resultDimensions;
 
-			// handle index change
-			if(this.lastDirection < 0) {
-				if(this.firstPrevInd > this.firstCurInd) {
-					this.retValue = this.firstCurInd;
-				} else if(this.lastPrevInd >= this.lastCurInd) {
-					this.retValue = this.lastCurInd;
-				}
-			} else if(this.lastDirection > 0) {
-				if(this.firstPrevInd < this.firstCurInd) {
-					this.retValue = this.firstCurInd;
-				} else {
-					this.retValue = this.lastCurInd;
-				}
+			if(this.options.alwaysShowScrollbars) {
+				// simply return dimensions without custom scrollbars
+				this.verticalScrollActive = true;
+				this.horizontalScrollActive = true;
+				resultDimensions = {
+					innerWidth: dimensions.width - fakeBarWidth,
+					innerHeight: dimensions.height - fakeBarHeight
+				};
 			} else {
-				this.retValue = this.realElement.selectedIndex;
+				// detect when to display each scrollbar
+				this.saveElementDimensions();
+				this.verticalScrollActive = false;
+				this.horizontalScrollActive = false;
+
+				// fill container with full size
+				this.realElement.css({
+					width: dimensions.width - paddingWidth,
+					height: dimensions.height - paddingHeight
+				});
+
+				this.horizontalScrollActive = this.realElement.prop('scrollWidth') > this.containerDimensions.width;
+				this.verticalScrollActive = this.realElement.prop('scrollHeight') > this.containerDimensions.height;
+				
+				this.restoreElementDimensions();
+				resultDimensions = {
+					innerWidth: dimensions.width - (this.verticalScrollActive ? fakeBarWidth : 0),
+					innerHeight: dimensions.height - (this.horizontalScrollActive ? fakeBarHeight : 0)
+				};
 			}
-			return this.retValue;
-		}
-		// simple select index
-		return this.realElement.selectedIndex;
-	},
-	getFirstSelectedOptionIndex: function() {
-		for(var i = 0; i < this.realElement.options.length; i++) {
-			if(this.realElement.options[i].selected) return i;
-		}
-	},
-	getLastSelectedOptionIndex: function() {
-		for(var i = this.realElement.options.length-1; i >= 0; i--) {
-			if(this.realElement.options[i].selected) return i;
-		}
-	},
-	getItemIndex: function(item){
-		for(var i = 0; i < this.fakeOptions.length; i++) {
-			if(this.fakeOptions[i] === item) return i;
-		}
-	},
-	getFakeActiveOption: function() {
-		return this.fakeOptions[this.realElement.selectedIndex < 0 ? 0 : this.realElement.selectedIndex];
-	},
-	refreshState: function(){
-		for(var i = 0; i < this.fakeOptions.length; i++) {
-			if(this.realElement.options[i].selected) {
-				jcf.lib.addClass(this.fakeOptions[i], this.options.itemSelectedClass);
+			$.extend(resultDimensions, {
+				width: resultDimensions.innerWidth - paddingWidth,
+				height: resultDimensions.innerHeight - paddingHeight
+			});
+			return resultDimensions;
+		},
+		rebuildScrollbars: function() {
+			// resize wrapper according to real element styles
+			this.containerDimensions = this.getContainerDimensions();
+			this.embeddedDimensions = this.getEmbeddedDimensions(this.containerDimensions);
+
+			// resize wrapper to desired dimensions
+			this.scrollWrapper.css({
+				width: this.containerDimensions.width,
+				height: this.containerDimensions.height
+			});
+
+			// resize element inside wrapper excluding scrollbar size
+			this.realElement.css({
+				overflow: 'hidden',
+				width: this.embeddedDimensions.width,
+				height: this.embeddedDimensions.height
+			});
+
+			// redraw scrollbar offset
+			this.redrawScrollbars();
+		},
+		redrawScrollbars: function() {
+			var viewSize, maxScrollValue;
+
+			// redraw vertical scrollbar
+			if(this.verticalScrollActive) {
+				viewSize = this.vBarEdge ? this.containerDimensions.height - this.vBarEdge : this.embeddedDimensions.innerHeight;
+				maxScrollValue = this.realElement.prop('scrollHeight') - this.vBarEdge;
+
+				this.vBar.show().setMaxValue(maxScrollValue - viewSize).setRatio(viewSize / maxScrollValue).setSize(viewSize);
+				this.vBar.setValue(this.realElement.scrollTop());
 			} else {
-				jcf.lib.removeClass(this.fakeOptions[i], this.options.itemSelectedClass);
+				this.vBar.hide();
 			}
-		}
-		if(arguments.length) {
-			this.scrollToItem(); // if called from event - scroll to item
-		}
-		if(this.realElement.disabled) {
-			jcf.lib.addClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.addClass(this.labelFor, this.options.labelDisabledClass);
-			}
-		} else {
-			jcf.lib.removeClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.removeClass(this.labelFor, this.options.labelDisabledClass);
-			}
-		}
-	}
-});
 
-// custom radio module
-jcf.addModule({
-	name:'radio',
-	selector: 'input[type="radio"]',
-	defaultOptions: {
-		wrapperClass:'rad-area',
-		focusClass:'rad-focus',
-		checkedClass:'rad-checked',
-		uncheckedClass:'rad-unchecked',
-		disabledClass:'rad-disabled',
-		radStructure:'<span></span>'
-	},
-	getRadioGroup: function(item){
-		var name = item.getAttribute('name');
-		if(name) {
-			return jcf.lib.queryBySelector('input[name="'+name+'"]', jcf.lib.getParent('form'));
-		} else {
-			return [item];
-		}
-	},
-	setupWrapper: function(){
-		jcf.lib.addClass(this.fakeElement, this.options.wrapperClass);
-		this.fakeElement.innerHTML = this.options.radStructure;
-		this.realElement.parentNode.insertBefore(this.fakeElement, this.realElement);
-		this.refreshState();
-		this.addEvents();
-	},
-	addEvents: function(){
-		jcf.lib.event.add(this.fakeElement, 'click', this.toggleRadio, this);
-		if(this.labelFor) {
-			jcf.lib.event.add(this.labelFor, 'click', this.toggleRadio, this);
-		}
-	},
-	onFocus: function(e) {
-		jcf.modules[this.name].superclass.onFocus.apply(this, arguments);
-		setTimeout(jcf.lib.bind(function(){
-			this.refreshState();
-		},this),10);
-	},
-	toggleRadio: function(){
-		if(!this.realElement.disabled && !this.realElement.checked) {
-			this.realElement.checked = true;
-			jcf.lib.fireEvent(this.realElement, 'change');
-		}
-		this.refreshState();
-	},
-	refreshState: function(){
-		var els = this.getRadioGroup(this.realElement);
-		for(var i = 0; i < els.length; i++) {
-			var curEl = els[i].jcf;
-			if(curEl) {
-				if(curEl.realElement.checked) {
-					jcf.lib.addClass(curEl.fakeElement, curEl.options.checkedClass);
-					jcf.lib.removeClass(curEl.fakeElement, curEl.options.uncheckedClass);
-					if(curEl.labelFor) {
-						jcf.lib.addClass(curEl.labelFor, curEl.options.labelActiveClass);
-					}
-				} else {
-					jcf.lib.removeClass(curEl.fakeElement, curEl.options.checkedClass);
-					jcf.lib.addClass(curEl.fakeElement, curEl.options.uncheckedClass);
-					if(curEl.labelFor) {
-						jcf.lib.removeClass(curEl.labelFor, curEl.options.labelActiveClass);
-					}
-				}
-				if(curEl.realElement.disabled) {
-					jcf.lib.addClass(curEl.fakeElement, curEl.options.disabledClass);
-					if(curEl.labelFor) {
-						jcf.lib.addClass(curEl.labelFor, curEl.options.labelDisabledClass);
-					}
-				} else {
-					jcf.lib.removeClass(curEl.fakeElement, curEl.options.disabledClass);
-					if(curEl.labelFor) {
-						jcf.lib.removeClass(curEl.labelFor, curEl.options.labelDisabledClass);
-					}
-				}
-			}
-		}
-	}
-});
+			// redraw horizontal scrollbar
+			if(this.horizontalScrollActive) {
+				viewSize = this.embeddedDimensions.innerWidth;
+				maxScrollValue = this.realElement.prop('scrollWidth');
 
-// custom checkbox module
-jcf.addModule({
-	name:'checkbox',
-	selector:'input[type="checkbox"]',
-	defaultOptions: {
-		wrapperClass:'chk-area',
-		focusClass:'chk-focus',
-		checkedClass:'chk-checked',
-		labelActiveClass:'chk-label-active',
-		uncheckedClass:'chk-unchecked',
-		disabledClass:'chk-disabled',
-		chkStructure:'<span></span>'
-	},
-	setupWrapper: function(){
-		jcf.lib.addClass(this.fakeElement, this.options.wrapperClass);
-		this.fakeElement.innerHTML = this.options.chkStructure;
-		this.realElement.parentNode.insertBefore(this.fakeElement, this.realElement);
-		jcf.lib.event.add(this.realElement, 'click', this.onRealClick, this);
-		this.refreshState();
-	},
-	isLinkTarget: function(target, limitParent) {
-		while(target.parentNode || target === limitParent) {
-			if(target.tagName.toLowerCase() === 'a') {
-				return true;
-			}
-			target = target.parentNode;
-		}
-	},
-	onFakePressed: function() {
-		jcf.modules[this.name].superclass.onFakePressed.apply(this, arguments);
-		if(!this.realElement.disabled) {
-			this.realElement.focus();
-		}
-	},
-	onFakeClick: function(e) {
-		jcf.modules[this.name].superclass.onFakeClick.apply(this, arguments);
-		this.tmpTimer = setTimeout(jcf.lib.bind(function(){
-			this.toggle();
-		},this),10);
-		if(!this.isLinkTarget(e.target, this.labelFor)) {
-			return false;
-		}
-	},
-	onRealClick: function(e) {
-		setTimeout(jcf.lib.bind(function(){
-			this.refreshState();
-		},this),10);
-		e.stopPropagation();
-	},
-	toggle: function(e){
-		if(!this.realElement.disabled) {
-			if(this.realElement.checked) {
-				this.realElement.checked = false;
+				if(maxScrollValue === viewSize) {
+					this.horizontalScrollActive = false;
+				}
+				this.hBar.show().setMaxValue(maxScrollValue - viewSize).setRatio(viewSize / maxScrollValue).setSize(viewSize);
+				this.hBar.setValue(this.realElement.scrollLeft());
 			} else {
-				this.realElement.checked = true;
+				this.hBar.hide();				
 			}
+
+			// set "touch-action" style rule
+			var touchAction = '';
+			if(this.verticalScrollActive && this.horizontalScrollActive) {
+				touchAction = 'none';
+			} else if(this.verticalScrollActive) {
+				touchAction = 'pan-x';
+			} else if(this.horizontalScrollActive) {
+				touchAction = 'pan-y';
+			}
+			this.realElement.css('touchAction', touchAction);
+		},
+		refresh: function() {
+			this.rebuildScrollbars();
+		},	
+		destroy: function() {
+			// remove event listeners
+			this.win.off('resize orientationchange load', this.onResize);
+			this.realElement.off({
+				'jcf-mousewheel': this.onMouseWheel,
+				'jcf-pointerdown': this.onTouchBody
+			});
+			this.doc.off({
+				'jcf-pointermove': this.onMoveBody,
+				'jcf-pointerup': this.onReleaseBody
+			});
+			
+			// restore structure
+			this.saveScrollOffsets();
+			this.vBar.destroy();
+			this.hBar.destroy();
+			this.realElement.insertAfter(this.scrollWrapper).css({
+				touchAction: '',
+				overflow: '',
+				width: '',
+				height: ''
+			});
+			this.scrollWrapper.remove();
+			this.restoreScrollOffsets();
 		}
-		this.refreshState();
-		jcf.lib.fireEvent(this.realElement, 'change');
-		return false;
-	},
-	refreshState: function(){
-		if(this.realElement.checked) {
-			jcf.lib.addClass(this.fakeElement, this.options.checkedClass);
-			jcf.lib.removeClass(this.fakeElement, this.options.uncheckedClass);
-			if(this.labelFor) {
-				jcf.lib.addClass(this.labelFor, this.options.labelActiveClass);
-			}
-		} else {
-			jcf.lib.removeClass(this.fakeElement, this.options.checkedClass);
-			jcf.lib.addClass(this.fakeElement, this.options.uncheckedClass);
-			if(this.labelFor) {
-				jcf.lib.removeClass(this.labelFor, this.options.labelActiveClass);
-			}
-		}
-		if(this.realElement.disabled) {
-			jcf.lib.addClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.addClass(this.labelFor, this.options.labelDisabledClass);
-			}
-		} else {
-			jcf.lib.removeClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.removeClass(this.labelFor, this.options.labelDisabledClass);
-			}
-		}
+	});
+
+	// custom scrollbar
+	function ScrollBar(options) {
+		this.options = $.extend({
+			holder: null,
+			vertical: true,
+			inactiveClass: 'jcf-inactive',
+			verticalClass: 'jcf-scrollbar-vertical',
+			horizontalClass: 'jcf-scrollbar-horizontal',
+			scrollbarStructure: '<div class="jcf-scrollbar"><div class="jcf-scrollbar-dec"></div><div class="jcf-scrollbar-slider"><div class="jcf-scrollbar-handle"></div></div><div class="jcf-scrollbar-inc"></div></div>',
+			btnDecSelector: '.jcf-scrollbar-dec',
+			btnIncSelector: '.jcf-scrollbar-inc',
+			sliderSelector: '.jcf-scrollbar-slider',
+			handleSelector: '.jcf-scrollbar-handle',
+			scrollInterval: 10,
+			scrollStep: 5
+		}, options);
+		this.init();
 	}
-});
+	$.extend(ScrollBar.prototype, {
+		init: function() {
+			this.initStructure();
+			this.attachEvents();
+		},
+		initStructure: function() {
+			// define proporties
+			this.doc = $(document);
+			this.isVertical = !!this.options.vertical;
+			this.sizeProperty = this.isVertical ? 'height' : 'width';
+			this.fullSizeProperty = this.isVertical ? 'outerHeight' : 'outerWidth';
+			this.invertedSizeProperty = this.isVertical ? 'width' : 'height';
+			this.thicknessMeasureMethod = 'outer' + this.invertedSizeProperty.charAt(0).toUpperCase() + this.invertedSizeProperty.substr(1);
+			this.offsetProperty = this.isVertical ? 'top' : 'left';
+			this.offsetEventProperty = this.isVertical ? 'pageY' : 'pageX';
 
-// custom upload field module
-jcf.addModule({
-	name: 'file',
-	selector: 'input[type="file"]',
-	defaultOptions: {
-		buttonWidth: 30,
-		bigFontSize: 200,
-		buttonText:'upload',
-		wrapperClass:'file-area',
-		focusClass:'file-focus',
-		disabledClass:'file-disabled',
-		opacityClass:'file-input-opacity',
-		noFileClass:'no-file',
-		extPrefixClass:'extension-',
-		uploadStructure:'<div class="jcf-input-wrapper"><div class="jcf-wrap"></div><label class="jcf-fake-input"><span><em></em></span></label><a class="jcf-upload-button"><span></span></a></div>',
-		uploadFileNameSelector:'label.jcf-fake-input span em',
-		uploadButtonSelector:'a.jcf-upload-button span',
-		inputWrapper: 'div.jcf-wrap'
-	},
-	setupWrapper: function(){
-		jcf.lib.addClass(this.fakeElement, this.options.wrapperClass);
-		this.fakeElement.innerHTML = this.options.uploadStructure;
-		this.realElement.parentNode.insertBefore(this.fakeElement, this.realElement);
-		this.fileNameInput = jcf.lib.queryBySelector(this.options.uploadFileNameSelector ,this.fakeElement)[0];
-		this.uploadButton = jcf.lib.queryBySelector(this.options.uploadButtonSelector ,this.fakeElement)[0];
-		this.inputWrapper = jcf.lib.queryBySelector(this.options.inputWrapper ,this.fakeElement)[0];
+			// initialize variables
+			this.value = this.options.value || 0;
+			this.maxValue = this.options.maxValue || 0;
+			this.currentSliderSize = 0;
+			this.handleSize = 0;
 
-		this.origElem = jcf.lib.nextSibling(this.realElement);
-		if(this.origElem && this.origElem.className.indexOf('file-input-text') > -1) {
-			this.origElem.parentNode.removeChild(this.origElem);
-			this.origTitle = this.origElem.innerHTML;
-			this.fileNameInput.innerHTML = this.origTitle;
-		}
-		this.uploadButton.innerHTML = this.realElement.title || this.options.buttonText;
-		this.realElement.removeAttribute('title');
-		this.fakeElement.style.position = 'relative';
-		this.realElement.style.position = 'absolute';
-		this.realElement.style.zIndex = 100;
-		this.inputWrapper.appendChild(this.realElement);
-		this.oTop = this.oLeft = this.oWidth = this.oHeight = 0;
+			// find elements
+			this.holder = $(this.options.holder);
+			this.scrollbar = $(this.options.scrollbarStructure).appendTo(this.holder);
+			this.btnDec = this.scrollbar.find(this.options.btnDecSelector);
+			this.btnInc = this.scrollbar.find(this.options.btnIncSelector);
+			this.slider = this.scrollbar.find(this.options.sliderSelector);
+			this.handle = this.slider.find(this.options.handleSelector);
 
-		jcf.lib.addClass(this.realElement, this.options.opacityClass);
-		jcf.lib.removeClass(this.realElement, jcf.baseOptions.hiddenClass);
-		this.inputWrapper.style.width = this.inputWrapper.parentNode.offsetWidth+'px';
+			// set initial styles
+			this.scrollbar.addClass(this.isVertical ? this.options.verticalClass : this.options.horizontalClass).css({
+				touchAction: this.isVertical ? 'pan-x' : 'pan-y',
+				position: 'absolute'
+			});
+			this.slider.css({
+				position: 'relative'
+			});
+			this.handle.css({
+				touchAction: 'none',
+				position: 'absolute'
+			});
+		},
+		attachEvents: function() {
+			var self = this;
+			this.bindHandlers();
+			this.handle.on('jcf-pointerdown', this.onHandlePress);
+			this.btnDec.add(this.btnInc).on('jcf-pointerdown', this.onButtonPress);
+		},
+		onHandlePress: function(e) {
+			if(e.pointerType === 'mouse' && e.button > 1) {
+				return;
+			} else {
+				e.preventDefault();
+				this.sliderOffset = this.slider.offset()[this.offsetProperty];
+				this.innerHandleOffset = e[this.offsetEventProperty] - this.handle.offset()[this.offsetProperty];
 
-		this.shakeInput();
-		this.refreshState();
-		this.addEvents();
-	},
-	addEvents: function(){
-		jcf.lib.event.add(this.realElement, 'change', this.onChange, this);
-		if(!jcf.isTouchDevice) {
-			jcf.lib.event.add(this.fakeElement, 'mousemove', this.onMouseMove, this);
-			jcf.lib.event.add(this.fakeElement, 'mouseover', this.recalcDimensions, this);
-		}
-	},
-	onMouseMove: function(e){
-		this.realElement.style.top = Math.round(e.pageY - this.oTop - this.oHeight/2) + 'px';
-		this.realElement.style.left = (e.pageX - this.oLeft - this.oWidth + this.options.buttonWidth) + 'px';
-	},
-	onChange: function(){
-		this.refreshState();
-	},
-	getFileName: function(){
-		return this.realElement.value.replace(/^[\s\S]*(?:\\|\/)([\s\S^\\\/]*)$/g, "$1");
-	},
-	getFileExtension: function(){
-		return this.realElement.value.lastIndexOf('.') < 0 ? false : this.realElement.value.substring(this.realElement.value.lastIndexOf('.')+1).toLowerCase();
-	},
-	updateExtensionClass: function(){
-		var currentExtension = this.getFileExtension();
-		if(currentExtension) {
-			this.fakeElement.className = this.fakeElement.className.replace(new RegExp('(\\s|^)'+this.options.extPrefixClass+'[^ ]+','gi'),'')
-			jcf.lib.addClass(this.fakeElement, this.options.extPrefixClass+currentExtension)
-		}
-	},
-	shakeInput: function() {
-		// make input bigger
-		jcf.lib.setStyles(this.realElement, {
-			fontSize: this.options.bigFontSize,
-			lineHeight: this.options.bigFontSize,
-			heigth: 'auto',
-			top: 0,
-			left: this.inputWrapper.offsetWidth - this.realElement.offsetWidth
-		});
-		// IE styling fix
-		if((/(MSIE)/gi).test(navigator.userAgent)) {
-			this.tmpElement = document.createElement('span');
-			this.inputWrapper.insertBefore(this.tmpElement,this.realElement);
-			this.inputWrapper.insertBefore(this.realElement,this.tmpElement);
-			this.inputWrapper.removeChild(this.tmpElement);
-		}
-	},
-	recalcDimensions: function() {
-		var o = jcf.lib.getOffset(this.fakeElement);
-		this.oTop = o.top;
-		this.oLeft = o.left;
-		this.oWidth = this.realElement.offsetWidth;
-		this.oHeight = this.realElement.offsetHeight;
-	},
-	refreshState: function(){
-		jcf.lib.setStyles(this.realElement, {opacity: 0});
-		this.fileNameInput.innerHTML = this.getFileName() || this.origTitle || '';
-		if(this.realElement.disabled) {
-			jcf.lib.addClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.addClass(this.labelFor, this.options.labelDisabledClass);
+				this.doc.on('jcf-pointermove', this.onHandleDrag);
+				this.doc.on('jcf-pointerup', this.onHandleRelease);
 			}
-		} else {
-			jcf.lib.removeClass(this.fakeElement, this.options.disabledClass);
-			if(this.labelFor) {
-				jcf.lib.removeClass(this.labelFor, this.options.labelDisabledClass);
+		},
+		onHandleDrag: function(e) {
+			e.preventDefault();
+			this.calcOffset = e[this.offsetEventProperty] - this.sliderOffset - this.innerHandleOffset;
+			this.setValue(this.calcOffset / (this.currentSliderSize - this.handleSize) * this.maxValue);
+			this.triggerScrollEvent(this.value);
+		},
+		onHandleRelease: function() {
+			this.doc.off('jcf-pointermove', this.onHandleDrag);
+			this.doc.off('jcf-pointerup', this.onHandleRelease);
+		},
+		onButtonPress: function(e) {
+			var direction;
+			if(e.pointerType === 'mouse' && e.button > 1) {
+				return;
+			} else {
+				e.preventDefault();
+				direction = this.btnDec.is(e.currentTarget) ? -1 : 1;
+				this.startButtonScrolling(direction);
+				this.doc.on('jcf-pointerup', this.onButtonRelease);
 			}
+		},
+		onButtonRelease: function() {
+			this.stopButtonScrolling();
+			this.doc.off('jcf-pointerup', this.onButtonRelease);
+		},
+		startButtonScrolling: function(direction) {
+			var self = this;
+			this.stopButtonScrolling();
+			this.scrollTimer = setInterval(function() {
+				if(direction > 0) {
+					self.value += self.options.scrollStep;
+				} else {
+					self.value -= self.options.scrollStep;
+				}
+				self.setValue(self.value);
+				self.triggerScrollEvent(self.value);
+			}, this.options.scrollInterval);
+		},
+		stopButtonScrolling: function() {
+			clearInterval(this.scrollTimer);
+		},
+		triggerScrollEvent: function(scrollValue) {
+			if(this.options.onScroll) {
+				this.options.onScroll(scrollValue);
+			}
+		},
+		getThickness: function() {
+			return this.scrollbar[this.thicknessMeasureMethod]();
+		},
+		setSize: function(size) {
+			// resize scrollbar
+			var btnDecSize = this.btnDec[this.fullSizeProperty](),
+				btnIncSize = this.btnInc[this.fullSizeProperty]();
+
+			// resize slider
+			this.currentSize = size;
+			this.currentSliderSize = size - btnDecSize - btnIncSize;
+			this.scrollbar.css(this.sizeProperty, size);
+			this.slider.css(this.sizeProperty, this.currentSliderSize);
+			this.currentSliderSize = this.slider[this.sizeProperty]();
+
+			// resize handle
+			this.handleSize = Math.round(this.currentSliderSize * this.ratio);
+			this.handle.css(this.sizeProperty, this.handleSize);
+			this.handleSize = this.handle[this.fullSizeProperty]();
+
+			return this;
+		},
+		setRatio: function(ratio) {
+			this.ratio = ratio;
+			return this;
+		},
+		setMaxValue: function(maxValue) {
+			this.maxValue = maxValue;
+			this.setValue(Math.min(this.value, this.maxValue));
+			return this;
+		},
+		setValue: function(value) {
+			this.value = value;
+			if(this.value < 0) {
+				this.value = 0;
+			} else if(this.value > this.maxValue) {
+				this.value = this.maxValue;
+			}
+			this.refresh();
+		},
+		setPosition: function(styles) {
+			this.scrollbar.css(styles);
+			return this;
+		},
+		hide: function() {
+			this.scrollbar.detach();
+			return this;
+		},
+		show: function() {
+			this.scrollbar.appendTo(this.holder);
+			return this;
+		},
+		refresh: function() {
+			// recalculate handle position
+			if(this.value === 0 || this.maxValue === 0) {
+				this.calcOffset = 0;
+			} else {
+				this.calcOffset = (this.value / this.maxValue) * (this.currentSliderSize - this.handleSize);
+			}
+			this.handle.css(this.offsetProperty, this.calcOffset);
+
+			// toggle inactive classes
+			this.btnDec.toggleClass(this.options.inactiveClass, this.value === 0);
+			this.btnInc.toggleClass(this.options.inactiveClass, this.value === this.maxValue);
+			this.scrollbar.toggleClass(this.options.inactiveClass, this.maxValue === 0);
+		},
+		destroy: function() {
+			//remove event handlers and scrollbar block itself
+			this.btnDec.add(this.btnInc).off('jcf-pointerdown', this.onButtonPress);
+			this.handle.off('jcf-pointerdown', this.onHandlePress);
+			this.doc.off('jcf-pointermove', this.onHandleDrag);
+			this.doc.off('jcf-pointerup', this.onHandleRelease);
+			this.doc.off('jcf-pointerup', this.onButtonRelease);
+			clearInterval(this.scrollTimer);
+			this.scrollbar.remove();
 		}
-		if(this.realElement.value.length) {
-			jcf.lib.removeClass(this.fakeElement, this.options.noFileClass);
-		} else {
-			jcf.lib.addClass(this.fakeElement, this.options.noFileClass);
+	});
+
+}(jQuery, this));
+
+/*!
+ * JavaScript Custom Forms : File Module
+ *
+ * Copyright 2014 PSD2HTML (http://psd2html.com)
+ * Released under the MIT license (LICENSE.txt)
+ * 
+ * Version: 1.0.2
+ */
+;(function($, window) {
+	'use strict';
+
+	jcf.addModule({
+		name: 'File',
+		selector: 'input[type="file"]',
+		options: {
+			fakeStructure: '<span class="jcf-file"><span class="jcf-fake-input"></span><span class="jcf-upload-button"><span class="jcf-button-content"></span></span></span>',
+			buttonText: 'Choose file',
+			placeholderText: 'No file chosen',
+			realElementClass: 'jcf-real-element',
+			extensionPrefixClass: 'jcf-extension-',
+			selectedFileBlock: '.jcf-fake-input',
+			buttonTextBlock: '.jcf-button-content'
+		},
+		matchElement: function(element) {
+			return element.is('input[type="file"]');
+		},
+		init: function(options) {
+			this.initStructure();
+			this.attachEvents();
+			this.refresh();
+		},
+		initStructure: function() {
+			this.doc = $(document);
+			this.realElement = $(this.options.element).addClass(this.options.realElementClass);
+			this.fakeElement = $(this.options.fakeStructure).insertBefore(this.realElement);
+			this.fileNameBlock = this.fakeElement.find(this.options.selectedFileBlock);
+			this.buttonTextBlock = this.fakeElement.find(this.options.buttonTextBlock).text(this.options.buttonText);
+
+			this.realElement.appendTo(this.fakeElement).css({
+				position: 'absolute',
+				opacity: 0
+			});
+		},
+		attachEvents: function() {
+			this.realElement.on({
+				'jcf-pointerdown': this.onPress,
+				'change': this.onChange,
+				'focus': this.onFocus
+			});
+		},
+		onChange: function() {
+			this.refresh();
+		},
+		onFocus: function() {
+			this.fakeElement.addClass(this.options.focusClass);
+			this.realElement.on('blur', this.onBlur);
+		},
+		onBlur: function() {
+			this.fakeElement.removeClass(this.options.focusClass);
+			this.realElement.off('blur', this.onBlur);
+		},
+		onPress: function() {
+			this.fakeElement.addClass(this.options.pressedClass);
+			this.doc.on('jcf-pointerup', this.onRelease);
+		},
+		onRelease: function() {
+			this.fakeElement.removeClass(this.options.pressedClass);
+			this.doc.off('jcf-pointerup', this.onRelease);
+		},
+		getFileName: function(){
+			return this.realElement.val().replace(/^[\s\S]*(?:\\|\/)([\s\S^\\\/]*)$/g, '$1');
+		},
+		getFileExtension: function(){
+			var fileName = this.realElement.val();
+			return fileName.lastIndexOf('.') < 0 ? '' : fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
+		},
+		updateExtensionClass: function(){
+			var currentExtension = this.getFileExtension(),
+				currentClassList = this.fakeElement.prop('className'),
+				cleanedClassList = currentClassList.replace(new RegExp('(\\s|^)' + this.options.extensionPrefixClass + '[^ ]+','gi'), '');
+
+			this.fakeElement.prop('className', cleanedClassList);
+			if(currentExtension) {
+				this.fakeElement.addClass(this.options.extensionPrefixClass + currentExtension);
+			}
+		},
+		refresh: function() {
+			var selectedFileName = this.getFileName() || this.options.placeholderText;
+			this.fakeElement.toggleClass(this.options.disabledClass, this.realElement.is(':disabled'));
+			this.fileNameBlock.text(selectedFileName);
+			this.updateExtensionClass();
+		},
+		destroy: function() {
+			// reset styles and restore element position
+			this.realElement.insertBefore(this.fakeElement).removeClass(this.options.realElementClass).css({
+				position: '',
+				opacity: ''
+			});
+			this.fakeElement.remove();
+
+			// remove event handlers
+			this.realElement.off({
+				'jcf-pointerdown': this.onPress,
+				'change': this.onChange,
+				'focus': this.onFocus,
+				'blur': this.onBlur
+			});
+			this.doc.off('jcf-pointerup', this.onRelease);
 		}
-		this.updateExtensionClass();
-	}
-});
+	});
+
+}(jQuery, this));
 
 
 /*! Hammer.JS - v2.0.4 - 2014-09-28

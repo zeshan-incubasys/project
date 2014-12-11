@@ -45,7 +45,7 @@
 	        $(this).css({
 			   width: "84px"
 			});
-			$('#sidebar ul .text').fadeOut('slow',0);
+			$('#sidebar ul .text').fadeOut('1000');
 	     });
 	   });
 </script>
