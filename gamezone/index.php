@@ -1,39 +1,10 @@
+
 <?php  include('include/header.php');?>
+
+
 <div id="main">
-
-
-	<div id="sidebar" class="col-sm-3 col-md-2">
-		<div class="open-close">
-			<a class="opener" href="">menu</a>
-			<div class="slide">
-				<div class="widget">
-					<strong class="heading">Browse</strong>
-					<ul>
-						<li><a href="javascript:void(0)">Recent Games</a></li>
-						<li class="chart"><a href="javascript:void(0)">Top Charts</a></li>
-						<li class="release"><a href="javascript:void(0)">New Releases</a></li>
-					</ul>
-				</div>
-				<div class="widget">
-					<strong class="heading">Your GAMES</strong>
-					<ul>
-						<li class="games"><a href="javascript:void(0)">My Games</a></li>
-						<li class="history"><a href="javascript:void(0)">History</a></li>
-					</ul>
-				</div>
-				<div class="widget option">
-					<strong class="heading">More Options</strong>
-					<ul>
-						<li class="settings"><a href="javascript:void(0)">Settings</a></li>
-						<li class="out"><a href="javascript:void(0)">Log Out</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="content" class="col-sm-9 col-md-10">
+	<?php  include('include/sidebar.php');?>
+	<div id="content">
 		<div class="header">
 			<div class="user-area">
 				<div class="numbers">
@@ -76,7 +47,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="javascript:void(0)"><img src="<?php echo IMAGE_URL; ?>img2.jpg" alt=""></a>
@@ -87,7 +57,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img3.jpg" alt=""></a>
@@ -98,7 +67,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img4.jpg" alt=""></a>
@@ -109,7 +77,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img5.jpg" alt=""></a>
@@ -120,7 +87,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img6.jpg" alt=""></a>
@@ -131,7 +97,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img7.jpg" alt=""></a>
@@ -142,7 +107,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img8.jpg" alt=""></a>
@@ -153,7 +117,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img9.jpg" alt=""></a>
@@ -164,7 +127,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img10.jpg" alt=""></a>
@@ -175,7 +137,6 @@
 					<span class="game-downloads"><span class="counter">53,98,37,590</span> Downloads</span>
 				</div> 
 			</div>
-
 			<div class="game-wrap">
 				<div class="image-wrap">
 					<a href="#"><img src="<?php echo IMAGE_URL; ?>img1.jpg" alt=""></a>
@@ -188,8 +149,6 @@
 			</div>
 		</section>
 	</div>
-
-
 	</div>
 </div>
 

@@ -5,10 +5,12 @@ body {
 	font: 12px/15px "Lucida Grande", "Lucida Sans", sans-serif;
 	margin: 0;
 	min-width: 320px;
+	min-width: 999px;
 }
 a { 
 	color: #4b5c66;
 	text-decoration: none;
+	outline: none !important;
 }
 a:hover {
 	text-decoration: underline;
@@ -44,8 +46,6 @@ h2{
 	line-height: 23px;
 	text-transform: capitalize;
 }
-
-
 /**/
 
 /*Date Picker style*/
@@ -67,15 +67,9 @@ h2{
 
 /*Date Picker End*/
 
-
-
-/*-----------------------------*/
-
+/*----------------------------------------------------------------*/
 
 /*Custom select,radio, checkbox*/
-
-/* custom checkbox styles */
-
 
 /* hide original element */
 .jcf-hidden {
@@ -84,7 +78,6 @@ h2{
 	left: -9999px !important; /* change to right: -9999px on RTL sites */
 }
 /* custom checkbox styles */
-
 
 .chk-area {
 	border: 1px solid #777;
@@ -131,11 +124,13 @@ h2{
 	cursor: default;
 	height: 26px;
 	font-size: 18px;
-	line-height:28px;
+ 	line-height:28px;
 	float: left;
+	margin: 1px 0 !important;
 	width: 100% !important;
 	padding: 0 20px 0 10px;
 }
+
 .select-focus {
 	border-color: #f00;
 }
@@ -191,12 +186,13 @@ h2{
 	padding: 5px 10px;
 	display: block;
 	cursor: default;
-	color: #000;
+	color: #8f86a3;
 	height: 1%;
+	text-transform: capitalize;
 }
 .select-options .item-selected a {
 	text-decoration: none;
-	background: #ccc;
+	background: #8f86a3;
 	color: #fff;
 }
 /* select options optgroup example styles */
@@ -294,4 +290,58 @@ h2{
 .scrollable-area-wrapper .hscroll-line {
 	height: 20px;
 	width: auto;
+}
+
+/* custom file input */
+.file-area .jcf-input-wrapper {
+	position: relative;
+	overflow: hidden;
+	font-size: 18px;
+	line-height: 22px;
+	color:#8f86a3;
+}
+.file-area .jcf-upload-button {
+	border-radius: 22px;
+	border: 1px solid #8f86a3;
+	padding: 1px 19px;
+	color: #8f86a3;
+	background:none;
+	margin: 2px 0;
+	float: right !important;
+}
+.file-area .jcf-fake-input {
+	border: 1px solid #777;
+	padding: 10px 15px;
+	float: left;
+	margin: 0 5px;
+	width: 200px;
+	height: 20px;
+}
+.file-disabled .jcf-upload-button {
+	border-color: #eee;
+	background-color: #eee;
+	color: #777;
+}
+.file-disabled .jcf-fake-input {
+	border-color: #eee;
+	color: #aaa;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: #8f86a3;
+	opacity: 1;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #8f86a3;
+	opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #8f86a3;
+	opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: #8f86a3;
+}
+::-moz-placeholder {
+ opacity: 1;
 }

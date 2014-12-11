@@ -25,7 +25,7 @@
 		<div class="top-search">
 			<form>
 				<fieldset>
-					<button class="btn"></button>
+					<input type="submit" class="btn">
 					<input type="text" placeholder="">
 				</fieldset>
 			</form>
@@ -41,7 +41,7 @@
 			<form>
 				<fieldset>
 					<input type="text">
-					<input class="search-btn" type="button">
+					<input class="search-btn" type="submit">
 				</fieldset>
 			</form>
 		</div>

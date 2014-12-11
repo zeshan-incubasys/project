@@ -1,7 +1,4 @@
 
-
-
-
 #header:after{
 	content: '';
 	display: block;
@@ -30,7 +27,6 @@
 	display: block;
 	height: 100%;
 }
-
 #header .search-wrap{
 	width: 230px;
 	display: inline-block;
@@ -84,19 +80,15 @@
 	-o-transition: all 5s ease;
 	transition: all 5s ease;
 }
-#header .right-pane .user .name:hover a{
-	padding:0 0 28px 0;
-}
-#header .right-pane .user .name:hover .dropdown{
-	display: block;
-}
+#header .right-pane .user .name:hover a{padding:0 0 28px 0;}
+#header .right-pane .user .name:hover .dropdown{display: block;}
 #header .right-pane .user .name .dropdown{
 	position: absolute;
 	top: 42px;
 	left: 0;
 	content: '';
 	display: block;
-	width: 231px;
+	width: 233px;
 	padding:0;
 	list-style: none;
 	margin: 0;
@@ -105,12 +97,10 @@
 	background: #fff;
 	border: 1px solid #ccc;
 	display: none;
-	border-radius:5px;
+	border-radius:0 0 5px 5px;
 	text-transform:capitalize;
 }
-#header .right-pane .user .name .dropdown li{
-	margin: 0 0 2px;
-}
+#header .right-pane .user .name .dropdown li{margin: 0 0 2px;}
 #header .right-pane .user .name .dropdown li a{
 	display: block;
 	height: 100%;
@@ -118,7 +108,7 @@
 }
 #header .right-pane .user .name .dropdown .active a,
 #header .right-pane .user .name .dropdown li a:hover{
-	background: #ececec;
+	background: #f1f1f2;
 	text-decoration: none;
 	}
 #header .right-pane .user .arrow{
@@ -150,12 +140,10 @@
 	margin: 0 0 0 24px;
 }
 #header .right-pane a{ color: #89949b;}
-
-
-
 #main{
 	overflow: hidden;
-	padding: 20px 0 0;
+	padding: 87px 0 0;
+	position: relative;
 }
 #main #content .header{
 	overflow: hidden;
@@ -165,11 +153,14 @@
 	overflow: hidden;
 	padding:26px 3% 20px;
 }
+#content{
+	overflow: hidden;
+	margin: 0 0 0 245px;
+}
 #content .header .user-area{
 	overflow: hidden;
 	padding: 0 0 20px;
 }
-
 #content .header .user-area .numbers{
 	float: right;
 	min-width:190px;
@@ -178,7 +169,6 @@
 	color: #4b5c66;
 	border-radius: 5px 0 0 5px;
 }
-
 #content .header .user-area .numbers .block:first-child{background: none;}
 #content .header .user-area .numbers .block{
 	display: inline-block;
@@ -217,9 +207,6 @@
 	display: block;
 	margin:10px	 0 0 0;
 }
-
-
-
 #content .header .info-area{
 	overflow: hidden;
 	padding: 0 0 10px;
@@ -262,9 +249,6 @@
 	background: url(../images/border1.png) no-repeat 0 100%;
 }
 #content .header .info-area .links-area span a:hover{ text-decoration: none;}
-
-
-
 #content .content-holder:after{
 	content: '';
 	display: block;
@@ -278,7 +262,6 @@
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-
 #content .content-holder .game-wrap{
 	display: inline-block;
 	vertical-align: top;
@@ -313,8 +296,16 @@
 }
 #content .game-wrap .text-wrap .game-title a{ color: #4b5c66;}
 #content .game-wrap .text-wrap .game-date a{ color: #fe7f19;}
-
-
+#sidebar{
+	position: fixed;
+	background: #fff;
+	z-index: 9999;
+	top: 84px;
+	left: 0;
+	overflow: hidden;
+	height: 100%;
+	width:219px;
+}
 #sidebar .open-close .opener{
 	display: block;
 	width: 100%;
@@ -348,30 +339,35 @@
 }
 #sidebar .widget ul li{
 	overflow: hidden;
-	margin: 0 0 5px;
+	margin: 0 0 6px;
 	font-size: 14px;
 	line-height: 16px;
 	padding: 0 0 0 20px;
 	background: url(../images/ico1.png) no-repeat;
 }
-#sidebar .widget ul .chart{background: url(../images/ico2.png) no-repeat;}
-#sidebar .widget ul .release{background: url(../images/ico3.png) no-repeat;}
-#sidebar .widget ul .games{background: url(../images/ico4.png) no-repeat;}
-#sidebar .widget ul .history{background: url(../images/ico5.png) no-repeat;}
-#sidebar .widget ul .settings{background: url(../images/ico6.png) no-repeat;}
-#sidebar .widget ul .out{background: url(../images/ico7.png) no-repeat;}
+#sidebar .widget ul .view-game{background: url(../images/View-Games.svg) no-repeat;}
+#sidebar .widget ul .approve-games{background: url(../images/Approve-Games.svg) no-repeat;}
+#sidebar .widget ul .basic-info{background: url(../images/basic-info.svg) no-repeat;}
+#sidebar .widget ul .change-password{background: url(../images/change-password.svg) no-repeat;}
+#sidebar .widget ul .create-tournament{background: url(../images/create-tournaments.svg) no-repeat;}
+#sidebar .widget ul .send-message{background: url(../images/send-message.svg) no-repeat;}
+#sidebar .widget ul .view-admin{background: url(../images/view-admin.svg) no-repeat;}
+#sidebar .widget ul .view-all-competitions{background: url(../images/view-all-competitions.svg) no-repeat;}
+#sidebar .widget ul .view-all-tournmanets{background: url(../images/view-all-tournmanets.svg) no-repeat;}
+#sidebar .widget ul .view-developres{background: url(../images/view-developers.svg) no-repeat;}
+#sidebar .widget ul .log-out{background: url(../images/Log-Out.svg) no-repeat;}
+
+#sidebar .widget ul .my-games{background: url(../images/GamesIcon.svg) no-repeat;}
+#sidebar .widget ul .history{background: url(../images/HistoryIcon.svg) no-repeat;}
+#sidebar .widget ul .settings{background: url(../images/SettingsIcon.svg) no-repeat;}
+
 .hide{ display: none;}
-
-
-
 
 /*Form Styling*/
 #form-wrap{
 	overflow: hidden;
 	padding: 0 14% 0 0 ;
 }
-
-	
 #form-wrap .row{
 	overflow: hidden;
 	margin: 0 0 30px;
@@ -403,10 +399,10 @@
 	font-weight: normal !important;
 }
 #form-wrap .row  input[type="submit"]{
-	background: none;
-    border:1px solid #ccc;
+	background:#32487f;
+	border: none;
     border-radius: 40px;
-    color: #999;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -423,11 +419,10 @@
 	transition: all .2s ease;
 }
 #form-wrap .row  input[type="submit"]:hover{
-	-webkit-box-shadow:inset  0 0 3px 3px #ebebeb;
-	box-shadow:inset  0 0 3px 3px #ebebeb;
+	-webkit-box-shadow:inset  0 0 8px 4px #233258;
+	box-shadow:inset  0 0 8px 4px #233258;
 }
 /*END Form Styling*/
-
 
 *//////////////////////////////////////////////////////////////////*/
 /*REGISTER STYLE*/
@@ -500,7 +495,6 @@
 	.top-form-area input[type="submit"]:hover{
 		background: #3f5a9c;
 	}
-
 /*register end*/
 
 /*//////////////////////////////////////////////////////////////////*/
@@ -531,7 +525,6 @@
 	margin: 0 0 18px;
 }
 #content .table-wrapper .holder.even .block .heading{color: #444040;}
-
 
 /*table style*/
 #content .table-wrapper .block .table-area{overflow: hidden;}
@@ -584,8 +577,12 @@ table.dataTable thead .sorting_asc,
 .holder.even table.dataTable thead .sorting,
 .holder.even table.dataTable thead .sorting_asc{
 	color: #fff;
+	font-size: 14px;
 	text-transform: capitalize;
 	background-color:#7e75ae !important;
+}
+table.dataTable thead th, table.dataTable thead td{
+	padding: 6px 18px !important;
 }
 .holder.even table.dataTable thead .sorting,
 .holder.even table.dataTable thead .sorting_asc{ background-color: #908380 !important;}
@@ -635,6 +632,7 @@ table.dataTable thead .sorting_asc,
 	border: none !important;
 	background:url(../images/info-divider.png) repeat-y 100% 0 !important;
 	text-align: center;
+	text-transform: capitalize;
 }
 .holder.even .table > thead > tr > th,
 .holder.even .table > tbody > tr > th,
@@ -657,7 +655,11 @@ table.dataTable tbody tr{
 	color: #8f827f;
 	background: #fff;
 }
-.table-striped > tbody > tr:nth-child(2n+1) a{ color: #7f7775}
+.table-striped > tbody > tr:nth-child(2n+1) a{
+	color: #7f7775;
+	text-decoration: underline;
+}
+.table-striped > tbody > tr:nth-child(2n+1) a:hover{ text-decoration: none;}
 table.dataTable tbody tr a{ color: #362e7e;}
 .holder.even table.dataTable tbody tr a{ color: #8f827f;}
 
@@ -677,11 +679,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 
 /*table end*/
 
-
-
-
 @media only screen and (max-width:1500px){}
-
 
 
 /* Small devices (tablets, 768px and up) */
@@ -694,6 +692,10 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 	#header{
 		padding: 7px 30px;
 		border-bottom: 1px solid #ccc;
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+		background:#fff;
 	}
 	#header .logo{margin:0 68px 0 0;}
 	#content .header .info-area .links-area{
@@ -727,18 +729,15 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 		overflow: hidden;
 		padding:20px 0 ;
 	}
-
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	#content .content-holder .game-wrap{
 		width: 18%;
-		margin: 0 2% 40px -4px;
+		margin: 0 1.6% 20px 0;
 	}
 }
-
-
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}

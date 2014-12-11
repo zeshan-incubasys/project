@@ -16,6 +16,15 @@
 	<script type="text/javascript" src="<?=JS_URL?>bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?=JS_URL?>customize.js"></script>
 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$( "#datepicker" ).datepicker(),
+			$( "#datepicker1" ).datepicker();
+			$( "#datepicker2" ).datepicker();
+		});
+	</script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 		    $('#sample-table-2').DataTable(),
@@ -24,4 +33,20 @@
 		    $('#sample-table-5').DataTable();
 		});
 	</script>
+	<script type="text/javascript">
+	   $(document).ready(function() {
+	        $('#sidebar').mouseover( function(){
+	        $(this).css({
+		   width: "221px"
+		});
+		$('#sidebar ul .text').fadeIn(1000);
+	    });
+        $('#sidebar').mouseleave( function(){
+	        $(this).css({
+			   width: "84px"
+			});
+			$('#sidebar ul .text').fadeOut('slow',0);
+	     });
+	   });
+</script>
 </head>

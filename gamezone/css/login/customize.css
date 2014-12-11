@@ -5,11 +5,6 @@ body{
 	background-size:cover;
 	background-attachment: fixed;
 }
-
-
-
-
-
 #login-wrap{ overflow: hidden;}
 	#login-wrap .main-holder{
 		overflow: hidden;
@@ -164,7 +159,6 @@ body{
 		background:#fff url(../../images/login/bg-footer.png) no-repeat 50%	-222px;
 	}
 	#login-wrap .footer a{color:#fff;}
-
 
 /*REGISTER STYLE*/
 
@@ -333,7 +327,6 @@ body{
 @media only screen and (max-width:1500px){}
 
 
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 #login-wrap{ overflow: hidden;}
@@ -406,7 +399,6 @@ body{
 	#login-wrap .holder .input-wrap.pswd input[type="text"]{
 		background:#fff url(../../images/login/ico3.png) no-repeat 10px 4px;
 	}
-	
 	#login-wrap .sign-area{
 		overflow: hidden;
 		font-size: 20px;
@@ -478,14 +470,10 @@ body{
 	}
 	#login-wrap .footer a{color:#fff;}
 
-
 }
 
 /* Medium devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {}
-
-
-
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
