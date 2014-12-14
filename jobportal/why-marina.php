@@ -49,19 +49,27 @@
 						<img src="images/img-ship.png" alt="" class="ico-ship">
 				  </div>
 			</div>
-			<h2><span>Commitment to Law &amp; Regulations</span></h2>
-			<p>In September 2014, UAE flag has implemented fresh safety regulations. As Captains or Management you will be held accountable and responsible, should your yacht encounter an incident or emergency. We recommend you ask yourself a couple of questions:</p>
-			<ul class="list">
-				  <li>How will my crew handle a fire on board, or are they certified to do so at all? </li>
-				  <li>What is the plan of action, if one of your guest have a cardio arrest, dive or jet-ski accident?</li>
-			</ul>
-			<img src="images/ico-marina3.png" class="main-ico">
-			<p style="text-align:center;">At sea, you need a fast and professional first response from your crew.</p>
-			<ul class="list">
-				  <li>We ensure that you have well trained and certified crewmembers within a well-organized safety structure. This can make a world of difference. </li>
-				  <li>It is paramount to understand that the beautiful, clean and shinning yacht is no better than its crew. Hired to provide the best service and maintenance, it has been easy to down play the safety of family, friends, guests, clients or crew - but it seems with the implementation of new safety regulations, the tide is turning and you.</li>
-				  <li>The best crew saves you time, money and the headache – and we are proud to be able to find them for you!</li>
-			</ul>
+			<div class="rule-area">
+				<h2><span>Commitment to Law &amp; Regulations</span></h2>
+				<div class="col-md-5">
+					
+					<p>In September 2014, UAE flag has implemented fresh safety regulations. As Captains or Management you will be held accountable and responsible, should your yacht encounter an incident or emergency. We recommend you ask yourself a couple of questions:</p>
+					<ul class="list">
+						  <li>How will my crew handle a fire on board, or are they certified to do so at all? </li>
+						  <li>What is the plan of action, if one of your guest have a cardio arrest, dive or jet-ski accident?</li>
+					</ul>
+				</div>
+				
+				<div class="col-md-5 pull-right">
+					<p style="text-align:center;">At sea, you need a fast and professional first response from your crew.</p>
+					<ul class="list">
+						  <li>We ensure that you have well trained and certified crewmembers within a well-organized safety structure. This can make a world of difference. </li>
+						  <li>It is paramount to understand that the beautiful, clean and shinning yacht is no better than its crew. Hired to provide the best service and maintenance, it has been easy to down play the safety of family, friends, guests, clients or crew - but it seems with the implementation of new safety regulations, the tide is turning and you.</li>
+						  <li>The best crew saves you time, money and the headache – and we are proud to be able to find them for you!</li>
+					</ul>
+				</div>
+				<img src="images/ico-marina3.png" class="main-ico">
+			</div>
 	  </div>
 </div>
 <?php include('include/footer.php');?>

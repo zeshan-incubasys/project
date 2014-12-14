@@ -27,7 +27,7 @@
 						<img src="images/crew1.jpg" alt="">
 				  </div>
 				  <div class="col-md-7 image img2">
-						<img src="images/crew2.jpg" alt="">
+						<a href="why-marina.php"><img src="images/crew2.jpg" alt=""></a>
 						<a href="#" class="butn">Find Crew</a>
 				  </div>
 				  <div class="more-area">

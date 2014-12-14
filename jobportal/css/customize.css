@@ -1413,10 +1413,10 @@ transition: all 600ms ease-in;
 .popup p { margin: 0 0 30px; }
 .popup .text-block {
 	overflow: hidden;
-	text-align: center;
+	/*text-align: center;*/
 	margin: 0 0 26px;
 }
-.popup .text-block .block { margin: 0 0 26px; }
+.popup .text-block .block { margin: 0 0 26px; text-align:center;  }
 .popup .text-block h3 {
 	margin: 0 0 10px;
 	font-size: 16px;
@@ -2124,10 +2124,12 @@ transform: rotate(-20deg);
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	.popup .text-block .block{ text-align:center; }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.popup .text-block .block{ text-align:left; }
 	.services .holder .image-area {
 	margin: 0;
 	padding: 0;
