@@ -1,13 +1,37 @@
 <?php include('variables.php');?>
 <?php include('head.php');?>
 <body>
-	<header id="header">
-		<div class="top-bar">
-			<div class="col-md-3">
-				<strong class="logo"><a href="#">logo</a></strong>
-			</div>
-			<div class="col-md-3">
-			</div>
+<header id="header">
+	<div class="top-bar">
+		<div class="right-pane">
+			<span class="user">
+				<span class="name">
+					<a href="#">abuBakar Butt</a>
+					<ul class="dropdown">
+						<li><a href="#">item 1</a></li>
+						<li class="active"><a href="#">item 1</a></li>
+						<li><a href="#">item 1</a></li>
+						<li><a href="#">item 1</a></li>
+						<li><a href="#">item 1</a></li>
+					</ul>
+				</span>
+				<span class="arrow"><a href="#"></a></span>
+			</span>
+			<a class="notification" href="#"></a>
+			<a class="friend" href="#"></a>
 		</div>
-		<?php /*?><?php include('navigation.php');?><?php */?>
-	</header>
+
+		<strong class="logo">
+			<a href="#">gamezone</a>
+		</strong>
+		<div class="search-wrap">
+			<form>
+				<fieldset>
+					<input type="text">
+					<input class="search-btn" type="submit">
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<?php /*?><?php include('navigation.php');?><?php */?>
+</header>
