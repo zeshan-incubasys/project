@@ -6,29 +6,33 @@
 		</div>
 	</section>
 	<div class="advice container">
-		<p>At Marina ReCrewter, we are more than a crew agency. Due to our immense platform of (local) network and contacts and maritime background, we have received requests to assist and support in a more consultative role, acting as initiating link with management related tasks.</p>
+		<p>At MARINA RECREWTER, we are more than a crew agency. Due to our immense platform of (local) network and contacts and maritime background, we have received requests to assist and support in a more consultative role, acting as initiating link with management related tasks.</p>
 		<ul>
 			<li>ISM code, Lloyds certified Internal Management System Auditor </li>
 			<li>ISPS code, Lloyds certified Company and Ship Security Officer, CSO/SSO</li>
 			<li>Classification and Statutory Surveys, Lloyds certified</li>
 			<li>Risk Management and Incident Investigation, Lloyds certified</li>
-			<li>We are well versed in Port State Controls, Class and Flag State Inspections, MCA USCG rules and regulation. Pre-audits: Crew safety and Security training. </li>
-			<li>Maintenance and repair, sea-trials and delivery crew </li>
+			<li>We are well versed in Port State Controls, Class and Flag State Inspections, MCA USCG rules and regulation. Pre-audits: Crew safety and Security training.</li>
+			<li>Maintenance and repair, sea-trials and delivery crew</li>
 		</ul>
 	</div>
-	<div class="image-section container">
-		<div class="col-md-5 row">
+	<div class="image-section container ad-images">
+		<div class="col-md-5 image">
 			<img src="images/advice1.jpg" alt="">
 		</div>
-		<div class="col-md-7 row">
+		<div class="col-md-7 image img2">
 			<img src="images/advice2.jpg" alt="">
-			<a href="#" class="btn">ENQUIRE NOW</a>
+			<a href="#" class="butn">ENQUIRE NOW</a>
 		</div>
+		<span class="note">For any requests or further information, please contact us.</span>
 	</div>
-	<section class="what-do">
+
+	  <section class="what-do">
         <div class="container head">
-          <h2><span>Candidates – Work &amp; Live Your Dream!</span></h2>
-          <p>Whether you are an experienced candidate or a new talent, it is our goal to help advance your career and hopefully contribute to securing your next job. We are committed to assist and advice. You will be supported by our hands-on approach, an honest assessment matching realistic opportunities.</p>
+			  <a href="#myModal3" role="button" data-toggle="modal"><h2><span>WHY MARINA RECREWTER? </span></h2></a>
+          <p>We have experienced firsthand the effects of not having the right profile on board; inadequate manning requirements, high turnover – increased costs and most importantly the dissatisfaction of Owners and Guests. Getting the right candidate first time is our priority. </p>
         </div>
 	</section>
+
+<?php  include('popup.php');?>
 <?php include('include/footer.php');?>

@@ -135,8 +135,9 @@ $(document).ready(function(e) {
                 }else{
                     $('.form2 .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
                     $('.form2 .message-box').delay(4000).fadeOut(800);
-                    window.open('brochure.pdf', '_blank');
-                    window.open('forms.pdf', '_blank');
+                    document.getElementById('brochure_link').click();
+                    document.getElementById('form_link').click();
+                    document.getElementById('fancybox-close').click();
                 }
 
             });
@@ -182,8 +183,9 @@ $(document).ready(function(e) {
                 }else{
                     $('.form3 .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
                     $('.form3 .message-box').delay(4000).fadeOut(800);
-                    window.open('brochure.pdf', '_blank');
-                    window.open('forms.pdf', '_blank');
+                    document.getElementById('brochure_link').click();
+                    document.getElementById('form_link').click();
+                    document.getElementById('fancybox-close').click();
                 }
 
             });
@@ -228,8 +230,9 @@ $(document).ready(function(e) {
                 }else{
                     $('.search-form .message-box').fadeIn(800).removeClass('error').addClass('success').html(data);
                     $('.search-form .message-box').delay(4000).fadeOut(800);
-                    window.open('brochure.pdf', '_blank');
-                    window.open('forms.pdf', '_blank');
+                    document.getElementById('brochure_link').click();
+                    document.getElementById('form_link').click();
+                    document.getElementById('fancybox-close').click();
                 }
 
             });
