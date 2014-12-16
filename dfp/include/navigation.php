@@ -95,7 +95,7 @@
 					</div>
 				</div>
 			</li>
-			<li><a href="#">Login</a></li>
+			<li><a class="lightbox" href="#popup1">Login</a></li>
 		</ul>
 	</div>
 </nav>
