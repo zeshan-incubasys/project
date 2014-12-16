@@ -23,30 +23,35 @@
 			$( "#datepicker" ).datepicker(),
 			$( "#datepicker1" ).datepicker();
 			$( "#datepicker2" ).datepicker();
-		});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-		    $('#sample-table-2').DataTable(),
+			$('#sample-table-2').DataTable(),
 		    $('#sample-table-3').DataTable(),
 		    $('#sample-table-4').DataTable(),
 		    $('#sample-table-5').DataTable();
+		    
+		    $('#sidebar').hover(
+		    	function()
+		    	{
+		    		console.log($('#sidebar').is(':animated'));
+		    		if(!$('#sidebar ul .text').is(':animated'))
+		    		{		    		
+		    			$(this).css("width", "221px");
+	        			$('#sidebar ul .text').fadeIn(1000);
+	        		}
+		    	},function()
+		    	{
+		    		if(!$('#sidebar ul .text').is(':animated')){
+		    			$(this).css("width", "84px");
+						$('#sidebar ul .text').fadeOut('1000');
+		    		}
+		    		
+					 
+					
+
+		    	}
+		    );
+		   
+
 		});
 	</script>
-	<script type="text/javascript">
-	   $(document).ready(function() {
-	        $('#sidebar').mouseover( function(){
-	        $(this).css({
-		   width: "221px"
-		});
-		$('#sidebar ul .text').fadeIn(1000);
-	    });
-        $('#sidebar').mouseleave( function(){
-	        $(this).css({
-			   width: "84px"
-			});
-			$('#sidebar ul .text').fadeOut('1000');
-	     });
-	   });
-</script>
+	
 </head>

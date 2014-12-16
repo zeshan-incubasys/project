@@ -1,7 +1,7 @@
 // page init
 jQuery(function(){
-	initCustomForms();
 	initCarousel();
+	initCustomForms();
 	initOpenClose();
 	jQuery('input, textarea').placeholder();
 });
@@ -23,6 +23,7 @@ function initCarousel() {
 		slides: 'div.slide',
 		btnPrev: 'a.btn-prev',
 		btnNext: 'a.btn-next',
+		stretchSlideToMask: true,
 		pagerLinks: '.pagination li',
 		autoRotation: false,
 		switchTime: 3000,

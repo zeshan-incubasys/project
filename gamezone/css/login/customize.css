@@ -60,6 +60,7 @@ body{
 		margin: 0 0 20px;
 	}
 	#login-wrap .holder .input-wrap input[type="text"],
+	.top-form-area .input-wrap input[type="email"],
 	#login-wrap .holder .input-wrap input[type="password"]{
 		background:#fff url(../../images/login/ico2.png) no-repeat 10px 6px;
 		width: 100%;

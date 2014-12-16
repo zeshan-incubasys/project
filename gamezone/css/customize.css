@@ -387,7 +387,8 @@
 }
 #form-wrap .row .input-wrap input[type="text"],
 #form-wrap .row .input-wrap input[type="password"],
-#form-wrap .row .input-wrap input[type="mail"]{
+#form-wrap .row .input-wrap input[type="mail"],
+.top-form-area .input-wrap input[type="email"]{
 	width: 100%;
 	outline: none;
 	border: 0;
@@ -461,7 +462,8 @@
 	}
 	.top-form-area .input-wrap input[type="text"],
 	.top-form-area .input-wrap input[type="password"],
-	.top-form-area .input-wrap input[type="mail"]{
+	.top-form-area .input-wrap input[type="mail"],
+	.top-form-area .input-wrap input[type="email"]{
 		width: 100%;
 		outline: none;
 		border: 0;
