@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<input type="submit" value="Login">
-				<a class="lightbox" href="#popup2">Not a member?</a>
+				<a class="lightbox member" href="#popup2">Not a member?</a>
  			</fieldset>
 		</form>
 	</div>

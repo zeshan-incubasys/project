@@ -42,7 +42,7 @@
 		<div class="mask">
 			<div class="slideset">
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img2.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -52,7 +52,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img3.png" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img4.png" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img5.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -82,7 +82,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img6.png" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img7.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -102,7 +102,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img8.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -112,7 +112,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img9.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -144,7 +144,7 @@
 		<div class="mask">
 			<div class="slideset">
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img2.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -154,7 +154,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img3.png" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -164,7 +164,7 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img4.png" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
@@ -174,7 +174,47 @@
 					</div>
 				</div>
 				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
+					<img src="<?=IMAGE_URL?>img5.jpg" alt="">
+					<div class="details">
+						<div class="title-area">
+							<strong class="title">Chairs</strong>
+							<span class="by">by Filicio Ernrim</span>
+						</div>
+						<a href="#" class="ico-cart">Add<br>to cart</a>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="<?=IMAGE_URL?>img6.png" alt="">
+					<div class="details">
+						<div class="title-area">
+							<strong class="title">Chairs</strong>
+							<span class="by">by Filicio Ernrim</span>
+						</div>
+						<a href="#" class="ico-cart">Add<br>to cart</a>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="<?=IMAGE_URL?>img7.jpg" alt="">
+					<div class="details">
+						<div class="title-area">
+							<strong class="title">Chairs</strong>
+							<span class="by">by Filicio Ernrim</span>
+						</div>
+						<a href="#" class="ico-cart">Add<br>to cart</a>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="<?=IMAGE_URL?>img8.jpg" alt="">
+					<div class="details">
+						<div class="title-area">
+							<strong class="title">Chairs</strong>
+							<span class="by">by Filicio Ernrim</span>
+						</div>
+						<a href="#" class="ico-cart">Add<br>to cart</a>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="<?=IMAGE_URL?>img9.jpg" alt="">
 					<div class="details">
 						<div class="title-area">
 							<strong class="title">Chairs</strong>
