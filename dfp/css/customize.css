@@ -783,6 +783,7 @@ vertical-align:middle; }
 	text-transform:uppercase;
 	color:#585858;
 	margin:0 0 10px;
+	text-align:left;
 }
 .popup .form input[type="text"],
 .popup .form input[type="password"],
