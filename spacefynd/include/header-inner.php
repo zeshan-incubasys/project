@@ -28,7 +28,13 @@
 				<a href="#" class="profile">Abubakar</a>
 				<a href="#" class="email">Email</a>
 				<a href="#" class="help">Help</a>
-				<a href="#" class="btn">List Your Space</a>
+				<a href="#" class="btn btn-sky">List Your Space</a>
 			</div>
 		</div>
+		<ul class="nav">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Press</a></li>
+			<li><a href="#">Job</a></li>
+			<li><a href="#">Blog</a></li>
+		</ul>
 	</header>
