@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-    $('.slider, .slider .image-holder').height($(window).height()-$('header').height());
+    /*$('.slider, .slider .image-holder').height($(window).height()-$('header').height());
     var pad=(($(window).height()-$('header').height())-$('.slider .holder').innerHeight())/2;
     if($('.slider, .slider .image-holder').height()>400)
         $('.slider .holder').css('padding-top',parseInt(pad)+"px");
     else
-        $('.slider .holder').css('padding-top',"20px");
+        $('.slider .holder').css('padding-top',"20px");*/
 
     initCarousel();
     });
