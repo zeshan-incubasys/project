@@ -1,3 +1,76 @@
+/** Generic Css**/
+@font-face {
+	font-family: 'luzsans-boldluzsans-bold';
+	src: url('../fonts/luzhpbro-webfont.eot');
+	src: url('../fonts/luzhpbro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/luzhpbro-webfont.woff') format('woff'), url('../fonts/luzhpbro-webfont.ttf') format('truetype'), url('../fonts/luzhpbro-webfont.svg#luzsans-boldluzsans-bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'luzsans-lightluzsans-light';
+	src: url('../fonts/luzhplro-webfont.eot');
+	src: url('../fonts/luzhplro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/luzhplro-webfont.woff') format('woff'), url('../fonts/luzhplro-webfont.ttf') format('truetype'), url('../fonts/luzhplro-webfont.svg#luzsans-lightluzsans-light') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'luzsans-bookluzsans-book';
+	src: url('../fonts/luzhporo-webfont.eot');
+	src: url('../fonts/luzhporo-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/luzhporo-webfont.woff') format('woff'), url('../fonts/luzhporo-webfont.ttf') format('truetype'), url('../fonts/luzhporo-webfont.svg#luzsans-bookluzsans-book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'luzsans-mediumluzsans-medium';
+	src: url('../fonts/luzhpmro-webfont.eot');
+	src: url('../fonts/luzhpmro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/luzhpmro-webfont.woff') format('woff'), url('../fonts/luzhpmro-webfont.ttf') format('truetype'), url('../fonts/luzhpmro-webfont.svg#luzsans-mediumluzsans-medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+}
+/* buttons*/
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #adadad;
+}
+.btn:hover, .btn:focus, .btn.focus, .btn:active, .btn.active {
+    color: #fff;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn.btn-sky {
+    background-color:#4a80ec;
+    color: #ffffff;
+    border-color:#4a80ec ;
+    font-size: 17px;
+    font-family: 'PT Sans', sans-serif;
+}
+.btn.btn-sky:hover {
+    background-color:#406bc1;
+    color: #adadad;
+}
+header {
+    position: relative;
+}
+
+/** Slider Starts **/
 .slider { position: relative; }
 .slider .btn-prev,
 .slider .btn-next {
@@ -5,7 +78,7 @@
     left: 20px;
     top: 50%;
     margin-top:-25px ;
-    z-index: 99999;
+    z-index: 99;
     text-indent: -9999px;
     overflow: hidden;
     background: url(../images/right-arrow.png) no-repeat;
@@ -33,9 +106,9 @@
     width: 100%;
     float: left;
     position: relative;
-    z-index:9999;
+    z-index:1;
 }
-.slider .slide.active { z-index: 99999; }
+.slider .slide.active { z-index: 1; }
 .slider .image-holder {
     background-image: url(../images/slider/img1.jpg);
     background-size: cover;
@@ -117,6 +190,60 @@
     -webkit-transition-duration: 0.8s;
     top: 0;
 }
+.slider .heading
+{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+.top-header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.head-container
+{
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+}
+/* Navigation*/
+nav {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 10px;
+
+}
+nav ul {
+    float: right;
+}
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 5px auto;
+
+}
+nav ul li a {
+    padding: 10px;
+    color: #ffffff;
+    font: 14px/16px 'luzsans-lightluzsans-light', sans-serif;
+    text-decoration: none;
+}
+nav .btn
+{
+    float: right;
+    margin: 10px 40px 0 10px;
+
+}
+
+/** Slider ends **/
 @media (min-width: 768px) {
  
  }
