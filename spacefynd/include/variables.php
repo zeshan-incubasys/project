@@ -1,7 +1,7 @@
 <?php
 if($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['SERVER_NAME']=='localhost')
 {
-    $project_name="project/spacefynd";
+    $project_name="project-office/spacefynd";
     define('BASE_URL',"http://localhost/$project_name/");
 }else
 {

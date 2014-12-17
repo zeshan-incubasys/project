@@ -8,9 +8,12 @@
         </ul>
 
     </nav>
-    <div class="">
-        <div class=""></div>
-        <div class=""></div>
+    <div class="description">
+       <h1>
+           WELCOME HOME
+           <small>Rent unique places to stay from local hosts in 190+ countries.</small>
+       </h1>
+        <a href="" class="btn btn-white">How it Works</a>
     </div>
 </div>
 
