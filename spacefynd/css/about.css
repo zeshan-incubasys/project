@@ -170,9 +170,53 @@ fieldset {
 	color:#fff;
 }
 #main{
-	padding:0 60px;
+	padding:20px;
+	overflow:hidden;
 }
- 
+#sidebar{
+	width:100%;
+	float:none;
+	padding:0 10px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#sidebar .sidenav{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-weight:700;
+	font-size:17px;
+	line-height:20px;
+	text-align:center;
+}
+#sidebar .sidenav li{
+	margin:0 0 20px;
+}
+#sidebar .sidenav a{
+	color:#c7c9c9
+}
+#sidebar .sidenav .active a,
+#sidebar .sidenav a:hover{
+	color:#61696b;
+}
+#content{
+	overflow:hidden;
+	padding:0 10px;
+}
+#content h1{
+	font-weight:700;
+	color:#505456;
+	font-size:47px;
+	line-height:50px;
+	margin:0 0 20px;
+}
+#content p{ margin:0 0 20px;}
+#content .map{
+	display:block;
+	margin:0 auto;
+	width:100%;
+}
 @media (min-width: 768px) {
 .inner header .top-bar{ padding:20px;}
 .inner header .logo-area {
@@ -216,6 +260,51 @@ fieldset {
 	font-size:15px;
 	line-height:18px;
 	overflow:hidden;
+}
+#main{
+	padding:20px;
+	overflow:hidden;
+}
+#sidebar{
+	width:20%;
+	float:left;
+	padding:0 10px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#sidebar .sidenav{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-weight:700;
+	font-size:17px;
+	line-height:20px;
+}
+#sidebar .sidenav li{
+	margin:0 0 20px;
+}
+#sidebar .sidenav a{
+	color:#c7c9c9
+}
+#sidebar .sidenav .active a,
+#sidebar .sidenav a:hover{
+	color:#61696b;
+}
+#content{
+	overflow:hidden;
+	padding:0 10px;
+}
+#content h1{
+	font-weight:700;
+	color:#505456;
+	font-size:47px;
+	line-height:50px;
+	margin:0 0 20px;
+}
+#content p{ margin:0 0 20px;}
+#content .map{
+	width:auto;
 }
 }
 
@@ -264,6 +353,24 @@ fieldset {
 	line-height:18px;
 	overflow:hidden;
 }
+#main{
+	padding:20px 60px;
+	overflow:hidden;
+}
+#sidebar{
+	width:20%;
+	float:left;
+}
+#sidebar .sidenav{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-weight:700;
+	font-size:17px;
+	line-height:20px;
+	text-align:left;
+}
+#content .map{ width:auto; }
 }
 
 /* Large devices (large desktops, 1200px and up) */
