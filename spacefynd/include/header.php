@@ -3,5 +3,7 @@
 <body>
 <header>
     <?php  include('include/slider.php');?>
-    <?php include('navigation.php');?>
+    <div class="top-header">
+        <?php include('navigation.php');?>
+    </div>
 </header>
