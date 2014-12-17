@@ -1,0 +1,23 @@
+@media (min-width: 768px) { 
+ 
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+ 
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+ 
+ }
+ /* common custom form elements styles */
+::selection,li::selection,div::selection {
+	background: #6193a5; /* WebKit/Blink Browsers */
+	color: #fff;
+}
+::-moz-selection,li::-moz-selection,div::-moz-selection, {
+	background: #6193a5; /* Gecko Browsers */
+	color: #fff;
+}
