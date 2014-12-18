@@ -496,14 +496,19 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 
         display: inline-block;
         vertical-align: middle;
-        max-width: 150px;
+        /*max-width: 150px;*/
+        width: 22%;
     }
 
     .box .desc {
         display: inline-block;
         vertical-align: middle;
         padding-left: 15px;
-        width: 65%;
+       /* width: 65%;*/
+        width: 74%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
     }
     .box .desc h3 {
         text-align: left;
@@ -521,6 +526,7 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     .how-data .col-right {
         float: right;
         width: 47%;
+
     }
 }
 
@@ -535,12 +541,10 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 
     }
     .how-data .col-left {
-        float: left;
         width: 41%;
     }
 
     .how-data .col-right {
-        float: right;
         width: 41%;
     }
 

@@ -4,7 +4,7 @@
 	<header>
 		<div class="top-bar">
 			<div class="logo-area">
-				<strong class="logo"><a href="#">spacefynd</a></strong>
+				<strong class="logo"><a href="<?=BASE_URL?>">spacefynd</a></strong>
 				<form class="loc-form" action="#">
 					<fieldset>
 						<input type="text" placeholder="Where are you going?">

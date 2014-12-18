@@ -1,6 +1,6 @@
 <div class="container">
     <nav id="nav">
-        <img src="<?=IMAGE_URL?>logo.svg" class="logo"/>
+        <a href="<?=BASE_URL?>"><img src="<?=IMAGE_URL?>logo.svg" class="logo"/></a>
         <a href="javscript:void(0)" class="btn btn-sky">List Your Space</a>
         <ul>
             <li class="dropdown"><a href="#">Signup</a></li>
