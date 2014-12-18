@@ -515,6 +515,57 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     }
 
 }
+footer
+{
+    background-color: #2b2d2e;
+    font-size: 14px;
+}
+footer h3 {
+    font-size:19px;
+}
+footer .container {
+    padding:15px 0;
+    overflow: hidden;
+    color: #ffffff;
+}
+.footer-link a
+{
+    display: block;
+}
+.footer-logo {
+    display: block;
+    margin-top:15px;
+}
+.footer-left-col
+{
+    width: 100%;
+    float: none;
+    display: block;
+}
+.footer-right-col
+{
+    display: none;
+}
+.footer-middle-col
+{
+    display: block;
+    width: 100%;
+}
+.footer-middle-col ul li
+{
+    list-style: none;
+    width: 100%;
+}
+.footer-middle-col ul li a
+{
+    color: #fff;
+}
+.footer-middle-col a
+{
+    list-style: none;
+    width: 100%;
+    color: #5079b5;
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -527,6 +578,24 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
         float: right;
         width: 47%;
 
+    }
+    .footer-left-col
+    {
+        width: 30%;
+        float: left;
+        display: block;
+    }
+    .footer-right-col
+    {
+        width: 30%;
+        float: right;
+        display: block;
+    }
+    .footer-middle-col
+    {
+        display: block;
+        width: 30%;
+        margin: 0 auto;
     }
 }
 
