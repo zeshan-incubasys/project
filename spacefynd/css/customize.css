@@ -36,6 +36,7 @@ body
     margin: 0;
     padding: 0;
     font-family: 'PT Sans', sans-serif;
+    background: #f7f7f5;
 }
 /* buttons*/
 .btn {
@@ -233,15 +234,38 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     padding: 11px 15px;
     vertical-align: top;
 }
-
-
+.heading {
+    text-align: center;
+}
+.heading h1
+{
+    font-size: 50px;
+    color: #4a80ec;
+    line-height: 53px;
+}
+.heading h1 small
+{
+    font-size: 16px;
+    color: #16161b;
+    line-height: 19px;
+    display: block;
+}
+#how-it-works {
+    position: relative;
+}
+.pull-left,.pull-right
+{
+    display: block;
+    float: none;
+}
 
 /** Slider ends **/
 @media (min-width: 768px) {
-    .slider .btn-prev,
-    .slider .btn-next {
-        top: 50%;
-    }
+ .slider .btn-prev,
+ .slider .btn-next
+ {
+     top: 50%;
+ }
 .description {
     padding:170px 0 ;
 }
@@ -263,19 +287,30 @@ nav .btn
         width:auto ;
 
 }
-    nav ul {
+nav ul
+{
         float: right;
-    }
-    nav ul li {
-        list-style: none;
-        display: inline;
-        margin: 5px auto;
+}
+nav ul li
+{
+    list-style: none;
+    display: inline;
+    margin: 5px auto;
 
-    }
-    input[type="email"], input[type="number"], input[type="password" ], input[type="text" ] {
-        display: inline-block;
-        margin: 0;
-    }
+}
+input[type="email"], input[type="number"], input[type="password" ], input[type="text" ]
+{
+    display: inline-block;
+    margin: 0;
+}
+.pull-left
+{
+ float: left;
+}
+.pull-right
+{
+ float: right;
+}
 
 
 }
