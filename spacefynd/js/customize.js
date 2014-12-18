@@ -29,6 +29,19 @@ function initCarousel() {
         animSpeed: 500,
         step: 1
     });
+    jQuery('.slider-venue').scrollGallery({
+        mask: '.mask',
+        slider: '.slideset',
+        slides: '.slide',
+        btnPrev: 'a.btn-prev',
+        btnNext: 'a.btn-next',
+        stretchSlideToMask: false,
+        maskAutoSize: false,
+        autoRotation: true,
+        switchTime: 3000,
+        animSpeed: 500,
+        step: 1
+    });
 }
 
 /*

@@ -1,4 +1,4 @@
-<div class="head-container">
+<div class="container">
     <nav id="nav">
         <img src="<?=IMAGE_URL?>logo.svg" class="logo"/>
         <a href="javscript:void(0)" class="btn btn-sky">List Your Space</a>
