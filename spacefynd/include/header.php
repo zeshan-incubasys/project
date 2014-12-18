@@ -7,12 +7,20 @@
         <?php include('navigation.php');?>
     </div>
     <div class="header-form">
-        <div class="head-container">
+        <div class="container">
             <form action="" method="post">
-                <input type="text" name="" value="" placeholder="Where do you want to go">
-                <input type="text" name="" value="" placeholder="Check In">
-                <input type="text" name="" value="" placeholder="Check Out">
-                <input type="text" name="" value="" placeholder="No of People">
+                <input type="text" name="" value="" placeholder="A space for......">
+                <select>
+                    <option>People</option>
+                    <option></option>
+                    <option></option>
+                </select>
+                <select>
+                    <option>Select City</option>
+                    <option></option>
+                    <option></option>
+                </select>
+
                 <input type="submit" class="btn btn-sky" value="Search Now"/>
             </form>
         </div>

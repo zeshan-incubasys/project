@@ -51,6 +51,12 @@ body
     color: #333;
     background-color: #ffffff;
     border: 1px solid #adadad;
+    border-radius: 2px;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .btn:hover, .btn:focus, .btn.focus, .btn:active, .btn.active {
     color: #fff;
@@ -147,7 +153,7 @@ header {
     top: 0;
     left: 0;
 }
-.head-container
+.container
 {
     max-width: 1170px;
     margin: 0 auto;
@@ -223,11 +229,13 @@ nav .btn
     padding: 15px 0;
     text-align: center;
 }
-input[type="email"], input[type="number"], input[type="password" ], input[type="text" ] {
+input[type="email"], input[type="number"], input[type="password" ], input[type="text" ],select {
     padding: 10px 10px;
     font:17px/21px 'PT Sans', sans-serif ;
     display: block;
     margin: 5px auto;
+    border-radius:2px ;
+    border: none;
 }
 .header-form .btn
 {
@@ -258,7 +266,42 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     display: block;
     float: none;
 }
+.description .btn-sky
+{
+    background: rgba(74,128,236,.6);
+    border: none;
+}
+.description .btn-sky:hover
+{
+    background: rgba(74,128,236,1);
+    color: #fff;
+}
+.logo
+{
+   float: left;
+    margin: 10px auto;
+}
 
+/** Gallery Section **/
+.gallery
+{
+
+}
+.gallery .slide
+{
+    position: relative;
+    width: 16.67%;
+}
+.gallery .slide.active
+{
+    position: relative;
+    width: 33.34%;
+}
+.gallery .slide .img
+{
+    height: 100%;
+    width: 100%;
+}
 /** Slider ends **/
 @media (min-width: 768px) {
  .slider .btn-prev,
@@ -298,7 +341,7 @@ nav ul li
     margin: 5px auto;
 
 }
-input[type="email"], input[type="number"], input[type="password" ], input[type="text" ]
+input[type="email"], input[type="number"], input[type="password" ], input[type="text" ],select
 {
     display: inline-block;
     margin: 0;
@@ -328,4 +371,7 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 ::-moz-selection,li::-moz-selection,div::-moz-selection, {
 	background: #6193a5; /* Gecko Browsers */
 	color: #fff;
+}
+::-moz-placeholder,::-webkit-placeholder, {
+    opacity: 1;
 }
