@@ -31,10 +31,12 @@
 				<a href="#" class="btn btn-sky">List Your Space</a>
 			</div>
 		</div>
-		<ul class="nav">
-			<li><a href="#">About</a></li>
-			<li><a href="#">Press</a></li>
-			<li><a href="#">Job</a></li>
-			<li><a href="#">Blog</a></li>
-		</ul>
+		<div class="nav">
+			<ul class="container">
+				<li><a href="#">About</a></li>
+				<li><a href="#">Press</a></li>
+				<li><a href="#">Job</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+		</div>
 	</header>
