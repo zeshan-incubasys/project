@@ -1,5 +1,5 @@
 <?php  include('include/header-inner.php');?>
-<div id="main">
+<div id="main" class="inner">
 	<aside id="sidebar">
 		<ul class="sidenav">
 			<li class="active"><a href="#">About Us</a></li>
