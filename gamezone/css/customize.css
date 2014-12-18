@@ -305,6 +305,7 @@
 	overflow: hidden;
 	height: 100%;
 	width:219px;
+	overflow: visible;
 }
 #sidebar .open-close .opener{
 	display: block;
@@ -697,6 +698,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 		position: fixed;
 		width: 100%;
 		z-index: 9999;
+		top: 0;
 		background:#fff;
 	}
 	#header .logo{margin:0 68px 0 0;}

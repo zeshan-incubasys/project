@@ -1,5 +1,5 @@
 
-<?php include('head.php');?>
+<?php include('include/head.php');?>
 <body class="admin-page">
 <header id="header">
 	<div class="top-bar">

@@ -1,7 +1,7 @@
 <div id="sidebar">
 		<div class="open-close">
 			<a class="opener" href="">menu</a>
-			<div class="slide">
+			<div class="slide scroll">
 				<div class="widget">
 					<strong class="heading">Browse</strong>
 					<ul>

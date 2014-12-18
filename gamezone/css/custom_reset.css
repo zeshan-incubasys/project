@@ -4,9 +4,32 @@ body {
 	color: #89949b;
 	font: 12px/15px "Lucida Grande", "Lucida Sans", sans-serif;
 	margin: 0;
-	min-width: 320px;
 	min-width: 999px;
+	scrollbar-arrow-color: #FF3300;
+	scrollbar-3dlight-color: #FF6633;
+	scrollbar-highlight-color: #FF9933;
+	scrollbar-face-color: #FF9900;
+	scrollbar-shadow-color: #FF6633;
+	scrollbar-darkshadow-color: #FF0033;
+	scrollbar-track-color: #FF6600;
 }
+::-moz-scrollbar
+{
+  width: 7px;  /* for vertical scrollbars */
+  height: 7px; /* for horizontal scrollbars */
+}
+::-moz-scrollbar-track{background: rgba(0, 0, 0, 0.1);}
+::-moz-scrollbar-thumb{ background: rgba(48, 41, 110, 0.5);}
+
+
+::-webkit-scrollbar
+{
+  width: 7px;  /* for vertical scrollbars */
+  height: 7px; /* for horizontal scrollbars */
+}
+::-webkit-scrollbar-track{background: rgba(0, 0, 0, 0.1);}
+::-webkit-scrollbar-thumb{ background: rgba(48, 41, 110, 0.5);}
+
 a { 
 	color: #4b5c66;
 	text-decoration: none;

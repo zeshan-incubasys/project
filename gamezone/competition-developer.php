@@ -75,4 +75,4 @@
 		</div>
 	</div>
 </div>
-<?php include('include/admin/footer.php');?>
+<?php include('include/footer.php');?>

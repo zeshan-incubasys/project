@@ -3,7 +3,6 @@
 
 <div id="main">
 	<?php  include('include/admin/sidebar.php');?>
-
 	<div id="content">
 		<div class="page-head">
 			<span class="page-heading">game detail</span>

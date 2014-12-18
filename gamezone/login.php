@@ -1,5 +1,5 @@
 <?php include('include/variables.php');?>
-<?php include('include/login/head.php');?>
+<?php include('include/head.php');?>
 <div id="login-wrap">
 	<div class="main-holder">
 		<div class="heading-area">

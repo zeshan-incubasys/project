@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class="scroll">
 	<div class="fixed">
 		<ul>
 			<li class="basic-info"><a href=""><span class="text">players</span></a></li>
