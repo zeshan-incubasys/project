@@ -297,12 +297,19 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     display: block;
 }
 #update-me.header-form {
-    padding: 18px 0;
+    padding: 17px 0;
+    background: rgba(0,0,0,0.7);
 }
 #update-me.header-form input[type="submit"]{
    margin-left: 20px;
     padding: 9px 15px;
+    border: 1px solid #fff;
+    border-radius: 0;
 }
+#update-me.header-form input{
+    border-radius: 0;
+}
+
 #update-me.header-form h2 {
     color: #fff;
     font-size: 28px;
