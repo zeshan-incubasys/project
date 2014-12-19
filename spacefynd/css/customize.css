@@ -298,10 +298,9 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 }
 #update-me.header-form {
     padding: 17px 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.9);
 }
 #update-me.header-form input[type="submit"]{
-   margin-left: 20px;
     padding: 9px 15px;
     border: 1px solid #fff;
     border-radius: 0;
