@@ -30,7 +30,7 @@
         <div class="container">
             <h2>We're working hard to bring you the best venues in your city so hang tight!</h2>
             <form action="" method="post">
-                <input type="text" name="" value="" placeholder="A space for......">
+                <input type="text" name="" value="" placeholder="Email">
                 <input type="submit" class="btn btn-sky" value="Keep me Posted!"/>
             </form>
         </div>
