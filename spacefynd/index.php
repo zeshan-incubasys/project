@@ -1,12 +1,74 @@
 <?php  include('include/header.php');?>
 <section id="top-venue">
-    <div class="heading">
+   <!-- <div class="heading">
         <h1>
             Top Venues
             <small>The best venues that will inspire you for any event.</small>
         </h1>
-    </div>
-    <div class="gallery">
+    </div>-->
+	<div class="block-area">
+		<div class="blocks">
+			<div class="features">
+				<div class="col">
+					<div class="hold">
+						<div class="block">
+							<img src="<?php echo IMAGE_URL; ?>ico1.png" alt="">
+							<strong class="title">It's Free</strong>
+							<p>Listing your space on Spacefynd is completely free </p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="hold">
+						<div class="block">
+							<img src="<?php echo IMAGE_URL; ?>ico2.png" alt="">
+							<strong class="title">It's Quick</strong>
+							<p>You can create a listing for your space in a matter of minutes </p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="hold">
+						<div class="block">
+							<img src="<?php echo IMAGE_URL; ?>ico3.png" alt="">
+							<strong class="title">It Brings New Business </strong>
+							<p>Reach new customers who are looking for a similar venue but might not be aware of yours yet</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="hold">
+						<div class="block">
+							<img src="<?php echo IMAGE_URL; ?>ico4.png" alt="">
+							<strong class="title">It Puts Your Space on a Pedestal</strong>
+							<p>There’s no other place that will make your space look that good</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list-form">
+			<h2>List your space</h2>
+			<form action="#">
+				<fieldset>
+					<select>
+						<option>Venue Capacity</option>
+					</select>
+					<select>
+						<option>Venue Size</option>
+					</select>
+					<select>
+						<option>Event Type</option>
+					</select>
+					<select>
+						<option>Location</option>
+					</select>
+					<input type="submit" value="Continue" class="btn btn-sky">
+				</fieldset>
+			</form>
+		</div>
+	</div>
+    <!--<div class="gallery">
         <div class="slide active">
             <div class="img"></div>
             <div class="description">
@@ -18,7 +80,7 @@
         <div class="slide"></div>
         <div class="slide"></div>
         <div class="slide"></div>
-    </div>
+    </div>-->
 
 
 

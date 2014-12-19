@@ -254,8 +254,8 @@ fieldset {
 	font-weight:400;
 	margin:0;
 }
-#content .features{ text-align:center; }
-#content .features .col{
+.features{ text-align:center; }
+.features .col{
 	display:inline-block;
 	vertical-align:middle;
 	width:335px;
@@ -265,20 +265,20 @@ fieldset {
 	border:1px solid #e1e1e1;
 	margin:0 20px 40px;
 }
-#content .features .hold{
+.features .hold{
 	display:table;
 	width:100%;
 	height:100%;
 }
-#content .features .block{
+.features .block{
 	display:table-cell;
 	vertical-align:middle;
 }
-#content .features img{
+.features img{
 	display:block;
 	margin:0 auto 20px;
 }
-#content .features .title{
+.features .title{
 	font-size:24px;
 	line-height:27px;
 	font-weight:700;
