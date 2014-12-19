@@ -527,8 +527,9 @@ footer .text {
 }
 #top-venue .block-area{ overflow:hidden; }
 #top-venue .features .col{
-	width:260px;
-	height:260px;
+	width:250px;
+	height:250px;
+	margin:0 12px 20px;
 }
 #top-venue .blocks{
 	float:none;
