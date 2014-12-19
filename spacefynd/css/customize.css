@@ -30,6 +30,10 @@
     font-weight: normal;
     font-style: normal;
 }
+.hide
+{
+    display: none;
+}
 
 a {
     text-decoration: none;
@@ -292,6 +296,17 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     line-height: 19px;
     display: block;
 }
+#update-me.header-form {
+    padding: 18px 0;
+}
+#update-me.header-form input[type="submit"]{
+   margin-left: 20px;
+    padding: 9px 15px;
+}
+#update-me.header-form h2 {
+    color: #fff;
+    font-size: 28px;
+}
 
 #how-it-works {
     position: relative;
@@ -507,6 +522,9 @@ footer .social-networks a{
 footer .social-networks .twitter a{ background-position:-51px 0;}
 footer .social-networks .linkedin a{ background-position:-104px 0;}
 footer .social-networks .instagram a{ background-position:100% 0;}
+footer .text {
+    color: #a4acae;
+}
 @media (min-width: 768px) {
     .slider .btn-prev,
     .slider .btn-next {

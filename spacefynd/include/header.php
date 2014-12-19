@@ -6,7 +6,7 @@
     <div class="top-header">
         <?php include('navigation.php');?>
     </div>
-    <div class="header-form">
+    <div class="header-form " id="">
         <div class="container">
             <form action="" method="post">
                 <input type="text" name="" value="" placeholder="A space for......">
@@ -22,6 +22,16 @@
                 </select>
 
                 <input type="submit" class="btn btn-sky" value="Search Now"/>
+            </form>
+        </div>
+
+    </div>
+    <div class="header-form" id="update-me">
+        <div class="container">
+            <h2>We're working hard to bring you the best venues in your city so hang tight!</h2>
+            <form action="" method="post">
+                <input type="text" name="" value="" placeholder="A space for......">
+                <input type="submit" class="btn btn-sky" value="Keep me Posted!"/>
             </form>
         </div>
 
