@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Space fynd</title>
-    <link rel="shortcut icon" type="image/png" href="<?php echo IMAGE_URL?>favicon.png">
+    <link rel="shortcut icon" type="image/png" href="<?php echo IMAGE_URL?>favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo CSS_URL?>customize.css" media="all" type="text/css">
 	<link rel="stylesheet" href="<?php echo CSS_URL?>about.css" media="all" type="text/css">
