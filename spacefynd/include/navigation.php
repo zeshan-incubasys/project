@@ -14,7 +14,7 @@
            FIND YOUR PERFECT VENUE
        </h1>
         <a href="" class="btn btn-sky">How it Works</a>
-        <a href="javscript:void(0)" class="btn btn-sky">List Your Space</a>
+        <a href="<?=BASE_URL?>lists.php" class="btn btn-sky">List Your Space</a>
     </div>
 </div>
 

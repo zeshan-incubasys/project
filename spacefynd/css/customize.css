@@ -115,6 +115,7 @@ header {
 .slider .btn-prev,
 .slider .btn-next {
     position: absolute;
+    display: none;
     left: 20px;
     top: 40%;
     margin-top: -25px;
@@ -285,9 +286,9 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 }
 
 .heading h1 {
-    font-size: 50px;
+    font-size: 40px;
     color: #4a80ec;
-    line-height: 53px;
+    line-height: 43px;
 }
 
 .heading h1 small {
@@ -311,7 +312,8 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 
 #update-me.header-form h2 {
     color: #fff;
-    font-size: 28px;
+    font-size: 20px;
+    padding: 0 10px;
 }
 
 #how-it-works {
@@ -568,7 +570,7 @@ footer .text {
 	margin:0 auto 40px;
 	display:block;
 	padding:0;
-	width:460px;
+	width:100%;
 	height:68px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -586,6 +588,7 @@ footer .text {
     .slider .btn-prev,
     .slider .btn-next {
         top: 50%;
+        display: block;
     }
 
     .description {
@@ -667,6 +670,16 @@ footer .text {
     }
     .box .desc h3 {
         text-align: left;
+    }
+    #update-me.header-form h2 {
+        font-size: 28px;
+    }
+    #top-venue select{
+        width:460px;
+    }
+    .heading h1 {
+        font-size: 50px;
+        line-height: 53px;
     }
 
 }
