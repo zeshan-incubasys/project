@@ -532,6 +532,56 @@ footer .social-networks .instagram a{ background-position:100% 0;}
 footer .text {
     color: #a4acae;
 }
+#top-venue .block-area{ overflow:hidden; }
+#top-venue .features .col{
+	width:260px;
+	height:260px;
+}
+#top-venue .blocks{
+	float:none;
+	width:100%;
+	padding:40px 20px;
+	background:#e5e5e5;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	webkit-box-sizing: border-box;
+}
+#top-venue .list-form{
+	float:none;
+	width:100%;
+	padding:40px 20px;
+	background:#fff;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	webkit-box-sizing: border-box;
+}
+#top-venue h2{
+	font-weight:700;
+	font-size:28px;
+	line-height:31px;
+	color:#4a80ec;
+	margin:0 0 40px;
+	text-align:center;
+	text-transform:uppercase;
+}
+#top-venue select{
+	margin:0 auto 40px;
+	display:block;
+	padding:0;
+	width:460px;
+	height:68px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border:1px solid #c8c8c8;
+	color:#c8c8c8;
+	text-align:center;
+}
+#top-venue input[type="submit"]{
+	display:block;
+	margin:0 auto;
+	cursor:pointer;
+}
 @media (min-width: 768px) {
     .slider .btn-prev,
     .slider .btn-next {
@@ -656,6 +706,24 @@ footer .text {
     }
 	.footer-logo {
 		margin:0 0 30px;
+	}
+	#top-venue .list-form{
+		float:left;
+		width:50%;
+		padding:60px 0;
+		background:#fff;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+	#top-venue .blocks{
+		float:left;
+		width:50%;
+		padding:40px 0 0;
+		background:#e5e5e5;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
 	}
 }
 
