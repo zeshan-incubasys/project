@@ -89,7 +89,7 @@
 <section id="how-it-works">
     <div class="heading">
         <h1>
-            Curated Shortlists
+            How it Works
             <small>Looking for some inspiration? We've created shortlists of the top venues.</small>
         </h1>
     </div>
