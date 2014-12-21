@@ -653,15 +653,16 @@ footer .text {
     .box img {
 
         display: inline-block;
-        vertical-align: middle;
-        /*max-width: 150px;*/
-        width: 22%;
+        vertical-align: bottom;
+        /*max-width: 150px;
+        width: 22%;*/
+	    width: 85px;
     }
 
     .box .desc {
         display: inline-block;
         vertical-align: middle;
-        padding-left: 15px;
+        padding-left: 25px;
        /* width: 65%;*/
         width: 74%;
         box-sizing: border-box;
@@ -743,7 +744,7 @@ footer .text {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .how-data .rope-man {
-        display: block;
+        display: none;
         position: absolute;
         left: 50%;
         top: 0;

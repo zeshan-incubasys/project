@@ -100,14 +100,14 @@
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>tent.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>list-your-space.png" alt=""/>
                     <div class="desc">
                         <h3>LIST YOUR SPACE</h3>
                         <p>Create a space profile on Spacefynd in minutes! Whether it’s an art gallery, empty warehouse, hotel ballroom, trendy restaurant, beach house villa or fancy yacht - make it visible to the exact people who are searching for it. Include a few good pictures and tell people about it’s location, capacity, amenities and hire cost. Simple! </p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>chat.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>answer-request.png" alt=""/>
                     <div class="desc">
                         <h3>ANSWER REQUESTS</h3>
                         <p>People who like your space will contact you instantly from your space profile page. You’ll receive the messages by email and on your Spacefynd account dashboard. Messages will include the contact details of potential customers so make sure you respond!
@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>navigate.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>get-it-hired.png" alt=""/>
                     <div class="desc">
                         <h3>GET IT HIRED</h3>
                         <p>We suggest that you meet individuals who express interest in hiring your space at the venue for a quick tour. Agree on the hire cost, payment terms and house rules - and voila! Your venue just got hired.
@@ -130,7 +130,7 @@
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>map.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>search-spaces.png" alt=""/>
                     <div class="desc">
                         <h3>SEARCH SPACES</h3>
                         <p>Spacefynd is the go-to place to find the perfect venue. All you have to do is specify the type of event or activity you are planning to host, the city, number of people expected and budget, and we’ll show you venues that best fit your requirements. You’ll be able to read more about the venue, view pictures and consider things like location, amenities.
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>key.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>make-contact.png" alt=""/>
                     <div class="desc">
                         <h3>MAKE CONTACT</h3>
                         <p>See a space you like? Great! Send the owner or manager of the space a message from the venue profile page and tell them more about what you are looking for and if you have any questions. Someone from the venue will get in touch with you to discuss details and schedule a venue visit if needed.
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>fire.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>host-event.png" alt=""/>
                     <div class="desc">
                         <h3>HOST EVENT</h3>
                         <p>We suggest that you visit the venue to confirm your interest and meet the owner or manager to agree on hire cost and payment terms. Once that is done, shake hands, get planning and start inviting your guests!
@@ -157,7 +157,7 @@
 
             </div>
         </div>
-        <img src="<?=IMAGE_URL?>rope-man.png" alt="" class="rope-man" />
+        <img src="<?=IMAGE_URL?>rope-man.png" alt="" class="rope-man hide" />
     </div>
 </section>
 <section id="featured-venue">
