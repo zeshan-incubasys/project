@@ -29,8 +29,8 @@
     <div class="header-form" id="update-me">
         <div class="container">
             <h2>We're working hard to bring you the best venues in your city so hang tight!</h2>
-            <form action="" method="post">
-                <input type="text" name="" value="" placeholder="Email">
+            <form  method="post" id="email-us">
+                <input type="text" name="email" id="email" value="" placeholder="Email">
                 <input type="submit" class="btn btn-sky" value="Keep me Posted!"/>
             </form>
         </div>
