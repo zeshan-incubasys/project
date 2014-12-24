@@ -1,7 +1,7 @@
 <?php  include('include/header-inner.php');?>
 <div id="main" class="inner">
-	<aside id="sidebar">
-		<h2>Spacefynd</h2>
+	<aside id="sidebar" class="contact">
+		<!--<h2>Spacefynd</h2>-->
 		<ul class="social">
 			<li><a href="#">Twitter</a></li>
 			<li class="fb"><a href="#">Facebook</a></li>

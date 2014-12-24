@@ -7,7 +7,7 @@
 				<strong class="logo"><a href="<?=BASE_URL?>">spacefynd</a></strong>
 				<form class="loc-form" action="#">
 					<fieldset>
-						<input type="text" placeholder="Where are you going?">
+						<input type="text" placeholder="Search for your venue">
 					</fieldset>
 				</form>
 				<ul class="small-menu">
@@ -33,10 +33,10 @@
 		</div>
 		<div class="nav">
 			<ul class="container">
-				<li><a href="#">About</a></li>
-				<li><a href="#">Press</a></li>
-				<li><a href="#">Job</a></li>
-				<li><a href="#">Blog</a></li>
+				<li <?=(strpos($_SERVER['PHP_SELF'], 'about.php') != false)?'class="active"':'';?> > <a href="<?=BASE_URL?>about.php">About</a></li>
+				<li <?=(strpos($_SERVER['PHP_SELF'], 'help.php') != false)?'class="active"':'';?> ><a href="<?=BASE_URL?>help.php">FAQ</a></li>
+				<li><a href="<?=BASE_URL?>index.php#how-it-works">How It Works</a></li>
+				<li <?=(strpos($_SERVER['PHP_SELF'], 'contact.php') != false)?'class="active"':'';?> ><a href="<?=BASE_URL?>contact.php">Contact</a></li>
 			</ul>
 		</div>
 	</header>

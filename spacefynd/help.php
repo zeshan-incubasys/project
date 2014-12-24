@@ -2,11 +2,11 @@
 <div id="main" class="inner">
 	<aside id="sidebar">
 		<ul class="sidenav help">
-			<li><a href="#">Why does Spacefynd only cover venues in Dubai? </a></li>
+			<li><a href="#">Why does Spacefynd only cover venues in Dubai?</a></li>
 			<li class="active"><a href="#">Do I pay anything if I find a venue through Spacefynd?</a></li>
-			<li><a href="#">How do reviews work?</a></li>
+			<!--<li><a href="#">How do reviews work?</a></li>
 			<li><a href="#">How much do I pay for a reservation?</a></li>
-			<li><a href="#">The Top 10 Tips for Successful Hosting</a></li>
+			<li><a href="#">The Top 10 Tips for Successful Hosting</a></li>-->
 		</ul>
 	</aside>
 	<section id="content">

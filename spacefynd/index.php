@@ -8,40 +8,41 @@
     </div>-->
 	<div class="block-area">
 		<div class="blocks">
+			  <h2>WHY List Your Space?</h2>
 			<div class="features">
 				<div class="col">
 					<div class="hold">
 						<div class="block">
-							<img src="<?php echo IMAGE_URL; ?>ico1.png" alt="">
-							<strong class="title">It's Free</strong>
-							<p>Listing your space on Spacefynd is completely free </p>
+							<img src="<?php echo IMAGE_URL; ?>ico1.svg" alt="">
+							<strong class="title">It's Free (Beta)</strong>
+							<p>While in beta, listing a space on Spacefynd is completely free.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="hold">
 						<div class="block">
-							<img src="<?php echo IMAGE_URL; ?>ico2.png" alt="">
+							<img src="<?php echo IMAGE_URL; ?>ico2.svg" alt="">
 							<strong class="title">It's Quick</strong>
-							<p>You can create a listing for your space in a matter of minutes </p>
+							<p>You can literally get your space listed in minutes.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="hold">
 						<div class="block">
-							<img src="<?php echo IMAGE_URL; ?>ico3.png" alt="">
+							<img src="<?php echo IMAGE_URL; ?>ico3.svg" alt="">
 							<strong class="title">It Brings New Business </strong>
-							<p>Reach new customers who are looking for a similar venue but might not be aware of yours yet</p>
+							<p>Showcase your space to new customers looking for similar venues.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="hold">
 						<div class="block">
-							<img src="<?php echo IMAGE_URL; ?>ico4.png" alt="">
-							<strong class="title">It Puts Your Space on a Pedestal</strong>
-							<p>There’s no other place that will make your space look that good</p>
+							<img src="<?php echo IMAGE_URL; ?>ico4.svg" alt="">
+							<strong class="title">It Presents Your Space Beautifully</strong>
+							<p>No other place will make your venue look that good. </p>
 						</div>
 					</div>
 				</div>
@@ -51,18 +52,31 @@
 			<h2>List your space</h2>
 			<form action="#">
 				<fieldset>
-					<select>
-						<option>Venue Capacity</option>
+					<select class="location">
+						  <option>What Type of Venue?</option>
+						  <option>Hotels/Resorts</option>
+						  <option>Villas/Private Residences</option>
+						  <option>Boats</option>
+						  <option>Warehouses/Galleries</option>
+						  <option>Sports Venues</option>
+						  <option>Malls</option>
+						  <option>Desert Camps</option>
+						  <option>Convention Centres</option>
+						  <option>Outdoor Venues</option>
+						  <option>Other/Exotic (islands)</option>
+						  <option>Restaurants/Nightclubs/Lounges</option>
 					</select>
-					<select>
-						<option>Venue Size</option>
+
+					<select class="venue-capacity">
+						<option>How many people can you accomodate?</option>
 					</select>
-					<select>
-						<option>Event Type</option>
+
+					<select class="located">
+						<option>Where is it located?</option>
 					</select>
-					<select>
-						<option>Location</option>
-					</select>
+
+
+
 					<input type="submit" value="Continue" class="btn btn-sky">
 				</fieldset>
 			</form>
@@ -90,7 +104,7 @@
     <div class="heading">
         <h1>
             How it Works
-            <small>Looking for some inspiration? We've created shortlists of the top venues.</small>
+           <!-- <small>Looking for some inspiration? We've created shortlists of the top venues.</small>-->
         </h1>
     </div>
     <div class="how-data">
@@ -100,26 +114,24 @@
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>list-your-space.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>list-your-space.svg" alt=""/>
                     <div class="desc">
                         <h3>LIST YOUR SPACE</h3>
-                        <p>Create a space profile on Spacefynd in minutes! Whether it’s an art gallery, empty warehouse, hotel ballroom, trendy restaurant, beach house villa or fancy yacht - make it visible to the exact people who are searching for it. Include a few good pictures and tell people about it’s location, capacity, amenities and hire cost. Simple! </p>
+                        <p>Create a space profile on Spacefynd in minutes! Upload pictures, state your starting price, highlight what makes it special and make it visible to the exact people who are looking for similar spaces.</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>answer-request.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>answer-request.svg" alt=""/>
                     <div class="desc">
                         <h3>ANSWER REQUESTS</h3>
-                        <p>People who like your space will contact you instantly from your space profile page. You’ll receive the messages by email and on your Spacefynd account dashboard. Messages will include the contact details of potential customers so make sure you respond!
-                        </p>
+                        <p>People who like your space will contact you instantly from your space profile page. Messages will include contact information and some details or questions about what your potential customers are looking for so make sure you respond!</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>get-it-hired.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>get-it-hired.svg" alt=""/>
                     <div class="desc">
-                        <h3>GET IT HIRED</h3>
-                        <p>We suggest that you meet individuals who express interest in hiring your space at the venue for a quick tour. Agree on the hire cost, payment terms and house rules - and voila! Your venue just got hired.
-                        </p>
+                        <h3>GET IT HIRED!</h3>
+                        <p>We suggest that you meet individuals who express interest in hiring your space at the venue for a quick tour. Agree on the hire price and house rules, and voila! You just got your space hired.</p>
                     </div>
                 </div>
             </div>
@@ -130,28 +142,24 @@
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>search-spaces.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>search-spaces.svg" alt=""/>
                     <div class="desc">
                         <h3>SEARCH SPACES</h3>
-                        <p>Spacefynd is the go-to place to find the perfect venue. All you have to do is specify the type of event or activity you are planning to host, the city, number of people expected and budget, and we’ll show you venues that best fit your requirements. You’ll be able to read more about the venue, view pictures and consider things like location, amenities.
-                        </p>
+                        <p>Search our database of venues by selecting the event type, city, number of people you expect will show up and your budget, and we’ll suggest to you venues that best fit your requirements.</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>make-contact.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>make-contact.svg" alt=""/>
                     <div class="desc">
                         <h3>MAKE CONTACT</h3>
-                        <p>See a space you like? Great! Send the owner or manager of the space a message from the venue profile page and tell them more about what you are looking for and if you have any questions. Someone from the venue will get in touch with you to discuss details and schedule a venue visit if needed.
-                        </p>
+                        <p>Send a message to the venue manager from the venue profile page, provide some details about what you’re looking for and someone will get in touch with you to arrange a visit.</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="<?=IMAGE_URL?>host-event.png" alt=""/>
+                    <img src="<?=IMAGE_URL?>host-event.svg" alt=""/>
                     <div class="desc">
-                        <h3>HOST EVENT</h3>
-                        <p>We suggest that you visit the venue to confirm your interest and meet the owner or manager to agree on hire cost and payment terms. Once that is done, shake hands, get planning and start inviting your guests!
-
-                        </p>
+                        <h3>Hire Space!</h3>
+                        <p>Visit the venue and make sure it’s what you’re looking for. Once all details are agreed with the venue manager, shake hands and start planning your event!</p>
                     </div>
                 </div>
 

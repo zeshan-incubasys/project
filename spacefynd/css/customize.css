@@ -44,6 +44,7 @@ body {
     padding: 0;
     font-family: 'PT Sans', sans-serif;
     background: #f7f7f5;
+	font-size: 16px;
 }
 
 /* buttons*/
@@ -74,16 +75,16 @@ body {
 }
 
 .btn.btn-sky {
-    background-color: #4a80ec;
+    background-color: #0090d2;
     color: #ffffff;
-    border-color: #4a80ec;
+    border-color: #0090d2;
     font-size: 17px;
     font-family: 'PT Sans', sans-serif;
 }
 
 .btn.btn-sky:hover {
-    background-color: #406bc1;
-    color: #adadad;
+    background-color: #0385c0;
+    color: #fff;
 }
 
 .btn.btn-white {
@@ -204,7 +205,10 @@ nav {
     left: 0;
     z-index: 2;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 
 }
 
@@ -275,6 +279,35 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
     border: none;
     min-width: 216px;
 }
+#top-venue select.venue-capacity
+{
+	background: url("../images/venue-capacity.svg") no-repeat 20px 50%;
+	padding:0 10px 0 40px;
+	background-size: 16px auto;
+}
+#top-venue select.venue-size
+{
+	background: url("../images/venue-size.svg") no-repeat 20px 50%;
+	padding:0 10px 0 40px;
+	background-size: 16px auto;
+}
+#top-venue select.event-type
+{
+	background: url("../images/event-type.svg") no-repeat 20px 50%;
+	padding:0 10px 0 40px;
+	background-size: 16px auto;
+}
+#top-venue select.location
+{
+	background: url("../images/location.svg") no-repeat 20px 50%;
+	padding:0 10px 0 40px;
+	background-size: 16px auto;
+}#top-venue select.located
+{
+	background: url("../images/located.svg") no-repeat 20px 50%;
+	padding:0 10px 0 40px;
+	background-size: 16px auto;
+}
 
 .header-form .btn {
     padding: 11px 15px;
@@ -287,7 +320,7 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 
 .heading h1 {
     font-size: 40px;
-    color: #4a80ec;
+    color: #0090d2;
     line-height: 43px;
 }
 
@@ -303,8 +336,9 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 }
 #update-me.header-form input[type="submit"]{
     padding: 9px 15px;
-    border: 1px solid #fff;
+   /* border: 1px solid #fff;*/
     border-radius: 0;
+	font-weight: bold;
 }
 #update-me.header-form input{
     border-radius: 0;
@@ -371,7 +405,7 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 }
 
 .box .desc p {
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .pull-left, .pull-right {
@@ -380,12 +414,14 @@ input[type="email"], input[type="number"], input[type="password" ], input[type="
 }
 
 .description .btn-sky {
-    background: rgba(74, 128, 236, .6);
+   /* background: rgba(74, 128, 236, .1);*/
+	background-color: #0090d2;
     border: none;
 }
 
 .description .btn-sky:hover {
-    background: rgba(74, 128, 236, 1);
+   /* background: rgba(74, 128, 236, 1);*/
+	background-color: #0385c0;
     color: #fff;
 }
 
@@ -524,7 +560,7 @@ footer .container {
 {
     list-style: none;
     width: 100%;
-    color: #5079b5;
+    color: #0090d2;
 }
 footer .social-networks{
 	margin:0 0 20px;
@@ -561,7 +597,7 @@ footer .text {
 	float:none;
 	width:100%;
 	padding:40px 20px;
-	background:#e5e5e5;
+	/*background:#e5e5e5;*/
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	webkit-box-sizing: border-box;
@@ -579,7 +615,7 @@ footer .text {
 	font-weight:700;
 	font-size:28px;
 	line-height:31px;
-	color:#4a80ec;
+	color:#0090d2;
 	margin:0 0 40px;
 	text-align:center;
 	text-transform:uppercase;
@@ -606,6 +642,9 @@ input[type="text"].error {
 	border: 2px solid red;
 }
 label.error{display:none !important;}
+#email-us {
+	margin-bottom: 0.83em;
+}
 @media (min-width: 768px) {
     .slider .btn-prev,
     .slider .btn-next {
@@ -620,6 +659,8 @@ label.error{display:none !important;}
     .description h1 {
         font-size: 50px;
         line-height: 50px;
+	    text-shadow: 4px 4px 6px #000;
+
 
     }
 
@@ -675,7 +716,7 @@ label.error{display:none !important;}
     .box img {
 
         display: inline-block;
-        vertical-align: bottom;
+        vertical-align: middle;
         /*max-width: 150px;
         width: 22%;*/
 	    width: 85px;
@@ -696,6 +737,12 @@ label.error{display:none !important;}
     }
     #update-me.header-form h2 {
         font-size: 28px;
+	    margin-top: 0.2em;
+    }
+	#update-me.header-form h2 small{
+        font-size: 28px;
+		font-weight: 300;
+		display: block;
     }
     #top-venue select{
         width:460px;
@@ -756,7 +803,7 @@ label.error{display:none !important;}
 		float:left;
 		width:50%;
 		padding:40px 0 0;
-		background:#e5e5e5;
+		/*background:#e5e5e5;*/
 		box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
@@ -831,7 +878,8 @@ label.error{display:none !important;}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .how-data .rope-man {
+
+	.how-data .rope-man {
         display: none;
         position: absolute;
         left: 50%;
@@ -852,12 +900,12 @@ label.error{display:none !important;}
 
 /* common custom form elements styles */
 ::selection, li::selection, div::selection {
-    background: #6193a5; /* WebKit/Blink Browsers */
+    background: #0090d2; /* WebKit/Blink Browsers */
     color: #fff;
 }
 
 ::-moz-selection, li::-moz-selection, div::-moz-selection, {
-    background: #6193a5; /* Gecko Browsers */
+    background: #0090d2; /* Gecko Browsers */
     color: #fff;
 }
 

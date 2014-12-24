@@ -1,3 +1,6 @@
+a {
+	color: #0090d2;
+}
 form,
 fieldset {
 	margin: 0;
@@ -26,9 +29,9 @@ fieldset {
 .inner header .logo {
 	overflow: hidden;
 	text-indent: -9999px;
-	background: url(../images/logo2.png) no-repeat;
+	background: url(../images/logo2.svg) no-repeat;
 	width: 167px;
-	height: 28px;
+	height: 34px;
 	display: block;
 	margin:0 auto 10px;
 }
@@ -167,7 +170,7 @@ fieldset {
 	display:block;
 	padding:14px 4px;
 }
-.inner header .nav a:hover{
+.inner header .nav a:hover,.inner header .nav li.active a{
 	border-bottom:6px solid #c8cacb;
 	padding:14px 4px 8px;
 	color:#fff;
@@ -205,7 +208,7 @@ fieldset {
 }
 #sidebar .sidenav.help{ padding:20px 0;}
 #sidebar .sidenav.help a{
-	color:#5178b3;
+	color:#0090d2;
 }
 #content{
 	overflow:hidden;
@@ -330,7 +333,7 @@ fieldset {
 .contact-form input[type="submit"]{
 	margin:0 auto;
 	padding:0;
-	background:#5178b3;
+	background:#0090d2;
 	border:none;
 	width:180px;
 	height:36px;
@@ -375,7 +378,7 @@ fieldset {
 .inner header .logo {
 	overflow: hidden;
 	text-indent: -9999px;
-	background: url(../images/logo2.png) no-repeat;
+	background: url(../images/logo2.svg) no-repeat;
 	width: 167px;
 	height: 28px;
 	display: inline-block;
@@ -477,9 +480,9 @@ fieldset {
 .inner header .logo {
 	overflow: hidden;
 	text-indent: -9999px;
-	background: url(../images/logo2.png) no-repeat;
+	background: url(../images/logo2.svg) no-repeat;
 	width: 167px;
-	height: 28px;
+	height: 34px;
 	display: inline-block;
 	vertical-align: middle;
 	margin:0;
@@ -525,6 +528,11 @@ fieldset {
 	float:left;
 	padding:20px 10px;
 }
+#sidebar.contact {
+
+	float:right;
+
+}
 #sidebar .sidenav{
 	margin:0;
 	padding:0;
@@ -539,15 +547,4 @@ fieldset {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-}
-/* common custom form elements styles */
-::selection,
-li::selection,
-div::selection {
-	background: #6193a5; /* WebKit/Blink Browsers */
-	color: #fff;
-}
-::-moz-selection, li::-moz-selection, div::-moz-selection, {
- background: #6193a5; /* Gecko Browsers */
- color: #fff;
 }
