@@ -367,7 +367,54 @@ fieldset {
 #sidebar .social .instagram{
 	background:url(../images/ico-instagram.png) no-repeat 0 50%;
 }
-#sidebar .social a{ color:#505456; }
+
+#testimonial.blocks {
+	width: 100%;
+	overflow: hidden;
+}
+#testimonial .block-area {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+#testimonial .block-area.testimonial
+{
+	background:#0090d2;
+	color: #fff;
+}
+#testimonial .block-area.testimonial h2
+{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 48px;
+}
+#testimonial .block-area.customers
+{
+	background:#e5e5e5;
+	color: #5d5e61;
+}
+#testimonial .block-area.customers h2
+{
+	color: #5d5e61;
+	font-size: 38px;
+}
+#testimonial .customers p
+{
+	font-size: 36px;
+	color: #838487;
+}
+#testimonial .customers .logos {
+	margin: 0 auto;
+	padding: 20px;
+}
+#testimonial .logos img {
+	vertical-align: middle;
+}
+
+#sidebar .social a {
+	color:#505456;
+}
+
 @media (min-width: 768px) {
 .inner header .top-bar{ padding:20px;}
 .inner header .logo-area {
