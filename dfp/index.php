@@ -1,6 +1,6 @@
 <?php  include('include/header.php');?>
 <section class="slider">
-	<img src="<?=IMAGE_URL?>img1.jpg" alt="">
+	<!--<img src="<?=IMAGE_URL?>img1.jpg" alt="">
 	<div class="desc">
 		<div class="holder">
 			<div class="content">
@@ -19,172 +19,148 @@
 				</form>
 			</div>
 		</div>
+	</div>-->
+	<div class="mask">
+		  <div class="slideset">
+				<div class="slide">
+					  <img src="<?=IMAGE_URL?>slider1.jpg" alt="">
+				</div>
+				<div class="slide">
+					  <img src="<?=IMAGE_URL?>slider1.jpg" alt="">
+				</div>
+				<div class="slide">
+					  <img src="<?=IMAGE_URL?>slider1.jpg" alt="">
+				</div>
+		  </div>
+		  <div class="pagination">
+		  </div>
 	</div>
+
 </section>
 <div id="main">
-	<div class="products">
-		<div class="head">
-			<h2>picks of the season</h2>
-			<div class="paged">
-				<div class="pages">
-					<span class="cur-num"></span>
-					<span>/</span>
-					<span class="all-num"></span>
-				</div>
-				<div class="btns">
-					<a class="btn-prev" href="#">Previous</a>
-					<a class="btn-next" href="#">Next</a>
-				</div>
-			</div>
-			<div class="pagination">
-			</div>
-		</div>
-		<div class="mask">
-			<div class="slideset">
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+	<ul class="design-list">
+		<li class="odd">
+
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img1.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li class="even">
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img2.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li class="even">
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img2.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+
+		</li>
+		<li class="odd">
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img1.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="products">
-		<div class="head">
-			<h2>picks of the season</h2>
-			<div class="paged">
-				<div class="pages">
-					<span class="cur-num"></span>
-					<span>/</span>
-					<span class="all-num"></span>
-				</div>
-				<div class="btns">
-					<a class="btn-prev" href="#">Previous</a>
-					<a class="btn-next" href="#">Next</a>
-				</div>
-			</div>
-			<div class="pagination">
-			</div>
-		</div>
-		<div class="mask">
-			<div class="slideset">
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-				<div class="slide">
-					<img src="<?=IMAGE_URL?>img-prod.jpg" alt="">
-					<div class="details">
-						<div class="title-area">
-							<strong class="title">Chairs</strong>
-							<span class="by">by Filicio Ernrim</span>
-						</div>
-						<a href="#" class="ico-cart">Add<br>to cart</a>
+			  </div>
+		</li>
+		<li>
+			  <div class="image">
+					<img src="<?=IMAGE_URL?>gal-img3.jpg" alt="">
+					<div class="detail-btn">
+						  <span class="title">Chairs</span>
+						  <span class="price">$35</span>
+						  <a href="" class="btn-pink">add to cart</a>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+			  </div>
+		</li>
+	</ul>
 </div>
 <?php include('include/footer.php');?>

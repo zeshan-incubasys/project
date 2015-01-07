@@ -51,7 +51,7 @@
 		<form class="search-form">
 			<fieldset>
 				<label>Search</label>
-				<input type="search">
+				<input type="search" placeholder="find something amazing">
 				<input type="submit" value="search">
 			</fieldset>
 		</form>
@@ -95,7 +95,7 @@
 					</div>
 				</div>
 			</li>
-			<li><a href="#">Login</a></li>
+			<li><a class="lightbox" href="#popup1">Login</a></li>
 		</ul>
 	</div>
 </nav>
