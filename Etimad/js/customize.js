@@ -28,6 +28,20 @@ function initCarousel() {
 		animSpeed: 500,
 		step: 1
 	});
+	jQuery('div.inner-carousel').scrollGallery({
+		mask: 'div.mask',
+		slider: 'div.slideset',
+		slides: 'div.slide',
+		btnPrev: 'a.btn-prev',
+		btnNext: 'a.btn-next',
+		generatePagination: '.pagination',
+		stretchSlideToMask: true,
+		maskAutoSize: true,
+		autoRotation: true,
+		switchTime: 3000,
+		animSpeed: 500,
+		step: 1
+	});
 }
 
 // content tabs init
