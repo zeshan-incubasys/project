@@ -67,6 +67,7 @@ body.admin-page{
 	width: auto;
 	background: #1e2226;
 	padding: 13px 17px;
+	position: relative;
 	border-left: 1px solid #262b2f;
 }
 #header .right-pane .user{
@@ -89,16 +90,16 @@ body.admin-page{
 #header .right-pane .user>.name:hover a{
 	padding: 3px 20px 30px 0;
 }
-#header .right-pane .user>.name:hover .dropdown{
+#header .right-pane:hover .dropdown{
 	display: block;
--webkit-transition: all .2s ease;
+	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
 	-ms-transition: all .2s ease;
 	-o-transition: all .2s ease;
 	transition: all .2s ease;
 	opacity: 0.95;
 }
-#header .right-pane .user>.name .dropdown {
+#header .right-pane .dropdown {
     background: #262b2f;
     border-radius:0 0 5px 5px;
     content: "";
@@ -107,11 +108,11 @@ body.admin-page{
     margin: 0;
     padding: 0;
     position: absolute;
-    right: -42px;
+    right: 0;
     text-align: center;
     text-transform: capitalize;
-    top: 39px;
-    width:228px;
+    top: 100%;
+    width:100%;
     z-index: 9999;
     -webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -119,17 +120,17 @@ body.admin-page{
 	-o-transition: all .2s ease;
 	transition: all .2s ease;
 }
-#header .right-pane .user>.name .dropdown li{
+#header .right-pane .dropdown li{
 	margin: 0 0 2px;
 }
-#header .right-pane .user>.name .dropdown li a{
+#header .right-pane .dropdown li a{
 	display: block;
 	height: 100%;
 	padding: 9px 7px;
 	color: #fff;
 }
-#header .right-pane .user>.name .dropdown .active a,
-#header .right-pane .user>.name .dropdown li a:hover{
+#header .right-pane .dropdown .active a,
+#header .right-pane .dropdown li a:hover{
 	background: #2f353a;
 	text-decoration: none;
 	-webkit-transition: all .2s ease;
@@ -248,7 +249,7 @@ body.admin-page{
 	z-index: 9999;
 	background: #362e7e;
 	height: 100%;
-	overflow: auto;
+	overflow:hidden;
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-ms-transition: all 1s ease;
@@ -1092,3 +1093,6 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 @media (min-width: 1200px) {}
 
 .hide{ display: none;}
+.nofloat{
+	overflow: hidden;
+}

@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="<?=CSS_URL?>bootstrap.min.css" media="all" type="text/css">
 	<link rel="stylesheet" href="<?=CSS_URL?>custom_reset.css" media="all" type="text/css">
-	<<link rel="stylesheet" href="<?=CSS_URL?>customize.css" media="all" type="text/css"> 
+	<link rel="stylesheet" href="<?=CSS_URL?>customize.css" media="all" type="text/css">
 	<!--<link rel="stylesheet" href="<?=CSS_URL?>admin/admin.css" media="all" type="text/css"><!-- ADMIN CSS -->
 	<!--<link rel="stylesheet" href="<?=CSS_URL?>login/login.css" media="all" type="text/css"><!-- LOGIN CSS -->
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css" media="all" type="text/css">

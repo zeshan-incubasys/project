@@ -266,7 +266,7 @@ body > .jcf-select-drop.jcf-drop-flipped {
 	overflow: hidden;
 	display: block;
 	text-decoration: none;
-	padding: 2px 10px;
+	padding: 2px 0;
 	display: block;
 	cursor: default;
 	color: #8f86a3;
@@ -494,3 +494,18 @@ body > .jcf-select-drop.jcf-drop-flipped {
 ::-moz-placeholder {
  opacity: 1;
 }
+
+
+
+
+/*New CSS*/
+h3{
+	margin: 0 0 0;
+	padding: 0;
+	color: #4b5c66;
+	font-size: 22px;
+	line-height: 24px;
+	text-transform: capitalize;
+}
+
+/*New Css End*/
