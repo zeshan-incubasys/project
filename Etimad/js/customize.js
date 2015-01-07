@@ -3,7 +3,14 @@ jQuery(function(){
 	initTabs();
 	initCarousel();
 	initOpenClose();
+    $('.slide .image-wrap img').on("click",function(){
+      $('.slide').removeClass('active');
+      $(this).parents('.slide').addClass("active");
+      $(".content-holder").removeClass("active");
+      $(".content-holder").eq($(this).parents(".slide").index()).addClass("active");
+    });
 });
+
 
 // scroll gallery init
 function initCarousel() {

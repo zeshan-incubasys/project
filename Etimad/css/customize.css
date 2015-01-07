@@ -150,7 +150,10 @@ h1{
 	max-width: 980px;
 	margin: 0 auto;
 }
-#container .content-holder{ margin: 0 0 20px;}
+#container .content-holder{ margin: 0 0 20px;display: none;}
+#container .content-holder.active {
+	display: block;
+}
 #container .content-holder:after{
 	content: '';
 	display: block;
@@ -283,7 +286,7 @@ h1{
 #container .slide-wrapper .slide:first-child{ margin: 0;}
 #container .slide-wrapper .slide{
 	float: left;
-	width:170px !important;
+	width:150px !important;
 	margin: 0 0 10px 30px;
 	text-align: center;
 	text-transform: capitalize;

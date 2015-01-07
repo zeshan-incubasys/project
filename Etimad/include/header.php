@@ -5,12 +5,12 @@
 		<div id="w2">
 			<header id="header">
 				<div class="holder">
-					<strong class="logo"><a href="#">etimad</a></strong>
+					<strong class="logo"><a href="<?=BASE_URL?>">etimad</a></strong>
 					<div class="open-close">
 						<a class="opener" href="#"></a>
 						<div id="navigation">
 							<ul>
-								<li class="active"><a href="#">home</a></li>
+								<li class="<?=(strpos($_SERVER['PHP_SELF'], 'index.php') != false)?"active":""?>"><a href="<?=BASE_URL?>">home</a></li>
 								<li>
 									<a href="#">Etimad Governance</a>
 									<ul class="dropdown">
@@ -24,7 +24,7 @@
 									</ul>
 								</li>
 								<li><a href="#">Our companies</a></li>
-								<li><a href="#">solutions</a></li>
+								<li class="<?=(strpos($_SERVER['PHP_SELF'], 'solution.php') != false)?"active":""?>"><a href="<?=BASE_URL?>solution.php">solutions</a></li>
 								<li><a href="#">Partners</a></li>
 								<li><a href="#">Contact</a></li>
 								<li><a href="#">News</a></li>
