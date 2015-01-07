@@ -5,7 +5,7 @@
 	  <div class="content-holder active">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home1.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -34,7 +34,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home2.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -47,9 +47,9 @@
 			<div class="text-wrap">
 				  <div class="head">
 						<h1>Project Risk Management</h1>
-						<span class="subheading">Supporting organizational KPIs, roles, responsibilities and technical analysis skills</span>
+						<span class="subheading">Supporting organizational KPIs, roles, responsibilities and technical skills</span>
 				  </div>
-				  <p> Our six risk-process-service-groups are:</p>
+				  <!--<p> Our six risk-process-service-groups are:</p>-->
 				  <ul>
 						<li><a href="javascript:void(0);">Planning risk management</a></li>
 						<li><a href="javascript:void(0);">Risk identification</a></li>
@@ -57,7 +57,7 @@
 						<li><a href="javascript:void(0);">Performing quantitative risk analysis</a></li>
 						<li><a href="javascript:void(0);">Performing qualitative risk analysis</a></li>
 						<li><a href="javascript:void(0);">Planning risk responses</a></li>
-						<li><a href="javascript:void(0);">Monitoring and controlling risks</a></li>
+						<!--<li><a href="javascript:void(0);">Monitoring and controlling risks</a></li>-->
 				  </ul>
 				  <a href="javascript:void(0);" class="more-btn">
 						<span class="holder">read more</span>
@@ -67,7 +67,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home3.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -92,7 +92,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home4.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -122,7 +122,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home5.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -152,7 +152,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home6.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -181,7 +181,7 @@
 	  <div class="content-holder">
 			<div class="image-wrap">
 				  <div class=holder>
-						<img src="<?php echo IMAGE_URL; ?>/img1.jpg" alt="">
+						<img src="<?php echo IMAGE_URL; ?>home7.jpg" alt="">
 
 						<div class="caption">
 							  <strong class="heading">End user Benefit:</strong>
@@ -202,8 +202,8 @@
 						<li><a href="javascript:void(0);">Stock of materials</a></li>
 						<li><a href="javascript:void(0);">Staff fall back plan per stage of project and skill</a></li>
 						<li><a href="javascript:void(0);">IT disaster recovery</a></li>
-						<li><a href="javascript:void(0);">Financial float-injections</a></li>
-						<li><a href="javascript:void(0);">Contingency planning identifications</a></li>
+						<!--<li><a href="javascript:void(0);">Financial float-injections</a></li>
+						<li><a href="javascript:void(0);">Contingency planning identifications</a></li>-->
 				  </ul>
 				  <a href="javascript:void(0);" class="more-btn">
 						<span class="holder">read more</span>
@@ -223,7 +223,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img2.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Fulfillment Management</span>
+										  <span class="title">Fulfillment Management</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -233,7 +233,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img3.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Project Risk Management</span>
+										  <span class="title">Project Risk Management</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -243,7 +243,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img4.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Compliance Monitoring</span>
+										  <span class="title">Compliance Monitoring</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -253,7 +253,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img5.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Process Efficiencies</span>
+										  <span class="title">Process Efficiencies</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -263,7 +263,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img6.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Performance Monitoring</span>
+										  <span class="title">Performance Monitoring</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -273,7 +273,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img3.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Ceritifications</span>
+										  <span class="title">Ceritifications</span>
 									</a>
 							  </div>
 							  <div class='slide'>
@@ -283,7 +283,7 @@
 													  <img src="<?php echo IMAGE_URL; ?>/img5.jpg" alt="">
 												</div>
 										  </div>
-										  <span class="title" href="javascript:void(0);">Continuity planning</span>
+										  <span class="title">Continuity planning</span>
 									</a>
 							  </div>
 

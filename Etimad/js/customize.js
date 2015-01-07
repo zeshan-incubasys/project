@@ -1,6 +1,13 @@
 // page init
 jQuery(function(){
-	initTabs();
+   /* if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // some code..
+    }else {
+        initTabs();
+    }*/
+    if($(window).width()>768) {
+        initTabs();
+    }
 	initCarousel();
 	initOpenClose();
     $('.slide .image-wrap img').on("click",function(){
@@ -9,6 +16,11 @@ jQuery(function(){
       $(".content-holder").removeClass("active");
       $(".content-holder").eq($(this).parents(".slide").index()).addClass("active");
     });
+    /*$('#etmad-slider .slide .image-wrap img').on("click",function(){
+         $(this).parents('.slide').addClass("active").siblings().removeClass("active");
+         var  i= $(this).parents('.slide').index();
+        $("#tab"+(i+1)+"-Href").trigger("click");
+    });*/
 });
 
 

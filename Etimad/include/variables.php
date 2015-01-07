@@ -5,7 +5,7 @@ if($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['SERVER_NAME']=='localhost')
     define('BASE_URL',"http://localhost/project/$project_name/");
 }else
 {
-    define('BASE_URL','http://incubasys.com/');// http://sitename.com/
+    define('BASE_URL','http://192.168.1.15/project/Etimad/');// http://sitename.com/
 }
 define('CSS_URL',BASE_URL."css/");
 define('IMAGE_URL',BASE_URL."images/");
