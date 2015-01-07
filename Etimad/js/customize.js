@@ -5,7 +5,7 @@ jQuery(function(){
 	initOpenClose();
 });
 
-// scroll gallery init
+// scroll galleries init
 function initCarousel() {
 	jQuery('div.carousel').scrollGallery({
 		mask: 'div.mask',
@@ -14,6 +14,20 @@ function initCarousel() {
 		btnPrev: 'a.btn-prev',
 		btnNext: 'a.btn-next',
 		pagerLinks: '.pagination li',
+		stretchSlideToMask: true,
+		maskAutoSize: true,
+		autoRotation: true,
+		switchTime: 3000,
+		animSpeed: 500,
+		step: 1
+	});
+	jQuery('div.inner-carousel').scrollGallery({
+		mask: 'div.mask',
+		slider: 'div.slideset',
+		slides: 'div.slide',
+		btnPrev: 'a.btn-prev',
+		btnNext: 'a.btn-next',
+		generatePagination: '.pagination',
 		stretchSlideToMask: true,
 		maskAutoSize: true,
 		autoRotation: true,
