@@ -11,7 +11,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>End to end integrated implementation, BOT, trainings, maintenance and outsourced management </p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=fulfill">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -26,7 +26,7 @@
 						<li><a href="javascript:void(0);">Al Fahad Electrical Systems, Specializing in …..</a></li>
 						<li><a href="javascript:void(0);">Power Systems, Specializing in …..</a></li>
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=fulfill" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -40,7 +40,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Minimize, monitor, and control the probability and/or impact of unfortunate events or to maximize the realization of opportunities</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=manage">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -51,7 +51,7 @@
 				  </div>
 				  <!--<p> Our six risk-process-service-groups are:</p>-->
 				  <ul>
-						<li><a href="javascript:void(0);">Planning risk management</a></li>
+						<li><a href="">Planning risk management</a></li>
 						<li><a href="javascript:void(0);">Risk identification</a></li>
 						<li><a href="javascript:void(0);">Performing qualitative risk analysis</a></li>
 						<li><a href="javascript:void(0);">Performing quantitative risk analysis</a></li>
@@ -59,7 +59,7 @@
 						<li><a href="javascript:void(0);">Planning risk responses</a></li>
 						<!--<li><a href="javascript:void(0);">Monitoring and controlling risks</a></li>-->
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=manage" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -73,7 +73,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Continuing Assurance through continuous audit; continuous controls monitoring; continuous process inspection</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=monitor">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -84,7 +84,7 @@
 				  </div>
 				  <p>We deploy the processes and technologies to monitor each project financial and operational environment, people, processes, and systems. Controls are put in place to address risks within these components uniquely designed and agreed for each project with the end user</p>
 
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=monitor" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -98,7 +98,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Predictability and Assurance of project success</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=process">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -114,7 +114,7 @@
 						<li><a href="javascript:void(0);">Operations</a></li>
 						<li><a href="javascript:void(0);">Logistics</a></li>
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=process" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -128,7 +128,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Predictability and Assurance of project success</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=performance">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -144,7 +144,7 @@
 						<li><a href="javascript:void(0);">Operations</a></li>
 						<li><a href="javascript:void(0);">Logistics</a></li>
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=performance" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -158,7 +158,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Assurance of operational integrity-grade of design, system components, connectivity, networking and access</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=certificate">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -173,7 +173,7 @@
 						<li><a href="javascript:void(0);">Technology</a></li>
 						<li><a href="javascript:void(0);">People</a></li>
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=certificate" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>
@@ -187,7 +187,7 @@
 							  <strong class="heading">End user Benefit:</strong>
 
 							  <p>Accurate on time and on budget delivery</p>
-							  <a class="read-more" href="javascript:void(0);">read more</a>
+							  <a class="read-more" href="etimad-governance.php?tab=planning">read more</a>
 						</div>
 				  </div>
 			</div>
@@ -205,7 +205,7 @@
 						<!--<li><a href="javascript:void(0);">Financial float-injections</a></li>
 						<li><a href="javascript:void(0);">Contingency planning identifications</a></li>-->
 				  </ul>
-				  <a href="javascript:void(0);" class="more-btn">
+				  <a href="etimad-governance.php?tab=planning" class="more-btn">
 						<span class="holder">read more</span>
 				  </a>
 			</div>

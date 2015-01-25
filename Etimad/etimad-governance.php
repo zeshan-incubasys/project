@@ -1,16 +1,22 @@
-<?php include('include/header.php'); ?>
+<?php include('include/header.php'); 
+	if(isset($_GET['tab'])){
+		$tab = $_GET['tab'];
+	}else{
+		$tab = '';
+	}
+?>
 
 	  <div id="container">
 			<div class="holder">
 				  <div class="tabs-wrapper">
 						<ul class="tabset">
-							  <li class="active"><a id="tab1-Href" href="#tab1">Project risk management</a></li>
-							  <li><a id="tab2-Href" href="#tab2">Fulfillment Management</a></li>
-							  <li><a id="tab3-Href" href="#tab3">Compliance Monitoring</a></li>
-							  <li><a id="tab4-Href" href="#tab4">Process efficiency monitoring</a></li>
-							  <li><a id="tab5-Href" href="#tab5">Certification</a></li>
-							  <li><a id="tab6-Href" href="#tab6">Continuity planning</a></li>
-							  <li><a id="tab7-Href" href="#tab7">Performance Monitoring</a></li>
+							  <li <?php if($tab == 'manage'){ echo 'class="active"'; } elseif(!isset($_GET['tab'])){ echo 'class="active"'; }?>><a id="tab1-Href" href="#tab1">Project risk management</a></li>
+							  <li <?php if($tab == 'fulfill'){ echo 'class="active"'; } ?>><a id="tab2-Href" href="#tab2">Fulfillment Management</a></li>
+							  <li <?php if($tab == 'monitor'){ echo 'class="active"'; } ?>><a id="tab3-Href" href="#tab3">Compliance Monitoring</a></li>
+							  <li <?php if($tab == 'process'){ echo 'class="active"'; } ?>><a id="tab4-Href" href="#tab4">Process efficiency monitoring</a></li>
+							  <li <?php if($tab == 'certificate'){ echo 'class="active"'; } ?>><a id="tab5-Href" href="#tab5">Certification</a></li>
+							  <li <?php if($tab == 'planning'){ echo 'class="active"'; } ?>><a id="tab6-Href" href="#tab6">Continuity planning</a></li>
+							  <li <?php if($tab == 'performance'){ echo 'class="active"'; } ?>><a id="tab7-Href" href="#tab7">Performance Monitoring</a></li>
 
 						</ul>
 						<div class="tab-content">
