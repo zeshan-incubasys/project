@@ -52,7 +52,7 @@ form,fieldset{
 	border-style:none;
 }
 h1{
-	color: #e51b24;
+	color: #4b4a4a;
 	/*font-size: 30px;
 	line-height: 34px;*/
 	font:30px/34px 'gotham_boldregular';
@@ -87,7 +87,10 @@ h2{
 	background: linear-gradient(to bottom,  #ffffff 0%,#f0f0f0 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-8 */
 }
-
+.text-holder {
+	max-width: 1170px;
+	margin: 0 auto;
+}
 #header .holder{
 	padding: 35px 60px 13px;
 	background: url(../images/header-border.png) repeat-x 0 100%;
@@ -161,6 +164,8 @@ h2{
 
 /*Container styling*/
 #container{
+	max-width: 1170px;
+	margin: 0 auto;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -237,7 +242,7 @@ h2{
 #container .content-holder .text-wrap .more-btn:hover .holder{ background: #e51b24 url(../images/read-arrow.png) no-repeat 94% 3px;}
 #container .content-holder .text-wrap .more-btn:after{ content: ''; display: block; clear: both; position: relative; z-index: 999;}
 #container .content-holder .text-wrap .more-btn .holder{
-	background:#000 url(../images/read-arrow.png) no-repeat 94% 3px;
+	background:#4b4a4a url(../images/read-arrow.png) no-repeat 94% 3px;
 	padding: 8px 30px 8px 16px;
 	border-radius:30px;
 	display: block;
@@ -256,7 +261,6 @@ h2{
 	color: rgba(199, 200, 201, 0.5);
 	padding:5px;
 	position: relative;
-	top: -42px;
 }
 #container .content-holder .image-wrap.inner{
 	top: 0;
@@ -317,10 +321,16 @@ h2{
 #container .slide-wrapper .slide:first-child{ margin: 0;}
 #container .slide-wrapper .slide{
 	float: left;
-	width:145px !important;
-	margin: 0 0 10px 30px;
+
+	width:12.4% !important;
+	margin: 0 0 10px 20px;
 	text-align: center;
 	text-transform: capitalize;
+}
+#container .slide-wrapper.solution .slide{width:145px !important;margin: 0 0 10px 30px;}
+#container .slide-wrapper .slide.active:first-child{ margin:-22px 0 0; }
+#container .slide-wrapper .slide.active{
+	margin:-22px 0 0 20px;
 }
 #container .slide-wrapper .slide:hover .image-wrap .holder,
 #container .slide-wrapper .slide.active .image-wrap .holder{border: 3px solid #e51b24;}
@@ -337,7 +347,8 @@ h2{
 }
 #container .slide-wrapper .slide .title{
 	display: block;
-	margin: 10px -14px 0;
+	/*margin: 10px -14px 0;*/
+	margin: 10px 2px 0;
 	position: relative;
 	line-height:17px;
 }
@@ -374,7 +385,7 @@ div.carousel div.mask {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	padding: 0 0 30px;
+	padding: 25px 0;
 }
 div.carousel div.mask div.slideset {
 	width: 100%;
@@ -540,15 +551,31 @@ div.inner-carousel div.mask div.slideset {
 div.inner-carousel div.mask div.slide {
 	width:100%;
 	float: left;
+	-webkit-transition: all 1s ease-in;
+	-moz-transition: all 1s ease-in;
+	-ms-transition: all 1s ease-in;
+	-o-transition: all 1s ease-in;
+	transition: all 1s ease-in;
 }
+
 /*End Tabs page Styling*/
 
-
+.footer-banner {
+	background: #333333;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	font-family:'gotham_bookregular', Arial, sans-serif;
+}
+.footer-banner h1 {
+	color: #fff;
+	font-size: 20px;
+	line-height: 23px;
+}
 
 /*Footer styling start*/
 #footer{
 	overflow: hidden;
-	border-top: 1px solid #a9aaaa;
 	padding: 12px 60px;
 	text-transform: capitalize;
 	font-family: 'gotham_boldregular';
