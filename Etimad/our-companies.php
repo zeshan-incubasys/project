@@ -18,9 +18,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -48,9 +48,10 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=al-masar-travel&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=al-masar-travel&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=al-masar-travel&tab=perimeter-security">External perimeter security</a></li>
+
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -78,9 +79,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -108,9 +109,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -138,9 +139,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -168,9 +169,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -198,9 +199,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -228,9 +229,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -258,9 +259,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -288,9 +289,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -318,9 +319,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -348,9 +349,9 @@
 									<h1>solution and services</h1>
 							  </div>
 							  <ul>
-									<li><a href="#">Multimedia monitoring</a></li>
-									<li><a href="#">Information security and intelligence</a></li>
-									<li><a href="#">External perimeter security</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=multimedia">Multimedia monitoring</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=information">Information security and intelligence</a></li>
+									<li><a href="companies-goverence.php?main=eitmaad-holding&tab=perimeter-security">External perimeter security</a></li>
 							  </ul>
 							  <div class="text-area">
 									<h1>Benefits</h1>
@@ -369,7 +370,7 @@
 						<div class="mask">
 							  <div class="slideset">
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo1.svg" alt="">
@@ -379,7 +380,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo2.svg" alt="">
@@ -389,7 +390,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo3.svg" alt="">
@@ -399,7 +400,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo4.svg" alt="">
@@ -409,7 +410,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo5.svg" alt="">
@@ -419,7 +420,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo6.svg" alt="">
@@ -429,7 +430,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo7.svg" alt="">
@@ -439,7 +440,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo8.svg" alt="">
@@ -449,7 +450,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo9.svg" alt="">
@@ -459,7 +460,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo10.svg" alt="">
@@ -469,7 +470,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo11.svg" alt="">
@@ -479,7 +480,7 @@
 										  </a>
 									</div>
 									<div class='slide'>
-										  <a href="#">
+										  <a href="javascript:void(0)">
 												<div class="image-wrap">
 													  <div class="holder">
 															<img src="<?php echo IMAGE_URL; ?>company-logos/com-logo12.svg" alt="">

@@ -57,7 +57,7 @@
 						<li><a href="javascript:void(0);">Performing quantitative risk analysis</a></li>
 						<li><a href="javascript:void(0);">Performing qualitative risk analysis</a></li>
 						<li><a href="javascript:void(0);">Planning risk responses</a></li>
-						<!--<li><a href="javascript:void(0);">Monitoring and controlling risks</a></li>-->
+						<li><a href="javascript:void(0);">Monitoring and controlling risks</a></li>
 				  </ul>
 				  <a href="etimad-governance.php?tab=manage" class="more-btn">
 						<span class="holder">read more</span>
@@ -202,8 +202,8 @@
 						<li><a href="javascript:void(0);">Stock of materials</a></li>
 						<li><a href="javascript:void(0);">Staff fall back plan per stage of project and skill</a></li>
 						<li><a href="javascript:void(0);">IT disaster recovery</a></li>
-						<!--<li><a href="javascript:void(0);">Financial float-injections</a></li>
-						<li><a href="javascript:void(0);">Contingency planning identifications</a></li>-->
+						<li><a href="javascript:void(0);">Financial float-injections</a></li>
+						<li><a href="javascript:void(0);">Contingency planning identifications</a></li>
 				  </ul>
 				  <a href="etimad-governance.php?tab=planning" class="more-btn">
 						<span class="holder">read more</span>
@@ -292,5 +292,4 @@
 			</div>
 	  </div>
 	  </div>
-
 <?php include('include/footer.php'); ?>

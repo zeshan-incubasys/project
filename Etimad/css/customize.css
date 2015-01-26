@@ -321,17 +321,22 @@ h2{
 #container .slide-wrapper .slide:first-child{ margin: 0;}
 #container .slide-wrapper .slide{
 	float: left;
-
 	width:12.4% !important;
 	margin: 0 0 10px 20px;
 	text-align: center;
 	text-transform: capitalize;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }
 #container .slide-wrapper.solution .slide{width:145px !important;margin: 0 0 10px 30px;}
 #container .slide-wrapper .slide.active:first-child{ margin:-22px 0 0; }
 #container .slide-wrapper .slide.active{
 	margin:-22px 0 0 20px;
 }
+#container .slide-wrapper .slide:hover {margin: -22px 0 0 20px;}
 #container .slide-wrapper .slide:hover .image-wrap .holder,
 #container .slide-wrapper .slide.active .image-wrap .holder{border: 3px solid #e51b24;}
 #container .slide-wrapper .image-wrap{
@@ -417,7 +422,7 @@ div.carousel div.mask div.slideset {
 .tabs-wrapper .tabset>li:first-child{ border: none;}
 .tabs-wrapper .tabset>li{
 	width:14.339%;
-	min-height: 60px;
+	min-height: 70px;
 	display: inline-block;
 	vertical-align: top;
 	margin: 0 0 0 -4px;
