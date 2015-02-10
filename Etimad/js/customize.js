@@ -8,7 +8,16 @@ jQuery(function(){
     if($(window).width()>768) {
         initTabs();
     }
-	initCarousel();
+	// alert(jQuery('.inner-carousel').length);
+	if(jQuery('.inner-carousel').length)
+	{
+		initCarousel2();
+	}
+	if(jQuery('.carousel').length)
+	{
+		initCarousel();
+	}
+	
 	initOpenClose();
     $('.slide .image-wrap img').on("click",function(){
       $('.slide').removeClass('active');
@@ -21,6 +30,8 @@ jQuery(function(){
          var  i= $(this).parents('.slide').index();
         $("#tab"+(i+1)+"-Href").trigger("click");
     });*/
+	
+	
 });
 
 
@@ -35,12 +46,14 @@ function initCarousel() {
 		pagerLinks: '.pagination li',
 		stretchSlideToMask: true,
 		maskAutoSize: true,
-		autoRotation: true,
+		autoRotation: false,
 		switchTime: 3000,
 		animSpeed: 500,
 		step: 1
 	});
-	jQuery('div.inner-carousel').scrollGallery({
+}
+function initCarousel2() {
+jQuery('div.inner-carousel').scrollGallery({
 		mask: 'div.mask',
 		slider: 'div.slideset',
 		slides: 'div.slide',
@@ -49,13 +62,12 @@ function initCarousel() {
 		generatePagination: '.pagination',
 		stretchSlideToMask: true,
 		maskAutoSize: true,
-		autoRotation: true,
+		autoRotation: false,
 		switchTime: 3000,
 		animSpeed: 500,
 		step: 1
 	});
 }
-
 // content tabs init
 function initTabs() {
 	jQuery('ul.tabset').contentTabs({
@@ -983,7 +995,155 @@ function initOpenClose() {
 			jQuery(this).data('OpenClose', new OpenClose($.extend(opt, {holder: this})));
 		});
 	};
+	
+	
+	
+	
+	
+	// page init
+bindReady(function(){
+	initScalingNavigation();
+});
+
+// resize navigation items to fill parent
+function initScalingNavigation() {
+	initAutoScalingNav({
+		menuId: 'tabset',
+		equalLinks: true,
+		flexible: true
+	});
+}
+
+// autosclaing navigation
+function initAutoScalingNav(o) {
+	if (!o.menuId) o.menuId = "nav";
+	if (!o.tag) o.tag = "a";
+	if (!o.spacing) o.spacing = 0;
+	if (!o.constant) o.constant = 0;
+	if (!o.minPaddings) o.minPaddings = 0;
+	if (!o.liHovering) o.liHovering = false;
+	if (!o.sideClasses) o.sideClasses = false;
+	if (!o.equalLinks) o.equalLinks = false;
+	if (!o.flexible) o.flexible = false;
+	var nav = document.getElementById(o.menuId);
+	if(nav) {
+		nav.className += " scaling-active";
+		var lis = nav.getElementsByTagName("li");
+		var asFl = [];
+		var lisFl = [];
+		var width = 0;
+		for (var i=0, j=0; i<lis.length; i++) {
+			if(lis[i].parentNode == nav) {
+				var t = lis[i].getElementsByTagName(o.tag).item(0);
+				asFl.push(t);
+				asFl[j++].width = t.offsetWidth;
+				lisFl.push(lis[i]);
+				if(width < t.offsetWidth) width = t.offsetWidth;
+			}
+			if(o.liHovering) {
+				lis[i].onmouseover = function() {
+					this.className += " hover";
+				}
+				lis[i].onmouseout = function() {
+					this.className = this.className.replace("hover", "");
+				}
+			}
+		}
+		var menuWidth = nav.clientWidth - asFl.length*o.spacing - o.constant;
+		if(o.equalLinks && width * asFl.length < menuWidth) {
+			for (var i=0; i<asFl.length; i++) {
+				asFl[i].width = width;
+			}
+		}
+		width = getItemsWidth(asFl);
+		if(width < menuWidth) {
+			for (var i=0; getItemsWidth(asFl) < menuWidth; i++) {
+				asFl[i].width++;
+				if(!o.flexible) {
+					asFl[i].style.width = asFl[i].width + "px";
+				}
+				if(i >= asFl.length-1) i=-1;
+			}
+			if(o.flexible) {
+				for (var i=0; i<asFl.length; i++) {
+					width = (asFl[i].width - o.spacing - o.constant/asFl.length)/menuWidth*100;
+					if(i != asFl.length-1) {
+						lisFl[i].style.width = width + "%";
+					}
+					else {
+						if(!/MSIE (6|7)/.test(navigator.userAgent)) {
+							lisFl[i].style.width = width + "%";
+						}
+					}
+				}
+			}
+		}
+		else if(o.minPaddings > 0) {
+			for (var i=0; i<asFl.length; i++) {
+				asFl[i].style.paddingLeft = o.minPaddings + "px";
+				asFl[i].style.paddingRight = o.minPaddings + "px";
+			}
+		}
+		if(o.sideClasses) {
+			lisFl[0].className += " first-child";
+			lisFl[0].getElementsByTagName(o.tag).item(0).className += " first-child-a";
+			lisFl[lisFl.length-1].className += " last-child";
+			lisFl[lisFl.length-1].getElementsByTagName(o.tag).item(0).className += " last-child-a";
+		}
+		nav.className += " scaling-ready";
+	}
+	function getItemsWidth(a) {
+		var w = 0;
+		for(var q=0; q<a.length; q++) {
+			w += a[q].width;
+		}
+		return w;
+	}
+}
+
+// DOM ready handler
+function bindReady(handler){
+	var called = false;
+	var ready = function() {
+		if (called) return;
+		called = true;
+		handler();
+	};
+	if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', ready, false);
+	} else if (document.attachEvent) {
+		if (document.documentElement.doScroll && window == window.top) {
+			var tryScroll = function(){
+				if (called) return;
+				if (!document.body) return;
+				try {
+					document.documentElement.doScroll('left');
+					ready();
+				} catch(e) {
+					setTimeout(tryScroll, 0);
+				}
+			};
+			tryScroll();
+		}
+		document.attachEvent('onreadystatechange', function(){
+			if (document.readyState === 'complete') {
+				ready();
+			}
+		});
+	}
+	if (window.addEventListener) window.addEventListener('load', ready, false);
+	else if (window.attachEvent) window.attachEvent('onload', ready);
+}
 }(jQuery));
+
+
+
+
+
+/*hussnain */
+
+
+/*hussnain end*/
 
 /*! Hammer.JS - v2.0.4 - 2014-09-28
  * http://hammerjs.github.io/

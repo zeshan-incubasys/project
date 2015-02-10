@@ -7,7 +7,7 @@
 	if(isset($_GET['main'])){
 		$main = $_GET['main'];
 	}else{
-		  $main = 'eitmaad-holding';
+		$main = 'eitmaad-holding';
 	}
 
 
