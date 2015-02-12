@@ -397,11 +397,68 @@ body.inner.user {
 	margin: 0 0 20px;
 	text-align: center;
 }
+<<<<<<< HEAD
 #sidebar .social {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	text-align: center;
+=======
+
+#testimonial.blocks {
+	width: 100%;
+	overflow: hidden;
+}
+#testimonial .block-area {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+#testimonial .block-area.testimonial
+{
+	background:#0090d2;
+	color: #fff;
+}
+#testimonial .block-area.testimonial h2
+{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 48px;
+}
+#testimonial .block-area.customers
+{
+	background:#e5e5e5;
+	color: #5d5e61;
+}
+#testimonial .block-area.customers h2
+{
+	color: #5d5e61;
+	font-size: 38px;
+}
+#testimonial .customers p
+{
+	font-size: 36px;
+	color: #838487;
+}
+#testimonial .customers .logos {
+	margin: 0 auto;
+	padding: 20px;
+}
+#testimonial .logos img {
+	vertical-align: middle;
+}
+
+#sidebar .social a {
+	color:#505456;
+}
+
+@media (min-width: 768px) {
+.inner header .top-bar{ padding:20px;}
+.inner header .logo-area {
+	text-align:center;
+	margin:0 0 10px;
+	padding:0;
+>>>>>>> e49aa4eb2121698ea69e861d3835c8c8524f7a2e
 }
 #sidebar .social li {
 	background: url(../images/ico-twitter.png) no-repeat 0 50%;

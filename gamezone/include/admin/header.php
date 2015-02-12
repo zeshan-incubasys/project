@@ -11,16 +11,23 @@
 			<span class="user">
 				<span class="name">
 					<a href="#">abuBakar Butt</a>
-					<ul class="dropdown">
+					<!-- <ul class="dropdown">
 						<li><a href="#">item 1</a></li>
 						<li class="active"><a href="#">item 1</a></li>
 						<li><a href="#">item 1</a></li>
 						<li><a href="#">item 1</a></li>
 						<li><a href="#">item 1</a></li>
-					</ul>
+					</ul> -->
 				</span>
 				<span class="arrow"><a href="#"></a></span>
 			</span>
+			<ul class="dropdown">
+				<li><a href="#">item 1</a></li>
+				<li class="active"><a href="#">item 1</a></li>
+				<li><a href="#">item 1</a></li>
+				<li><a href="#">item 1</a></li>
+				<li><a href="#">item 1</a></li>
+			</ul>
 		</div>
 		<!-- <div class="top-search">
 			<form>
@@ -30,7 +37,7 @@
 				</fieldset>
 			</form>
 		</div> -->
-		<strong class="logo"><a href="#"></a></strong>
+		<strong class="logo"><a href="dashboard.php"></a></strong>
 		<div class="links">
 			<a class="add-game" href="#">add new game</a>
 			<a href="#">settings</a>

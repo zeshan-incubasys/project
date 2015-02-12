@@ -6,6 +6,20 @@ jQuery(function(){
 
 // scroll gallery init
 function initCarousel() {
+    jQuery('.slider').scrollGallery({
+        mask: '.mask',
+        slider: '.slideset',
+        slides: '.slide',
+        disableWhileAnimating: true,
+        stretchSlideToMask: true,
+        generatePagination: '.pagination',
+        circularRotation: true,
+        pauseOnHover: false,
+        autoRotation: true,
+        maskAutoSize: true,
+        switchTime: 2000,
+        animSpeed: 600,
+    });
 	jQuery('.products').scrollGallery({
 		mask: '.mask',
 		slider: '.slideset',

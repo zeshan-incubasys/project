@@ -49,4 +49,32 @@
 		</div>
 	</section>
 </div>
+<div id="testimonial" class="blocks">
+			<div class="block-area customers">
+				  <h2>spacefynd is used by</h2>
+				  <div class="logos">
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp1.png" alt=""/>
+						<img src="<?=IMAGE_URL?>comp2.png" alt=""/>
+
+				  </div>
+				  <p>
+						..... and by 30,000 others
+				  </p>
+			</div>
+			<div class="block-area testimonial">
+				  <h2>Testimonials</h2>
+				  <p>Aenean interdum ultricies justo, ut vehicula erat dignissim ac. Aliquam condimentum lectus libero, eu semper arcu eleifend quis. Duis quam massa, posuere ac tempus eu, accumsan sed augue. Suspendisse scelerisque.</p>
+				  <h4 class="title">Someone famous @ Source Title</h4>
+			</div>
+	  </div>
 <?php include('include/footer.php');?>

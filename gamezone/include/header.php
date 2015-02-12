@@ -1,5 +1,5 @@
 <?php include('variables.php');?>
-<?php include('head.php');?>
+<?php include('include/head.php');?>
 <body>
 <header id="header">
 	<div class="top-bar">

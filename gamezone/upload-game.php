@@ -16,12 +16,17 @@
 							<input type="text" placeholder="title">
 						</div>
 						<div class="input-wrap file">
-							<input type="file" data-jcf='{"buttonText": "browse", "placeholderText": "choose icon"}'>
+							<div class="nofloat">
+								<input type="file" data-jcf='{"buttonText": "browse", "placeholderText": "choose image"}'>
+							</div>	
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-wrap file">
-							<input type="file" data-jcf='{"buttonText": "browse", "placeholderText": "choose image"}'>
+							<div class="nofloat">
+								<input type="file" data-jcf='{"buttonText": "browse", "placeholderText": "choose image"}'>
+							</div>
+		
 						</div>
 						<div class="input-wrap file">
 							<input type="file" data-jcf='{"buttonText": "browse", "placeholderText": "choose game file"}'>

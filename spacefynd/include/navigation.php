@@ -17,4 +17,3 @@
         <a href="<?=BASE_URL?>lists.php" class="btn btn-sky">List Your Space Now!</a>
     </div>
 </div>
-

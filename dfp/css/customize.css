@@ -90,7 +90,7 @@ fieldset {
 }
 #header .btn {
 	float: right;
-	font: 12px/46px 'gotham_boldregular', Arial, sans-serif;
+	font: 11px/30px 'gotham_boldregular', Arial, sans-serif;
 	background: #83b5dd;
 	min-width: 212px;
 	color: #fff;
@@ -323,17 +323,64 @@ fieldset {
 #nav .nav-right>ul .dropdown .cart {
 	background: #fff;
 	color: #000;
-	-webkit-box-shadow: 2px 2px 5px 0 #9f9f9f;
+	border: 1px solid #f4f4f4;
+	/*-webkit-box-shadow: 2px 2px 5px 0 #9f9f9f;
 	-moz-box-shadow: 2px 2px 5px 0 #9f9f9f;
-	box-shadow: 2px 2px 5px 0 #9f9f9f;
+	box-shadow: 2px 2px 5px 0 #9f9f9f;*/
 }
 #nav .nav-right>ul .dropdown .checkout {
-	background: #ff3112;
+	background: #f82186;
 	color: #fff;
 }
 .slider {
 	width: 100%;
 	position: relative;
+}
+.slider .mask {
+	overflow: hidden;
+	width: 100%;
+}
+.slider .slideset {
+	float: left;
+	width: 999px;
+}
+.slider .slide {
+	float: left;
+	width: 100%;
+}
+.pagination{
+	position: absolute;
+	width:100%;
+	bottom:20px;
+	right:35px;
+	text-align: right;
+}
+.pagination ul{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+.pagination li{
+	display:inline-block;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+.pagination a{
+	display: block;
+	text-align: left;
+	overflow: hidden;
+	text-indent: -9999px;
+	width:10px;
+	height: 10px;
+	background: #b7b7b7;
+	border-radius:100%;
+}
+.pagination .active a,
+.pagination a:hover{
+	width:6px;
+	height: 6px;
+	background: #fff;
+	border:4px solid #b7b7b7;
 }
 .slider img {
 	width: 100%;
@@ -398,7 +445,7 @@ fieldset {
 	font: 12px/46px "gotham_boldregular", Arial, sans-serif;
 	cursor: pointer;
 }
-#main {
+#main,.slider {
 	max-width: 1120px;
 	margin: 0 auto;
 }
@@ -1818,6 +1865,9 @@ fieldset {
 	padding-bottom:10px;
 	color: #5d5d5c;
 	text-transform: uppercase;
+}
+.title {
+	font-weight: bold;
 }
 .btn-pink {
 	font: 12px/46px 'gotham_boldregular', Arial, sans-serif;
