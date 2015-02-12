@@ -17,5 +17,22 @@
     <script type="text/javascript" src="<?php echo JS_URL?>bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL?>jquery.validate.min.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL?>customize.js"></script>
-
+	
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script>
+		 $(function() {
+			$( ".budget-slider" ).slider({
+				range: true,
+				min: 0,
+				max: 500,
+				values: [ 75, 300 ],
+				slide: function( event, ui ) {
+					$( "#amount" ).html( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				}
+			});
+			$( "#amount" ).html( "$" + $( ".budget-slider" ).slider( "values", 0 ) +
+			" - $" + $( ".budget-slider" ).slider( "values", 1 ) );
+		}); 
+	</script>
 </head>
