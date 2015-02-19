@@ -23,7 +23,7 @@
 					</ul>
 				</div>
 			</li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="#">reach us</a></li>
 		</ul>
 	</nav>
 </div>

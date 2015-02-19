@@ -1,5 +1,39 @@
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 $(document).ready(function(e) {
-	
+
+    var form = $("#contact-form");
+    form.on("submit",function(){
+       var error=false;
+        if($('#name').val().trim().length<=0)
+       {
+           $('#name').after("<label class='error'>Name Field Required</label>");
+           error=true;
+           return false;
+       }
+        if($('#email').val().trim().length<=0||!validateEmail($('#email').val().trim()))
+        {
+            $('#email').after("<label class='error'>Please enter Valid email address</label>");
+            error=true;
+            return false;
+        }
+        captcha=$("#contact-form").serializeArray()[6].value;
+        if(!error)
+        {
+           $.ajax({
+                url:"mail.php",
+                type:"POST",
+                data:$("#contact-form").serialize(),
+                success:function(response){
+                    console.log(response);
+                }
+            })
+        }
+        return false;
+
+    });
 	$(".top").on("click", function(e){
 		$('html, body').animate({ scrollTop: 0 }, 800);
 		e.preventDefault();
@@ -10,11 +44,26 @@ $(document).ready(function(e) {
 		delay: 10,
 		time: 1000
 	});
-	
+
 	// Padding for header fixed
 	var headerHeight = $('#header').innerHeight();
 	$('body').css('padding-top', headerHeight);
-	
+    $(window).on("scroll",function(){
+        if($(window).scrollTop()>100)
+        {
+            $('.logo').css({"width":"40px","height":"55px","margin-top":"-10px"});
+            $('#header').css({"padding":"10px"});
+            $('.nav-area').css({"margin-top":"10px"});
+            $('.search-form').hide();
+            $('body').css('padding-top', $('#header').innerHeight());
+        }else
+        {
+            $('.logo, .search-form').show();
+            $('.logo,#header,.nav-area').removeAttr("style");
+            $('body').css('padding-top', headerHeight);
+        }
+
+    });
 	// Slider Height
 	var windowHeight = $(window).height();
 	var sliderHeight = windowHeight - headerHeight;

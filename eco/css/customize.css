@@ -100,6 +100,7 @@ fieldset {
 	background: url(../images/logo.png) no-repeat;
 	width: 82px;
 	height: 106px;
+	background-size:100% ;
 }
 #header .logo a {
 	height: 100%;
@@ -878,6 +879,10 @@ fieldset {
 	overflow:hidden;
 	z-index:999;
 }
+.error {
+	color: red;
+	font-weight: bold;
+}
 @media only screen and (max-width:1199px) {
 body { min-width: 320px; }
 #main .about-list,
@@ -1041,3 +1046,66 @@ body { min-width: 320px; }
 @media only screen and (max-width:599px) {
 .products .tabs-area .tabs img { width: 96%; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****custom css***/
+
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.slider_discrition {
+    float: left;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 37%;
+    width: 100%;
+}
+.discription_holder{ margin:0 auto; max-width:930px;}
+.slider_discrition h1 {
+	background: url(../images/bg-heading.png) no-repeat 50% 0;
+	font: 35px/38px 'luzsans-boldluzsans-bold', Arial, sans-serif;
+	padding: 60px 0;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 0 0 26px;
+	text-shadow: 0 3px 0 rgba(4,4,4,0.75);
+	position: relative;
+}
+.slider_discrition .btn {
+	border: 1px solid #fff;
+	display: inline-block;
+	vertical-align: middle;
+	background: #002c5a;
+	font-size: 11px;
+	line-height: 38px;
+	padding: 0 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+}
+.slider_discrition .btn:hover{ text-decoration:underline;}
+.slider_discrition h1:after {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background: url(../images/bg-heading.png) no-repeat 50% 0;
+	height: 7px;
+	content: '';
+}
+.owl-controls.clickable{ display:none !important;}
+

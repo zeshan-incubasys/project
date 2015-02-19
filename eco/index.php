@@ -1,6 +1,51 @@
 <?php  include('include/header.php');?>
 <div id="main">
-	<section class="slider">
+<div id="owl-demo" class="owl-carousel owl-theme">
+ 						
+  <div class="item">
+  <img src="<?php echo IMAGE_URL; ?>slide_1.jpg" alt="">
+    <div class="slider_discrition">
+        <div class="discription_holder">
+            <h1>Specialized in Engineered Solutions</h1>
+            <a href="#" class="btn">More Information</a>
+        </div>
+    </div>
+  </div>
+  
+  <div class="item">
+  <img src="<?php echo IMAGE_URL; ?>slide_2.jpg" alt="">
+  <div class="slider_discrition">
+    <div class="discription_holder">
+        <h1>Specialized in Engineered Solutions</h1>
+        <a href="#" class="btn">More Information</a>
+    </div>
+	</div>
+  </div>
+  
+  <div class="item">
+  <img src="<?php echo IMAGE_URL; ?>slide_3.jpg" alt="">
+  <div class="slider_discrition">
+    <div class="discription_holder">
+        <h1>Specialized in Engineered Solutions</h1>
+        <a href="#" class="btn">More Information</a>
+    </div>
+	</div>
+  </div>
+  
+  <div class="item">
+  <img src="<?php echo IMAGE_URL; ?>slide_4.jpg" alt="">
+  <div class="slider_discrition">
+    <div class="discription_holder">
+        <h1>Specialized in Engineered Solutions</h1>
+        <a href="#" class="btn">More Information</a>
+    </div>
+	</div>
+  </div>
+ 
+</div>
+
+
+	<!--<section class="slider">
 		<div class="mask">
 			<div class="slideset">
 				<div class="slide">
@@ -31,7 +76,13 @@
 			<a href="#" class="btn-next">next</a>
 			<a href="#" class="btn-prev">prev</a>
 		</div>
-	</section>
+	</section>-->
+    
+    
+    
+    
+    
+    
 	<section class="about">
 		<div class="head-block">
 			<div class="hold">
@@ -1923,11 +1974,11 @@
 		</div>
 		<div class="tabs-area2">
 			<ul class="tabset2">
-				<li class="active infra"><a href="#infra1">Infrastructure<span class="num">01</span></a></li>
-				<li class="ind"><a href="#ind1">Industry<span class="num">02</span></a></li>
-				<li class="oil"><a href="#oil1">Oil &amp; Gas<span class="num">03</span></a></li>
-				<li class="water"><a href="#water1">Water &amp; Waste Water<span class="num">04</span></a></li>
-				<li class="marine"><a href="#marine1">Marine / Offshore<span class="num">05</span></a></li>
+				<li class="active infra"><a href="#infra1">Infrastructure<!--<span class="num">01</span>--></a></li>
+				<li class="ind"><a href="#ind1">Industry<!--<span class="num">02</span>--></a></li>
+				<li class="oil"><a href="#oil1">Oil &amp; Gas<!--<span class="num">03</span>--></a></li>
+				<li class="water"><a href="#water1">Water &amp; Waste Water<!--<span class="num">04</span>--></a></li>
+				<li class="marine"><a href="#marine1">Marine / Offshore<!--<span class="num">05</span>--></a></li>
 			</ul>
 			<div class="tab-content2">
 				<div class="tabs2" id="infra1">
@@ -2015,7 +2066,7 @@
 		<div class="head-block">
 			<div class="hold">
 				<div class="head-area">
-					<h1>Contact Us</h1>
+					<h1>Reach Us</h1>
 					<span class="tagline">“We develop tomorrow with Innovative Technology” </span>
 				</div>
 				<div class="text-area">
@@ -2028,38 +2079,48 @@
 				</div>
 			</div>
 		</div>
-		<form action="#" class="contact-form">
+		<form action="#" class="contact-form" method="post" id="contact-form" >
 			<fieldset>
 				<strong class="title">We’d love to hear from you! Send us a message using the form below.</strong>
 				<div class="row">
 					<div class="col">
-						<input type="text" placeholder="Name">
+						<input type="text" placeholder="Name" name="name" id="name" required="required" tabindex="1">
 					</div>
 					<div class="col">
-						<input type="text" placeholder="Contact Number">
+						<input type="text" placeholder="Contact Number" name="contact-number" id="contact-number" tabindex="2">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<input type="email" class="email" placeholder="Email">
+						<input type="email" class="email" placeholder="Email" name="email" id="email" required tabindex="3">
 					</div>
 					<div class="col">
-						<input type="text" placeholder="Message">
+						<input type="text" placeholder="Message" name="message" id="message" tabindex="5">
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col">
+						<input type="text" placeholder="Subject" name="subject" id="subject" tabindex="4">
+					</div>
+					<div class="col">
+						<input type="text" placeholder="" name="message1"  id="message1" tabindex="6">
 					</div>
 				</div>
 				<div class="row">
-					<div class="col">
-						<input type="text" placeholder="Subject">
-					</div>
-					<div class="col">
-						<input type="text" placeholder="">
-					</div>
-				</div>
-				<input type="submit" value="Send Message">
+						<div class="col">
+							  <div class="g-recaptcha" data-sitekey="6LckAwITAAAAAMP_N_y2XrTHWYIEQAbr1LG9N6Ac"></div>
+						</div>
+					  <div class="col">
+							<input type="submit" value="Send" tabindex="7" >
+					  </div>
+				  </div>
+
 			</fieldset>
 		</form>
 		<div class="map-area">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.294420466!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1421135712130" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+			  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d29758012.937249158!2d54.463688!3d24.431004!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1423822659059" width="100%" height="450" frameborder="0" style="border:0"></iframe>
 		</div>
 	</section>
 	<a href="#header" class="top"></a>
