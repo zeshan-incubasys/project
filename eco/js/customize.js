@@ -27,7 +27,7 @@ $(document).ready(function(e) {
                 type:"POST",
                 data:$("#contact-form").serialize(),
                 success:function(response){
-                    console.log(response);
+                    alert(response);
                 }
             })
         }

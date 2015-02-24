@@ -13,7 +13,6 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 	<script type="text/javascript" src="<?=JS_URL?>jquery.counterup.min.js"></script>
-	<script type="text/javascript" src="<?=JS_URL?>jquery.validate.min.js"></script>
 	<script type="text/javascript" src="<?=JS_URL?>customize.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	  <script type="text/javascript">
