@@ -1,0 +1,234 @@
+body, html {
+	margin: 0;
+	overflow: hidden;
+	-webkit-transition: opacity 400ms;
+	-moz-transition: opacity 400ms;
+	transition: opacity 400ms;
+}
+
+body, .onepage-wrapper, html {
+	display: block;
+	position: static;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.onepage-wrapper {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: relative;
+	padding: 0;
+	-webkit-transform-style: preserve-3d;
+}
+
+.onepage-wrapper .section {
+	width: 100%;
+	height: 100%;
+}
+
+.onepage-pagination {
+	position: absolute;
+	right: 20px;
+	top: 40%;
+	z-index: 5;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.onepage-pagination li {
+	padding: 0;
+	text-align: center;
+}
+
+.onepage-pagination li a {
+	padding: 10px;
+	width: 4px;
+	height: 4px;
+	display: block;
+
+}
+
+.onepage-pagination li a:before {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background: rgba(0, 0, 0, 0.85);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.onepage-pagination li a.active:before {
+	width: 10px;
+	height: 10px;
+	background: none;
+	border: 1px solid black;
+	margin-top: -4px;
+	left: 8px;
+}
+
+.onepage-pagination.color1 li a:before, .onepage-pagination.color3 li a:before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: none;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border: 1px solid #dc5a56;
+	margin-left: -8px;
+}
+
+.onepage-pagination.color1 li a.active:before, .onepage-pagination.color3 li a.active:before {
+	border: 1px solid #dc5a56;
+	background: #dc5a56;
+	margin-top: 0;
+	left: 12px;
+}
+
+.onepage-pagination.color2 li a:before, .onepage-pagination.color4 li a:before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: none;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border: 1px solid #362b42;
+	margin-left: -8px;
+}
+
+.onepage-pagination.color2 li a.active:before, .onepage-pagination.color4 li a.active:before {
+	border: 1px solid #362b42;
+	background: #362b42;
+	margin-top: 0;
+	left: 12px;
+}
+
+.onepage-pagination.color5 li a:before, .onepage-pagination.color6 li a:before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: none;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border: 1px solid #fff;
+	margin-left: -8px;
+}
+
+.onepage-pagination.color5 li a.active:before, .onepage-pagination.color6 li a.active:before {
+	border: 1px solid #fff;
+	background: #fff;
+	margin-top: 0;
+	left: 12px;
+}
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+	overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+}
+
+.disabled-onepage-scroll .onepage-wrapper {
+	-webkit-transform: none !important;
+	-moz-transform: none !important;
+	transform: none !important;
+	-ms-transform: none !important;
+	min-height: 100%;
+}
+
+.disabled-onepage-scroll .onepage-pagination {
+	display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+	position: inherit;
+}
+
+a.tooltip {
+	position: relative;
+	display: inline;
+}
+
+a.tooltip span {
+	position: absolute;
+	width: 75px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	visibility: hidden;
+	border-radius: 6px;
+}
+
+a.tooltip span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -6px;
+	width: 0;
+	height: 0;
+	border-left: 8px solid #000000;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+a:hover.tooltip span {
+	visibility: visible;
+	opacity: 0.8;
+	right: 100%;
+	top: 70%;
+	margin-top: -15px;
+	margin-right: 10px;
+	z-index: 999;
+}
+
+.color1 a.tooltip span, .color3 a.tooltip span {
+	background: #dc5a56;
+}
+
+.color1 a.tooltip span:after, .color3 a.tooltip span:after {
+	border-left: 6px solid #dc5a56;
+}
+
+.color2 a.tooltip span, .color4 a.tooltip span {
+	background: #362b42;
+}
+
+.color2 a.tooltip span:after, .color4 a.tooltip span:after {
+	border-left: 6px solid #362b42;
+}
+
+.color5 a.tooltip span, .color6 a.tooltip span {
+	background: #fff;
+	color: #000;
+}
+
+.color5 a.tooltip span:after, .color6 a.tooltip span:after {
+	border-left: 6px solid #fff;
+}
+@media (max-width: 768px) {
+	.onepage-wrapper .section {
+		height: auto;
+	}
+	.page1 .page-top-bar {
+		display: block;
+	}
+	.page-top-bar {
+		display: none;
+	}
+}
