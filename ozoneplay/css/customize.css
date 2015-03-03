@@ -523,10 +523,6 @@ section.page3 .text-holder p {
 
 }
 
-.page6 .left-col h2 {
-	margin-top: 40px;
-}
-
 .post {
 	border-bottom: 1px dotted #fff;
 	margin-bottom: 20px;
@@ -577,28 +573,31 @@ section.page3 .text-holder p {
 	margin: 0 0 10px 0;
 }
 
-.page6 .right-col .social-area ul li {
+.page6 .right-col .social-area .h-row div {
 	display: inline-block;
 	vertical-align: top;
-	background: url("../images/icon-fb-footer.png") no-repeat;
 	margin: 0 0 10px 20px;
+	min-width: 160px;
 }
 
-.page6 .right-col .social-area ul li a {
+.page6 .right-col .social-area div a {
 	display: block;
 	height: 100%;
 	padding: 7px 0 8px 41px;
 }
 
-.page6 .right-col .social-area ul li.tumblr {
+.page6 .right-col .social-area div.facebook {
+	background: url("../images/icon-fb-footer.png") no-repeat;
+}
+.page6 .right-col .social-area div.tumblr {
 	background: url("../images/icon-timbler-footer.png") no-repeat;
 }
 
-.page6 .right-col .social-area ul li.twitter {
+.page6 .right-col .social-area div.twitter {
 	background: url("../images/icon-twitter-footer.png") no-repeat;
 }
 
-.page6 .right-col .social-area ul li.instagram {
+.page6 .right-col .social-area div.instagram {
 	background: url("../images/icon-insta-footer.png") no-repeat;
 }
 
@@ -784,6 +783,9 @@ section.page3 .text-holder p {
 	.main section.page4 .page_container .heading hr {
 		width: 70%;
 	}
+	.overlay {
+		visibility: visible;
+	}
 
 }
 
@@ -792,9 +794,15 @@ section.page3 .text-holder p {
 	body {
 		font-size: 12px;
 	}
+	.main section.page1,.main section.page3,.main section.page4 {
+		background-size: cover;
+		height: 100%;
+
+	}
 
 	.page3 .page_container .text-holder {
 		width: 27%;
+		padding: 15px 25px;
 	}
 
 	.main section .page_container {
@@ -875,6 +883,26 @@ section.page3 .text-holder p {
 
 	.main section .page-name {
 		padding: 20px;
+	}
+	.page5 .top-row .data {
+		max-width: 50%;
+	}
+	.page5 .page5-container {
+		padding: 15px 20px;
+	}
+	.page5 .page5-container .data {
+		padding: 15px;
+	}
+	.page6 .left-col .data-holder {
+		max-width: 90%;
+		padding: 15px 0;
+	}
+    h2 {
+	    margin-top: 20px;
+    }
+	.post p {
+		margin: 0;
+
 	}
 
 }

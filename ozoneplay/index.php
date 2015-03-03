@@ -433,24 +433,22 @@
 
 										  </div>
 										  <div class="social-area">
-											<ul>
-												  <li>
-
-														<a href="#">FACEBOOK</a>
-												  </li>
-												  <li class="tumblr">
-
-														<a href="#">TUMBLR</a>
-												  </li>
-												  <li class="twitter">
-
+											<div class="h-row">
+												<div class="facebook">
+													  <a href="#">FACEBOOK</a>
+												</div>
+												<div class="tumblr">
+													  <a href="#">TUMBLR</a>
+												</div>
+											</div>
+											<div class="h-row">
+												  <div class="twitter">
 														<a href="#">TWITTER</a>
-												  </li>
-												  <li class="instagram">
+												  </div>
+												  <div class="instagram">
 														<a href="#">INSTAGRAM</a>
-												  </li>
-
-											</ul>
+												  </div>
+											</div>
 										  </div>
 									</div>
 							  </div>

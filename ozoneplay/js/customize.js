@@ -24,8 +24,7 @@ function setValues(){
 
 }
 $(window).ready(function () {
-    //console.log($(window).width());
-
+   // console.log($(window).width());
     $(".main").onepage_scroll({
         sectionContainer: "section",
         responsiveFallback: 768,
@@ -99,10 +98,19 @@ $(window).ready(function () {
     $(".opener").click(function () {
         $("#menu").dialog("open");
     });
-    $(".game-desc").click(function () {
-        $("#game-desc").html($("#game3").html());
-        $("#game-desc").dialog("open");
-    });
+    if($(window).width()>768){
+        $(".game-desc").click(function () {
+            $("#game-desc").html($("#game3").html());
+            $("#game-desc").dialog("open");
+        });
+    }else {
+        $(".image-hold,.game-desc").click(function () {
+            $("#game-desc").html($("#game3").html());
+            $("#game-desc").dialog("open");
+        });
+    }
+
+
 
 
     $('.desc-dialog').on("click", '.image-slide li', function () {
